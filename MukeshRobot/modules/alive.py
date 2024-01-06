@@ -10,21 +10,24 @@ from telethon import __version__ as tver
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
 PHOTO = [
-    "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
-    "https://telegra.ph/file/ddf30888de58d77911ee1.jpg",
-    "https://telegra.ph/file/268d66cad42dc92ec65ca.jpg",
-    "https://telegra.ph/file/13a0cbbff8f429e2c59ee.jpg",
-    "https://telegra.ph/file/bdfd86195221e979e6b20.jpg",
+    "https://graph.org/file/f86b71018196c5cfe7344.jpg",
+    "https://graph.org/file/a3db9af88f25bb1b99325.jpg",
+    "https://graph.org/file/5b344a55f3d5199b63fa5.jpg",
+    "https://graph.org/file/84de4b440300297a8ecb3.jpg",
+    "https://graph.org/file/84e84ff778b045879d24f.jpg",
+    "https://graph.org/file/a4a8f0e5c0e6b18249ffc.jpg",
+    "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
+    "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg"
 ]
 
 Mukesh = [
     [
-        InlineKeyboardButton(text="ɴᴏᴏʙ", user_id=OWNER_ID),
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx"),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
         InlineKeyboardButton(
-            text="➕ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+            text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
@@ -37,11 +40,11 @@ async def restart(client, m: Message):
     await m.delete()
     accha = await m.reply("⚡")
     await asyncio.sleep(0.2)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("🧪")
     await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
+    await accha.edit("💌")
     await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("🌡️")
 
     await accha.delete()
     await asyncio.sleep(0.3)
@@ -52,17 +55,18 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await m.reply_photo(
         START_IMG,
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
+        caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") 💌**
    ━━━━━━━━━━━━━━━━━━━
-  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID})
+  ๏ **ᴍʏ ᴏᴡɴᴇʀ ➛** [ʀᴏʏ-ᴇᴅɪᴛx](tg://user?id={OWNER_ID})
   
-  » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
+  ๏ **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{lver}`
   
-  » **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tver}`
+  ๏ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tver}`
   
-  » **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pver}`
+  ๏ **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➛** `{pver}`
   
-  » **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{pyver()}`
+  ๏ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{pyver()}`
    ━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(Mukesh),
     )
+    
