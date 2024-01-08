@@ -38,13 +38,13 @@ Mukesh = [
 @pbot.on_message(filters.command("alive"))
 async def restart(client, m: Message):
     await m.delete()
-    accha = await m.reply("⚡")
+    accha = await m.reply("🤍")
     await asyncio.sleep(0.2)
-    await accha.edit("🧪")
+    await accha.edit("🖤")
     await asyncio.sleep(0.1)
-    await accha.edit("💌")
+    await accha.edit("🧡")
     await asyncio.sleep(0.1)
-    await accha.edit("🌡️")
+    await accha.edit("💚")
 
     await accha.delete()
     await asyncio.sleep(0.3)
@@ -57,15 +57,12 @@ async def restart(client, m: Message):
         START_IMG,
         caption=f"""** ๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") 💌**
    ━━━━━━━━━━━━━━━━━━━
-  ๏ **ᴍʏ ᴏᴡɴᴇʀ ➛** [ʀᴏʏ-ᴇᴅɪᴛx](tg://user?id={OWNER_ID})
-  
   ๏ **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{lver}`
-  
   ๏ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tver}`
-  
   ๏ **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➛** `{pver}`
-  
   ๏ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{pyver()}`
+  
+  ๏ **ᴍᴀᴅᴇ ʙʏ ➛** [ʀᴏʏ-ᴇᴅɪᴛx](tg://user?id={OWNER_ID})
    ━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(Mukesh),
     )
