@@ -51,7 +51,7 @@ async def paste_func(_, message):
     link = await paste(content)
     preview = link 
     button = InlineKeyboard(row_width=1)
-    button.add(InlineKeyboardButton(text="• ᴘᴀsᴛᴇ ʟɪɴᴋ •", url=link))
+    button.add(InlineKeyboardButton(text="ᴘᴀsᴛᴇ ʟɪɴᴋ", url=link))
 
     await m.delete()
     try:
@@ -62,7 +62,7 @@ async def paste_func(_, message):
     
 
 
-__mod_name__ = "Pᴀs​ᴛᴇ"
+__mod_name__ = "ᴘᴀs​ᴛᴇ"
 __help__ = """
  ᴘᴀsᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ғɪʟᴇ ᴀɴᴅ sʜᴏᴡs ʏᴏᴜ ᴛʜᴇ ʀᴇsᴜʟᴛ
 
