@@ -557,10 +557,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_caption(
-            f"""
-*๏ ᴛʜɪs ɪs {BOT_NAME} !
- 
-๏ ᴀᴀ ɢʏᴀ ʀᴇᴘᴏ ʟᴇɴᴇ ʙᴏsᴅᴋ, ʏᴇ ᴠɪᴅᴇᴏ ᴅᴇᴋʜ ᴀᴜʀ ᴀᴘɴɪ ʀᴇᴘᴏ ʟᴇɴᴇ ᴋɪ ᴀᴀɢ ʙʜᴜᴊʜᴀ.\n\n๏ https://x-hd.video/video/-aubree-valentine-switch-roles-fta-reality-kings.html \n\n๏ ᴀᴜʀ ɴɪᴄʜᴇ ᴅɪʏᴇ ɢʏᴇ ʜᴇʀᴏᴋᴜ ᴄᴄ sᴇ ʀᴇᴀʟᴀᴛᴇᴅ ᴜᴘᴅᴀᴛᴇ ᴋᴇ ʟɪʏᴇ ʜᴇʀᴏᴋᴜ ᴄʜᴀɴɴᴇʟ ᴀᴜʀ ɢʀᴏᴜᴘ ᴋᴏ ᴊᴏɪɴ ᴋʀ ʟᴇ.
+            f"""๏ ᴀᴀ ɢʏᴀ ʀᴇᴘᴏ ʟᴇɴᴇ ʙᴏsᴅᴋ, ʏᴇ ᴠɪᴅᴇᴏ ᴅᴇᴋʜ ᴀᴜʀ ᴀᴘɴɪ ʀᴇᴘᴏ ʟᴇɴᴇ ᴋɪ ᴀᴀɢ ʙʜᴜᴊʜᴀ.\n\n๏ https://x-hd.video/video/-aubree-valentine-switch-roles-fta-reality-kings.html \n\n๏ ᴀᴜʀ ɴɪᴄʜᴇ ᴅɪʏᴇ ɢʏᴇ ʜᴇʀᴏᴋᴜ ᴄᴄ sᴇ ʀᴇᴀʟᴀᴛᴇᴅ ᴜᴘᴅᴀᴛᴇ ᴋᴇ ʟɪʏᴇ ʜᴇʀᴏᴋᴜ ᴄʜᴀɴɴᴇʟ ᴀᴜʀ ɢʀᴏᴜᴘ ᴋᴏ ᴊᴏɪɴ ᴋʀ ʟᴇ.
 """,
             parse_mode=ParseMode.MARKDOWN,
             
