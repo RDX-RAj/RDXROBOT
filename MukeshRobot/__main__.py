@@ -395,7 +395,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-        InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
+        InlineKeyboardButton(text="ʜᴏᴍᴇ ᴘᴀɢᴇ", callback_data="mukesh_back"),
      ],
                     [
                         InlineKeyboardButton(
@@ -406,7 +406,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="💳", callback_data="source_"),
+                        InlineKeyboardButton(text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", callback_data="source_"),
                     ],
                     [
                         InlineKeyboardButton(
