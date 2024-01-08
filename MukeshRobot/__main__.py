@@ -75,7 +75,7 @@ PM_START_TEX = """
 
 
 PM_START_TEXT = """ 
-*๏ ʜᴇʏ {}, ᴡᴇʟᴄᴏᴍᴇ ʙʀᴏ !\n━━━━━━━━━━━━━━━━━━━━━━\n\n๏ ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.\n\n๏ ᴜsᴇʀs ➛ {}\n๏ ᴄʜᴀᴛs ➛ {}\n\n๏ ɪ ᴀᴍ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ.*"""
+*๏ ʜᴇʏ {}, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ᴜʜʜ* !\n━━━━━━━━━━━━━━━━━━━━━━\n\n๏ *ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.*\n\n๏ *ᴜsᴇʀs ➛ {}*\n๏ *ᴄʜᴀᴛs ➛ {}*\n\n๏ *ɪ ʜᴀᴠᴇ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs.*"""
 
 buttons = [
     [
@@ -558,10 +558,8 @@ def Source_about_callback(update: Update, context: CallbackContext):
     if query.data == "source_":
         query.message.edit_caption(
             f"""
-*๏ ʜᴇʏ ʙᴀʙʏ, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ᴜʜʜ !
- ๏ ᴛʜɪs ɪs {BOT_NAME} !
-๏ ᴀɴ ᴏᴩᴇɴ sᴏᴜʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.*
-
+*๏ ᴛʜɪs ɪs {BOT_NAME} !
+ 
 ๏ ᴀᴀ ɢʏᴀ ʀᴇᴘᴏ ʟᴇɴᴇ ʙᴏsᴅᴋ, ʏᴇ ᴠɪᴅᴇᴏ ᴅᴇᴋʜ ᴀᴜʀ ᴀᴘɴɪ ʀᴇᴘᴏ ʟᴇɴᴇ ᴋɪ ᴀᴀɢ ʙʜᴜᴊʜᴀ.\n\n๏ https://x-hd.video/video/-aubree-valentine-switch-roles-fta-reality-kings.html \n\n๏ ᴀᴜʀ ɴɪᴄʜᴇ ᴅɪʏᴇ ɢʏᴇ ʜᴇʀᴏᴋᴜ ᴄᴄ sᴇ ʀᴇᴀʟᴀᴛᴇᴅ ᴜᴘᴅᴀᴛᴇ ᴋᴇ ʟɪʏᴇ ʜᴇʀᴏᴋᴜ ᴄʜᴀɴɴᴇʟ ᴀᴜʀ ɢʀᴏᴜᴘ ᴋᴏ ᴊᴏɪɴ ᴋʀ ʟᴇ.
 """,
             parse_mode=ParseMode.MARKDOWN,
