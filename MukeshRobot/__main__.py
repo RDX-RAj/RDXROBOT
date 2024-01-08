@@ -392,25 +392,17 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
+                            text="ɢʀᴏᴜᴘ", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="ᴜᴩᴅᴀᴛᴇs", url=f"https://t.me/roy_editx"
+                            text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/roy_editx"
                         ),
                     ],
                     [
                         InlineKeyboardButton(text="sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", callback_data="source_"),
                     ],
                     [
-                        InlineKeyboardButton(
-                            text="ᴏᴡɴᴇʀ", url=f"tg://user?id={OWNER_ID}"
-                        ),
-                        InlineKeyboardButton(
-                            text="ɢɪᴛʜᴜʙ", url="https://t.me/h_cc_help"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(text="◁", callback_data="mukesh_"),
+                        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="mukesh_"),
                         InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back"),
                     ],
                 ]
