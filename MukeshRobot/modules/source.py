@@ -16,15 +16,7 @@ Mukesh = "https://telegra.ph/file/6f04cb09ff8e8af19ae02.jpg"
 async def repo(client, message):
     await message.reply_photo(
         photo=Mukesh,
-        caption=f"""**ʜᴇʏ {message.from_user.mention()},\n\nɪ ᴀᴍ [{dispatcher.bot.first_name}](t.me/{dispatcher.bot.username})**
-
-**» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ʀᴏʏ-ᴇᴅɪᴛx](tg://user?id={OWNER_ID})
-**» ᴩʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{y()}`
-**» ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{o}` 
-**» ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{s}` 
-**» ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{z}`
-
-**ᴀᴠɪsʜᴀ sᴏᴜʀᴄᴇ ɪs ɴᴏᴡ ᴩᴜʙʟɪᴄ ᴀɴᴅ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.**
+        caption=f"""**๏ ʜᴇʏ {message.from_user.mention()},\n\n๏ ɪ ᴀᴍ [{dispatcher.bot.first_name}](t.me/{dispatcher.bot.username})**\n\n๏ **ᴀᴠɪsʜᴀ sᴏᴜʀᴄᴇ ɪs ɴᴏᴡ ᴩᴜʙʟɪᴄ ᴀɴᴅ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -42,7 +34,7 @@ async def repo(client, message):
     )
 
 
-__mod_name__ = "Rᴇᴩᴏ"
+__mod_name__ = "ʀᴇᴩᴏ"
 _help__ = """
  /repo  ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 
  /source ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
