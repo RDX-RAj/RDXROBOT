@@ -11,7 +11,7 @@ async def Mahadev(bot, message):
         response = requests.get(f'https://mukesh-api.vercel.app/mahadev') 
         x=response.json()["results"]
             
-        await message.reply_photo(photo=x,caption=f" \n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN)     
+        await message.reply_photo(photo=x,caption=f" \n๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot) ", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 @Mukesh.on_message(filters.command("uselessfact"))
