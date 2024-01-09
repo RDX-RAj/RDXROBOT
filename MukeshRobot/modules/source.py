@@ -22,9 +22,11 @@ async def repo(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "sᴜᴘᴘᴏʀᴛ", url="https://the_friendz",
+                        "ᴏᴡɴᴇʀ",user_id=OWNER_ID
                     ),
-                    InlineKeyboardButton(text="ʀᴇᴘᴏ", callback_data="source_",
+                    InlineKeyboardButton(
+                        "ʀᴇᴘᴏ",
+                        url="https://t.me/roy_editx",
                     ),
                 ]
             ]
