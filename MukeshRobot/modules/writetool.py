@@ -33,18 +33,19 @@ async def handwrite(_, message: Message):
         text = message.reply_to_message.text
     else:
         text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`Please wait...,\n\nWriting your text...`")
+    m =await message.reply_text( "๏ `ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n๏ ᴡʀɪᴛɪɴɢ ʏᴏᴜʀ ᴛᴇxᴛ...`")
     write = requests.get(f"https://mukesh-api.vercel.app/write/{text}").json()["results"]
 
     caption = f"""
-sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
-✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
-🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
+✦ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ ✦
+
+๏ **ᴡʀɪᴛᴛᴇɴ ʙʏ ➛** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
+๏ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
 """
     await m.delete()
     await message.reply_photo(photo=write,caption=caption)
 
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
+__mod_name__ = "ᴡʀɪᴛᴇ-ᴛᴏᴏʟ"
 
 __help__ = """
 
