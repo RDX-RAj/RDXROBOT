@@ -12,7 +12,7 @@ from MukeshRobot import pbot as client
 Mukesh = "https://telegra.ph/file/6f04cb09ff8e8af19ae02.jpg"
 
 
-@client.on_message(filters.command(["repo", "source"]))
+@client.on_message(filters.command(["repo"]))
 async def repo(client, message):
     await message.reply_photo(
         photo=Mukesh,
