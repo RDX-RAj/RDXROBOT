@@ -35,13 +35,14 @@ async def imagine_(b, message: Message):
         text = message.reply_to_message.text
     else:
         text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`๏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n๏ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴘʀᴏᴍᴘᴛ .. ...`")
+    m =await message.reply_text( "`❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n❍ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴘʀᴏᴍᴘᴛ .. ...`")
     results= requests.get(f"https://mukesh-api.vercel.app/imagine/{text}").json()["results"]
 
     caption = f"""
 ✦ sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ✦
-๏ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)
-๏ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
+
+❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)
+❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
 """
     await m.delete()
     photos=[]
@@ -55,6 +56,6 @@ async def imagine_(b, message: Message):
 # github : noob-mukesh
 __mod_name__ = "ᴀɪ-ɪᴍᴀɢᴇ"
 __help__ = """
- ➻ /imagine : ɢᴇɴᴇʀᴀᴛᴇ ᴀɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
- ➻ /mahadev : ɢᴇɴᴇʀᴀᴛᴇ Mᴀʜᴀᴅᴇᴠ ɪᴍᴀɢᴇ
+ ❍ /imagine ➛ ɢᴇɴᴇʀᴀᴛᴇ ᴀɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
+ ❍ /mahadev ➛ ɢᴇɴᴇʀᴀᴛᴇ Mᴀʜᴀᴅᴇᴠ ɪᴍᴀɢᴇ
  """
