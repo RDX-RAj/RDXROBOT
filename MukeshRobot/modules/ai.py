@@ -14,7 +14,7 @@ async def chat_gpt(event):
 
     if query:
         # Send "Please wait" message
-        processing_message = await event.reply("Please wait, generating answer...")
+        processing_message = await event.reply("❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ, ɢᴇɴᴇʀᴀᴛɪɴɢ ᴀɴsᴡᴇʀ...")
 
         try:
             # Make a request to GPT API
@@ -29,8 +29,8 @@ async def chat_gpt(event):
                     del result["join"]
 
                 # Add signature to the answer
-                answer = result.get("answer", "No answer received from ChatGPT.")
-                signature = "\n\nᴀɴsᴡᴇʀ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)"
+                answer = result.get("answer", "❍ ɴᴏ ᴀɴsᴡᴇʀ ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴄʜᴀᴛ ᴀɪ.")
+                signature = "\n\n❍ ᴀɴsᴡᴇʀ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)"
                 reply_message = answer + signature
 
                 # Edit the "Please wait" message with the final answer
@@ -46,7 +46,7 @@ async def chat_gpt(event):
             await processing_message.edit(f"Unexpected error: {str(e)}. Please try again later.")
     else:
         # Provide information about the correct command format
-        await event.reply("Please provide a question after /gpt command. For example: /gpt What is the meaning of life?")
+        await event.reply("❍ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇsᴛɪᴏɴ after /ask ᴄᴏᴍᴍᴀɴᴅ.\n\n❍ ғᴏʀ ᴇxᴀᴍᴘʟᴇ ➛ /ask ᴡʜᴀᴛ ɪs ᴛʜᴇ ᴍᴇᴀɴɪɴɢ ᴏғ ʟɪғᴇ ?")
 
 
-mod_name = "ChatGPT"
+mod_name = "ᴄʜᴀᴛ-ᴀɪ"
