@@ -211,11 +211,11 @@ police_ani = [
 @run_async
 def brainanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text("PROCESSING...")
+    msg = update.effective_message.reply_text("❍ ᴘʀᴏᴄᴇssɪɴɢ...")
     for x in range(EDIT_TIMES):
         msg.edit_text(brain_chain[x % 14])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("YOU PUT BRAIN IN DUSTBIN")
+    msg.edit_text("❍ ʏᴏᴜ ᴘᴜᴛ ʙʀᴀɪɴ ɪɴ ᴅᴜsᴛʙɪɴ")
 
 
 @user_admin
@@ -238,7 +238,7 @@ def policeanimation(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(police_ani[x % 11])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("Mastermind POLICE IS HERE")
+    msg.edit_text("❍ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ ɪs ʜᴇʀᴇ")
 
 
 @user_admin
@@ -260,19 +260,19 @@ def bombs(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(bomb_ettu[x % 9])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("RIP PLOX...")
+    msg.edit_text("❍ ʀɪᴘ ᴘʟᴏx...")
 
 
 @user_admin
 @run_async
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text("Target selected")
+    msg = update.effective_message.reply_text("❍ ᴛᴀʀɢᴇᴛ sᴇʟᴇᴄᴛᴇᴅ")
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x % 18])
         time.sleep(EDIT_SLEEP)
     msg.edit_text(
-        "`pdf created click link below to download data\n\n😂 Don't worry only i can open this 😎😎.. If u don't Believe try to download` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing"
+        "❍ ᴘᴅғ ᴄʀᴇᴀᴛᴇᴅ ᴄʟɪᴄᴋ ʟɪɴᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴅᴀᴛᴀ.\n\n❍ ᴅᴏɴ'ᴛ ᴡᴏʀʀʏ ᴏɴʟʏ ɪ ᴄᴀɴ ᴏᴘᴇɴ ᴛʜɪs.. ɪғ ᴜ ᴅᴏɴ'ᴛ ʙᴇʟɪᴇᴠᴇ ᴛʀʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ.\n\n❍ https://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing"
     )
 
 
@@ -284,7 +284,7 @@ def love(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x % 35])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("True Love💞")
+    msg.edit_text("❍ ᴛʀᴜᴇ ʟᴏᴠᴇ 💞")
 
 
 @user_admin
@@ -316,13 +316,13 @@ dispatcher.add_handler(CLOCKANIMATION_HANDLER)
 dispatcher.add_handler(BRAINANIMATION_HANDLER)
 
 __help__ = """
+*✿ ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ ✿*
 
-*ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ*
- ❍ /love - ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
- ❍ /hack -  ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
- ❍ /moon    - ᴛᴏ ᴡɪsʜ ɢɴ ᴛᴏ ᴜʀ ʟᴏᴠᴇ
- ❍ /kill  -  ᴛᴏ ᴋɪʟʟ  ᴜʀ ɢғ ᴅᴀᴅ
- ❍ /bombs -  ᴛᴏ sᴜᴄɪᴅᴇ ᴜʀsᴇʟғ
- ❍ /police - ᴛᴏ ᴄᴀʟʟ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ
+ ❍ /love ➛ ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
+ ❍ /hack ➛ ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
+ ❍ /moon ➛ ᴛᴏ ᴡɪsʜ ɢɴ ᴛᴏ ᴜʀ ʟᴏᴠᴇ
+ ❍ /kill ➛ ᴛᴏ ᴋɪʟʟ  ᴜʀ ɢғ ᴅᴀᴅ
+ ❍ /bombs ➛ ᴛᴏ sᴜᴄɪᴅᴇ ᴜʀsᴇʟғ
+ ❍ /police ➛ ᴛᴏ ᴄᴀʟʟ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ
 """
-__mod_name__ = "Gᴀᴍᴇ"
+__mod_name__ = "ᴀɴɪᴍᴀᴛɪᴏɴ"
