@@ -51,5 +51,5 @@ async def chat_gpt(event):
 
 __mod_name__ = "ᴄʜᴀᴛ-ᴀɪ"
 __help__ = """
- ❍ /chatgpt  *➛* ʀᴇᴘʟʏ ᴛo ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ
+ ❍ /ask  *➛* ʀᴇᴘʟʏ ᴛo ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ
  """
