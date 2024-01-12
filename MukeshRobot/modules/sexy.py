@@ -73,7 +73,7 @@ async def cute(e):
     await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
-@asst.on_message(pattern="/wish ?(.*)"))
+@asst.on(events.NewMessage(pattern="/wish ?(.*)"))
 async def wish(e):
     api = requests.get("https://nekos.best/api/v2/happy").json()
     url = api["results"][0]['url']
