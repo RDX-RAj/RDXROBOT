@@ -29,16 +29,15 @@ def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
         description = description[0:500] + "...."
-        msg += f"\n*Description*: _{description}_[Read More]({info})"
+        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs*: _{description}_[Read More]({info})"
     else:
-        msg += f"\n*Description*:_{description}_"
+        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs*:_{description}_"
     return msg
 
 
 # time formatter from uniborg
 def t(milliseconds: int) -> str:
-    """Inputs time in milliseconds, to get beautified time,
-    as string"""
+    """❍ ɪɴᴘᴜᴛs ᴛɪᴍᴇ ɪɴ ᴍɪʟʟɪsᴇᴄᴏɴᴅs, ᴛᴏ ɢᴇᴛ ʙᴇᴀᴜᴛɪғɪᴇᴅ ᴛɪᴍᴇ, ᴀs sᴛʀɪɴɢ"""
     seconds, milliseconds = divmod(int(milliseconds), 1000)
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
@@ -183,20 +182,20 @@ def airing(update: Update, context: CallbackContext):
     search_str = extract_arg(message)
     if not search_str:
         update.effective_message.reply_text(
-            "Tell Anime Name :) ( /airing <anime name>)"
+            "❍ ᴛᴇʟʟ ᴀɴɪᴍᴇ ɴᴀᴍᴇ :) ( /airing <anime name>)"
         )
         return
     variables = {"search": search_str}
     response = requests.post(
         url, json={"query": airing_query, "variables": variables}
     ).json()["data"]["Media"]
-    msg = f"*Name*: *{response['title']['romaji']}*(`{response['title']['native']}`)\n*ID*: `{response['id']}`"
+    msg = f"*❍ ɴᴀᴍᴇ* ➛ *{response['title']['romaji']}*(`{response['title']['native']}`)\n*ID*: `{response['id']}`"
     if response["nextAiringEpisode"]:
         time = response["nextAiringEpisode"]["timeUntilAiring"] * 1000
         time = t(time)
-        msg += f"\n*Episode*: `{response['nextAiringEpisode']['episode']}`\n*Airing In*: `{time}`"
+        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ `{response['nextAiringEpisode']['episode']}`\n*Airing In*: `{time}`"
     else:
-        msg += f"\n*Episode*:{response['episodes']}\n*Status*: `N/A`"
+        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ {response['episodes']}\n*Status*: `N/A`"
     update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
 
@@ -243,12 +242,12 @@ def anime(update: Update, context: CallbackContext):
         if trailer:
             buttons = [
                 [
-                    InlineKeyboardButton("⍟ ᴍᴏʀᴇ ɪɴғᴏ ⍟", url=info),
-                    InlineKeyboardButton("⍟ ᴛʀᴀɪʟᴇʀ ⍟", url=trailer),
+                    InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏ", url=info),
+                    InlineKeyboardButton("ᴛʀᴀɪʟᴇʀ", url=trailer),
                 ]
             ]
         else:
-            buttons = [[InlineKeyboardButton("More Info", url=info)]]
+            buttons = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏ", url=info)]]
         if image:
             try:
                 update.effective_message.reply_photo(
@@ -332,16 +331,16 @@ def manga(update: Update, context: CallbackContext):
             json.get("averageScore", False),
         )
         if title:
-            msg += f"*{title}*"
+            msg += f"❍ *{title}*"
             if title_native:
-                msg += f"(`{title_native}`)"
+                msg += f"❍ (`{title_native}`)"
         if start_date:
-            msg += f"\n*Start Date* - `{start_date}`"
+            msg += f"\n❍ *sᴛᴀʀᴛ ᴅᴀᴛᴇ* ➛ `{start_date}`"
         if status:
-            msg += f"\n*Status* - `{status}`"
+            msg += f"\n❍ *sᴛᴀᴛᴜs* ➛ `{status}`"
         if score:
-            msg += f"\n*Score* - `{score}`"
-        msg += "\n*Genres* - "
+            msg += f"\n❍ *sᴄᴏʀᴇ* ➛ `{score}`"
+        msg += "\n❍ *ɢᴇɴʀᴇs* ➛ "
         for x in json.get("genres", []):
             msg += f"{x}, "
         msg = msg[:-2]
@@ -378,7 +377,7 @@ def user(update: Update, context: CallbackContext):
     search_query = extract_arg(message)
 
     if not search_query:
-        update.effective_message.reply_text("Format : /user <username>")
+        update.effective_message.reply_text("❍ ғᴏʀᴍᴀᴛ ➛ /user <username>")
         return
 
     jikan = jikanpy.jikan.Jikan()
@@ -386,7 +385,7 @@ def user(update: Update, context: CallbackContext):
     try:
         us = jikan.user(search_query)
     except jikanpy.APIException:
-        update.effective_message.reply_text("Username not found.")
+        update.effective_message.reply_text("❍ ᴜsᴇʀɴᴀᴍᴇ ɴᴏᴛ ғᴏᴜɴᴅ.")
         return
 
     progress_message = update.effective_message.reply_text("Searching.... ")
@@ -424,18 +423,18 @@ def user(update: Update, context: CallbackContext):
 
     caption += textwrap.dedent(
         f"""
-    *ᴜsᴇʀɴᴀᴍᴇ*: [{us['username']}]({us['url']})
+    *❍ ᴜsᴇʀɴᴀᴍᴇ* ➛ [{us['username']}]({us['url']})
 
-    *ɢᴇɴᴅᴇʀ*: `{us['gender']}`
-    *ʙɪʀᴛʜᴅᴀʏ*: `{user_birthday_formatted}`
-    *ᴊᴏɪɴᴇᴅ*: `{user_joined_date_formatted}`
-    *ᴅᴀʏs ᴡᴀsᴛᴇᴅ ᴡᴀᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ*: `{us['anime_stats']['days_watched']}`
-    *ᴅᴀʏs ᴡᴀsᴛᴇᴅ ʀᴇᴀᴅɪɴɢ ᴍᴀɴɢᴀ*: `{us['manga_stats']['days_read']}`
+    *❍ ɢᴇɴᴅᴇʀ* ➛ `{us['gender']}`
+    *❍ ʙɪʀᴛʜᴅᴀʏ* ➛ `{user_birthday_formatted}`
+    *❍ ᴊᴏɪɴᴇᴅ* ➛ `{user_joined_date_formatted}`
+    *❍ ᴅᴀʏs ᴡᴀsᴛᴇᴅ ᴡᴀᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ*: `{us['anime_stats']['days_watched']}`
+    *❍ ᴅᴀʏs ᴡᴀsᴛᴇᴅ ʀᴇᴀᴅɪɴɢ ᴍᴀɴɢᴀ*: `{us['manga_stats']['days_read']}`
 
     """
     )
 
-    caption += f"*ᴀʙᴏᴜᴛ*: {about_string}"
+    caption += f"❍ *ᴀʙᴏᴜᴛ* ➛ {about_string}"
 
     buttons = [
         [InlineKeyboardButton(info_btn, url=us["url"])],
@@ -488,14 +487,14 @@ def site_search(update: Update, context: CallbackContext, site: str):
         search_result = soup.find_all("h2", {"class": "post-title"})
 
         if search_result:
-            result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KaizokuAnime: \n"
+            result = f"❍ <b>sᴇᴀʀᴄʜ ʀᴇsᴜʟᴛs ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KaizokuAnime: \n"
             for entry in search_result:
                 post_link = "https://animekaizoku.com/" + entry.a["href"]
                 post_name = html.escape(entry.text)
-                result += f"• <a href='{post_link}'>{post_name}</a>\n"
+                result += f"❍ <a href='{post_link}'>{post_name}</a>\n"
         else:
             more_results = False
-            result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KaizokuAnime"
+            result = f"❍ <b>ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KaizokuAnime"
 
     elif site == "kayo":
         search_url = f"https://animekayo.com/?s={search_query}"
@@ -503,19 +502,19 @@ def site_search(update: Update, context: CallbackContext, site: str):
         soup = bs4.BeautifulSoup(html_text, "html.parser")
         search_result = soup.find_all("h2", {"class": "title"})
 
-        result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KayoAnime: \n"
+        result = f"❍ <b>sᴇᴀʀᴄʜ ʀᴇsᴜʟᴛs ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KayoAnime: \n"
         for entry in search_result:
 
             if entry.text.strip() == "Nothing Found":
-                result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KayoAnime"
+                result = f"❍ <b>ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KayoAnime"
                 more_results = False
                 break
 
             post_link = entry.a["href"]
             post_name = html.escape(entry.text.strip())
-            result += f"• <a href='{post_link}'>{post_name}</a>\n"
+            result += f"❍ <a href='{post_link}'>{post_name}</a>\n"
 
-    buttons = [[InlineKeyboardButton("See all results", url=search_url)]]
+    buttons = [[InlineKeyboardButton("sᴇᴇ ᴀʟʟ ʀᴇsᴜʟᴛ", url=search_url)]]
 
     if more_results:
         message.reply_text(
@@ -541,18 +540,18 @@ def kayo(update: Update, context: CallbackContext):
 
 
 __help__ = """
-ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀɴɪᴍᴇ, ᴍᴀɴɢᴀ ᴏʀ ᴄʜᴀʀᴀᴄᴛᴇʀs ғʀᴏᴍ [ᴀɴɪʟɪsᴛ](ᴀɴɪʟɪsᴛ.ᴄᴏ).
+❍ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀɴɪᴍᴇ, ᴍᴀɴɢᴀ ᴏʀ ᴄʜᴀʀᴀᴄᴛᴇʀs ғʀᴏᴍ [ᴀɴɪʟɪsᴛ](ᴀɴɪʟɪsᴛ.ᴄᴏ).
 
-*ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:*
+✿ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs* ✿
 
- ❍ /anime <anime>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴀɴɪᴍᴇ.
- ❍ /character <ᴄʜᴀʀᴀᴄᴛᴇʀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ.
- ❍ /manga <ᴍᴀɴɢᴀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴍᴀɴɢᴀ.
- ❍ /user  <ᴜsᴇʀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴍʏᴀɴɪᴍᴇʟɪsᴛ ᴜsᴇʀ.
- ❍ /upcoming *:* ʀᴇᴛᴜʀɴs ᴀ ʟɪsᴛ ᴏғ ɴᴇᴡ ᴀɴɪᴍᴇ ɪɴ ᴛʜᴇ ᴜᴘᴄᴏᴍɪɴɢ sᴇᴀsᴏɴs.
- ❍ /kaizoku <ᴀɴɪᴍᴇ>*:* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀɪᴢᴏᴋᴜ.ᴄᴏᴍ
- ❍ /kayo <ᴀɴɪᴍᴇ>*:* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀʏᴏ.ᴄᴏᴍ
- ❍ /airing <ᴀɴɪᴍᴇ>*:* ʀᴇᴛᴜʀɴs ᴀɴɪᴍᴇ ᴀɪʀɪɴɢ ɪɴғᴏ.
+ ❍ /anime <anime>* ➛* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴀɴɪᴍᴇ.
+ ❍ /character <ᴄʜᴀʀᴀᴄᴛᴇʀ>* ➛* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ.
+ ❍ /manga <ᴍᴀɴɢᴀ>* ➛* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴍᴀɴɢᴀ.
+ ❍ /user  <ᴜsᴇʀ>* ➛* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴍʏᴀɴɪᴍᴇʟɪsᴛ ᴜsᴇʀ.
+ ❍ /upcoming *➛* ʀᴇᴛᴜʀɴs ᴀ ʟɪsᴛ ᴏғ ɴᴇᴡ ᴀɴɪᴍᴇ ɪɴ ᴛʜᴇ ᴜᴘᴄᴏᴍɪɴɢ sᴇᴀsᴏɴs.
+ ❍ /kaizoku <ᴀɴɪᴍᴇ>* ➛* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀɪᴢᴏᴋᴜ.ᴄᴏᴍ
+ ❍ /kayo <ᴀɴɪᴍᴇ>* ➛* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀʏᴏ.ᴄᴏᴍ
+ ❍ /airing <ᴀɴɪᴍᴇ>* ➛* ʀᴇᴛᴜʀɴs ᴀɴɪᴍᴇ ᴀɪʀɪɴɢ ɪɴғᴏ.
 
 """
 
@@ -574,7 +573,7 @@ dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 
-__mod_name__ = "Aɴɪᴍᴇ"
+__mod_name__ = "ᴀɴɪᴍᴇ"
 __command_list__ = [
     "anime",
     "manga",
