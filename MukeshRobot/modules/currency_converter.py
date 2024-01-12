@@ -13,7 +13,7 @@ def convert(update: Update, context: CallbackContext):
             orig_cur_amount = float(args[1])
 
         except ValueError:
-            update.effective_message.reply_text("Invalid Amount Of Currency")
+            update.effective_message.reply_text("❍ ɪɴᴠᴀʟɪᴅ ᴀᴍᴏᴜɴᴛ ᴏғ ᴄᴜʀʀᴇɴᴄʏ")
             return
 
         orig_cur = args[2].upper()
@@ -33,11 +33,11 @@ def convert(update: Update, context: CallbackContext):
                 response["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
             )
         except KeyError:
-            update.effective_message.reply_text("Currency Not Supported.")
+            update.effective_message.reply_text("❍ ᴄᴜʀʀᴇɴᴄʏ ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ.")
             return
         new_cur_amount = round(orig_cur_amount * current_rate, 5)
         update.effective_message.reply_text(
-            f"{orig_cur_amount} {orig_cur} = {new_cur_amount} {new_cur}"
+            f"❍ {orig_cur_amount} {orig_cur} = {new_cur_amount} {new_cur}"
         )
 
     elif len(args) == 1:
@@ -51,10 +51,10 @@ def convert(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Converts money from one exchange to another
+❍ ᴄᴏɴᴠᴇʀᴛs ᴍᴏɴᴇʏ ғʀᴏᴍ ᴏɴᴇ ᴇxᴄʜᴀɴɢᴇ ᴛᴏ ᴀɴᴏᴛʜᴇʀ
 
-Usage: /cash amount from to
-Example: /cash 20 USD INR
+❍ ᴜsᴀɢᴇ ➛ /cash ᴀᴍᴏᴜɴᴛ ғʀᴏᴍ ᴛᴏ
+❍ ᴇxᴀᴍᴘʟᴇ ➛ /cash 20 ᴜsᴅ ɪɴʀ
 """
 
 CONVERTER_HANDLER = CommandHandler("cash", convert, run_async=True)
@@ -63,4 +63,4 @@ __command_list__ = ["cash"]
 
 __handlers__ = [CONVERTER_HANDLER]
 
-__mod_name__ = "Cᴀsʜ"
+__mod_name__ = "ᴄᴀsʜ"
