@@ -6,14 +6,14 @@ import glob
 import time
 import requests
 
-from IRO.events import register
-from IRO import OWNER_ID, BOT_USERNAME, BOT_NAME
-from IRO import telethn as tbot
+from MukeshRobot.events import register
+from MukeshRobot import OWNER_ID, BOT_USERNAME, BOT_NAME
+from MukeshRobot import telethn as tbot
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
 from io import BytesIO
 from requests import get
-from IRO import SUPPORT_CHAT
+from MukeshRobot import SUPPORT_CHAT
 
 LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
     "https://telegra.ph/file/c1ff2d5ec5e1b5bd1b200.jpg",
@@ -1698,7 +1698,7 @@ LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
     ]
 
 
-@register(pattern="^/logo ?(.*)")
+@register(pattern="^/tlogo ?(.*)")
 async def lego(event):
  quew = event.pattern_match.group(1)
  if event.sender_id == OWNER_ID:
@@ -1720,7 +1720,7 @@ async def lego(event):
     pointsize = 350
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 120)
     w, h = draw.textsize(text, font=font)
@@ -1757,13 +1757,13 @@ async def lego(event):
  pesan = await event.reply('`ᴘʀᴏᴄᴇꜱꜱɪɴɢ ʙᴀʙʏ🥀...`')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./IRO/IROFont/blackbg.jpg')
+    img = Image.open("./MukeshRobot/resources/fonts/*")
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -1782,10 +1782,6 @@ async def lego(event):
  except Exception as e:
     await event.reply(f'ᴇʀʀᴏʀ, ʀᴇᴘᴏʀᴛ ᴛᴏ @{SUPPORT_CHAT} ʙᴀʙʏ🥀')  
 
-
-
-    
-    
     
     
 @register(pattern="^/rlogo ?(.*)")
@@ -1803,13 +1799,13 @@ async def lego(event):
  pesan = await event.reply('`ᴘʀᴏᴄᴇꜱꜱɪɴɢ ʙᴀʙʏ🥀...`')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./IRO/IROFont/blackbg.jpg')
+    img = Image.open("./MukeshRobot/resources/fonts/*")
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -1848,13 +1844,13 @@ async def lego(event):
  pesan = await event.reply('`ᴘʀᴏᴄᴇꜱꜱɪɴɢ ʙᴀʙʏ🥀...`')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./IRO/IROFont/blackbg.jpg')
+    img = Image.open("./MukeshRobot/resources/fonts/*")
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -1872,9 +1868,6 @@ async def lego(event):
             os.remove(fname)
  except Exception as e:
     await event.reply(f'ᴇʀʀᴏʀ, ʀᴇᴘᴏʀᴛ ᴛᴏ @{SUPPORT_CHAT} ʙᴀʙʏ🥀')  
-
-
-
     
     
     
@@ -1893,13 +1886,13 @@ async def lego(event):
  pesan = await event.reply('`ᴘʀᴏᴄᴇꜱꜱɪɴɢ ʙᴀʙʏ🥀...`')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./IRO/IROFont/blackbg.jpg')
+    img = Image.open('./IRO/IROFont"./MukeshRobot/resources/fonts/blackbg.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -1940,7 +1933,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -1960,10 +1953,6 @@ async def lego(event):
     await event.reply(f'ᴇʀʀᴏʀ, ʀᴇᴘᴏʀᴛ ᴛᴏ @{SUPPORT_CHAT} ʙᴀʙʏ🥀')  
     
     
-    
-    
-    
-
     
 @register(pattern="^/alogo ?(.*)")
 async def lego(event):
@@ -1986,7 +1975,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -2028,7 +2017,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./IRO/IROFont/logofonts/*")
+    fnt = glob.glob("./MukeshRobot/resources/fonts/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 800)
     w, h = draw.textsize(text, font=font)
@@ -2046,11 +2035,6 @@ async def lego(event):
             os.remove(fname)
  except Exception as e:
     await event.reply(f'ᴇʀʀᴏʀ, ʀᴇᴘᴏʀᴛ ᴛᴏ @{SUPPORT_CHAT} ʙᴀʙʏ🥀')  
-
-
-    
-
-    
     
     
  
