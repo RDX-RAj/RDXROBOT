@@ -39,13 +39,13 @@ def blacklist(update, context):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "❍ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs ɪɴ <b>{}</b>\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
     if len(args) > 0 and args[0].lower() == "copy":
         for trigger in all_blacklisted:
-            filter_list += "<code>{}</code>\n".format(html.escape(trigger))
+            filter_list += "❍ <code>{}</code>\n".format(html.escape(trigger))
     else:
         for trigger in all_blacklisted:
             filter_list += " - <code>{}</code>\n".format(html.escape(trigger))
@@ -55,12 +55,12 @@ def blacklist(update, context):
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if filter_list == "Current blacklisted words in <b>{}</b>:\n".format(
+        if filter_list == "❍ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs ɪɴ <b>{}</b>\n".format(
             html.escape(chat_name)
         ):
             send_message(
                 update.effective_message,
-                "No blacklisted words in <b>{}</b>!".format(html.escape(chat_name)),
+                "❍ ɴᴏ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs ɪɴ <b>{}</b> !".format(html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
             return
@@ -97,7 +97,7 @@ def add_blacklist(update, context):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Added blacklist <code>{}</code> in chat: <b>{}</b>!".format(
+                "❍ ᴀᴅᴅᴇᴅ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ɪɴ ᴄʜᴀᴛ <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -106,7 +106,7 @@ def add_blacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(
+                "❍ ᴀᴅᴅᴇᴅ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢɢᴇʀ <code>{}</code> ɪɴ <b>{}</b>!".format(
                     len(to_blacklist), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -153,7 +153,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                    "❍ ʀᴇᴍᴏᴠᴇᴅ <code>{}</code> ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ ɪɴ <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
@@ -166,7 +166,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "❍ ʀᴇᴍᴏᴠᴇᴅ <code>{}</code> ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ ɪɴ <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -182,8 +182,8 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist. {} did not exist, "
-                "so were not removed.".format(
+                "❍ ʀᴇᴍᴏᴠᴇᴅ <code>{}</code> ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ. {} ᴅɪᴅ ɴᴏᴛ ᴇxɪsᴛ, "
+                "❍ sᴏ ᴡᴇʀᴇ ɴᴏᴛ ʀᴇᴍᴏᴠᴇᴅ.".format(
                     successful, len(to_unblacklist) - successful
                 ),
                 parse_mode=ParseMode.HTML,
@@ -439,25 +439,25 @@ def __chat_settings__(chat_id, user_id):
 
 
 def __stats__():
-    return "• {} Bʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.".format(
+    return "❍ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢᴇʀs ➛ {}, ❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {}".format(
         sql.num_blacklist_filters(), sql.num_blacklist_filter_chats()
     )
 
 
-__mod_name__ = "Bʟᴀᴄᴋʟɪsᴛ"
+__mod_name__ = "ʙʟᴀᴄᴋʟɪsᴛ"
 
 __help__ = """
-Bʟᴀᴄᴋʟɪsᴛs ᴀʀᴇ ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ʙᴇɪɴɢ sᴀɪᴅ ɪɴ ᴀ ɢʀᴏᴜᴘ. Aɴʏ ᴛɪᴍᴇ ᴛʜᴇ ᴛʀɪɢɢᴇʀ ɪs ᴍᴇɴᴛɪᴏɴᴇᴅ, ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ. A ɢᴏᴏᴅ ᴄᴏᴍʙᴏ ɪs sᴏᴍᴇᴛɪᴍᴇs ᴛᴏ ᴘᴀɪʀ ᴛʜɪs ᴜᴘ ᴡɪᴛʜ ᴡᴀʀɴ ғɪʟᴛᴇʀs!
+❍ ʙʟᴀᴄᴋʟɪsᴛs ᴀʀᴇ ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ʙᴇɪɴɢ sᴀɪᴅ ɪɴ ᴀ ɢʀᴏᴜᴘ. Aɴʏ ᴛɪᴍᴇ ᴛʜᴇ ᴛʀɪɢɢᴇʀ ɪs ᴍᴇɴᴛɪᴏɴᴇᴅ, ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ. A ɢᴏᴏᴅ ᴄᴏᴍʙᴏ ɪs sᴏᴍᴇᴛɪᴍᴇs ᴛᴏ ᴘᴀɪʀ ᴛʜɪs ᴜᴘ ᴡɪᴛʜ ᴡᴀʀɴ ғɪʟᴛᴇʀs!
 
-*Nᴏᴛᴇ*: Bʟᴀᴄᴋʟɪsᴛs ᴅᴏ ɴᴏᴛ ᴀғғᴇᴄᴛ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs.
+❍ *ɴᴏᴛᴇ* ➛ ʙʟᴀᴄᴋʟɪsᴛs ᴅᴏ ɴᴏᴛ ᴀғғᴇᴄᴛ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs.
 
+ ❍ /blacklist* ➛* ᴠɪᴇᴡ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
 
- ❍ /blacklist*:* Vɪᴇᴡ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
+✿ ᴀᴅᴍɪɴ ᴏɴʟʏ ✿
 
-Aᴅᴍɪɴ Oɴʟʏ:
- ❍ /addblacklist <triggers>*:* ᴀᴅᴅ ᴀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. ᴇᴀᴄʜ ʟɪɴᴇ ɪs ᴄᴏɴsɪᴅᴇʀᴇᴅ ᴏɴᴇ ᴛʀɪɢɢᴇʀ, sᴏ ᴜsɪɴɢ ᴅɪғғᴇʀᴇɴᴛ ʟɪɴᴇs ᴡɪʟʟ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴀᴅᴅ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs.
- ❍ /unblacklist <triggers>*:* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ʀᴇᴍᴏᴠᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ.
- ❍ /blacklistmode <off/del/warn/ban/kick/mute/tban/tmute>*:* ᴀᴄᴛɪᴏɴ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴡʜᴇɴ sᴏᴍᴇᴏɴᴇ sᴇɴᴅs ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
+ ❍ /addblacklist <triggers>* ➛* ᴀᴅᴅ ᴀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. ᴇᴀᴄʜ ʟɪɴᴇ ɪs ᴄᴏɴsɪᴅᴇʀᴇᴅ ᴏɴᴇ ᴛʀɪɢɢᴇʀ, sᴏ ᴜsɪɴɢ ᴅɪғғᴇʀᴇɴᴛ ʟɪɴᴇs ᴡɪʟʟ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴀᴅᴅ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs.
+ ❍ /unblacklist <triggers>* ➛* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ʀᴇᴍᴏᴠᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ.
+ ❍ /blacklistmode <off/del/warn/ban/kick/mute/tban/tmute>* ➛* ᴀᴄᴛɪᴏɴ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴡʜᴇɴ sᴏᴍᴇᴏɴᴇ sᴇɴᴅs ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
 """
 
 BLACKLIST_HANDLER = DisableAbleCommandHandler(
