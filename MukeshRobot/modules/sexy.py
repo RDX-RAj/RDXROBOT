@@ -73,7 +73,7 @@ async def cute(e):
     await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
-@pbot.on_message(filters.command("wish"))
+@asst.on_message(filters.command("wish"))
 async def wish(_, m):
             if len(m.command) <  2:
                   await m.reply("**ᴀᴅᴅ ᴡɪꜱʜ ʙᴀʙʏ🥀!**")
