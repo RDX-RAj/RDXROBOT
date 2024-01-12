@@ -26,9 +26,9 @@ def anime_quote():
 def quotes(update: Update, context: CallbackContext):
     message = update.effective_message
     quote, character, anime = anime_quote()
-    msg = f"<i>❝{quote}❞</i>\n\n<b>{character} from {anime}</b>"
+    msg = f"<i>❝{quote}❞</i>\n\n<b>{character} ғʀᴏᴍ {anime}</b>"
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="Change🔁", callback_data="change_quote")]]
+        [[InlineKeyboardButton(text="ᴄʜᴀɴɢᴇ", callback_data="change_quote")]]
     )
     message.reply_text(
         msg,
@@ -42,9 +42,9 @@ def change_quote(update: Update, context: CallbackContext):
     update.effective_chat
     message = update.effective_message
     quote, character, anime = anime_quote()
-    msg = f"<i>❝{quote}❞</i>\n\n<b>{character} from {anime}</b>"
+    msg = f"<i>❝{quote}❞</i>\n\n<b>{character} ғʀᴏᴍ {anime}</b>"
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="ᴄʜᴀɴɢᴇ🔁", callback_data="quote_change")]]
+        [[InlineKeyboardButton(text="ᴄʜᴀɴɢᴇ", callback_data="quote_change")]]
     )
     message.edit_text(msg, reply_markup=keyboard, parse_mode=ParseMode.HTML)
 
@@ -139,10 +139,11 @@ dispatcher.add_handler(QUOTE_CHANGE)
 dispatcher.add_handler(ANIMEQUOTES_HANDLER)
 dispatcher.add_handler(QUOTES_HANDLER)
 
-__mod_name__ = "Qᴜᴏᴛᴇs"
+__mod_name__ = "ǫᴜᴏᴛᴇ"
 __help__ = """
-/quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
-/animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs
+❍ /quote ➛ ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
+
+❍ /animequotes ➛ ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs
  """
 
 __command_list__ = [
