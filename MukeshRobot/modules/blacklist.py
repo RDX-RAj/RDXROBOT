@@ -176,7 +176,7 @@ def unblacklist(update, context):
             send_message(
                 update.effective_message,
                 "None of these triggers exist so it can't be removed.",
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.HTML, h ye 
             )
 
         else:
@@ -283,9 +283,9 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
             text = "Changed blacklist mode: `{}`!".format(settypeblacklist)
         send_message(update.effective_message, text, parse_mode="markdown")
         return (
-            "<b>{}:</b>\n"
-            "<b>Admin:</b> {}\n"
-            "Changed the blacklist mode. will {}.".format(
+            "❍ <b>{}</b>\n"
+            "❍ <b>ᴀᴅᴍɪɴ ➛</b> {}\n"
+            "❍ ᴄʜᴀɴɢᴇᴅ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ ᴍᴏᴅᴇ. ᴡɪʟʟ {}".format(
                 html.escape(chat.title),
                 mention_html(user.id, html.escape(user.first_name)),
                 settypeblacklist,
