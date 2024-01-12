@@ -10,7 +10,7 @@ from MukeshRobot import REM_BG_API_KEY
 from MukeshRobot.events import register
 from MukeshRobot import telethn as tbot
 
-REM_BG_API_KEY = "REM_BG_API_KEY"
+REM_BG_API_KEY = "87EbsfidHYtoyr1fjphR1Hvk"
 TEMP_DOWNLOAD_DIRECTORY = "./"
 
 
