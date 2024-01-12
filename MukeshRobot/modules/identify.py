@@ -2,7 +2,7 @@ import os
 import wget
 import urllib.request
 from faker import Faker
-import pyaztro
+import astro
 from faker.providers import internet
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
