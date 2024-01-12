@@ -73,6 +73,23 @@ async def cute(e):
     await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
+@pbot.on_message(filters.command("wish"))
+async def wish(_, m):
+            if len(m.command) <  2:
+                  await m.reply("**ᴀᴅᴅ ᴡɪꜱʜ ʙᴀʙʏ🥀!**")
+                  return 
+            api = requests.get("https://nekos.best/api/v2/happy").json()
+            url = api["results"][0]['url']
+            text = m.text.split(None, 1)[1]
+            wish_count = random.randint(1,100)
+            wish = f"✨ **ʜᴇʏ! {m.from_user.first_name}!** "
+            wish += f"✨ **ʏᴏᴜʀ ᴡɪꜱʜ**: **{text}** "
+            wish += f"✨ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ: {wish_count}%**"
+            await m.reply_animation(url,caption=(wish),
+              reply_markup=InlineKeyboardMarkup(
+                    [ [InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}")]]))
+
+
 __help__ = """
 ➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
 
