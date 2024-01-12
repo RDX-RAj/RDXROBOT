@@ -96,7 +96,7 @@ def dbcleanup(update: Update, context: CallbackContext):
     reply = f"Total invalid chats - {invalid_chat_count}\n"
     reply += f"Total invalid gbanned users - {invalid_gban_count}"
 
-    buttons = [[InlineKeyboardButton("Cleanup DB", callback_data="db_cleanup")]]
+    buttons = [[InlineKeyboardButton("ᴄʟᴇᴀɴᴜᴘ ᴅʙ", callback_data="db_cleanup")]]
 
     update.effective_message.reply_text(
         reply, reply_markup=InlineKeyboardMarkup(buttons)
@@ -140,5 +140,9 @@ BUTTON_HANDLER = CallbackQueryHandler(callback_button, pattern="db_.*", run_asyn
 dispatcher.add_handler(DB_CLEANUP_HANDLER)
 dispatcher.add_handler(BUTTON_HANDLER)
 
-__mod_name__ ="Dᴀᴛᴀʙᴀsᴇ"
+__mod_name__ ="ᴅᴀᴛᴀʙᴀsᴇ"
+__help__ = """
+ ❍ /dbcleanup ➛ ғᴏʀ ᴅᴇᴇᴘ ᴄʟᴇᴀɴɪɴɢ.
+ """
+
 __handlers__ = [DB_CLEANUP_HANDLER, BUTTON_HANDLER]
