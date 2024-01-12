@@ -2,7 +2,7 @@ from os import remove
 
 from pyrogram import filters
 
-from MukeshRobot import pbot, arq, BOT_USERNAME as bn
+from MukeshRobot import asets, BOT_USERNAME as bn
 from MukeshRobot.utils.errors import capture_err
 from MukeshRobot.utils.permissions import adminsOnly
 from MukeshRobot.services.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
