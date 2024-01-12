@@ -45,10 +45,15 @@ async def channel_handler(client: Client, update: Update, _, chats: dict):
             await client.delete_messages(chat_id, message.id)
             await client.send_message(
                 int(chat_id),
-                f"#𝙰𝙽𝚃𝙸𝙲𝙷𝙰𝙽𝙽𝙴𝙻\n\n᛭ 𝚂𝙴𝙽𝙳𝙴𝚁 𝙸𝙳: `{channel_id}`\n᛭ 𝚃𝙰𝙺𝙴𝙽 𝙰𝙲𝚃𝙸𝙾𝙽: `DELETE BAN`",
+                f"❍ #ᴀɴᴛɪᴄʜᴀɴɴᴇʟ\n\n❍ sᴇɴᴅᴇʀ ɪᴅ ➛ `{channel_id}`\n❍ ᴛᴀᴋᴇɴ ᴀᴄᴛɪᴏɴ ➛ `DELETE BAN`",
                 disable_web_page_preview=True,
             )
             break
         except Exception as e:
             print(e)
             break
+            
+__mod_name__ = "ᴀɴᴛɪ-ʙᴀɴ"
+__help__ = """
+ ❍ /antiban  ➛ ᴀɴᴛɪ ʙᴀɴ ᴄʜᴀɴɴᴇʟ ғᴏʀᴡᴀʀᴅ [ᴏɴ/ᴏғғ]
+ """
