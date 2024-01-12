@@ -1,8 +1,8 @@
 import random, requests, time
-from Mukesh import telethn as asst
-from Mukesh import pbot
+from MukeshRobot import telethn as asst
+from MukeshRobot import pbot
 from telethon import Button, events
-from Mukesh.events import register
+from MukeshRobot.events import register
 from pyrogram import filters
 from pyrogram.types import *
 from MukeshRobot import SUPPORT_CHAT
