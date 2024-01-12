@@ -63,7 +63,7 @@ async def cock(e):
     await e.reply(COCK, buttons=BUTTON, file=LANG)
 
 
-@asst.on(events.NewMessage(pattern="/cute ?(.*)"))
+@asst.on(events.NewMessage(pattern="/dull ?(.*)"))
 async def cute(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -94,7 +94,6 @@ __help__ = """
 
 ➻ /boob - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ
 
-➻ /cute - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴜᴛᴇɴᴇꜱꜱ
 """
 
 __mod_name__ = "Sᴇᴍxʏ"
