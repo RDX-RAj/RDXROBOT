@@ -322,9 +322,9 @@ def blacklist_mode(update: Update, context: CallbackContext):
             )
         send_message(update.effective_message, text, parse_mode="markdown")
         return (
-            "<b>{}:</b>\n"
-            "<b>Admin:</b> {}\n"
-            "Changed sticker blacklist mode. users will be {}.".format(
+            "❍ <b>{}</b>\n"
+            "❍ <b>ᴀᴅᴍɪɴ ➛</b> {}\n"
+            "❍ ᴄʜᴀɴɢᴇᴅ sᴛɪᴄᴋᴇʀ ʙʟᴀᴄᴋʟɪsᴛ ᴍᴏᴅᴇ. ᴜsᴇʀs ᴡɪʟʟ ʙᴇ {}.".format(
                 html.escape(chat.title),
                 mention_html(user.id, html.escape(user.first_name)),
                 settypeblacklist,
@@ -483,25 +483,27 @@ def __chat_settings__(chat_id, user_id):
 
 
 def __stats__():
-    return "• {} ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.".format(
+    return "❍ ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀs ➛ {}, ❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {}".format(
         sql.num_stickers_filters(), sql.num_stickers_filter_chats()
     )
 
 
 __help__ = """
-ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀ ɪs ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ sᴛɪᴄᴋᴇʀs. ᴡʜᴇɴᴇᴠᴇʀ ᴀ sᴛɪᴄᴋᴇʀ ɪs sᴇɴᴛ, ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ.
-*ɴᴏᴛᴇ:* ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀs ᴅᴏ ɴᴏᴛ ᴀғғᴇᴄᴛ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ
- ❍ /blsticker*:* sᴇᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀ
-*ᴏɴʟʏ ᴀᴅᴍɪɴ:*
- ❍ /addblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* ᴀᴅᴅ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋ ʟɪsᴛ. ᴄᴀɴ ʙᴇ ᴀᴅᴅᴇᴅ ᴠɪᴀ ʀᴇᴘʟʏ sᴛɪᴄᴋᴇʀ
- ❍ /unblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ. ᴛʜᴇ sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ᴅᴇʟᴇᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ
- ❍ /rmblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* sᴀᴍᴇ ᴀs ᴀʙᴏᴠᴇ
- ❍ /blstickermode <ʙᴀɴ/ᴛʙᴀɴ/ᴍᴜᴛᴇ/ᴛᴍᴜᴛᴇ>*:* sᴇᴛs ᴜᴘ ᴀ ᴅᴇғᴀᴜʟᴛ ᴀᴄᴛɪᴏɴ ᴏɴ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ ɪғ ᴜsᴇʀs ᴜsᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀs
+❍ ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀ ɪs ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ sᴛɪᴄᴋᴇʀs. ᴡʜᴇɴᴇᴠᴇʀ ᴀ sᴛɪᴄᴋᴇʀ ɪs sᴇɴᴛ, ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ.
+❍ *ɴᴏᴛᴇ ✿* ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀs ᴅᴏ ɴᴏᴛ ᴀғғᴇᴄᴛ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ
+❍ /blsticker* ➛* sᴇᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀ
+
+✿ *ᴏɴʟʏ ᴀᴅᴍɪɴ* ✿
+
+ ❍ /addblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>* ➛* ᴀᴅᴅ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋ ʟɪsᴛ. ᴄᴀɴ ʙᴇ ᴀᴅᴅᴇᴅ ᴠɪᴀ ʀᴇᴘʟʏ sᴛɪᴄᴋᴇʀ
+ ❍ /unblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>* ➛* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ. ᴛʜᴇ sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ᴅᴇʟᴇᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ
+ ❍ /rmblsticker <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>* ➛* sᴀᴍᴇ ᴀs ᴀʙᴏᴠᴇ
+ ❍ /blstickermode <ʙᴀɴ/ᴛʙᴀɴ/ᴍᴜᴛᴇ/ᴛᴍᴜᴛᴇ>* ➛* sᴇᴛs ᴜᴘ ᴀ ᴅᴇғᴀᴜʟᴛ ᴀᴄᴛɪᴏɴ ᴏɴ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ ɪғ ᴜsᴇʀs ᴜsᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀs
 ɴᴏᴛᴇ:
  ❍ <sticker link > ᴄᴀɴ ʙᴇ `https://t.me/addstickers//<sticker>` ᴏʀ ᴊᴜsᴛ `<sticker>` ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ᴍᴇssᴀɢᴇ
 """
 
-__mod_name__ = "Sᴛɪᴄᴋᴇʀ"
+__mod_name__ = "sᴛɪᴄᴋᴇʀ"
 
 BLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler(
     "blsticker", blackliststicker, admin_ok=True, run_async=True
