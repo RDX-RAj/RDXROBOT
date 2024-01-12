@@ -75,7 +75,7 @@ def list_handlers(update, context):
         return
 
     for keyword in all_handlers:
-        entry = " • `{}`\n".format(escape_markdown(keyword))
+        entry = "❍ `{}`\n".format(escape_markdown(keyword))
         if len(entry) + len(filter_list) > telegram.MAX_MESSAGE_LENGTH:
             send_message(
                 update.effective_message,
@@ -501,10 +501,10 @@ def rmall_filters(update, context):
             [
                 [
                     InlineKeyboardButton(
-                        text="Stop all filters", callback_data="filters_rmall"
+                        text="sᴛᴏᴘ ᴀʟʟ ғɪʟᴛᴇʀs", callback_data="filters_rmall"
                     )
                 ],
-                [InlineKeyboardButton(text="Cancel", callback_data="filters_cancel")],
+                [InlineKeyboardButton(text="ᴄᴀɴᴄᴇʟ", callback_data="filters_cancel")],
             ]
         )
         update.effective_message.reply_text(
@@ -579,7 +579,7 @@ def addnew_filter(update, chat_id, keyword, text, file_type, file_id, buttons):
 
 
 def __stats__():
-    return "• {} ғɪʟᴛᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.".format(sql.num_filters(), sql.num_chats())
+    return "❍ ғɪʟᴛᴇʀs ➛ {}, ❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {}".format(sql.num_filters(), sql.num_chats())
 
 
 def __import_data__(chat_id, data):
@@ -599,33 +599,22 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
+ ❍ /filters* ➛* ʟɪsᴛ ᴀʟʟ ᴀᴄᴛɪᴠᴇ ғɪʟᴛᴇʀs sᴀᴠᴇᴅ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
 
- ❍ /filters*:* ʟɪsᴛ ᴀʟʟ ᴀᴄᴛɪᴠᴇ ғɪʟᴛᴇʀs sᴀᴠᴇᴅ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
+✿ *ᴀᴅᴍɪɴ ᴏɴʟʏ* ✿
+ ❍ /filter <ᴋᴇʏᴡᴏʀᴅ> <ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ>* ➛* ᴀᴅᴅ ᴀ ғɪʟᴛᴇʀ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ. ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ɴᴏᴡ ʀᴇᴘʟʏ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴡʜᴇɴᴇᴠᴇʀ 'ᴋᴇʏᴡᴏʀᴅ'\
+ ❍ /stop  <ғɪʟᴛᴇʀ ᴋᴇʏᴡᴏʀᴅ>* ➛* sᴛᴏᴘ ᴛʜᴀᴛ ғɪʟᴛᴇʀ.
 
-*ᴀᴅᴍɪɴ ᴏɴʟʏ:*
- ❍ /filter <ᴋᴇʏᴡᴏʀᴅ> <ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ>*:* ᴀᴅᴅ ᴀ ғɪʟᴛᴇʀ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ. ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ɴᴏᴡ ʀᴇᴘʟʏ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴡʜᴇɴᴇᴠᴇʀ 'ᴋᴇʏᴡᴏʀᴅ'\
-ɪs ᴍᴇɴᴛɪᴏɴᴇᴅ. ɪғ ʏᴏᴜ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴡɪᴛʜ ᴀ ᴋᴇʏᴡᴏʀᴅ, ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴀᴛ sᴛɪᴄᴋᴇʀ. ɴᴏᴛᴇ: ᴀʟʟ ғɪʟᴛᴇʀ \
-ᴋᴇʏᴡᴏʀᴅs ᴀʀᴇ ɪɴ ʟᴏᴡᴇʀᴄᴀsᴇ. ɪғ ʏᴏᴜ ᴡᴀɴᴛ ʏᴏᴜʀ ᴋᴇʏᴡᴏʀᴅ ᴛᴏ ʙᴇ ᴀ sᴇɴᴛᴇɴᴄᴇ, ᴜsᴇ ǫᴜᴏᴛᴇs. ᴇɢ: /ғɪʟᴛᴇʀ "ʜᴇʏ ᴛʜᴇʀᴇ" ʜᴏᴡ ʏᴏᴜ \
-ᴅᴏɪɴ?
- sᴇᴘᴀʀᴀᴛᴇ ᴅɪғғ ʀᴇᴘʟɪᴇs ʙʏ `%%%` ᴛᴏ ɢᴇᴛ ʀᴀɴᴅᴏᴍ ʀᴇᴘʟɪᴇs
- *ᴇxᴀᴍᴘʟᴇ:* 
- ` /filter  "ғɪʟᴛᴇʀɴᴀᴍᴇ"
- ʀᴇᴘʟʏ 1
- %%%
- ʀᴇᴘʟʏ 2
- %%%
- ʀᴇᴘʟʏ 3`
- ❍ /stop  <ғɪʟᴛᴇʀ ᴋᴇʏᴡᴏʀᴅ>*:* sᴛᴏᴘ ᴛʜᴀᴛ ғɪʟᴛᴇʀ.
+✿ *ᴄʜᴀᴛ ᴄʀᴇᴀᴛᴏʀ ᴏɴʟʏ* ✿ 
 
-*ᴄʜᴀᴛ ᴄʀᴇᴀᴛᴏʀ ᴏɴʟʏ:*
- ❍ /removeallfilters*:* ʀᴇᴍᴏᴠᴇ ᴀʟʟ ᴄʜᴀᴛ ғɪʟᴛᴇʀs ᴀᴛ ᴏɴᴄᴇ.
+ ❍ /removeallfilters* ➛* ʀᴇᴍᴏᴠᴇ ᴀʟʟ ᴄʜᴀᴛ ғɪʟᴛᴇʀs ᴀᴛ ᴏɴᴄᴇ.
 
-*ɴᴏᴛᴇ*: ғɪʟᴛᴇʀs ᴀʟsᴏ sᴜᴘᴘᴏʀᴛ ᴍᴀʀᴋᴅᴏᴡɴ ғᴏʀᴍᴀᴛᴛᴇʀs ʟɪᴋᴇ: {ғɪʀsᴛ}, {ʟᴀsᴛ} ᴇᴛᴄ.. ᴀɴᴅ ʙᴜᴛᴛᴏɴs.
-ᴄʜᴇᴄᴋ ❍ /markdownhelp ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ!
+❍ *ɴᴏᴛᴇ* ➛ ғɪʟᴛᴇʀs ᴀʟsᴏ sᴜᴘᴘᴏʀᴛ ᴍᴀʀᴋᴅᴏᴡɴ ғᴏʀᴍᴀᴛᴛᴇʀs ʟɪᴋᴇ: {ғɪʀsᴛ}, {ʟᴀsᴛ} ᴇᴛᴄ.. ᴀɴᴅ ʙᴜᴛᴛᴏɴs.
+❍ ᴄʜᴇᴄᴋ /markdownhelp ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ!
 
 """
 
-__mod_name__ = "Fɪʟᴛᴇʀs"
+__mod_name__ = "ғɪʟᴛᴇʀs"
 
 FILTER_HANDLER = CommandHandler("filter", filters, run_async=True)
 STOP_HANDLER = CommandHandler("stop", stop_filter, run_async=True)
