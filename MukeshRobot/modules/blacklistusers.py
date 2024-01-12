@@ -51,12 +51,12 @@ def bl_user(update: Update, context: CallbackContext) -> str:
     sql.blacklist_user(user_id, reason)
     message.reply_text("I shall ignore the existence of this user!")
     log_message = (
-        f"#BLACKLIST\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>User:</b> {mention_html(target_user.id, html.escape(target_user.first_name))}"
+        f"❍ #ʙʟᴀᴄᴋʟɪsᴛ\n"
+        f"❍ <b>ᴀᴅᴍɪɴ ➛</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"❍ <b>ᴜsᴇʀ ➛</b> {mention_html(target_user.id, html.escape(target_user.first_name))}"
     )
     if reason:
-        log_message += f"\n<b>Reason:</b> {reason}"
+        log_message += f"\n❍ <b>ʀᴇᴀsᴏɴ ➛</b> {reason}"
 
     return log_message
 
@@ -91,9 +91,9 @@ def unbl_user(update: Update, context: CallbackContext) -> str:
         sql.unblacklist_user(user_id)
         message.reply_text("*notices user*")
         log_message = (
-            f"#UNBLACKLIST\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            f"<b>User:</b> {mention_html(target_user.id, html.escape(target_user.first_name))}"
+            f"❍ #ᴜɴʙʟᴀᴄᴋʟɪsᴛ\n"
+            f"❍ <b>ᴀᴅᴍɪɴ ➛</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"❍ <b>ᴜsᴇʀ ➛</b> {mention_html(target_user.id, html.escape(target_user.first_name))}"
         )
 
         return log_message
@@ -113,10 +113,10 @@ def bl_users(update: Update, context: CallbackContext):
 
         if reason:
             users.append(
-                f"• {mention_html(user.id, html.escape(user.first_name))} :- {reason}"
+                f"❍ {mention_html(user.id, html.escape(user.first_name))} :- {reason}"
             )
         else:
-            users.append(f"• {mention_html(user.id, html.escape(user.first_name))}")
+            users.append(f"❍ {mention_html(user.id, html.escape(user.first_name))}")
 
     message = "<b>Blacklisted Users</b>\n"
     if not users:
@@ -130,7 +130,7 @@ def bl_users(update: Update, context: CallbackContext):
 def __user_info__(user_id):
     is_blacklisted = sql.is_user_blacklisted(user_id)
 
-    text = "Blacklisted: <b>{}</b>"
+    text = "❍ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ➛ <b>{}</b>"
     if user_id in [777000, 1087968824]:
         return ""
     if user_id == dispatcher.bot.id:
@@ -141,7 +141,7 @@ def __user_info__(user_id):
         text = text.format("Yes")
         reason = sql.get_reason(user_id)
         if reason:
-            text += f"\nReason: <code>{reason}</code>"
+            text += f"\n❍ ʀᴇᴀsᴏɴ ➛ <code>{reason}</code>"
     else:
         text = text.format("No")
 
@@ -156,5 +156,10 @@ dispatcher.add_handler(BL_HANDLER)
 dispatcher.add_handler(UNBL_HANDLER)
 dispatcher.add_handler(BLUSERS_HANDLER)
 
-__mod_name__ = "B-Usᴇʀ"
+__mod_name__ = "ʙ-ᴜsᴇʀ"
+__help__ = """
+ ❍ /ignore ➛ ʙʟᴀᴄᴋʟɪsᴛ ᴛʜᴇ ᴜsᴇʀ.
+ ❍ /notice ➛ sᴇᴇ ᴛʜᴇ ɴᴏᴛɪᴄᴇ.
+ ❍ /ignoredlist ➛ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴜsᴇʀs ʟɪsᴛ.
+ """
 __handlers__ = [BL_HANDLER, UNBL_HANDLER, BLUSERS_HANDLER]
