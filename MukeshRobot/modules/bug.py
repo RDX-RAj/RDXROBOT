@@ -42,15 +42,14 @@ async def bug(_, msg: Message):
     
 
     bug_report = f"""
-**#ʙᴜɢ : ** **tg://user?id={owner_id}**
+**❍ #ʙᴜɢ ➛ ** **tg://user?id={owner_id}**
 
-**ʀᴇᴩᴏʀᴛᴇᴅ ʙʏ : ** **{mention}**
-**ᴜsᴇʀ ɪᴅ : ** **{user_id}**
-**ᴄʜᴀᴛ : ** **{chat_username}**
+**❍ ʀᴇᴩᴏʀᴛᴇᴅ ʙʏ ➛ ** **{mention}**
+**❍ ᴜsᴇʀ ɪᴅ ➛ ** **{user_id}**
+**❍ ᴄʜᴀᴛ ➛ ** **{chat_username}**
+**❍ ʙᴜɢ ➛ ** **{bugs}**
 
-**ʙᴜɢ : ** **{bugs}**
-
-**ᴇᴠᴇɴᴛ sᴛᴀᴍᴩ : ** **{datetimes}**"""
+**❍ ᴇᴠᴇɴᴛ sᴛᴀᴍᴩ ➛ ** **{datetimes}**"""
 
     if msg.chat.type == "private":
         await msg.reply_text("<b>» ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴩs.</b>")
@@ -70,7 +69,7 @@ async def bug(_, msg: Message):
                 f"<b>ʙᴜɢ ʀᴇᴩᴏʀᴛ : {bugs}</b>\n\n"
                 "<b>» ʙᴜɢ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇᴩᴏʀᴛᴇᴅ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ !</b>",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data=f"close_reply")]]
+                    [[InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data=f"close_reply")]]
                 ),
             )
             await Client.send_photo(
@@ -79,10 +78,10 @@ async def bug(_, msg: Message):
                 caption=f"{bug_report}",
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [InlineKeyboardButton("• ᴠɪᴇᴡ ʙᴜɢ •", url=f"{msg.link}")],
+                        [InlineKeyboardButton("ᴠɪᴇᴡ ʙᴜɢ", url=f"{msg.link}")],
                         [
                             InlineKeyboardButton(
-                                "• ᴄʟᴏsᴇ •", callback_data="close_send_photo"
+                                "ᴄʟᴏsᴇ", callback_data="close_send_photo"
                             )
                         ],
                     ]
@@ -113,7 +112,8 @@ async def close_send_photo(_, CallbackQuery):
 
 
 __help__ = """
-*ғᴏʀ ʀᴇᴩᴏʀᴛɪɴɢ ᴀ ʙᴜɢ *
- ❍ /bug *:* ᴛᴏ ʀᴇᴩᴏʀᴛ ᴀ ʙᴜɢ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.
+✿ *ғᴏʀ ʀᴇᴩᴏʀᴛɪɴɢ ᴀ  ✿*
+
+ ❍ /bug *➛* ᴛᴏ ʀᴇᴩᴏʀᴛ ᴀ ʙᴜɢ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.
 """
-__mod_name__ = "Bᴜɢ"
+__mod_name__ = "ʙᴜɢ"
