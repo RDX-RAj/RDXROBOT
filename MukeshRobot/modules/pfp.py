@@ -3,7 +3,7 @@ from telethon.tl.functions.account import *
 from telethon.tl.functions.channels import *
 from telethon.tl.functions.photos import *
 from telethon.tl.types import *
-from Mukesh Robot.events import register
+from MukeshRobot.events import register
 from MukeshRobot import telethn as borg
 from html import *
 import logging
