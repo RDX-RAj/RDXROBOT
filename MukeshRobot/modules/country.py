@@ -16,7 +16,7 @@ async def msg(event):
     try:
         a = country.info()
     except:
-        await event.reply("❍ Country Not Available Currently")
+        await event.reply("❍ ᴄᴏᴜɴᴛʀʏ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴜʀʀᴇɴᴛʟʏ")
     name = a.get("name")
     bb = a.get("altSpellings")
     hu = ""
@@ -76,7 +76,7 @@ async def msg(event):
 
     wiki = a.get("wiki")
 
-    caption = f"""<b><u>ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴇssғᴜʟʟʏ </b></u>
+    caption = f"""<b>✦ ᴄᴏᴜɴᴛʀʏ ғᴜʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦</b>
 
 <b>❍ ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ ➛</b> {name}
 <b>❍ ᴀʟᴛᴇʀɴᴀᴛɪᴠᴇ sᴘᴇʟʟɪɴɢs ➛</b> {hu}
@@ -98,7 +98,7 @@ async def msg(event):
 <b>❍ ᴛᴏᴛᴀʟ ʟᴇᴠᴇʟ ᴅᴏᴍᴀɪɴ ➛</b> {lanester}
 <b>❍ ᴡɪᴋɪᴘᴇᴅɪᴀ ➛</b> {wiki}
 
-<u>ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ ʙʏ @{BOT_USERNAME}</u>
+<u>❍ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ʙʏ ➛ @{BOT_USERNAME}</u>
 """
 
     await borg.send_message(
@@ -110,9 +110,9 @@ async def msg(event):
 
 
 __help__ = """
-ɪ ᴡɪʟʟ ɢɪᴠᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴄᴏᴜɴᴛʀʏ
+❍ ɪ ᴡɪʟʟ ɢɪᴠᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴄᴏᴜɴᴛʀʏ
 
- ❍ /country <ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ>*:* ɢᴀᴛʜᴇʀɪɴɢ ɪɴғᴏ ᴀʙᴏᴜᴛ ɢɪᴠᴇɴ ᴄᴏᴜɴᴛʀʏ
+ ❍ /country <ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ>* ➛* ɢᴀᴛʜᴇʀɪɴɢ ɪɴғᴏ ᴀʙᴏᴜᴛ ɢɪᴠᴇɴ ᴄᴏᴜɴᴛʀʏ
 """
 
-__mod_name__ = "Cᴏᴜɴᴛʀʏ"
+__mod_name__ = "ᴄᴏᴜɴᴛʀʏ"
