@@ -1,8 +1,8 @@
 import math
 
 import pynewtonmath as newton
-from Shikimori import dispatcher
-from Shikimori.modules.disable import DisableAbleCommandHandler
+from MukeshRobot import dispatcher
+from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext
 
