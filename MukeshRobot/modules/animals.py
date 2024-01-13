@@ -64,7 +64,7 @@ import requests
 
 
 async def animalfact_(b, message: Message):
-  if message.effective_message.reply_text("please wait...,\n\ngenerating prompt....")
+  if message.effective_message.reply_to_message:
 
 def cats_(b, message: Message):
     msg = message.effective_message
