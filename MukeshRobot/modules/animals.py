@@ -32,7 +32,7 @@ SOFTWARE."""
 
 import requests
 import random
-import MukeshRobot.strings.animal_facts_string as animal_facts
+import MukeshRobot.strings.animal_facts_string as InputMediaPhoto
 from MukeshRobot import dispatcher
 from telegram import Update
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
