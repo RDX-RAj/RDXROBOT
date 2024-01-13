@@ -38,37 +38,37 @@ import requests
 #from MukeshRobot.modules.disable import DisableAbleCommandHandler
 #from telegram.ext import CallbackContext
 
-@Mukesh.on_message(filters.command("imagine"))
-async def imagine_(b, message: Message):
-    if message.reply_to_message:
-        text = message.reply_to_message.text
+#@Mukesh.on_message(filters.command("imagine"))
+#async def imagine_(b, message: Message):
+    #if message.reply_to_message:
+        #text = message.reply_to_message.text
+    #else:
+        #text =message.text.split(None, 1)[1]
+    #m =await message.reply_text( "`❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n❍ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴘʀᴏᴍᴘᴛ .. ...`")
+    #results= requests.get(f"https://mukesh-api.vercel.app/imagine/{text}").json()["results"]
+
+    #caption = f"""
+#✦ sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ✦
+
+#❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)
+#❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
+#"""
+    #await m.delete()
+    #photos=[]
+    #for i in range(5):
+        #photos.append(InputMediaPhoto(results[i]))
+    #photos.append(InputMediaPhoto(results[5], caption=caption))
+    #await b.send_media_group(message.chat.id, media=photos)
+
+
+
+
+async def animalfact_(b, message: Message):
+  if message.effective_message.reply_text(random.choice(animal_facts.ANIMAL_FACTS))
+
+def cats_(b, message: Message):
+    msg = message.effective_message
     else:
-        text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n❍ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴘʀᴏᴍᴘᴛ .. ...`")
-    results= requests.get(f"https://mukesh-api.vercel.app/imagine/{text}").json()["results"]
-
-    caption = f"""
-✦ sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ✦
-
-❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)
-❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
-"""
-    await m.delete()
-    photos=[]
-    for i in range(5):
-        photos.append(InputMediaPhoto(results[i]))
-    photos.append(InputMediaPhoto(results[5], caption=caption))
-    await b.send_media_group(message.chat.id, media=photos)
-
-
-
-
-def animalfact(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(random.choice(animal_facts.ANIMAL_FACTS))
-
-def cats(update, context):
-    msg = update.effective_message
-    try:
         url = f'https://aws.random.cat/meow'
         result = requests.get(url).json()
         img = result['file']
