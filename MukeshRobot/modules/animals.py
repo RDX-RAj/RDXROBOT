@@ -23,20 +23,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
 
-#from pyrogram import filters
-#from pyrogram.types import  Message
-#from pyrogram.enums import ChatAction
-#from pyrogram.types import InputMediaPhoto
-#from .. import pbot as  Mukesh,BOT_USERNAME
-#import requests
-
+from pyrogram import filters
+from pyrogram.types import  Message
+from pyrogram.enums import ChatAction
+from pyrogram.types import InputMediaPhoto
+from .. import pbot as  Mukesh,BOT_USERNAME
 import requests
-import random
-import MukeshRobot.strings.animal_facts_string as InputMediaPhoto
-from MukeshRobot import dispatcher
-from telegram import Update
-from MukeshRobot.modules.disable import DisableAbleCommandHandler
-from telegram.ext import CallbackContext
+
+#import requests
+#import random
+#import MukeshRobot.strings.animal_facts_string as InputMediaPhoto
+#from MukeshRobot import dispatcher
+#from telegram import Update
+#from MukeshRobot.modules.disable import DisableAbleCommandHandler
+#from telegram.ext import CallbackContext
 
 
 def animalfact(update: Update, context: CallbackContext):
