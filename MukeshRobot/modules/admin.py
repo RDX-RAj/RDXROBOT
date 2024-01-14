@@ -822,11 +822,11 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n❀ ᴏᴡɴᴇʀ ❀"
-            text += "\n\n<code> ❍ </code>{}\n".format(name)
+            text += "\n\n❀ ᴏᴡɴᴇʀ ❀"
+            text += "\n\n<code> ❍ </code>{}".format(name)
 
             if custom_title:
-                text += f"❍ <code> {html.escape(custom_title)}</code>\n"
+                text += f"✦ <code> {html.escape(custom_title)}</code>\n"
 
     text += "\n❀ ᴀᴅᴍɪɴs ❀"
 
