@@ -3,17 +3,17 @@ from MukeshRobot.events import register
 from MukeshRobot import telethn
 
 APAKAH_STRING = [
-    "Iya",
-    "Tidak",
-    "Mungkin",
-    "Mungkin Tidak",
-    "Bisa jadi",
-    "Mungkin Tidak",
-    "Tidak Mungkin",
-    "YNTKTS",
-    "Pala bapak kau pecah",
-    "Apa iya?",
-    "Tanya aja sama mamak kau tu pler",
+    "ɪʏᴀ",
+    "ᴛɪᴅᴀᴋ",
+    "ᴍᴜɴɢᴋɪɴ",
+    "ᴍᴜɴɢᴋɪɴ ᴛɪᴅᴀᴋ",
+    "ʙɪsᴀ ᴊᴀᴅɪ",
+    "ᴍᴜɴɢᴋɪɴ ᴛɪᴅᴀᴋ",
+    "ᴛɪᴅᴀᴋ ᴍᴜɴɢᴋɪɴ",
+    "ʏɴᴛᴋᴛs",
+    "ᴘᴀʟᴀ ʙᴀᴘᴀᴋ ᴋᴀᴜ ᴘᴇᴄᴀʜ",
+    "ᴀᴘᴀ ɪʏᴀ?",
+    "ᴛᴀɴʏᴀ ᴀᴊᴀ sᴀᴍᴀ ᴍᴀᴍᴀᴋ ᴋᴀᴜ ᴛᴜ ᴘʟᴇʀ",
 ]
 
 
@@ -21,6 +21,11 @@ APAKAH_STRING = [
 async def apakah(event):
     quew = event.pattern_match.group(1)
     if not quew:
-        await event.reply("Berikan saya pertanyaan 😐")
+        await event.reply("❍ ʙᴇʀɪᴋᴀɴ sᴀʏᴀ ᴘᴇʀᴛᴀɴʏᴀᴀɴ 😐")
         return
     await event.reply(random.choice(APAKAH_STRING))
+
+__mod_name__ = "ᴀᴘᴀᴋᴀʜ"
+__help__ = """
+ ❍ /apakah ➛ ᴄʜᴇᴄᴋ ᴀᴘᴀᴋᴀʜ sᴛᴀᴛᴜs.
+ """
