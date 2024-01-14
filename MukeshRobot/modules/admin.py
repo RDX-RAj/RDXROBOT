@@ -859,11 +859,11 @@ def adminlist(update, context):
                 normal_admin_list.append(name)
 
     for admin in normal_admin_list:
-        text += "\n\n<code> ❍ </code>{}".format(admin)
+        text += "\n\n<code> ❍ ᴄᴏ-ғᴏᴜɴᴅᴇʀ ➛ </code>{}\n\n".format(admin)
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➛ </code>{} ✦ ᴀᴅᴍɪɴ ᴛɪᴛʟᴇ ➛ <code>{}</code>".format(
+            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➛ </code>{} \n✦ ᴀᴅᴍɪɴ ᴛɪᴛʟᴇ ➛ <code>{}</code>\n\n".format(
                 custom_admin_list[admin_group][0],
                 html.escape(admin_group),
             )
