@@ -49,11 +49,11 @@ def ann(update, context):
         img = result['Post_image']
         # Message (EDIT THIS PART AS HTML *IF YOU WANT*)
         text = f'''
-<b>Title :</b> <code>{result['Post_title']}</code>
+<b>❍ ᴛɪᴛʟᴇ ➛</b> <code>{result['Post_title']}</code>
         
-<b>Description :</b> <code>{result['Description']}</code>
+<b>❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ➛</b> <code>{result['Description']}</code>
 
-<b>For more info :</b> <code>{result['Post_url']}</code>
+<b>❍ ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ ➛</b> <code>{result['Post_url']}</code>
 '''
         msg.reply_photo(photo=img, caption=text, parse_mode=ParseMode.HTML)
 
@@ -66,13 +66,13 @@ ANN_HANDLER = CommandHandler('ann', ann, run_async=True)
 dispatcher.add_handler(ANN_HANDLER)
 
 #  Buttons for /help .
-__mod_name__ = 'Anime News Network'  # *IF YOU WANT* EDIT NAME OF BUTTON IN '/help'
+__mod_name__ = "ᴀɴɪᴍᴇ-ɴᴇᴡs"  # *IF YOU WANT* EDIT NAME OF BUTTON IN '/help'
 
 # *IF YOU WANT* EDIT MESSAGE FOR HELP OF THIS MODULE.
 __help__ = '''
-❍ `/ann` : Gives latest Anime news.
-❍ `/subscribe` : Suscribes to Anime News Network feeds.
-❍ `/unsubscribe` : Suscribes to Anime News Network feeds.
+❍ `/ann` ➛ ɢɪᴠᴇs ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ɴᴇᴡs.
+❍ `/subscribe` ➛ sᴜsᴄʀɪʙᴇs ᴛᴏ ᴀɴɪᴍᴇ ɴᴇᴡs ɴᴇᴛᴡᴏʀᴋ ғᴇᴇᴅs.
+❍ `/unsubscribe` ➛ sᴜsᴄʀɪʙᴇs ᴛᴏ ᴀɴɪᴍᴇ ɴᴇᴡs ɴᴇᴛᴡᴏʀᴋ ғᴇᴇᴅs.
 '''
 
 # DON'T EDIT
