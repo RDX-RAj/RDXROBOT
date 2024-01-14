@@ -29,9 +29,9 @@ def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
         description = description[0:500] + "...."
-        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs*: _{description}_[Read More]({info})"
+        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs* ➛ _{description}_[ʀᴇᴀᴅ ᴍᴏʀᴇ]({info})"
     else:
-        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs*:_{description}_"
+        msg += f"\n*❍ ᴅᴇsᴄʀɪᴘᴛɪᴏɴs*➛ _{description}_"
     return msg
 
 
@@ -189,13 +189,13 @@ def airing(update: Update, context: CallbackContext):
     response = requests.post(
         url, json={"query": airing_query, "variables": variables}
     ).json()["data"]["Media"]
-    msg = f"*❍ ɴᴀᴍᴇ* ➛ *{response['title']['romaji']}*(`{response['title']['native']}`)\n*ID*: `{response['id']}`"
+    msg = f"*❍ ɴᴀᴍᴇ* ➛ *{response['title']['romaji']}*(`{response['title']['native']}`)\n*❍ ɪᴅ* ➛ `{response['id']}`"
     if response["nextAiringEpisode"]:
         time = response["nextAiringEpisode"]["timeUntilAiring"] * 1000
         time = t(time)
-        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ `{response['nextAiringEpisode']['episode']}`\n*Airing In*: `{time}`"
+        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ `{response['nextAiringEpisode']['episode']}`\n*❍ ᴀɪʀɪɴɢ ɪɴ* ➛ `{time}`"
     else:
-        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ {response['episodes']}\n*Status*: `N/A`"
+        msg += f"\n*❍ ᴇᴘɪsᴏᴅᴇ* ➛ {response['episodes']}\n*❍ sᴛᴀᴛᴜs* ➛ `N/A`"
     update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
 
@@ -211,11 +211,11 @@ def anime(update: Update, context: CallbackContext):
         url, json={"query": anime_query, "variables": variables}
     ).json()
     if "errors" in json.keys():
-        update.effective_message.reply_text("Anime not found")
+        update.effective_message.reply_text("❍ ᴀɴɪᴍᴇ ɴᴏᴛ ғᴏᴜɴᴅ")
         return
     if json:
         json = json["data"]["Media"]
-        msg = f"*{json['title']['romaji']}*(`{json['title']['native']}`)\n*Type*: {json['format']}\n*Status*: {json['status']}\n*Episodes*: {json.get('episodes', 'N/A')}\n*Duration*: {json.get('duration', 'N/A')} Per Ep.\n*Score*: {json['averageScore']}\n*Genres*: `"
+        msg = f"❍ *{json['title']['romaji']}*(`{json['title']['native']}`)\n*❍ ᴛʏᴘᴇ* ➛ {json['format']}\n*❍ sᴛᴀᴛᴜs* ➛ {json['status']}\n*❍ ᴇᴘɪsᴏᴅᴇs* ➛ {json.get('episodes', 'N/A')}\n*❍ ᴅᴜʀᴀᴛɪᴏɴ* ➛ {json.get('duration', 'N/A')} ᴘᴇʀ ᴇᴘ.\n*❍ sᴄᴏʀᴇ* ➛ {json['averageScore']}\n*❍ ɢᴇɴʀᴇs* ➛ `"
         for x in json["genres"]:
             msg += f"{x}, "
         msg = msg[:-2] + "`\n"
@@ -276,14 +276,14 @@ def character(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
     if not search:
-        update.effective_message.reply_text("Format : /character < character name >")
+        update.effective_message.reply_text("❍ ғᴏʀᴍᴀᴛ ➛ /character < ᴄʜᴀʀᴀᴄᴛᴇʀ ɴᴀᴍᴇ >")
         return
     variables = {"query": search}
     json = requests.post(
         url, json={"query": character_query, "variables": variables}
     ).json()
     if "errors" in json.keys():
-        update.effective_message.reply_text("Character not found")
+        update.effective_message.reply_text("❍ ᴄʜᴀʀᴀᴄᴛᴇʀ ɴᴏᴛ ғᴏᴜɴᴅ")
         return
     if json:
         json = json["data"]["Character"]
@@ -310,7 +310,7 @@ def manga(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
     if not search:
-        update.effective_message.reply_text("Format : /manga < manga name >")
+        update.effective_message.reply_text("❍ ғᴏʀᴍᴀᴛ : /manga < ᴍᴀɴɢᴀ ɴᴀᴍᴇ >")
         return
     variables = {"search": search}
     json = requests.post(
@@ -318,7 +318,7 @@ def manga(update: Update, context: CallbackContext):
     ).json()
     msg = ""
     if "errors" in json.keys():
-        update.effective_message.reply_text("Manga not found")
+        update.effective_message.reply_text("❍ ᴍᴀɴɢᴀ ɴᴏᴛ ғᴏᴜɴᴅ")
         return
     if json:
         json = json["data"]["Media"]
