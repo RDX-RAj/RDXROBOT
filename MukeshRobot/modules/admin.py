@@ -863,7 +863,7 @@ def adminlist(update, context):
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ❍ </code>{} \n✦ ᴀᴅᴍɪɴ ᴛɪᴛʟᴇ ➛ <code>{}</code>".format(
+            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➛ </code>{} ✦ ᴀᴅᴍɪɴ ᴛɪᴛʟᴇ ➛ <code>{}</code>".format(
                 custom_admin_list[admin_group][0],
                 html.escape(admin_group),
             )
