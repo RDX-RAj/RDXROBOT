@@ -47,18 +47,18 @@ def schedule(_, message):
         time = result['time']
         aired = bool(result['aired'])
         title = f"**[{title}](https://subsplease.org/shows/{result['page']})**" if not aired else f"**~~[{title}](https://subsplease.org/shows/{result['page']})~~**"
-        data = f"{title} - **{time}**"
+        data = f"❍ {title} ➛ **{time}**"
         
         if text:
             text = f"{text}\n{data}"
         else:
             text = data
 
-    message.reply_text(f"**Today's Schedule:**\nTime-Zone: Tokyo (GMT +9)\n\n{text}")
+    message.reply_text(f"**✦ ᴛᴏᴅᴀʏ's sᴄʜᴇᴅᴜʟᴇ ✦**\n\n✦ ᴛɪᴍᴇ-ᴢᴏɴᴇ ➛ ᴛᴏᴋʏᴏ (ɢᴍᴛ +9)\n\n❍ {text}")
 
 
-__mod_name__ = "Schedule"
+__mod_name__ = "sᴄʜᴇᴅᴜʟᴇ"
 
 __help__ = """
- ❍ `/latest`: to see latest anime episode
+ ❍ `/latest`➛ ᴛᴏ sᴇᴇ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ᴇᴘɪsᴏᴅᴇ
 """
