@@ -798,7 +798,7 @@ def adminlist(update, context):
         )
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "✦ ɢʀᴏᴜᴘ sᴛᴀғғ <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "✦ ɢʀᴏᴜᴘ sᴛᴀғғ ➛ <b>{}</b>".format(html.escape(update.effective_chat.title))
 
     for admin in administrators:
         user = admin.user
@@ -822,13 +822,13 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n\n❀ ᴏᴡɴᴇʀ ❀"
+            text += "\n\n✦ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ✦"
             text += "\n\n<code> ❍ </code>{}".format(name)
 
             if custom_title:
                 text += f"✦ <code> {html.escape(custom_title)}</code>\n"
 
-    text += "\n❀ ᴀᴅᴍɪɴs ❀"
+    text += "\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -863,7 +863,7 @@ def adminlist(update, context):
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ❍ </code>{} | <code>{}</code>".format(
+            text += "\n<code> ❍ </code>{} \n✦ ᴀᴅᴍɪɴ ᴛɪᴛʟᴇ ➛ <code>{}</code>".format(
                 custom_admin_list[admin_group][0],
                 html.escape(admin_group),
             )
