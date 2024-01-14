@@ -889,14 +889,14 @@ async def listbots(client, message):
         ):
             botList.append(bot.user)
         lenBotList = len(botList)
-        text3 = f"**✦ ʙᴏᴛ ʟɪsᴛ ➛ {message.chat.title}**\n\n✦ ʙᴏᴛs\n\n"
+        text3 = f"**✦ ʙᴏᴛ ʟɪsᴛ ➛ {message.chat.title}**\n\n✦ ʙᴏᴛs ✦\n\n"
         while len(botList) > 1:
             bot = botList.pop(0)
             text3 += f"❍ @{bot.username}\n"
         else:
             bot = botList.pop(0)
             text3 += f"❍ @{bot.username}\n\n"
-            text3 += f"✦ **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➛ {lenBotList}"
+            text3 += f"✦ || **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➛ {lenBotList}"
             await pbot.send_message(message.chat.id, text3)
     except FloodWait as e:
         await asyncio.sleep(e.value)
