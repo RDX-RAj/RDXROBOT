@@ -11,15 +11,15 @@ async def passwordgen(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/password <length>`")
+            "❍ ᴇxᴀᴍᴘʟᴇ ➛ /password <length>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/password/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f"Here is your Password:- ` {x}`", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"❍ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀssᴡᴏʀᴅ ➛ ` {x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
+        await message.reply_text(f"**❍ ᴇʀʀᴏʀ ➛ {e} ")
 @Mukesh.on_message(filters.command(["morseencode"]))
 async def morse_en(bot, message):
     
@@ -28,7 +28,7 @@ async def morse_en(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/morseencode <query>`")
+            "❍ ᴇxᴀᴍᴘʟᴇ ➛ /morseencode <ǫᴜᴇʀʏ>")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/morse/encode/{a}') 
@@ -36,7 +36,7 @@ async def morse_en(bot, message):
             
             await message.reply_text(f"`{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
+        await message.reply_text(f"**❍ ᴇʀʀᴏʀ ➛ {e} ")
 @Mukesh.on_message(filters.command("morsedecode"))
 async def morse_de(bot, message):
     
@@ -45,7 +45,7 @@ async def morse_de(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/morsedecode <query>`")
+            "❍ ᴇxᴀᴍᴘʟᴇ ➛ /morsedecode <ǫᴜᴇʀʏ>")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/morse/decode/{a}') 
@@ -53,7 +53,7 @@ async def morse_de(bot, message):
             
             await message.reply_text(f"`{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
+        await message.reply_text(f"**❍ ᴇʀʀᴏʀ ➛ {e} ")
 @Mukesh.on_message(filters.command(["encode"]))
 async def base_en(bot, message):
     
@@ -62,7 +62,7 @@ async def base_en(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/encode <query>`")
+            "❍ ᴇxᴀᴍᴘʟᴇ ➛ /encode <query>")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/base/encode/{a}') 
@@ -70,7 +70,7 @@ async def base_en(bot, message):
             
             await message.reply_text(f"` {x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
+        await message.reply_text(f"**❍ ᴇʀʀᴏʀ ➛ {e} ")
 @Mukesh.on_message(filters.command(["decode"]))
 async def base_de(bot, message):
     
@@ -79,7 +79,7 @@ async def base_de(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/decode <query>`")
+            "❍ ᴇxᴀᴍᴘʟᴇ ➛ /decode <ǫᴜᴇʀʏ>")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/base/decode/{a}') 
@@ -87,4 +87,13 @@ async def base_de(bot, message):
             
             await message.reply_text(f" `{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")                                
+        await message.reply_text(f"**❍ ᴇʀʀᴏʀ ➛ {e} ")                                
+
+__mod_name__ = "ᴄᴏᴅᴇ"
+__help__ = """
+ ❍ /encode* ➛* ᴇɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /decode* ➛* ᴅᴇᴄᴏᴅᴇ ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /morseencode* ➛* ᴍᴏʀsᴇ ᴇɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /morsedecode* ➛* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /password *➛*  ɢɪᴠᴇ ʟᴇɴɢᴛʜ ᴏғ ᴘᴀssᴡᴏʀᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ
+ """
