@@ -6,7 +6,7 @@ from MukeshRobot import pbot as mukesh
 @mukesh.on_message(filters.command("encrypt"))
 async def encyrpt(bot, message):
     if len(message.command) < 2:
-        return await message.reply_text("**Example:**\n\n`/encyrpt India`")
+        return await message.reply_text("**❍ ᴇxᴀᴍᴘʟᴇ ➛ /encyrpt ɪɴᴅɪᴀ")
     m = message.text.split(' ',1)[1]
     try:
         Secure = secureme.encrypt(m)
@@ -20,7 +20,7 @@ async def encyrpt(bot, message):
 @mukesh.on_message(filters.command("decrypt"))
 async def decrypt(bot, message):
     if len(message.command) < 2:
-        return await message.reply_text("**Example:**\n\n`/decrypt Nsinf`")
+        return await message.reply_text("**❍ ᴇxᴀᴍᴘʟᴇ ➛ /decrypt ɴsɪɴғ")
     m = message.text.split(' ',1)[1]
     try:
         Decrypt = secureme.decrypt(m)
@@ -32,16 +32,12 @@ async def decrypt(bot, message):
         await message.reply_text(f"{e}")
 
 
-__mod_name__ = "ᴘᴀssᴡᴏʀᴅ"
+__mod_name__ = "ᴇɴᴄʀʏᴘᴛ"
 
 __help__ = """
-*ᴄᴏɴᴠᴇʀᴛs*
- ❍ /encrypt*:* ᴇɴᴄʀʏᴘᴛs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
- ❍ /decrypt*:* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
- ❍ /encode*:* ᴇɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
- ❍ /decode*:* ᴅᴇᴄᴏᴅᴇ ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
- ❍ /morseencode*:* Mᴏʀsᴇ Eɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
- ❍ /morsedecode*:* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
- ❍ /password *:*  ɢɪᴠᴇ ʟᴇɴɢᴛʜ ᴏғ ᴘᴀssᴡᴏʀᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ
- ❍ /uselessfact *:* Gᴇɴᴇʀᴀᴛᴇ  Rᴀᴍᴅᴏᴍ Usᴇʟᴇss Fᴀᴄᴛ
+✿ *ᴄᴏɴᴠᴇʀᴛs* ✿
+
+ ❍ /encrypt* ➛* ᴇɴᴄʀʏᴘᴛs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /decrypt* ➛* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /uselessfact *➛* ɢᴇɴᴇʀᴀᴛᴇ  Rᴀᴍᴅᴏᴍ Usᴇʟᴇss Fᴀᴄᴛ
 """
