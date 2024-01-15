@@ -14,18 +14,25 @@ from MukeshRobot import pbot as app
 @app.on_message(filters.command("cosplay"))
 async def cosplay(_,msg):
     img = requests.get("https://waifu-api.vercel.app").json()
-    await msg.reply_photo(img, caption=f"Cosplay By @{app.me.username}\nCredits: @NovaXMod")
+    await msg.reply_photo(img, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ @{app.me.username}\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ @RoY_EdiTX")
 
 @app.on_message(filters.command("ncosplay"))
 async def ncosplay(_,msg):
     if msg.chat.type != ChatType.PRIVATE:
-      await msg.reply_text("Sorry you can use this command only in private chat with bot",
+      await msg.reply_text("❍ sᴏʀʀʏ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ ᴡɪᴛʜ ʙᴏᴛ",
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Go PM",url=f"https://t.me/{app.me.username}?start=True")]
+                [InlineKeyboardButton("ɢᴏ ᴘᴍ",url=f"https://t.me/{app.me.username}?start=True")]
             ]
         ))
     else:
        ncosplay = requests.get("https://waifu-api.vercel.app/items/1").json()
 
-       await msg.reply_photo(ncosplay, caption=f"Cosplay By @{app.me.username}\nCredits: @NovaXMod")
+       await msg.reply_photo(ncosplay, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ @{app.me.username}\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ @RoY_EdiTX")
+
+
+__mod_name__ = "ᴄᴏsᴘʟᴀʏ"
+__help__ = """
+ ❍ /cosplay ➛ ʀᴀɴᴅᴏᴍ ᴄᴏsᴘʟᴀʏ ɪᴍᴀɢᴇ.
+ """
+ 
