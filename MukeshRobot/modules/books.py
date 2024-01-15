@@ -53,7 +53,7 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     lool = 0
-    KkK = await event.reply("Searching for the book...")
+    KkK = await event.reply("❍ sᴇᴀʀᴄʜɪɴɢ ғᴏʀ ᴛʜᴇ ʙᴏᴏᴋs...")
     lin = "https://b-ok.cc/s/"
     text = input_str
     link = lin + text
@@ -69,7 +69,7 @@ async def _(event):
     for nb in total.descendants:
         nbx = nb.replace("(", "").replace(")", "")
     if nbx == "0":
-        await event.reply("No Books Found with that name.")
+        await event.reply("❍ ɴᴏ ʙᴏᴏᴋs ғᴏᴜɴᴅ ᴡɪᴛʜ ᴛʜᴀᴛ ɴᴀᴍᴇ.")
     else:
 
         for tr in soup.find_all("td"):
@@ -82,23 +82,21 @@ async def _(event):
                     link = "https://b-ok.cc" + ref
 
                 f.write("\n" + title)
-                f.write("\nBook link:- " + link + "\n\n")
+                f.write("\n❍ ʙᴏᴏᴋ ʟɪɴᴋ ➛ " + link + "\n\n")
 
-        f.write(f"By @{BOT_USERNAME}")
+        f.write(f"❍ ʙʏ ➛ @{BOT_USERNAME}")
         f.close()
 
         await tbot.send_file(
             event.chat_id,
             "book.txt",
-            caption=f"**BOOKS GATHERED SUCCESSFULLY!**",
+            caption=f"**❍ ʙᴏᴏᴋs ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!**",
         )
         os.remove("book.txt")
         await KkK.delete()
 
 
 __help__ = """
-Book 
-Available commands:
- - `/book` <book name> : Get the download link of the book
+ ❍ `/book` <book name> ➛ ɢᴇᴛ ᴛʜᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ ᴏғ ᴛʜᴇ ʙᴏᴏᴋ.
 """
-__mod_name__ = "Books"
+__mod_name__ = "ʙᴏᴏᴋs"
