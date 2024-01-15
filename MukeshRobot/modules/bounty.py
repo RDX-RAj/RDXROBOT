@@ -20,15 +20,15 @@ from MukeshRobot import pbot
 API_URL = 'https://sasta.tk/bounty'
 
 class STRINGS:
-    ONLY_USERS = '<b>• Only users can use this command!</b>'
-    DOWNLOADING_PHOTO = '<b>• Downloading photo...</b>'
-    REQUESTING_API = '<b>• Requesting API...</b>'
-    API_ERROR = '<b>An API Error occured while requesting:</b>:\n{}'
-    SUPPORT_CHAT = '<b>Support Chat:</b> @HelpSupportChat'
+    ONLY_USERS = '<b>❍ ᴏɴʟʏ ᴜsᴇʀs ᴄᴀɴ ᴜsᴇ ᴛʜɪs command!</b>'
+    DOWNLOADING_PHOTO = '<b>❍ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴘʜᴏᴛᴏ...</b>'
+    REQUESTING_API = '<b>❍ ʀᴇǫᴜᴇsᴛɪɴɢ ᴀᴘɪ...</b>'
+    API_ERROR = '<b>❍ ᴀɴ ᴀᴘɪ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀᴇᴅ ᴡʜɪʟᴇ ʀᴇǫᴜᴇsᴛɪɴɢ</b> ➛\n{}'
+    SUPPORT_CHAT = '<b>❍ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ ➛</b> @The_Friendz'
     BOUNTY_RESULT = '''
-<b>• Here is your Bounty!</b>
+<b>✦ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʙᴏᴜɴᴛʏ ✦</b>
 
-<b>Credits:</b> @SastaNetwork
+<b>❍ ᴄʀᴇᴅɪᴛs ➛</b> @The_Friendz
     '''
 
 COMMANDS = ['bounty', 'wanted']
@@ -64,7 +64,14 @@ async def on_bounty(client: Client, message: Message) -> Message:
     # Replacing `telegra.ph` with `te.legra.ph`.
     url = response_json['url'].replace('telegra.ph','te.legra.ph')
     reply_markup = [
-        [InlineKeyboardButton('Telegraph Link', url=url)]
+        [InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜʏ ʟɪɴᴋ', url=url)]
         ]
     await message.reply_photo(url, caption=STRINGS.BOUNTY_RESULT, reply_markup=InlineKeyboardMarkup(reply_markup))
     await status_msg.delete()
+
+
+__mod_name__ = "ʙᴏᴜɴᴛʏ"
+__help__ = """
+ ❍ /wanted ➛ ʀᴇᴘʟᴀʏ ᴀ ᴘʜᴏᴛᴏ.
+ ❍ /bounty ➛ ʀᴇᴘʟᴀʏ ᴀ ᴘʜᴏᴛᴏ.
+ """
