@@ -271,7 +271,7 @@ def flood(update, context):
             )
         else:
             text = msg.reply_text(
-                "I'ᴍ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴇsᴛʀɪᴄᴛɪɴɢ ᴍᴇᴍʙᴇʀ ᴀғᴛᴇʀ {} ᴄᴏɴsᴇᴄᴜᴛɪᴠᴇ ᴍᴇssᴀɢᴇs.".format(
+                "❍ I'ᴍ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴇsᴛʀɪᴄᴛɪɴɢ ᴍᴇᴍʙᴇʀ ᴀғᴛᴇʀ {} ᴄᴏɴsᴇᴄᴜᴛɪᴠᴇ ᴍᴇssᴀɢᴇs.".format(
                     limit
                 )
             )
@@ -293,7 +293,7 @@ def set_flood_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command is meant to use in group not in PM",
+                "❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴍᴇᴀɴᴛ ᴛᴏ ᴜsᴇ ɪɴ ɢʀᴏᴜᴘ ɴᴏᴛ ɪɴ ᴘᴍ",
             )
             return ""
         chat = update.effective_chat
@@ -312,11 +312,10 @@ def set_flood_mode(update, context):
             sql.set_flood_strength(chat_id, 3, "0")
         elif args[0].lower() == "tban":
             if len(args) == 1:
-                teks = """It looks like you tried to set time value for antiflood but you didn't specified time; Try, `/setfloodmode tban <timevalue>`.
-Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks."""
+                teks = """❍ ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ᴛʀɪᴇᴅ ᴛᴏ set time value for ᴀɴᴛɪғʟᴏᴏᴅ ʙᴜᴛ ʏᴏᴜ ᴅɪᴅɴ'ᴛ sᴘᴇᴄɪғɪᴇᴅ ᴛɪᴍᴇ; ᴛʀʏ, /setfloodmode ᴛʙᴀɴ <timevalue>. ᴇxᴀᴍᴘʟᴇs ᴏғ ᴛɪᴍᴇ ᴠᴀʟᴜᴇ : 4m = 4 ᴍɪɴᴜᴛᴇs, 3h = 3 ʜᴏᴜʀs, 6d = 6 ᴅᴀʏs, 5w = 5 ᴡᴇᴇᴋs."""
                 send_message(update.effective_message, teks, parse_mode="markdown")
                 return
-            settypeflood = "tban for {}".format(args[1])
+            settypeflood = "❍ ᴛʙᴀɴ ғᴏʀ {}".format(args[1])
             sql.set_flood_strength(chat_id, 4, str(args[1]))
         elif args[0].lower() == "tmute":
             if len(args) == 1:
@@ -327,29 +326,29 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
                 )
                 send_message(update.effective_message, teks, parse_mode="markdown")
                 return
-            settypeflood = "tmute for {}".format(args[1])
+            settypeflood = "❍ ᴛᴍᴜᴛᴇ ғᴏʀ {}".format(args[1])
             sql.set_flood_strength(chat_id, 5, str(args[1]))
         else:
             send_message(
-                update.effective_message, "I only understand ban/kick/mute/tban/tmute!"
+                update.effective_message, "❍ ɪ ᴏɴʟʏ ᴜɴᴅᴇʀsᴛᴀɴᴅ ʙᴀɴ/ᴋɪᴄᴋ/ᴍᴜᴛᴇ/ᴛʙᴀɴ/ᴛᴍᴜᴛᴇ !"
             )
             return
         if conn:
             text = msg.reply_text(
-                "Exceeding consecutive flood limit will result in {} in {}!".format(
+                "❍ ᴇxᴄᴇᴇᴅɪɴɢ ᴄᴏɴsᴇᴄᴜᴛɪᴠᴇ ғʟᴏᴏᴅ ʟɪᴍɪᴛ ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ {} ɪɴ {}!".format(
                     settypeflood, chat_name
                 )
             )
         else:
             text = msg.reply_text(
-                "Exceeding consecutive flood limit will result in {}!".format(
+                "❍ ᴇxᴄᴇᴇᴅɪɴɢ ᴄᴏɴsᴇᴄᴜᴛɪᴠᴇ ғʟᴏᴏᴅ ʟɪᴍɪᴛ ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ {}!".format(
                     settypeflood
                 )
             )
         return (
-            "<b>{}:</b>\n"
-            "<b>Admin:</b> {}\n"
-            "Has changed antiflood mode. User will {}.".format(
+            "❍ <b>{} :</b>\n"
+            "❍ <b>ᴀᴅᴍɪɴ :</b> {}\n"
+            "❍ ʜᴀs ᴄʜᴀɴɢᴇᴅ ᴀɴᴛɪғʟᴏᴏᴅ ᴍᴏᴅᴇ. ᴜsᴇʀ ᴡɪʟʟ {}.".format(
                 settypeflood,
                 html.escape(chat.title),
                 mention_html(user.id, html.escape(user.first_name)),
@@ -369,13 +368,13 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
             settypeflood = "tmute for {}".format(getvalue)
         if conn:
             text = msg.reply_text(
-                "Sending more messages than flood limit will result in {} in {}.".format(
+                "❍ sᴇɴᴅɪɴɢ ᴍᴏʀᴇ ᴍᴇssᴀɢᴇs ᴛʜᴀɴ ғʟᴏᴏᴅ ʟɪᴍɪᴛ ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ {} ɪɴ {}.".format(
                     settypeflood, chat_name
                 )
             )
         else:
             text = msg.reply_text(
-                "Sending more message than flood limit will result in {}.".format(
+                "❍ sᴇɴᴅɪɴɢ ᴍᴏʀᴇ ᴍᴇssᴀɢᴇ ᴛʜᴀɴ ғʟᴏᴏᴅ ʟɪᴍɪᴛ ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ {}.".format(
                     settypeflood
                 )
             )
@@ -389,31 +388,31 @@ def __migrate__(old_chat_id, new_chat_id):
 def __chat_settings__(chat_id, user_id):
     limit = sql.get_flood_limit(chat_id)
     if limit == 0:
-        return "Not enforcing to flood control."
+        return "❍ ɴᴏᴛ ᴇɴғᴏʀᴄɪɴɢ ᴛᴏ ғʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ."
     else:
-        return "Antiflood has been set to`{}`.".format(limit)
+        return "❍ ᴀɴᴛɪғʟᴏᴏᴅ ʜᴀs ʙᴇᴇɴ sᴇᴛ ᴛᴏ`{}`.".format(limit)
 
 
 __help__ = """
-*ᴀɴᴛɪғʟᴏᴏᴅ* ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴛᴀᴋᴇ ᴀᴄᴛɪᴏɴ ᴏɴ ᴜsᴇʀs ᴛʜᴀᴛ sᴇɴᴅ ᴍᴏʀᴇ ᴛʜᴀɴ x ᴍᴇssᴀɢᴇs ɪɴ ᴀ ʀᴏᴡ. ᴇxᴄᴇᴇᴅɪɴɢ ᴛʜᴇ sᴇᴛ ғʟᴏᴏᴅ \
-ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ ʀᴇsᴛʀɪᴄᴛɪɴɢ ᴛʜᴀᴛ ᴜsᴇʀ.
- ᴛʜɪs ᴡɪʟʟ ᴍᴜᴛᴇ ᴜsᴇʀs ɪғ ᴛʜᴇʏ sᴇɴᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 10 ᴍᴇssᴀɢᴇs ɪɴ ᴀ ʀᴏᴡ, ʙᴏᴛs ᴀʀᴇ ɪɢɴᴏʀᴇᴅ.
+❍ *ᴀɴᴛɪғʟᴏᴏᴅ* ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴛᴀᴋᴇ ᴀᴄᴛɪᴏɴ ᴏɴ ᴜsᴇʀs ᴛʜᴀᴛ sᴇɴᴅ ᴍᴏʀᴇ ᴛʜᴀɴ x ᴍᴇssᴀɢᴇs ɪɴ ᴀ ʀᴏᴡ ᴇxᴄᴇᴇᴅɪɴɢ ᴛʜᴇ sᴇᴛ ғʟᴏᴏᴅ / ᴡɪʟʟ ʀᴇsᴜʟᴛ ɪɴ ʀᴇsᴛʀɪᴄᴛɪɴɢ ᴛʜᴀᴛ ᴜsᴇʀ.
 
- ❍ /flood *:* ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ғʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ sᴇᴛᴛɪɴɢ
-• *ᴀᴅᴍɪɴs ᴏɴʟʏ:*
- ❍ /setflood <ɪɴᴛ/'ɴᴏ'/'ᴏғғ'>*:* ᴇɴᴀʙʟᴇs ᴏʀ ᴅɪsᴀʙʟᴇs ғʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ
- *ᴇxᴀᴍᴘʟᴇ:* `/sᴇᴛғʟᴏᴏᴅ 10`
- ❍ /setfloodmode <ʙᴀɴ/ᴋɪᴄᴋ/ᴍᴜᴛᴇ/ᴛʙᴀɴ/ᴛᴍᴜᴛᴇ> <ᴠᴀʟᴜᴇ>*:* ᴀᴄᴛɪᴏɴ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴡʜᴇɴ ᴜsᴇʀ ʜᴀᴠᴇ ᴇxᴄᴇᴇᴅᴇᴅ ғʟᴏᴏᴅ ʟɪᴍɪᴛ. ʙᴀɴ/ᴋɪᴄᴋ/ᴍᴜᴛᴇ/ᴛᴍᴜᴛᴇ/ᴛʙᴀɴ
-• *ɴᴏᴛᴇ:*
- • ᴠᴀʟᴜᴇ ᴍᴜsᴛ ʙᴇ ғɪʟʟᴇᴅ ғᴏʀ ᴛʙᴀɴ ᴀɴᴅ ᴛᴍᴜᴛᴇ!!
- ɪᴛ ᴄᴀɴ ʙᴇ:
- `5ᴍ` = 5 ᴍɪɴᴜᴛᴇs
- `6ʜ` = 6 ʜᴏᴜʀs
- `3ᴅ` = 3 ᴅᴀʏs
- `1ᴡ` = 1 ᴡᴇᴇᴋ
+ ❍ ᴛʜɪs ᴡɪʟʟ ᴍᴜᴛᴇ ᴜsᴇʀs ɪғ ᴛʜᴇʏ sᴇɴᴅ ᴍᴏʀᴇ ᴛʜᴀɴ 10 ᴍᴇssᴀɢᴇs ɪɴ ᴀ ʀᴏᴡ, ʙᴏᴛs ᴀʀᴇ ɪɢɴᴏʀᴇᴅ.
+
+ ❍ /flood *➛* ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ғʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ sᴇᴛᴛɪɴɢ
+ 
+ ✿ *ᴀᴅᴍɪɴs ᴏɴʟʏ* ✿
+ 
+ ❍ /setflood <ɪɴᴛ/'ɴᴏ'/'ᴏғғ'>* ➛* ᴇɴᴀʙʟᴇs ᴏʀ ᴅɪsᴀʙʟᴇs ғʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ || ☼ *ᴇxᴀᴍᴘʟᴇ ➛* `/sᴇᴛғʟᴏᴏᴅ 10`
+ 
+ ❍ /setfloodmode <ʙᴀɴ/ᴋɪᴄᴋ/ᴍᴜᴛᴇ/ᴛʙᴀɴ/ᴛᴍᴜᴛᴇ> <ᴠᴀʟᴜᴇ>* ➛* ᴀᴄᴛɪᴏɴ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴡʜᴇɴ ᴜsᴇʀ ʜᴀᴠᴇ ᴇxᴄᴇᴇᴅᴇᴅ ғʟᴏᴏᴅ ʟɪᴍɪᴛ. ʙᴀɴ/ᴋɪᴄᴋ/ᴍᴜᴛᴇ/ᴛᴍᴜᴛᴇ/ᴛʙᴀɴ
+ ☼ *ɴᴏᴛᴇ ➛* ᴠᴀʟᴜᴇ ᴍᴜsᴛ ʙᴇ ғɪʟʟᴇᴅ ғᴏʀ ᴛʙᴀɴ ᴀɴᴅ ᴛᴍᴜᴛᴇ, ɪᴛ ᴄᴀɴ ʙᴇ
+ ☼ `5ᴍ` = 5 ᴍɪɴᴜᴛᴇs
+ ☼ `6ʜ` = 6 ʜᴏᴜʀs
+ ☼ `3ᴅ` = 3 ᴅᴀʏs
+ ☼ `1ᴡ` = 1 ᴡᴇᴇᴋ
  """
 
-__mod_name__ = "Fʟᴏᴏᴅ"
+__mod_name__ = "ғʟᴏᴏᴅ"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.chat_type.groups,
@@ -445,4 +444,5 @@ __handlers__ = [
     SET_FLOOD_HANDLER,
     FLOOD_HANDLER,
     SET_FLOOD_MODE_HANDLER,
-]
+        ]
+        
