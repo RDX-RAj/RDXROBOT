@@ -21,11 +21,11 @@ def bingimg_search(client: Client, message: Message):
         ]  # Extract the query from command arguments
     except IndexError:
         return message.reply_text(
-            "Provide me a query to search!"
+            "❍ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ!"
         )  # Return error if no query is provided
 
     search_message = message.reply_text(
-        "Searching image using Bing search 🔎"
+        "🧪"
     )  # Display searching message
 
     # Send request to Bing image search API
@@ -60,11 +60,11 @@ def googleimg_search(client: Client, message: Message):
         ]  # Extract the query from command arguments
     except IndexError:
         return message.reply_text(
-            "Provide me a query to search!"
+            "❍ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ!"
         )  # Return error if no query is provided
 
     search_message = message.reply_text(
-        "Searching image using Google search 🔎"
+        "🔎"
     )  # Display searching message
 
     # Send request to Google image search API
@@ -88,3 +88,10 @@ def googleimg_search(client: Client, message: Message):
     # Delete the searching message and the original command message
     search_message.delete()
     message.delete()
+
+
+__mod_name__ = "ʙɪɴɢ-ɪᴍɢ"
+__help__ = """
+ ❍ /bingimg ➛ sᴇᴀʀᴄʜ ᴘɪɴᴛᴇʀᴇsᴛ ɪᴍᴀɢᴇs ᴄᴏʟʟᴇᴄᴛɪᴏɴ.
+ ❍ /googleimg ➛ sᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ ɪᴍᴀɢᴇs ᴄᴏʟʟᴇᴄᴛɪᴏɴ.
+ """
