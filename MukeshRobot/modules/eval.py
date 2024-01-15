@@ -155,10 +155,12 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
-__mod_name__ = "Eᴠᴀʟ"
+__mod_name__ = "ᴇᴠᴀʟ"
 __help__ = f"""
-★ᴏᴡɴᴇʀ ᴄᴍᴅ ★
-★ /eval :- to evaluate simple code
-★ /ex :-  to execute code
-★ /clear :- to run clear cmd
+✿ ᴏᴡɴᴇʀ ᴄᴍᴅ ✿
+
+❍ /eval ➛ ᴛᴏ ᴇᴠᴀʟᴜᴀᴛᴇ sɪᴍᴘʟᴇ ᴄᴏᴅᴇ
+❍ /ex ➛  ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ᴄᴏᴅᴇ
+❍ /clear ➛ ᴛᴏ ʀᴜɴ ᴄʟᴇᴀʀ ᴄᴍᴅ
 """
+              
