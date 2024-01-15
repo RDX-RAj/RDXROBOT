@@ -60,16 +60,16 @@ async def feedback(e):
         "https://telegra.ph/file/6c9951e14cece66f2fc3a.jpg",
     )
     NATFEED = ("https://telegra.ph/file/2dd04f407b16bc2cfdf76.jpg",)
-    BUTTON = [[Button.url("Go To Support Group", f"https://t.me/{SUPPORT_CHAT}")]]
-    TEXT = "ᴛʜᴀɴᴋꜱ ꜰᴏʀ ʏᴏᴜʀ ꜰᴇᴇᴅʙᴀᴄᴋ, ɪ ʜᴏᴘᴇ ʏᴏᴜ ʜᴀᴘᴘʏ ᴡɪᴛʜ ᴏᴜʀ ꜱᴇʀᴠɪᴄᴇ."
-    GIVE = "ɢɪᴠᴇ ꜱᴏᴍᴇ ᴛᴇxᴛ ꜰᴏʀ ꜰᴇᴇᴅʙᴄᴋ ✨"
+    BUTTON = [[Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/{SUPPORT_CHAT}")]]
+    TEXT = "❍ ᴛʜᴀɴᴋꜱ ꜰᴏʀ ʏᴏᴜʀ ꜰᴇᴇᴅʙᴀᴄᴋ, ɪ ʜᴏᴘᴇ ʏᴏᴜ ʜᴀᴘᴘʏ ᴡɪᴛʜ ᴏᴜʀ ꜱᴇʀᴠɪᴄᴇ."
+    GIVE = "❍ ɢɪᴠᴇ ꜱᴏᴍᴇ ᴛᴇxᴛ ꜰᴏʀ ꜰᴇᴇᴅʙᴄᴋ ✨"
     logger_text = f"""
-**ɴᴇᴡ ꜰᴇᴇᴅʙᴀᴄᴋ**
+**✦ ɴᴇᴡ ꜰᴇᴇᴅʙᴀᴄᴋ ✦**
 
-**ꜰʀᴏᴍ ᴜꜱᴇʀ:** {mention}
-**ᴜꜱᴇʀɴᴀᴍᴇ:** @{e.sender.username}
-**ᴜꜱᴇʀ ɪᴅ:** `{e.sender.id}`
-**ꜰᴇᴇᴅʙᴀᴄᴋ:** `{e.text}`
+**❍ ꜰʀᴏᴍ ᴜꜱᴇʀ ➛** {mention}
+**❍ ᴜꜱᴇʀɴᴀᴍᴇ ➛** @{e.sender.username}
+**❍ ᴜꜱᴇʀ ɪᴅ ➛** `{e.sender.id}`
+**❍ ꜰᴇᴇᴅʙᴀᴄᴋ ➛** `{e.text}`
 """
     if e.sender_id != OWNER_ID and not quew:
         await e.reply(
@@ -87,3 +87,4 @@ async def feedback(e):
         link_preview=False,
     )
     await e.reply(TEXT, file=random.choice(MukeshRobot), buttons=BUTTON)
+    
