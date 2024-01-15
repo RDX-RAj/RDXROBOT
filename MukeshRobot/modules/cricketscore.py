@@ -61,7 +61,7 @@ async def _(event):
         return
     if event.is_group:
      if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-       await event.reply("🚨 Need Admin Pewer.. You can't use this command.. But you can use in my pm")
+       await event.reply("✦ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴇᴡᴇʀ.. ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.. ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ɪɴ ᴍʏ ᴘᴍ")
        return
 
     score_page = "http://static.cricinfo.com/rss/livescores.xml"
@@ -72,13 +72,12 @@ async def _(event):
     for match in result:
         Sed += match.get_text() + "\n\n"
     await event.reply(
-        f"<b><u>Match information gathered successful</b></u>\n\n\n<code>{Sed}</code>",
+        f"<b>✦ ᴍᴀᴛᴄʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴄᴇssғᴜʟ ✦</b>\n\n\n❍ <code>{Sed}</code>",
         parse_mode="HTML",
     )
 
-__mod_name__ = "Cricket Score 🏏"
+__mod_name__ = "ᴄʀɪᴄᴋᴇᴛ"
 __help__ = """
-*Cricket Score*
- ❍ `/c` : To check live cricket score
- ❍ `/cs` : To check live cricket score
+ ❍ `/c` ➛ ᴛᴏ ᴄʜᴇᴄᴋ ʟɪᴠᴇ ᴄʀɪᴄᴋᴇᴛ sᴄᴏʀᴇ.
+ ❍ `/cs` ➛ ᴛᴏ ᴄʜᴇᴄᴋ ʟɪᴠᴇ ᴄʀɪᴄᴋᴇᴛ sᴄᴏʀᴇ.
 """
