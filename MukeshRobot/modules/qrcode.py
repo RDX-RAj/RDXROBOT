@@ -36,20 +36,21 @@ async def qrcode_(_, message: Message):
         text = message.reply_to_message.text
     else:
         text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`Please wait...,\n\nCreating your Qrcode ...`")
+    m =await message.reply_text( "❍ `ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...,\n\n❍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ǫʀᴄᴏᴅᴇ ...`")
     write = requests.get(f"https://mukesh-api.vercel.app/qrcode/{text}").json()["results"]
 
     caption = f"""
-sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ Qʀᴄᴏᴅᴇ 💘
-✨ **Gᴇɴᴇʀᴀᴛᴇᴅ ʙʏ :** @{BOT_USERNAME}
-🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
+✦ sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ǫʀᴄᴏᴅᴇ ✦
+
+❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** @{BOT_USERNAME}
+❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
 """
     await m.delete()
     await message.reply_photo(photo=write,caption=caption)
 # -----------CREDITS -----------
 # telegram : @legend_coder
 # github : noob-mukesh
-__mod_name__ = "Qʀᴄᴏᴅᴇ"
+__mod_name__ = "ǫʀᴄᴏᴅᴇ"
 __help__ = """
- ➻ /qrcode : ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ǫʀᴄᴏᴅᴇ
+ ❍ /qrcode ➛ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ǫʀᴄᴏᴅᴇ
  """
