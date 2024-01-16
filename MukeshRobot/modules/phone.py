@@ -7,9 +7,9 @@ from MukeshRobot import dispatcher
 from MukeshRobot.modules.helper_funcs.alternate import send_message
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin
 
-__mod_name__ = "Pʜᴏɴᴇ"
+__mod_name__ = "ᴛʀᴜᴇᴄᴀʟʟᴇʀ"
 __help__ = """
-» /phone ꜰɪʟʟ ᴀɴʏ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴄʜᴇᴄᴋ ɪɴꜰᴏ.
+❍ /phone ꜰɪʟʟ ᴀɴʏ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴄʜᴇᴄᴋ ɪɴꜰᴏ.
 """
 
 
@@ -37,13 +37,13 @@ def phone(update, context):
     carrier = obj["carrier"]
     line_type = obj["line_type"]
     validornot = obj["valid"]
-    aa = "Valid: " + str(validornot)
-    a = "Phone number: " + str(number)
-    b = "Country: " + str(country_code)
-    c = "Country Name: " + str(country_name)
-    d = "Location: " + str(location)
-    e = "Carrier: " + str(carrier)
-    f = "Device: " + str(line_type)
+    aa = "✦ ᴠᴀʟɪᴅ ➛" + str(validornot)
+    a = "✦ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ ➛ " + str(number)
+    b = "✦ ᴄᴏᴜɴᴛʀʏ ➛ " + str(country_code)
+    c = "✦ ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ ➛ " + str(country_name)
+    d = "✦ ʟᴏᴄᴀᴛɪᴏɴ ➛ " + str(location)
+    e = "✦ ᴄᴀʀʀɪᴇʀ ➛ " + str(carrier)
+    f = "✦ ᴅᴇᴠɪᴄᴇ ➛ " + str(line_type)
     g = f"{aa}\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}"
     send_message(update.effective_message, g)
 
