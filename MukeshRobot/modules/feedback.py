@@ -88,9 +88,3 @@ async def feedback(e):
     )
     await e.reply(TEXT, file=random.choice(MukeshRobot), buttons=BUTTON)
     
- __mod_name__ = "ғᴇᴇᴅʙᴀᴄᴋ"
-
-__help__ = """
- ❍ /feedback ➛ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴛᴏ ᴀᴠɪsʜᴀ ʙᴏᴛ.
- """
-
