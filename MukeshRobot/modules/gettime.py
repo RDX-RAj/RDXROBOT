@@ -43,14 +43,14 @@ def generate_time(to_find: str, findtype: List[str]) -> str:
 
     try:
         result = (
-            f"<b>Country:</b> <code>{country_name}</code>\n"
-            f"<b>Zone Name:</b> <code>{country_zone}</code>\n"
-            f"<b>Country Code:</b> <code>{country_code}</code>\n"
-            f"<b>Daylight saving:</b> <code>{daylight_saving}</code>\n"
-            f"<b>Day:</b> <code>{current_day}</code>\n"
-            f"<b>Current Time:</b> <code>{current_time}</code>\n"
-            f"<b>Current Date:</b> <code>{current_date}</code>\n"
-            '<b>Timezones:</b> <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">List here</a>'
+            f"❍ <b>ᴄᴏᴜɴᴛʀʏ ➛</b> <code>{country_name}</code>\n"
+            f"❍ <b>ᴢᴏɴᴇ ɴᴀᴍᴇ ➛</b> <code>{country_zone}</code>\n"
+            f"❍ <b>ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ ➛</b> <code>{country_code}</code>\n"
+            f"❍ <b>ᴅᴀʏʟɪɢʜᴛ sᴀᴠɪɴɢ ➛</b> <code>{daylight_saving}</code>\n"
+            f"❍ <b>ᴅᴀʏ ➛</b> <code>{current_day}</code>\n"
+            f"❍ <b>ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ ➛</b> <code>{current_time}</code>\n"
+            f"❍ <b>ᴄᴜʀʀᴇɴᴛ ᴅᴀᴛᴇ ➛</b> <code>{current_date}</code>\n"
+            '❍ <b>ᴛɪᴍᴇᴢᴏɴᴇs ➛</b> <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">ʟɪsᴛ ʜᴇʀᴇ</a>'
         )
     except:
         result = None
@@ -64,10 +64,10 @@ def gettime(update: Update, context: CallbackContext):
     try:
         query = message.text.strip().split(" ", 1)[1]
     except:
-        message.reply_text("Provide a country name/abbreviation/timezone to find.")
+        message.reply_text("❍ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ/ᴀʙʙʀᴇᴠɪᴀᴛɪᴏɴ/ᴛɪᴍᴇᴢᴏɴᴇ ᴛᴏ ғɪɴᴅ.")
         return
     send_message = message.reply_text(
-        f"Finding timezone info for <b>{query}</b>", parse_mode=ParseMode.HTML
+        f"❍ ғɪɴᴅɪɴɢ ᴛɪᴍᴇᴢᴏɴᴇ ɪɴғᴏ ғᴏʀ <b>{query}</b>", parse_mode=ParseMode.HTML
     )
 
     query_timezone = query.lower()
@@ -78,8 +78,8 @@ def gettime(update: Update, context: CallbackContext):
 
     if not result:
         send_message.edit_text(
-            f"Timezone info not available for <b>{query}</b>\n"
-            '<b>All Timezones:</b> <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">List here</a>',
+            f"❍ ᴛɪᴍᴇᴢᴏɴᴇ ɪɴғᴏ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ <b>{query}</b>\n"
+            '<b>ᴀʟʟ ᴛɪᴍᴇᴢᴏɴᴇs ➛</b> <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">ʟɪsᴛ ʜᴇʀᴇ</a>',
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
         )
@@ -91,18 +91,18 @@ def gettime(update: Update, context: CallbackContext):
 
 
 __help__ = """
- ❍ /time <ǫᴜᴇʀʏ>*:* ɢɪᴠᴇs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴛɪᴍᴇᴢᴏɴᴇ.
-*ᴀᴠᴀɪʟᴀʙʟᴇ ǫᴜᴇʀɪᴇs:* ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ/ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ/ᴛɪᴍᴇᴢᴏɴᴇ ɴᴀᴍᴇ
+ ❍ /time <ǫᴜᴇʀʏ>* ➛* ɢɪᴠᴇs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴛɪᴍᴇᴢᴏɴᴇ.
+ ❍ *ᴀᴠᴀɪʟᴀʙʟᴇ ǫᴜᴇʀɪᴇs* ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ/ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ/ᴛɪᴍᴇᴢᴏɴᴇ ɴᴀᴍᴇ
 
  ❍ ⏰ [ᴛɪᴍᴇᴢᴏɴᴇs ʟɪsᴛ](ʜᴛᴛᴘs://ᴇɴ.ᴡɪᴋɪᴘᴇᴅɪᴀ.ᴏʀɢ/ᴡɪᴋɪ/ʟɪsᴛ_ᴏғ_ᴛᴢ_ᴅᴀᴛᴀʙᴀsᴇ_ᴛɪᴍᴇ_ᴢᴏɴᴇs)
 
-💡 ᴇx:- /time ɪɴ *:* ɪᴛ ᴡɪʟʟ sʜᴏᴡs ɪɴᴅɪᴀɴ ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ..
+ ❍ ᴇx ⇒ /time ɪɴ *➛* ɪᴛ ᴡɪʟʟ sʜᴏᴡs ɪɴᴅɪᴀɴ ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ..
 """
 
 TIME_HANDLER = DisableAbleCommandHandler("time", gettime, run_async=True)
 
 dispatcher.add_handler(TIME_HANDLER)
 
-__mod_name__ = "Tɪᴍᴇ"
+__mod_name__ = "ᴛɪᴍᴇ"
 __command_list__ = ["time"]
 __handlers__ = [TIME_HANDLER]
