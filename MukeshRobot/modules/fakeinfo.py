@@ -55,7 +55,7 @@ async def hi(event):
     android = fake.android_platform_token()
     pc = fake.chrome()
     await event.reply(
-        f"<b>✦ ғᴀᴋᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b> ✦\n<b>❍ ɴᴀᴍᴇ ➛ </b><code>{name}</code>\n\n<b>❍ ᴀᴅᴅʀᴇss ➛ </b><code>{address}</code>\n\n<b>❍ ɪᴘ ᴀᴅᴅʀᴇss ➛ </b><code>{ip}</code>\n\n<b>❍ ᴄʀᴇᴅɪᴛ ᴄᴀʀᴅ ➛ </b><code>{cc}</code>\n\n<b>❍ ᴇᴍᴀɪʟ ɪᴅ ➛ </b><code>{email}</code>\n\n<b>❍ ᴊᴏʙ ➛ </b><code>{job}</code>\n\n<b>❍ ᴀɴᴅʀᴏɪᴅ ᴜsᴇʀ ᴀɢᴇɴᴛ ➛ </b><code>{android}</code>\n\n<b>❍ ᴘᴄ ᴜsᴇʀ ᴀɢᴇɴᴛ ➛ </b><code>{pc}</code>",
+        f"<b>✦ ғᴀᴋᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b> ✦\n\n<b>❍ ɴᴀᴍᴇ ➛ </b><code>{name}</code>\n\n<b>❍ ᴀᴅᴅʀᴇss ➛ </b><code>{address}</code>\n\n<b>❍ ɪᴘ ᴀᴅᴅʀᴇss ➛ </b><code>{ip}</code>\n\n<b>❍ ᴄʀᴇᴅɪᴛ ᴄᴀʀᴅ ➛ </b><code>{cc}</code>\n\n<b>❍ ᴇᴍᴀɪʟ ɪᴅ ➛ </b><code>{email}</code>\n\n<b>❍ ᴊᴏʙ ➛ </b><code>{job}</code>\n\n<b>❍ ᴀɴᴅʀᴏɪᴅ ᴜsᴇʀ ᴀɢᴇɴᴛ ➛ </b><code>{android}</code>\n\n<b>❍ ᴘᴄ ᴜsᴇʀ ᴀɢᴇɴᴛ ➛ </b><code>{pc}</code>",
         parse_mode="HTML",
     )
 
