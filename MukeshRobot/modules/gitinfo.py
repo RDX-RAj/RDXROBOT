@@ -9,13 +9,13 @@ from MukeshRobot.utils.errors import capture_err
 @capture_err
 async def github(_, message):
     if len(message.command) != 2:
-        return await message.reply_text("/github {username} \n`/github Noob-Mukesh`")
+        return await message.reply_text("/github {username} \n`/github nykaaxbot`")
     username = message.text.split(None, 1)[1]
     URL = f"https://api.github.com/users/{username}"
     async with ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await message.reply_text("404")
+                return await message.reply_text("ʙᴏsᴅᴋ sᴀʜɪ ɢɪᴛʜᴜʙ ᴜsᴇʀɴᴀᴍᴇ ᴅᴀᴀʟ.")
             result = await request.json()
             try:
                 url = result["html_url"]
@@ -32,7 +32,7 @@ async def github(_, message):
                 global Mukesh
                 Mukesh = [[
             InlineKeyboardButton(text="ᴘʀᴏғɪʟᴇ ʟɪɴᴋ", url=url),
-            InlineKeyboardButton("Cʟᴏsᴇ",callback_data="close_reply")
+            InlineKeyboardButton("ᴄʟᴏsᴇ",callback_data="close_reply")
             ]]     
                 caption = f"""**Iɴғᴏ Oғ {name}**
 **ᴜsᴇʀɴᴀᴍᴇ :** `{username}`
@@ -50,10 +50,11 @@ async def github(_, message):
     await message.reply_photo(photo=avatar_url, caption=caption,reply_markup=InlineKeyboardMarkup(Mukesh))
 
 
-__mod_name__ = "Gɪᴛʜᴜʙ"
+__mod_name__ = "ɢɪᴛʜᴜʙ"
 
 __help__ = """
-ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴘʀᴏғɪʟᴇ. 
+ ❍ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴘʀᴏғɪʟᴇ. 
 
- ❍ /github <ᴜsᴇʀɴᴀᴍᴇ> *:* ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴜsᴇʀ.
+ ❍ /github <ᴜsᴇʀɴᴀᴍᴇ> *➛* ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴜsᴇʀ.
 """
+                
