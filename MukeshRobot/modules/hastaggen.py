@@ -10,14 +10,14 @@ async def hastag(bot, message):
         res = requests.get(f"https://mukesh-api.vercel.app/hastag/{text}").json()["results"]
 
     except IndexError:
-        return await message.reply_text("Example:\n\n`/hastag python`")
+        return await message.reply_text("❍ ᴇxᴀᴍᴘʟᴇ ➛ `/hastag python`")
         
     
-    await message.reply_text(f"ʜᴇʀᴇ ɪs ʏᴏᴜʀ  ʜᴀsᴛᴀɢ :\n<pre>{res}</pre>", quote=True)
+    await message.reply_text(f"❍ ʜᴇʀᴇ ɪs ʏᴏᴜʀ  ʜᴀsᴛᴀɢ \n❍ <pre>{res}</pre>", quote=True)
     
-__mod_name__ = "Hᴀsʜᴛᴀɢ"
+__mod_name__ = "ʜᴀsʜᴛᴀɢ"
 __help__= """
-**Yᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʜᴀsʜᴛᴀɢ ɢᴇɴᴇʀᴀᴛᴏʀ ᴡʜɪᴄʜ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴛʜᴇ ᴛᴏᴘ 𝟹𝟶 ᴀɴᴅ ᴍᴏʀᴇ ʜᴀsʜᴛᴀɢs ʙᴀsᴇᴅ ᴏғғ ᴏғ ᴏɴᴇ ᴋᴇʏᴡᴏʀᴅ sᴇʟᴇᴄᴛɪᴏɴ.**
-° /hastag enter word to generate hastag.
-°Exᴀᴍᴘʟᴇ: ` /hastag python `"""
+**❍ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʜᴀsʜᴛᴀɢ ɢᴇɴᴇʀᴀᴛᴏʀ ᴡʜɪᴄʜ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴛʜᴇ ᴛᴏᴘ 𝟹𝟶 ᴀɴᴅ ᴍᴏʀᴇ ʜᴀsʜᴛᴀɢs ʙᴀsᴇᴅ ᴏғғ ᴏғ ᴏɴᴇ ᴋᴇʏᴡᴏʀᴅ sᴇʟᴇᴄᴛɪᴏɴ.**
+❍ /hastag ➛ ᴇɴᴛᴇʀ ᴡᴏʀᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ʜᴀsᴛᴀɢ.
+❍ ᴇxᴀᴍᴘʟᴇ ➛ ` /hastag ᴘʏᴛʜᴏɴ `"""
 
