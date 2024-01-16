@@ -28,7 +28,7 @@ async def proboyx(event):
     on = await bot.send_file(
         event.chat_id,
         file=file2,
-        caption=f"ʜᴇʏ {firstname}, \nᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ \n ᴛᴏ ɢᴇᴛ ɪɴғᴏ ᴀʙᴏᴜᴛ ʏᴏᴜ",
+        caption=f"❍ ʜᴇʏ {firstname} !\n\n❍ ᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ɪɴғᴏ ᴀʙᴏᴜᴛ ʏᴏᴜ",
         buttons=button,
     )
 
@@ -65,17 +65,22 @@ async def callback_query_handler(event):
     try:
         boy = event.sender_id
         PRO = await bot.get_entity(boy)
-        LILIE = f"ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}\n\n"
-        LILIE += f"ғɪʀsᴛ ɴᴀᴍᴇ: {PRO.first_name} \n"
-        LILIE += f"ʟᴀsᴛ ɴᴀᴍᴇ: {PRO.last_name}\n"
-        LILIE += f"ʏᴏᴜ ʙᴏᴛ : {PRO.bot} \n"
-        LILIE += f"ʀᴇsᴛʀɪᴄᴛᴇᴅ : {PRO.restricted} \n"
-        LILIE += f"ᴜsᴇʀ ɪᴅ: {boy}\n"
-        LILIE += f"ᴜsᴇʀɴᴀᴍᴇ : @{PRO.username}\n"
+        LILIE = f"❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ {BOT_NAME}\n\n"
+        LILIE += f"❍ ғɪʀsᴛ ɴᴀᴍᴇ ➛ {PRO.first_name} \n"
+        LILIE += f"❍ ʟᴀsᴛ ɴᴀᴍᴇ ➛ {PRO.last_name}\n"
+        LILIE += f"❍ ʏᴏᴜ ʙᴏᴛ ➛ {PRO.bot} \n"
+        LILIE += f"❍ ʀᴇsᴛʀɪᴄᴛᴇᴅ ➛ {PRO.restricted} \n"
+        LILIE += f"❍ ᴜsᴇʀ ɪᴅ ➛ {boy}\n"
+        LILIE += f"❍ ᴜsᴇʀɴᴀᴍᴇ ➛ @{PRO.username}\n"
         await event.answer(LILIE, alert=True)
     except Exception as e:
         await event.reply(f"{e}")
-
+        
+        
+__mod_name__ = "ᴍʏ-ɪɴғᴏ"
+__help__ = """
+ ❍ /myinfo ➛ ᴄʜᴋ ᴏᴡɴ ɪɴғᴏʀᴍᴀᴛɪᴏɴ
+ """
 
 __command_list__ = ["myinfo"]
 
