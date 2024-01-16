@@ -182,20 +182,22 @@ async def mimi(event):
 
 
 __help__ = """
-Memes help you get through tough times, enjoy memes with our funny and horny memes
+❍ ᴍᴇᴍᴇs ʜᴇʟᴘ ʏᴏᴜ ɢᴇᴛ ᴛʜʀᴏᴜɢʜ ᴛᴏᴜɢʜ ᴛɪᴍᴇs, ᴇɴᴊᴏʏ ᴍᴇᴍᴇs ᴡɪᴛʜ ᴏᴜʀ ғᴜɴɴʏ ᴀɴᴅ ʜᴏʀɴʏ ᴍᴇᴍᴇs
 
-Usage:
-- /memes Will give you mixed memes
-- /wmeme Will give you wholesome memes
-- /dank Provides dank memes
-- /cursed Cursed memes
-- /shitposting Random shitposts
-- /fbi FBI Memes
-- /teen Teenagers meme
-- /hmeme Horny Memes
-- /pewds Pewdiepie Collection
-- /hornyjail Onichan Arrested :p
-- /lolimeme Loli Memes (**fbi locating**)
+✿ ᴜsᴀɢᴇ ✿
+
+❍ /memes ➛ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴍɪxᴇᴅ ᴍᴇᴍᴇs
+❍ /wmeme ➛ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴡʜᴏʟᴇsᴏᴍᴇ ᴍᴇᴍᴇs
+❍ /dank ➛ ᴘʀᴏᴠɪᴅᴇs ᴅᴀɴᴋ ᴍᴇᴍᴇs
+❍ /cursed ➛ ᴄᴜʀsᴇᴅ ᴍᴇᴍᴇs
+❍ /shitposting ➛ʀᴀɴᴅᴏᴍ sʜɪᴛᴘᴏsᴛs
+❍ /fbi ➛ ғʙɪ ᴍᴇᴍᴇs
+❍ /teen ➛ ᴛᴇᴇɴᴀɢᴇʀs ᴍᴇᴍᴇ
+❍ /hmeme ➛ ʜᴏʀɴʏ ᴍᴇᴍᴇs
+❍ /pewds ➛ ᴘᴇᴡᴅɪᴇᴘɪᴇ ᴄᴏʟʟᴇᴄᴛɪᴏɴ
+❍ /hornyjail ➛ ᴏɴɪᴄʜᴀɴ ᴀʀʀᴇsᴛᴇᴅ
+❍ /lolimeme ➛ ʟᴏʟɪ ᴍᴇᴍᴇs
 """
 
-__mod_name__ = "Memes"
+__mod_name__ = "ᴍᴇᴍᴇs"
+        
