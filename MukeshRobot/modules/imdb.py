@@ -42,8 +42,8 @@ async def imdb(e):
         credits = soup.findAll("div", "credit_summary_item")
         if len(credits) == 1:
             director = credits[0].a.text
-            writer = "Not available"
-            stars = "Not available"
+            writer = "❍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ"
+            stars = "❍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ"
         elif len(credits) > 2:
             director = credits[0].a.text
             writer = credits[1].a.text
@@ -54,7 +54,7 @@ async def imdb(e):
             stars = actors[0] + "," + actors[1] + "," + actors[2]
         else:
             director = credits[0].a.text
-            writer = "Not available"
+            writer = "❍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ"
             actors = []
             for x in credits[1].findAll("a"):
                 actors.append(x.text)
@@ -63,7 +63,7 @@ async def imdb(e):
         if soup.find("div", "inline canwrap"):
             story_line = soup.find("div", "inline canwrap").findAll("p")[0].text
         else:
-            story_line = "Not available"
+            story_line = "❍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ"
         info = soup.findAll("div", "txt-block")
         if info:
             mov_country = []
@@ -79,31 +79,36 @@ async def imdb(e):
             for r in soup.findAll("div", "ratingValue"):
                 mov_rating = r.strong["title"]
         else:
-            mov_rating = "Not available"
+            mov_rating = "❍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ"
         await e.reply(
             "<a href=" + poster + ">&#8203;</a>"
-            "<b>Title : </b><code>"
+            "<b>❍ ᴛɪᴛʟᴇ ➛ </b><code>"
             + mov_title
             + "</code>\n<code>"
             + mov_details
-            + "</code>\n<b>Rating : </b><code>"
+            + "</code>\n<b>❍ ʀᴀᴛɪɴɢ ➛ </b><code>"
             + mov_rating
-            + "</code>\n<b>Country : </b><code>"
+            + "</code>\n<b>❍ ᴄᴏᴜɴᴛʀʏ ➛ </b><code>"
             + mov_country[0]
-            + "</code>\n<b>Language : </b><code>"
+            + "</code>\n<b>❍ ʟᴀɴɢᴜᴀɢᴇ ➛ </b><code>"
             + mov_language[0]
-            + "</code>\n<b>Director : </b><code>"
+            + "</code>\n<b>❍ ᴅɪʀᴇᴄᴛᴏʀ ➛ </b><code>"
             + director
-            + "</code>\n<b>Writer : </b><code>"
+            + "</code>\n<b>❍ ᴡʀɪᴛᴇʀ ➛ </b><code>"
             + writer
-            + "</code>\n<b>Stars : </b><code>"
+            + "</code>\n<b>❍ sᴛᴀʀs ➛ </b><code>"
             + stars
-            + "</code>\n<b>IMDB Url : </b>"
+            + "</code>\n<b>❍ ɪᴍᴅʙ ᴜʀʟ ➛ </b>"
             + mov_link
-            + "\n<b>Story Line : </b>"
+            + "\n<b>❍ sᴛᴏʀʏ ʟɪɴᴇ ➛ </b>"
             + story_line,
             link_preview=True,
             parse_mode="HTML",
         )
     except IndexError:
-        await e.reply("Plox enter **Valid movie name** kthx")
+        await e.reply("❍ ᴘʟᴢ ᴇɴᴛᴇʀ ᴠᴀʟɪᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ.")
+
+__mod_name__ = "ɪᴍᴅʙ"
+__help__ = """
+ ❍ /imdb ➛ sᴇᴀʀᴄʜ ᴀ ᴍᴏᴠɪᴇ ᴅᴇᴛᴀɪʟs.
+ """
