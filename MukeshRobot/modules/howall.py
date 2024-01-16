@@ -10,15 +10,15 @@ from MukeshRobot import SUPPORT_CHAT
 @pbot.on_message(filters.command("wish"))
 async def wish(_, m):
             if len(m.command) <  2:
-                  await m.reply("**ᴀᴅᴅ ᴡɪꜱʜ ʙᴀʙʏ🥀!**")
+                  await m.reply("**❍ ᴀᴅᴅ ᴡɪꜱʜ ʙᴀʙʏ !**")
                   return 
             api = requests.get("https://nekos.best/api/v2/happy").json()
             url = api["results"][0]['url']
             text = m.text.split(None, 1)[1]
             wish_count = random.randint(1,100)
-            wish = f"✨ **ʜᴇʏ! {m.from_user.first_name}!** "
-            wish += f"✨ **ʏᴏᴜʀ ᴡɪꜱʜ**: **{text}** "
-            wish += f"✨ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ: {wish_count}%**"
+            wish = f"✦ **ʜᴇʏ {m.from_user.first_name} !** "
+            wish += f"✦ **ʏᴏᴜʀ ᴡɪꜱʜ** ➛ **{text}** "
+            wish += f"✦ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ ➛ {wish_count}%**"
             await m.reply_animation(url,caption=(wish),
               reply_markup=InlineKeyboardMarkup(
                     [ [InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}")]]))
@@ -36,7 +36,7 @@ async def cute(e):
               user_name = e.sender.first_name
               mention = f"[{user_name}](tg://user?id={str(user_id)})"
               mm = random.randint(1,100)
-              CUTE = f"**🍑** {mention} {mm}**% ᴄᴜᴛᴇ ʙᴀʙʏ🥀**"
+              CUTE = f"**Ⰶ** {mention} {mm}**% ᴄᴜᴛᴇ ʙᴀʙʏ.**"
               await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
          if e.is_reply:
                replied = (await e.get_reply_message())
@@ -44,18 +44,14 @@ async def cute(e):
                name = replied.sender.first_name
                mention = f"[{name}](tg://user?id={str(id)})"
                mm = random.randint(1,100)
-               CUTE = f"**🍑** {mention} {mm}**% ᴄᴜᴛᴇ ʙᴀʙʏ🥀**"
+               CUTE = f"**Ⰶ** {mention} {mm}**% ᴄᴜᴛᴇ ʙᴀʙʏ.**"
                await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 __help__ = """
-
-» ᴡʜᴀᴛ ɪꜱ ᴛʜɪꜱ (ᴡɪꜱʜ):
-ʏᴏᴜ ʜᴀᴠɪɴɢ ᴀɴʏ ᴋɪɴᴅ ᴏꜰ 
-(ᴡɪꜱʜᴇꜱ) ʏᴏᴜ ᴄᴀɴ ᴜꜱɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ᴛᴏ ʜᴏᴡ ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ ʏᴏᴜʀ ᴡɪꜱʜ!
-ᴇxᴀᴍᴘʟᴇ:» /wish : ɪ ᴡᴀɴᴛ ᴄʟᴀꜱꜱ ᴛᴏᴘᴘᴇʀ 
-» `/wish` : ɪ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ɪᴘʜᴏɴᴇ 
-» `/cute` : ʜᴏᴡ ᴍᴜᴄʜ ɪ ᴀᴍ ᴄᴜᴛᴇ 
+❍ ᴇxᴀᴍᴘʟᴇ ➛ /wish ɪ ᴡᴀɴᴛ ᴄʟᴀꜱꜱ ᴛᴏᴘᴘᴇʀ 
+❍ `/wish` ➛ ɪ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ɪᴘʜᴏɴᴇ 
+❍ `/cute` ➛ ʜᴏᴡ ᴍᴜᴄʜ ɪ ᴀᴍ ᴄᴜᴛᴇ 
 
 """
 
-__mod_name__ = "HOWALL"
+__mod_name__ = "ᴡɪsʜ"
