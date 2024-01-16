@@ -72,16 +72,21 @@ if 1 == 1:
                 try:
                     id = int(id)
                     if id <= 0:
-                        await event.edit("<code>ID number you entered is invalid</code>")
+                        await event.edit("❍ <code>ɪᴅ ɴᴜᴍʙᴇʀ ʏᴏᴜ ᴇɴᴛᴇʀᴇᴅ ɪs ɪɴᴠᴀʟɪᴅ</code>")
                         return
                 except:
-                    await event.edit("<code>ID number you entered is invalid</code>")
+                    await event.edit("❍ <code>ɪᴅ ɴᴜᴍʙᴇʀ ʏᴏᴜ ᴇɴᴛᴇʀᴇᴅ ɪs ɪɴᴠᴀʟɪᴅ</code>")
                     return
                 if int(id) <= (len(photos)):
                     send_photos = await event.client.download_media(photos[id - 1])
                     await borg.send_file(event.chat.id, send_photos)
                 else:
-                    await event.edit("<code>No photo found with that id</code>")
+                    await event.edit("❍ <code>ɴᴏ ᴘʜᴏᴛᴏ ғᴏᴜɴᴅ ᴡɪᴛʜ ᴛʜᴀᴛ ɪᴅ</code>")
                     return
         except:
-            await borg.send_text("Reply to user mate")
+            await borg.send_text("❍ ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴍᴀᴛᴇ.")
+            
+__mod_name__ = "ᴘғᴘ"
+__help__ = """
+ ❍ /pfp ➛ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏᴏɴᴇ ᴘғᴘ ᴘɪᴄᴛᴜʀᴇs. [ᴇx - ɢʀᴏᴜᴘ ᴘɪᴄ, ᴄʜᴀɴɴᴇʟ, ᴜsᴇʀ ] ( ᴇɢ - /pfp @afk_mr_roy
+ """
