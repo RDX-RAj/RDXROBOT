@@ -319,7 +319,7 @@ async def _try_delete(event):
     except BaseException as er:
         from . import LOGS
 
-        LOGS.error("Error while Deleting Message..")
+        LOGS.error("❍ ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴅᴇʟᴇᴛɪɴɢ ᴍᴇssᴀɢᴇ..")
         LOGS.exception(er)
 
 
@@ -331,7 +331,7 @@ setattr(Message, "try_delete", _try_delete)
 async def quott_(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
-        return await event.eor("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
+        return await event.eor("❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
     msg = await event.reply("⚡️")
     reply = await event.get_reply_message()
     replied_to, reply_ = None, None
@@ -390,9 +390,9 @@ async def quott_(event):
     return message
 
 
-__mod_name__ = "Qᴜᴏᴛʟʏ"
+__mod_name__ = "ǫᴜᴏᴛʟʏ"
 
 __help__="""
-•➥ /q → ᴄʀᴇᴀᴛᴇ ᴀ ǫᴜᴏᴛᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇssᴀɢᴇ 
-•➥ /q r → ᴄʀᴇᴀᴛᴇ ᴀ ǫᴜᴏᴛᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʀᴇᴘʟʏ
+❍ /q ➛ ᴄʀᴇᴀᴛᴇ ᴀ ǫᴜᴏᴛᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇssᴀɢᴇ 
+❍ /q r ➛ ᴄʀᴇᴀᴛᴇ ᴀ ǫᴜᴏᴛᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʀᴇᴘʟʏ
  """
