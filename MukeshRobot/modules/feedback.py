@@ -62,7 +62,7 @@ async def feedback(e):
     NATFEED = ("https://telegra.ph/file/2dd04f407b16bc2cfdf76.jpg",)
     BUTTON = [[Button.url("sᴜᴘᴘᴏʀᴛ", f"https://t.me/{SUPPORT_CHAT}")]]
     TEXT = "❍ ᴛʜᴀɴᴋꜱ ꜰᴏʀ ʏᴏᴜʀ ꜰᴇᴇᴅʙᴀᴄᴋ, ɪ ʜᴏᴘᴇ ʏᴏᴜ ʜᴀᴘᴘʏ ᴡɪᴛʜ ᴏᴜʀ ꜱᴇʀᴠɪᴄᴇ."
-    GIVE = "❍ ɢɪᴠᴇ ꜱᴏᴍᴇ ᴛᴇxᴛ ꜰᴏʀ ꜰᴇᴇᴅʙᴄᴋ ✨"
+    GIVE = "❍ ɢɪᴠᴇ ꜱᴏᴍᴇ ᴛᴇxᴛ ꜰᴏʀ ꜰᴇᴇᴅʙᴄᴋ."
     logger_text = f"""
 **✦ ɴᴇᴡ ꜰᴇᴇᴅʙᴀᴄᴋ ✦**
 
@@ -88,3 +88,8 @@ async def feedback(e):
     )
     await e.reply(TEXT, file=random.choice(MukeshRobot), buttons=BUTTON)
     
+ __mod_name__ = "ғᴇᴇᴅʙᴀᴄᴋ"
+__help__ = """
+ ❍ /feedback ➛ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴛᴏ ᴀᴠɪsʜᴀ ʙᴏᴛ.
+ """
+
