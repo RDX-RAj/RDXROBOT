@@ -93,9 +93,9 @@ def pingall(update: Update, context: CallbackContext):
     pinged_list.insert(2, "")
     uptime = get_readable_time((time.time() - StartTime))
 
-    reply_msg = "❍ ᴘɪɴɢ ʀᴇsᴜʟᴛs ᴀʀᴇ:\n"
+    reply_msg = "❍ ᴘɪɴɢ ʀᴇsᴜʟᴛs ᴀʀᴇ\n"
     reply_msg += "\n".join(pinged_list)
-    reply_msg += "\n<b>ᴜᴘᴛɪᴍᴇ:</b> <code>{}</code>".format(uptime)
+    reply_msg += "\n❍ <b>ᴜᴘᴛɪᴍᴇ ➛</b> <code>{}</code>".format(uptime)
 
     update.effective_message.reply_text(
         reply_msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
