@@ -84,7 +84,7 @@ def slap(update: Update, context: CallbackContext):
     throw = random.choice(fun_strings.THROW)
 
     if update.effective_user.id == OWNER_ID:
-        temp = "@legend_coder scratches {user2}"
+        temp = "❍ @the_friendz sᴄʀᴀᴛᴄʜᴇs {user2}"
 
     reply = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 
@@ -212,20 +212,20 @@ def table(update: Update, context: CallbackContext):
 
 
 __help__ = """
- ❍ /runs *:* ʀᴇᴘʟʏ ᴀ ʀᴀɴᴅᴏᴍ sᴛʀɪɴɢ ғʀᴏᴍ ᴀɴ ᴀʀʀᴀʏ ᴏғ ʀᴇᴘʟɪᴇs
- ❍ /slap *:* sʟᴀᴘ ᴀ ᴜsᴇʀ, ᴏʀ ɢᴇᴛ sʟᴀᴘᴘᴇᴅ ɪғ ɴᴏᴛ ᴀ ʀᴇᴘʟʏ
- ❍ /shrug *:* ɢᴇᴛ sʜʀᴜɢ xᴅ
- ❍ /table *:* ɢᴇᴛ ғʟɪᴘ/ᴜɴғʟɪᴘ :ᴠ
- ❍ /decide *:* ʀᴀɴᴅᴏᴍʟʏ ᴀɴsᴡᴇʀs ʏᴇs/ɴᴏ/ᴍᴀʏʙᴇ
- ❍ /toss *:* ᴛᴏssᴇs ᴀ ᴄᴏɪɴ
- ❍ /bluetext *:* ᴄʜᴇᴄᴋ ᴜʀsᴇʟғ :ᴠ
- ❍ /roll *:* ʀᴏʟʟ ᴀ ᴅɪᴄᴇ
- ❍ /rlg *:* ᴊᴏɪɴ ᴇᴀʀs,ɴᴏsᴇ,ᴍᴏᴜᴛʜ ᴀɴᴅ ᴄʀᴇᴀᴛᴇ ᴀɴ ᴇᴍᴏ ;-;
- ❍ /shout  <ᴋᴇʏᴡᴏʀᴅ>*:* ᴡʀɪᴛᴇ ᴀɴʏᴛʜɪɴɢ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢɪᴠᴇ ʟᴏᴜᴅ sʜᴏᴜᴛ
- ❍ /weebify  <ᴛᴇxᴛ>*:* ʀᴇᴛᴜʀɴs ᴀ ᴡᴇᴇʙɪғɪᴇᴅ ᴛᴇxᴛ
- ❍ /sanitize *:* ᴀʟᴡᴀʏs ᴜsᴇ ᴛʜɪs ʙᴇғᴏʀᴇ /ᴘᴀᴛ ᴏʀ ᴀɴʏ ᴄᴏɴᴛᴀᴄᴛ
- ❍ /pat *:* ᴘᴀᴛs ᴀ ᴜsᴇʀ, ᴏʀ ɢᴇᴛ ᴘᴀᴛᴛᴇᴅ
- ❍ /8ball *:* ᴘʀᴇᴅɪᴄᴛs ᴜsɪɴɢ 8ʙᴀʟʟ ᴍᴇᴛʜᴏᴅ 
+ ❍ /runs *➛* ʀᴇᴘʟʏ ᴀ ʀᴀɴᴅᴏᴍ sᴛʀɪɴɢ ғʀᴏᴍ ᴀɴ ᴀʀʀᴀʏ ᴏғ ʀᴇᴘʟɪᴇs
+ ❍ /slap *➛* sʟᴀᴘ ᴀ ᴜsᴇʀ, ᴏʀ ɢᴇᴛ sʟᴀᴘᴘᴇᴅ ɪғ ɴᴏᴛ ᴀ ʀᴇᴘʟʏ
+ ❍ /shrug *➛* ɢᴇᴛ sʜʀᴜɢ xᴅ
+ ❍ /table *➛* ɢᴇᴛ ғʟɪᴘ/ᴜɴғʟɪᴘ :ᴠ
+ ❍ /decide *➛* ʀᴀɴᴅᴏᴍʟʏ ᴀɴsᴡᴇʀs ʏᴇs/ɴᴏ/ᴍᴀʏʙᴇ
+ ❍ /toss *➛* ᴛᴏssᴇs ᴀ ᴄᴏɪɴ
+ ❍ /bluetext *➛* ᴄʜᴇᴄᴋ ᴜʀsᴇʟғ :ᴠ
+ ❍ /roll *➛* ʀᴏʟʟ ᴀ ᴅɪᴄᴇ
+ ❍ /rlg *➛* ᴊᴏɪɴ ᴇᴀʀs,ɴᴏsᴇ,ᴍᴏᴜᴛʜ ᴀɴᴅ ᴄʀᴇᴀᴛᴇ ᴀɴ ᴇᴍᴏ ;-;
+ ❍ /shout  <ᴋᴇʏᴡᴏʀᴅ>* ➛* ᴡʀɪᴛᴇ ᴀɴʏᴛʜɪɴɢ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢɪᴠᴇ ʟᴏᴜᴅ sʜᴏᴜᴛ
+ ❍ /weebify  <ᴛᴇxᴛ>* ➛* ʀᴇᴛᴜʀɴs ᴀ ᴡᴇᴇʙɪғɪᴇᴅ ᴛᴇxᴛ
+ ❍ /sanitize *➛* ᴀʟᴡᴀʏs ᴜsᴇ ᴛʜɪs ʙᴇғᴏʀᴇ /ᴘᴀᴛ ᴏʀ ᴀɴʏ ᴄᴏɴᴛᴀᴄᴛ
+ ❍ /pat *➛* ᴘᴀᴛs ᴀ ᴜsᴇʀ, ᴏʀ ɢᴇᴛ ᴘᴀᴛᴛᴇᴅ
+ ❍ /8ball *➛* ᴘʀᴇᴅɪᴄᴛs ᴜsɪɴɢ 8ʙᴀʟʟ ᴍᴇᴛʜᴏᴅ 
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
@@ -256,7 +256,7 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 
-__mod_name__ = "Fᴜɴ"
+__mod_name__ = "ғᴜɴ"
 __command_list__ = [
     "runs",
     "slap",
@@ -287,4 +287,5 @@ __handlers__ = [
     SANITIZE_HANDLER,
     SHOUT_HANDLER,
     EIGHTBALL_HANDLER,
-]
+        ]
+    
