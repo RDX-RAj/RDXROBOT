@@ -27,12 +27,12 @@ def anime(update: Update, context: CallbackContext):
     try:
         res = jikan.search("anime", query)
     except APIException:
-        msg.reply_text("Error connecting to the API. Please try again!")
+        msg.reply_text("❍ ᴇʀʀᴏʀ ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴛʜᴇ ᴀᴘɪ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
         return ""
     try:
         res = res.get("results")[0].get("mal_id")  # Grab first result
     except APIException:
-        msg.reply_text("Error connecting to the API. Please try again!")
+        msg.reply_text("❍ ᴇʀʀᴏʀ ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴛʜᴇ ᴀᴘɪ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
         return ""
     if res:
         anime = jikan.anime(res)
@@ -62,30 +62,30 @@ def anime(update: Update, context: CallbackContext):
         url = anime.get("url")
         trailer = anime.get("trailer_url")
     else:
-        msg.reply_text("No results found!")
+        msg.reply_text("❍ ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ !")
         return
-    rep = f"<b>{title} ({japanese})</b>\n"
-    rep += f"<b>Type:</b> <code>{type}</code>\n"
-    rep += f"<b>Source:</b> <code>{source}</code>\n"
-    rep += f"<b>Status:</b> <code>{status}</code>\n"
-    rep += f"<b>Genres:</b> <code>{genres}</code>\n"
-    rep += f"<b>Episodes:</b> <code>{episodes}</code>\n"
-    rep += f"<b>Duration:</b> <code>{duration}</code>\n"
-    rep += f"<b>Score:</b> <code>{score}</code>\n"
-    rep += f"<b>Studio(s):</b> <code>{studios}</code>\n"
-    rep += f"<b>Premiered:</b> <code>{premiered}</code>\n"
-    rep += f"<b>Rating:</b> <code>{rating}</code>\n\n"
-    rep += f"<a href='{image_url}'>\u200c</a>"
-    rep += f"<i>{synopsis}</i>\n"
+    rep = f"✦ <b>{title} ({japanese})</b> ✦\n\n"
+    rep += f"<b>❍ ᴛʏᴘᴇ ➛</b> <code>{type}</code>\n"
+    rep += f"<b>❍ sᴏᴜʀᴄᴇ ➛</b> <code>{source}</code>\n"
+    rep += f"<b>❍ sᴛᴀᴛᴜs ➛</b> <code>{status}</code>\n"
+    rep += f"<b>❍ ɢᴇɴʀᴇs ➛</b> <code>{genres}</code>\n"
+    rep += f"<b>❍ ᴇᴘɪsᴏᴅᴇs ➛</b> <code>{episodes}</code>\n"
+    rep += f"<b>❍ ᴅᴜʀᴀᴛɪᴏɴ ➛</b> <code>{duration}</code>\n"
+    rep += f"<b>❍ sᴄᴏʀᴇ ➛</b> <code>{score}</code>\n"
+    rep += f"<b>❍ sᴛᴜᴅɪᴏ(s) ➛</b> <code>{studios}</code>\n"
+    rep += f"<b>❍ ᴘʀᴇᴍɪᴇʀᴇᴅ ➛</b> <code>{premiered}</code>\n"
+    rep += f"<b>❍ ʀᴀᴛɪɴɢ ➛</b> <code>{rating}</code>\n\n"
+    rep += f"❍ <a href='{image_url}'>\u200c</a>"
+    rep += f"❍ <i>{synopsis}</i>\n"
     if trailer:
         keyb = [
             [
-                InlineKeyboardButton("More Information", url=url),
-                InlineKeyboardButton("Trailer", url=trailer),
+                InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ", url=url),
+                InlineKeyboardButton("ᴛʀᴀɪʟᴇʀ", url=trailer),
             ]
         ]
     else:
-        keyb = [[InlineKeyboardButton("More Information", url=url)]]
+        keyb = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ", url=url)]]
 
     msg.reply_text(
         rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb)
@@ -100,13 +100,13 @@ def character(update: Update, context: CallbackContext):
     try:
         search = jikan.search("character", query).get("results")[0].get("mal_id")
     except APIException:
-        msg.reply_text("No results found!")
+        msg.reply_text("❍ ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ!")
         return ""
     if search:
         try:
             res = jikan.character(search)
         except APIException:
-            msg.reply_text("Error connecting to the API. Please try again!")
+            msg.reply_text("❍ ᴇʀʀᴏʀ ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴛʜᴇ ᴀᴘɪ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
             return ""
     if res:
         name = res.get("name")
@@ -116,10 +116,10 @@ def character(update: Update, context: CallbackContext):
             about = about[:4000] + "..."
         image = res.get("image_url")
         url = res.get("url")
-        rep = f"<b>{name} ({kanji})</b>\n\n"
-        rep += f"<a href='{image}'>\u200c</a>"
-        rep += f"<i>{about}</i>\n"
-        keyb = [[InlineKeyboardButton("More Information", url=url)]]
+        rep = f"❍ <b>{name} ({kanji})</b>\n\n"
+        rep += f"❍ <a href='{image}'>\u200c</a>"
+        rep += f"❍ <i>{about}</i>\n"
+        keyb = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ", url=url)]]
 
         msg.reply_text(
             rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb)
@@ -128,13 +128,13 @@ def character(update: Update, context: CallbackContext):
 
 def upcoming(update: Update, context: CallbackContext):
     msg = update.effective_message
-    rep = "<b>Upcoming anime</b>\n"
+    rep = "❍ <b>ᴜᴘᴄᴏᴍɪɴɢ ᴀɴɪᴍᴇ</b>\n"
     later = jikan.season_later()
     anime = later.get("anime")
     for new in anime:
         name = new.get("title")
         url = new.get("url")
-        rep += f"• <a href='{url}'>{name}</a>\n"
+        rep += f"❍ <a href='{url}'>{name}</a>\n"
         if len(rep) > 2000:
             break
     msg.reply_text(rep, parse_mode=ParseMode.HTML)
@@ -149,13 +149,13 @@ def manga(update: Update, context: CallbackContext):
     try:
         res = jikan.search("manga", query).get("results")[0].get("mal_id")
     except APIException:
-        msg.reply_text("Error connecting to the API. Please try again!")
+        msg.reply_text("❍ ᴇʀʀᴏʀ ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴛʜᴇ ᴀᴘɪ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
         return ""
     if res:
         try:
             manga = jikan.manga(res)
         except APIException:
-            msg.reply_text("Error connecting to the API. Please try again!")
+            msg.reply_text("❍ ᴇʀʀᴏʀ ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴛʜᴇ ᴀᴘɪ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ !")
             return ""
         title = manga.get("title")
         japanese = manga.get("title_japanese")
@@ -172,24 +172,31 @@ def manga(update: Update, context: CallbackContext):
         synopsis = manga.get("synopsis")
         image = manga.get("image_url")
         url = manga.get("url")
-        rep = f"<b>{title} ({japanese})</b>\n"
-        rep += f"<b>Type:</b> <code>{type}</code>\n"
-        rep += f"<b>Status:</b> <code>{status}</code>\n"
-        rep += f"<b>Genres:</b> <code>{genres}</code>\n"
-        rep += f"<b>Score:</b> <code>{score}</code>\n"
-        rep += f"<b>Volumes:</b> <code>{volumes}</code>\n"
-        rep += f"<b>Chapters:</b> <code>{chapters}</code>\n\n"
-        rep += f"<a href='{image}'>\u200c</a>"
-        rep += f"<i>{synopsis}</i>"
-        keyb = [[InlineKeyboardButton("More Information", url=url)]]
+        rep = f"❍ <b>{title} ({japanese})</b>\n"
+        rep += f"<b>❍ ᴛʏᴘᴇ ➛ </b> <code>{type}</code>\n"
+        rep += f"<b>❍ sᴛᴀᴛᴜs ➛ </b> <code>{status}</code>\n"
+        rep += f"<b>❍ ɢᴇɴʀᴇs ➛ </b> <code>{genres}</code>\n"
+        rep += f"<b>❍ sᴄᴏʀᴇ ➛ </b> <code>{score}</code>\n"
+        rep += f"<b>❍ ᴠᴏʟᴜᴍᴇs ➛ </b> <code>{volumes}</code>\n"
+        rep += f"<b>❍ ᴄʜᴀᴘᴛᴇʀs ➛ </b> <code>{chapters}</code>\n\n"
+        rep += f"❍ <a href='{image}'>\u200c</a>"
+        rep += f"❍ <i>{synopsis}</i>"
+        keyb = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ", url=url)]]
 
         msg.reply_text(
             rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb)
         )
 
 
-__mod_name__ = "MyAnimeList"
+__mod_name__ = "ᴍʏ-ᴀɴɪᴍᴇ"
 
+__help__ = """
+ ❍ /manime ➛ ᴄʜᴋ ᴍʏ ᴀɴɪᴍᴇ
+ ❍ /mupcoming ➛ ᴄʜᴋ ᴍʏ ᴜᴘᴄᴏᴍɪɴɢ ᴀɴɪᴍᴇ
+ ❍ /mcharacter ➛ ᴄʜᴋ ᴍʏ ғᴀᴠ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ
+ ❍ /mmanga ➛ ᴄʜᴋ ᴍʏ ᴍᴀɴɢᴀ
+ 
+ """
 
 ANIME_HANDLER = CommandHandler("manime", anime, pass_args=True, run_async=True)
 CHARACTER_HANDLER = CommandHandler(
@@ -202,3 +209,4 @@ dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(CHARACTER_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 dispatcher.add_handler(MANGA_HANDLER)
+    
