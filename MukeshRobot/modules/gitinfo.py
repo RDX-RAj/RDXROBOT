@@ -15,7 +15,7 @@ async def github(_, message):
     async with ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await message.reply_text("ʙᴏsᴅᴋ sᴀʜɪ ɢɪᴛʜᴜʙ ᴜsᴇʀɴᴀᴍᴇ ᴅᴀᴀʟ.")
+                return await message.reply_text("❍ ʙᴏsᴅᴋ sᴀʜɪ ɢɪᴛʜᴜʙ ᴜsᴇʀɴᴀᴍᴇ ᴅᴀᴀʟ.")
             result = await request.json()
             try:
                 url = result["html_url"]
@@ -34,16 +34,21 @@ async def github(_, message):
             InlineKeyboardButton(text="ᴘʀᴏғɪʟᴇ ʟɪɴᴋ", url=url),
             InlineKeyboardButton("ᴄʟᴏsᴇ",callback_data="close_reply")
             ]]     
-                caption = f"""**Iɴғᴏ Oғ {name}**
-**ᴜsᴇʀɴᴀᴍᴇ :** `{username}`
-**ʙɪᴏ :** `{bio}`
-**ᴄᴏᴍᴘᴀɴʏ :** `{company}`
-**ᴄʀᴇᴀᴛᴇᴅ ᴏɴ:** `{created_at}`
-**ʀᴇᴘᴏsɪᴛᴏʀɪᴇs :** `{repositories}`
-**ʙʟᴏɢ :** `{blog}`
-**ʟᴏᴄᴀᴛɪᴏɴ :** `{location}`
-**ғᴏʟʟᴏᴡᴇʀs  :** `{followers}`
-**ғᴏʟʟᴏᴡɪɴɢ :** `{following}`"""
+                caption = f"""ㅤㅤ✦ ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name} ✦
+                 
+•❅─────✧❅✦❅✧─────❅•
+๏ ᴜsᴇʀɴᴀᴍᴇ ➠ {username}
+๏ ʙɪᴏ ➠ {bio}
+๏ ʟɪɴᴋ ➠ [Here]({url})
+๏ ᴄᴏᴍᴩᴀɴʏ ➠ {company}
+๏ ᴄʀᴇᴀᴛᴇᴅ ᴏɴ ➠ {created_at}
+๏ ʀᴇᴩᴏsɪᴛᴏʀɪᴇs ➠ {repositories}
+๏ ʙʟᴏɢ ➠ {blog}
+๏ ʟᴏᴄᴀᴛɪᴏɴ ➠ {location}
+๏ ғᴏʟʟᴏᴡᴇʀs ➠ {followers}
+๏ ғᴏʟʟᴏᴡɪɴɢ ➠ {following}
+
+๏ ᴍᴀᴅᴇ ʙʏ ➠ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/roy_editx)"""
             except Exception as e:
                 await message.reply(f"#ERROR {e}")
                   
