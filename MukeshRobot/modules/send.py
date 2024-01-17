@@ -42,11 +42,13 @@ def send(update, context):
 	creply = args[1]
 	send_message(update.effective_message, creply)
 
-__help__ = """The Send Module Allows you to send a custom message to users in a chat
-`/snd` :Send the given message
-Note - /snd Hi will send the message hi to the chat"""
+__help__ = """❍ ᴛʜᴇ sᴇɴᴅ ᴍᴏᴅᴜʟᴇ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ sᴇɴᴅ ᴀ ᴄᴜsᴛᴏᴍ ᴍᴇssᴀɢᴇ ᴛᴏ ᴜsᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ.
 
-__mod_name__ = "Send"
+❍ `/snd` ➛ sᴇɴᴅ ᴛʜᴇ ɢɪᴠᴇɴ ᴍᴇssᴀɢᴇ
+
+❍ ɴᴏᴛᴇ ➛ /snd ʜɪ ᴡɪʟʟ sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ʜɪ ᴛᴏ ᴛʜᴇ ᴄʜᴀᴛ"""
+
+__mod_name__ = "sᴇɴᴅ"
 
 
 ADD_CCHAT_HANDLER = DisableAbleCommandHandler("snd", send, run_async = True)
