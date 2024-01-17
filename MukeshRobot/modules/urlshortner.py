@@ -86,4 +86,4 @@ __help__ = """
  ❍ /short <url> ➛ *ᴇxᴀᴍᴘʟᴇ ⇴ `/short https://t.me/roy_editx`.
  *"""
 
-__mod_name__ = "sʜᴏʀᴛᴇɴᴇʀ"
+__mod_name__ = "sʜᴏʀᴛ"
