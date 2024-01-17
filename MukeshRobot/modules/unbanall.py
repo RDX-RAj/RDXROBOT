@@ -44,7 +44,7 @@ async def _(event):
     creator = chat.creator
     if event.is_private:
         return await event.respond(
-            "__ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇ ɪɴ ɢʀᴏᴜᴘs ᴀɴᴅ ᴄʜᴀɴɴᴇʟs!__"
+            "❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇ ɪɴ ɢʀᴏᴜᴘs ᴀɴᴅ ᴄʜᴀɴɴᴇʟs."
         )
 
     is_admin = False
@@ -62,13 +62,13 @@ async def _(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("__ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜɴᴍᴜᴛᴇᴀʟʟ!__")
+        return await event.respond("❍ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜɴᴍᴜᴛᴇᴀʟʟ")
 
     if not admin and not creator:
-        await event.reply("`ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs!`")
+        await event.reply("❍ `ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs!`")
         return
 
-    done = await event.reply("sᴇᴀʀᴄʜɪɴɢ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ ʟɪsᴛs")
+    done = await event.reply("❍ sᴇᴀʀᴄʜɪɴɢ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ ʟɪsᴛs")
     p = 0
     async for i in telethn.iter_participants(
         event.chat_id, filter=ChannelParticipantsKicked, aggressive=True
@@ -79,7 +79,7 @@ async def _(event):
                 functions.channels.EditBannedRequest(event.chat_id, i, rights)
             )
         except FloodWaitError as ex:
-            LOGGER.warn(f"sʟᴇᴇᴘɪɴɢ ғᴏʀ {ex.seconds} sᴇᴄᴏɴᴅs")
+            LOGGER.warn(f"❍ sʟᴇᴇᴘɪɴɢ ғᴏʀ {ex.seconds} sᴇᴄᴏɴᴅs")
             sleep(ex.seconds)
         except Exception as ex:
             await event.reply(str(ex))
@@ -87,9 +87,9 @@ async def _(event):
             p += 1
 
     if p == 0:
-        await done.edit("ɴᴏ ᴏɴᴇ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ")
+        await done.edit("❍ ɴᴏ ᴏɴᴇ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ")
         return
-    required_string = "sᴜᴄᴇssғᴜʟʟʏ ᴜɴʙᴀɴɴᴇᴅ **{}** ᴜsᴇʀs"
+    required_string = "❍ sᴜᴄᴇssғᴜʟʟʏ ᴜɴʙᴀɴɴᴇᴅ **{}** ᴜsᴇʀs"
     await event.reply(required_string.format(p))
 
 
@@ -97,7 +97,7 @@ async def _(event):
 async def _(event):
     if event.is_private:
         return await event.respond(
-            "__This command can be use in groups and channels!__"
+            "❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇ ɪɴ ɢʀᴏᴜᴘs ᴀɴᴅ ᴄʜᴀɴɴᴇʟs "
         )
 
     is_admin = False
@@ -115,17 +115,17 @@ async def _(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("__ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜɴᴍᴜᴛᴇᴀʟʟ!__")
+        return await event.respond("❍ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜɴᴍᴜᴛᴇᴀʟʟ !")
     chat = await event.get_chat()
     admin = chat.admin_rights.ban_users
     creator = chat.creator
 
     # Well
     if not admin and not creator:
-        await event.reply("`I don't have enough permissions!`")
+        await event.reply("❍ `ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs !`")
         return
 
-    done = await event.reply("Working ...")
+    done = await event.reply("❍ ᴡᴏʀᴋɪɴɢ ...")
     p = 0
     async for i in telethn.iter_participants(
         event.chat_id, filter=ChannelParticipantsBanned, aggressive=True
@@ -139,7 +139,7 @@ async def _(event):
                 functions.channels.EditBannedRequest(event.chat_id, i, rights)
             )
         except FloodWaitError as ex:
-            LOGGER.warn(f"sʟᴇᴇᴘɪɴɢ ғᴏʀ {ex.seconds} sᴇᴄᴏɴᴅs")
+            LOGGER.warn(f"❍ sʟᴇᴇᴘɪɴɢ ғᴏʀ {ex.seconds} sᴇᴄᴏɴᴅs")
             sleep(ex.seconds)
         except Exception as ex:
             await event.reply(str(ex))
@@ -147,9 +147,9 @@ async def _(event):
             p += 1
 
     if p == 0:
-        await done.edit("ɴᴏ ᴏɴᴇ ɪs ᴍᴜᴛᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ")
+        await done.edit("❍ ɴᴏ ᴏɴᴇ ɪs ᴍᴜᴛᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ")
         return
-    required_string = "sᴜᴄᴇssғᴜʟʟʏ ᴜɴᴍᴜᴛᴇᴅ **{}** ᴜsᴇʀs"
+    required_string = "❍ sᴜᴄᴇssғᴜʟʟʏ ᴜɴᴍᴜᴛᴇᴅ **{}** ᴜsᴇʀs"
     await event.reply(required_string.format(p))
 
 
@@ -160,13 +160,13 @@ async def get_users(show):
     if not await is_register_admin(show.input_chat, show.sender_id):
         return
     info = await telethn.get_entity(show.chat_id)
-    title = info.title or "this chat"
-    mentions = f"ᴜsᴇʀs ɪɴ {title}: \n"
+    title = info.title or "ᴛʜɪs ᴄʜᴀᴛ"
+    mentions = f"❍ ᴜsᴇʀs ɪɴ {title} \n"
     async for user in telethn.iter_participants(show.chat_id):
         mentions += (
             f"\nᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs  {user.id}"
             if user.deleted
-            else f"\n[{user.first_name}](tg://user?id={user.id}) ❣ {user.id}"
+            else f"\n❍ [{user.first_name}](tg://user?id={user.id}) ✦ {user.id}"
         )
 
     with open("userslist.txt", "w+") as file:
@@ -174,20 +174,20 @@ async def get_users(show):
     await telethn.send_file(
         show.chat_id,
         "userslist.txt",
-        caption=f"ᴜsᴇʀs ɪɴ {title}",
+        caption=f"❍ ᴜsᴇʀs ɪɴ {title}",
         reply_to=show.id,
     )
 
     os.remove("userslist.txt")
 
 
-__mod_name__ = "Aᴅᴠᴀɴᴄᴇ"
+__mod_name__ = "ᴀᴅᴠᴀɴᴄᴇ"
 __help__ = """
+❍ /unbanall ➛ ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
 
-➥ /unbanall : ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
+❍ /unmuteall ➛ ᴜɴᴍᴜᴛᴇ ᴀʟʟ ᴍᴀᴍʙᴇʀ
 
-➥ /unmuteall : ᴜɴᴍᴜᴛᴇ ᴀʟʟ ᴍᴀᴍʙᴇʀ
-
-➥ /users : ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀs ʟɪsᴛ
+❍ /users ➛ ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀs ʟɪsᴛ
 
 """
+        
