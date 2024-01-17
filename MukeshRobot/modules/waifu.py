@@ -54,14 +54,14 @@ def waifu(update, context):
         img = result['Character_Image']
         # Message (EDIT THIS PART AS HTML *IF YOU WANT*)
         text = f'''
-<b>Name :</b> <code>{result['Character_Name']}</code>
+<b>❍ ɴᴀᴍᴇ ➛</b> <code>{result['Character_Name']}</code>
         
-<b>Anime :</b> <code>{result['Anime_name']}</code>
+<b>❍ ᴀɴɪᴍᴇ ➛</b> <code>{result['Anime_name']}</code>
 '''
         msg.reply_photo(photo=img, caption=text, parse_mode=ParseMode.HTML)
 
     except Exception as e:
-        text = f'<b>Error</b>: <code>' + e + '</code>'
+        text = f'<b>❍ ᴇʀʀᴏʀ</b> ➛ <code>' + e + '</code>'
         msg.reply_text(text, parse_mode=ParseMode.HTML)
 
 
@@ -70,21 +70,16 @@ WAIFUINFO_HANDLER = CommandHandler('waifuinfo', waifu, run_async=True)
 dispatcher.add_handler(WAIFUINFO_HANDLER)
 
 #  Buttons for /help .
-__mod_name__ = 'Waifus'  # *IF YOU WANT* EDIT NAME OF BUTTON IN '/help'
-
-
-# *IF YOU WANT* EDIT MESSAGE FOR HELP OF THIS MODULE.
+__mod_name__ = "ᴡᴀɪғᴜs"
 __help__ = '''
-*Get waifu images*
+   ❍ `/waifu`* ➛* sᴇɴᴅs ʟɪᴍɪᴛᴇᴅ ʙᴜᴛ ʙᴇsᴛ ᴡᴀɪғᴜ ɪᴍᴀɢᴇ.
+   
+   ❍ `/waifuinfo`*➛* ɢɪᴠᴇs ʀᴀɴᴅᴏᴍ ɪᴍᴀɢᴇ ᴏғ ᴡᴀɪғᴜ ᴡɪᴛʜ ɪɴғᴏ. 
 
-   ➢ `/waifu`*:* Sends limited but best Waifu image. *RECOMMENDED*
-   ➢ `/waifuinfo`*:* Gives random image of waifu with info. 
-   ➢ `/waifus`*:* Sends Random Waifu image.
-   ➢ `/swaifu`*:* Sends Random Waifu image.
-
-   *NSFW CONTENT*
-   ➢ `/nsfwwaifu`
-   ➢ `/nwaifu`  
+   ✿ *ɴsғᴡ ᴄᴏɴᴛᴇɴᴛ* ✿
+   
+   ❍ `/nsfwwaifu`
+   ❍ `/nwaifu`  
 '''
 
 # DON'T EDIT
