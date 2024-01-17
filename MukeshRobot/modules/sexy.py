@@ -4,7 +4,7 @@ from telethon import Button, events
 
 from .. import telethn as asst, SUPPORT_CHAT as c
 
-BUTTON = [[Button.url("🍒 ꜱᴜᴘᴘᴏʀᴛ 🍒", f"https://t.me/{c}")]]
+BUTTON = [[Button.url("ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/{c}")]]
 HOT = "https://telegra.ph/file/daad931db960ea40c0fca.gif"
 SMEXY = "https://telegra.ph/file/a23e9fd851fb6bc771686.gif"
 LEZBIAN = "https://telegra.ph/file/5609b87f0bd461fc36acb.gif"
@@ -19,7 +19,7 @@ async def horny(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    HORNY = f"**🔥** {mention} **ɪꜱ** {mm}**% ʜᴏʀɴʏ!**"
+    HORNY = f"**❍ 🤤** {mention} **ɪꜱ** {mm}**% ʜᴏʀɴʏ !**"
     await e.reply(HORNY, buttons=BUTTON, file=HOT)
 
 
@@ -29,7 +29,7 @@ async def gay(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    GAY = f"**🍷** {mention} **ɪꜱ** {mm}**% ɢᴀʏ!**"
+    GAY = f"**❍ 🧝** {mention} **ɪꜱ** {mm}**% ɢᴀʏ !**"
     await e.reply(GAY, buttons=BUTTON, file=SMEXY)
 
 
@@ -39,7 +39,7 @@ async def lezbian(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    FEK = f"**💜** {mention} **ɪꜱ** {mm}**% ʟᴇᴢʙɪᴀɴ!**"
+    FEK = f"**❍ 🥶** {mention} **ɪꜱ** {mm}**% ʟᴇᴢʙɪᴀɴ !**"
     await e.reply(FEK, buttons=BUTTON, file=LEZBIAN)
 
 
@@ -49,7 +49,7 @@ async def boob(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    BOOBS = f"**🍒** {mention}**'ꜱ ʙᴏᴏʙꜱ ꜱɪᴢᴇ ɪᴢ** {mm}**!**"
+    BOOBS = f"**❍ 🥵** {mention}**'ꜱ ʙᴏᴏʙꜱ ꜱɪᴢᴇ ɪᴢ** {mm}** !**"
     await e.reply(BOOBS, buttons=BUTTON, file=BIGBALL)
 
 
@@ -59,7 +59,7 @@ async def cock(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    COCK = f"**🍆** {mention}**'ꜱ ᴄᴏᴄᴋ ꜱɪᴢᴇ ɪᴢ** {mm}**ᴄᴍ**"
+    COCK = f"**❍ 🍆** {mention}**'ꜱ ᴄᴏᴄᴋ ꜱɪᴢᴇ ɪᴢ** {mm}**ᴄᴍ !**"
     await e.reply(COCK, buttons=BUTTON, file=LANG)
 
 
@@ -69,7 +69,7 @@ async def cute(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    CUTE = f"**🍑** {mention} {mm}**% ᴄᴜᴛᴇ**"
+    CUTE = f"**❍ 🧟** {mention} {mm}**% ᴅᴜʟʟ !**"
     await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
@@ -79,21 +79,25 @@ async def wish(e):
     url = api["results"][0]['url']
     text = m.text.split(None, 1)[1]
     wish_count = random.randint(1,100)
-    wish = f"✨ **ʜᴇʏ! {m.from_user.first_name}!** "
-    wish += f"✨ **ʏᴏᴜʀ ᴡɪꜱʜ**: **{text}** "
-    wish += f"✨ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ: {wish_count}%**"
+    wish = f"❍ **ɢᴇᴛ {m.from_user.first_name} !**\n"
+    wish += f"❍ **ʏᴏᴜʀ ᴡɪꜱʜ** ➛ **{text}**\n"
+    wish += f"❍ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ ➛ {wish_count}%**"
     await e.reply(WISH, buttons=BUTTON, file=WISHES)
               
 
 __help__ = """
-➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
+❍ /horny ➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ.
 
-➻ /gay - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴜʏɴᴇꜱꜱ
+❍ /gay ➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴜʏɴᴇꜱꜱ.
 
-➻ /lezbian - ᴄʜᴇᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀᴢʙɪᴀɴ
+❍ /lezbian ➛ ᴄʜᴇᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀᴢʙɪᴀɴ.
 
-➻ /boob - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ
+❍ /boob ➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ.
 
+❍ /cock ➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴏᴄᴋ sɪᴢᴇ.
+
+❍ /dull ➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴅᴜʟʟɴᴇss.
 """
 
-__mod_name__ = "Sᴇᴍxʏ"
+__mod_name__ = "sᴇxʏ"
+    
