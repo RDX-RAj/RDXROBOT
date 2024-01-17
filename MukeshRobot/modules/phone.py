@@ -7,7 +7,7 @@ from MukeshRobot import dispatcher
 from MukeshRobot.modules.helper_funcs.alternate import send_message
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin
 
-__mod_name__ = "ᴛʀᴜᴇᴄᴀʟʟᴇʀ"
+__mod_name__ = "ᴄᴀʟʟᴇʀ"
 __help__ = """
 ❍ /phone ꜰɪʟʟ ᴀɴʏ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴄʜᴇᴄᴋ ɪɴꜰᴏ.
 """
