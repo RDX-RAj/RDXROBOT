@@ -30,7 +30,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             h = await event.reply(
-                "Downloaded to {} in {} seconds.".format(downloaded_file_name, ms)
+                "❍ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴛᴏ {} ɪɴ {} sᴇᴄᴏɴᴅs.".format(downloaded_file_name, ms)
             )
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
@@ -45,7 +45,7 @@ async def _(event):
                 (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
-                    "Uploaded to https://graph.org{})".format(media_urls[0]),
+                    "❍ ʏᴏᴜʀ ɢʀᴀᴘʜ ᴜʀʟ ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ ➛\n\n❍ https://graph.org{})".format(media_urls[0]),
                     link_preview=True,
                 )
         elif input_str == "t":
@@ -71,13 +71,13 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await event.reply(
-                "Pasted to https://graph.org/{} in {} seconds.".format(
+                "❍ ᴘᴀsᴛᴇᴅ ᴛᴏ https://graph.org/{} ɪɴ {} sᴇᴄᴏɴᴅs.".format(
                     response["path"], ms
                 ),
                 link_preview=True,
             )
     else:
-        await event.reply("Reply to a message to get a permanent telegra.ph link.")
+        await event.reply("❍ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴀ ᴘᴇʀᴍᴀɴᴇɴᴛ ᴛᴇʟᴇɢʀᴀ.ᴘʜ ʟɪɴᴋ.")
 
 
 def resize_image(image):
@@ -86,10 +86,12 @@ def resize_image(image):
 
 
 __help__ = """
-ɪ ᴄᴀɴ ᴜᴘʟᴏᴀᴅ ғɪʟᴇs ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ
- ❍ /tgm :ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴍᴇᴅɪᴀ
- ❍ /tgt :ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
- ❍ /tgt [ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ]: ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ ᴡɪᴛʜ ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ.
+ ❍ ɪ ᴄᴀɴ ᴜᴘʟᴏᴀᴅ ғɪʟᴇs ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ
+
+
+ ❍ /tgm ➛ ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴍᴇᴅɪᴀ
+ ❍ /tgt ➛ ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
+ ❍ /tgt [ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ] ➛ ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ ᴡɪᴛʜ ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ.
 """
 
-__mod_name__ = "T-Gʀᴀᴘʜ"
+__mod_name__ = "ɢʀᴀᴘʜ-ᴜʀʟ"
