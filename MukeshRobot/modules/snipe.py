@@ -14,25 +14,25 @@ def snipe(update: Update, context: CallbackContext):
         chat_id = str(args[0])
         del args[0]
     except TypeError:
-        update.effective_message.reply_text("Please give me a chat to echo to!")
+        update.effective_message.reply_text("❍ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴀ ᴄʜᴀᴛ ᴛᴏ ᴇᴄʜᴏ ᴛᴏ !")
     to_send = " ".join(args)
     if len(to_send) >= 2:
         try:
             bot.sendMessage(int(chat_id), str(to_send))
         except TelegramError:
-            LOGGER.warning("Couldn't send to group %s", str(chat_id))
+            LOGGER.warning("❍ ᴄᴏᴜʟᴅɴ'ᴛ sᴇɴᴅ ᴛᴏ ɢʀᴏᴜᴘ %s", str(chat_id))
             update.effective_message.reply_text(
-                "Couldn't send the message. Perhaps I'm not part of that group?"
+                "❍ ᴄᴏᴜʟᴅɴ'ᴛ sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ. ᴘᴇʀʜᴀᴘs ɪ'ᴍ ɴᴏᴛ ᴘᴀʀᴛ ᴏғ ᴛʜᴀᴛ ɢʀᴏᴜᴘ ?"
             )
 
 
 __help__ = """
-*ᴅᴇᴠ  ᴏɴʟʏ:* 
-• /snipe <ᴄʜᴀᴛɪᴅ> <sᴛʀɪɴɢ>
-ᴍᴀᴋᴇ ᴍᴇ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀ sᴘᴇᴄɪғɪᴄ ᴄʜᴀᴛ.
+✿ *ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴏɴʟʏ* ✿
+
+❍ /snipe <ᴄʜᴀᴛɪᴅ> <sᴛʀɪɴɢ> ➛ ᴍᴀᴋᴇ ᴍᴇ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀ sᴘᴇᴄɪғɪᴄ ᴄʜᴀᴛ.
 """
 
-__mod_name__ = "Sɴɪᴘᴇ"
+__mod_name__ = "sɴɪᴘᴇ"
 
 SNIPE_HANDLER = CommandHandler(
     "snipe", snipe, pass_args=True, filters=CustomFilters.dev_filter
