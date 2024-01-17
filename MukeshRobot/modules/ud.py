@@ -13,7 +13,7 @@ def ud(update: Update, context: CallbackContext):
         f"https://api.urbandictionary.com/v0/define?term={text}"
     ).json()
     try:
-        reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+        reply_text = f'*✦ ᴡᴏʀᴅ ➛ {text}*\n\n✦ ᴅᴇғɪɴɪᴛɪᴏɴ ➛\n{results["list"][0]["definition"]}\n\n✦ ᴇxᴀᴍᴘʟᴇ ➛\n_{results["list"][0]["example"]}_'
     except:
         reply_text = "❍ ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ."
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
