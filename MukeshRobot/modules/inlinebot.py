@@ -24,9 +24,9 @@ from search_engine_parser import GoogleSearch
 from tswift import Song
 from youtubesearchpython import VideosSearch
 
-from Shikimori.utils.inlinehelper import *
-from Shikimori.utils.pluginhelpers import fetch, json_prettify
-from Shikimori import pbot, API_WEATHER, TIME_API_KEY, SUPPORT_CHAT, BOT_USERNAME
+from MukeshRobot.utils.inlinehelper import *
+from MukeshRobot.utils.pluginhelpers import fetch, json_prettify
+from MukeshRobot import pbot, API_WEATHER, TIME_API_KEY, SUPPORT_CHAT, BOT_USERNAME
 
 dictionary = PyDictionary()
 
