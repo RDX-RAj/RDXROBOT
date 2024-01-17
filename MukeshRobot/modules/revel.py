@@ -28,22 +28,23 @@ async def get_vars(_, message: Message):
     try:
         await app.send_message(
             chat_id=int(OWNER_ID),
-            text=f"""<u>**{BOT_NAME} ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs :**</u>
+            text=f"""✦ **{BOT_NAME} ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs** ✦
 
-**ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{TOKEN}`
-**sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ :** `{SUPPORT_CHAT}`
-**Sᴛᴀʀᴛ Iᴍᴀɢᴇ :** `{START_IMG}`
-**Aᴘɪ Iᴅ :** `{API_ID}`
-**Aᴘɪ Hᴀsʜ :** `{API_HASH}` 
-**Mᴏɴɢᴏ Uʀʟ :** `{MONGO_DB_URI}`   
+**❍ ʙᴏᴛ ᴛᴏᴋᴇɴ ➛** `{TOKEN}`
+**❍ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ ➛** `{SUPPORT_CHAT}`
+**❍ sᴛᴀʀᴛ ɪᴍᴀɢᴇ ➛** `{START_IMG}`
+**❍ ᴀᴘɪ ɪᴅ ➛** `{API_ID}`
+**❍ ᴀᴘɪ ʜᴀsʜ ➛** `{API_HASH}` 
+**❍ ᴍᴏɴɢᴏ ᴜʀʟ ➛** `{MONGO_DB_URI}`   
 
 
 
 
 """)
     except:
-        return await message.reply_text("» ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs.")
+        return await message.reply_text("❍ ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs.")
     if message.chat.type != ChatType.PRIVATE:
         await message.reply_text(
-            "» ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ, ɪ'ᴠᴇ sᴇɴᴛ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs ᴛʜᴇʀᴇ."
+            "❍ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ, ɪ'ᴠᴇ sᴇɴᴛ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs ᴛʜᴇʀᴇ."
         )
+        
