@@ -48,8 +48,8 @@ def get_user_id(username):
                 return userdat.id
 
         except BadRequest as excp:
-            if excp.message != "Chat not found":
-                logger.exception("Error extracting user ID")
+            if excp.message != "❍ ᴄʜᴀᴛ ɴᴏᴛ ғᴏᴜɴᴅ":
+                logger.exception("❍ ᴇʀʀᴏʀ ᴇxᴛʀᴀᴄᴛɪɴɢ ᴜsᴇʀ ɪᴅ")
 
     return None
 
@@ -61,10 +61,10 @@ async def broadcast_handler(bot: Client, m: Message):
     all_chats = user_db.get_all_chats() or []
     await bot.send_message(
         OWNER_ID,
-        f"{m.from_user.mention} or {m.from_user.id} Iꜱ ꜱᴛᴀʀᴛᴇᴅ ᴛʜᴇ Bʀᴏᴀᴅᴄᴀꜱᴛ......",
+        f"❍ {m.from_user.mention} ᴏʀ {m.from_user.id} ɪꜱ ꜱᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙʀᴏᴀᴅᴄᴀꜱᴛ......",
     )
     broadcast_msg = m.reply_to_message
-    sts_msg = await m.reply_text(f"broadcasting ..")
+    sts_msg = await m.reply_text(f"❍ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ..")
     done = 0
     failed = 0
     success = 0
@@ -83,11 +83,11 @@ async def broadcast_handler(bot: Client, m: Message):
         done += 1
         if not done % 20:
             await sts_msg.edit(
-                f"Bʀᴏᴀᴅᴄᴀꜱᴛ Iɴ Pʀᴏɢʀᴇꜱꜱ: \nTᴏᴛᴀʟ ᴄʜᴀᴛꜱ  {total_chats} \nCᴏᴍᴩʟᴇᴛᴇᴅ: {done} / {total_chats}\nSᴜᴄᴄᴇꜱꜱ: {success}\nFᴀɪʟᴇᴅ: {failed}"
+                f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ɪɴ ᴘʀᴏɢʀᴇꜱꜱ ➛ \n\n❍ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ ➛  {total_chats} \n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_chats}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
             )
     completed_in = datetime.timedelta(seconds=int(time.time() - start_time))
     await sts_msg.edit(
-        f"Bʀᴏᴀᴅᴄᴀꜱᴛ Cᴏᴍᴩʟᴇᴛᴇᴅ: \nCᴏᴍᴩʟᴇᴛᴇᴅ Iɴ {completed_in}.\n\nTᴏᴛᴀʟ ᴄʜᴀᴛꜱ {total_chats}\nCᴏᴍᴩʟᴇᴛᴇᴅ: {done} / {total_chats}\nSᴜᴄᴄᴇꜱꜱ: {success}\nFᴀɪʟᴇᴅ: {failed}"
+        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ {completed_in}.\n\n❍ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ ➛ {total_chats}\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_chats}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
     )
 
 
@@ -99,16 +99,16 @@ async def send_chat(chat_id, message):
         await asyncio.sleep(e.value)
         return send_msg(chat_id, message)
     except InputUserDeactivated:
-        logger.info(f"{chat_id} : Dᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
+        logger.info(f"❍ {chat_id} ➛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
         return 400
     except UserIsBlocked:
-        logger.info(f"{chat_id} : Bʟᴏᴄᴋᴇᴅ Tʜᴇ Bᴏᴛ")
+        logger.info(f"❍ {chat_id} ➛ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ")
         return 400
     except PeerIdInvalid:
-        logger.info(f"{chat_id} : Uꜱᴇʀ Iᴅ Iɴᴠᴀʟɪᴅ")
+        logger.info(f"❍ {chat_id} ➛ ᴜꜱᴇʀ ɪᴅ ɪɴᴠᴀʟɪᴅ")
         return 400
     except Exception as e:
-        logger.error(f"{chat_id} : {e}")
+        logger.error(f"❍ {chat_id} ➛ {e}")
         pass
 
 @dev_plus
@@ -118,10 +118,10 @@ async def broadcast_handler(bot: Client, m: Message):
     all_users = get_all_users()
     await bot.send_message(
         OWNER_ID,
-        f"{m.from_user.mention} or {m.from_user.id} Iꜱ ꜱᴛᴀʀᴛᴇᴅ ᴛʜᴇ Bʀᴏᴀᴅᴄᴀꜱᴛ......",
+        f"❍ {m.from_user.mention} ᴏʀ {m.from_user.id} ɪꜱ ꜱᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙʀᴏᴀᴅᴄᴀꜱᴛ......",
     )
     broadcast_msg = m.reply_to_message
-    sts_msg = await m.reply_text(f"broadcasting ..")
+    sts_msg = await m.reply_text(f"❍ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ..")
     done = 0
     failed = 0
     success = 0
@@ -138,11 +138,11 @@ async def broadcast_handler(bot: Client, m: Message):
         done += 1
         if not done % 20:
             await sts_msg.edit(
-                f"Bʀᴏᴀᴅᴄᴀꜱᴛ Iɴ Pʀᴏɢʀᴇꜱꜱ: \nTᴏᴛᴀʟ Uꜱᴇʀꜱ {total_users} \nCᴏᴍᴩʟᴇᴛᴇᴅ: {done} / {total_users}\nSᴜᴄᴄᴇꜱꜱ: {success}\nFᴀɪʟᴇᴅ: {failed}"
+                f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ɪɴ ᴘʀᴏɢʀᴇꜱꜱ ➛ \n\n❍ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ➛ {total_users} \n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_users}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
             )
     completed_in = datetime.timedelta(seconds=int(time.time() - start_time))
     await sts_msg.edit(
-        f"Bʀᴏᴀᴅᴄᴀꜱᴛ Cᴏᴍᴩʟᴇᴛᴇᴅ: \nCᴏᴍᴩʟᴇᴛᴇᴅ Iɴ {completed_in}.\n\nTᴏᴛᴀʟ Uꜱᴇʀꜱ {total_users}\nCᴏᴍᴩʟᴇᴛᴇᴅ: {done} / {total_users}\nSᴜᴄᴄᴇꜱꜱ: {success}\nFᴀɪʟᴇᴅ: {failed}"
+        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ  \n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ {completed_in}.\n\n❍ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ➛ {total_users}\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_users}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
     )
 
 
@@ -154,16 +154,16 @@ async def send_msg(user_id, message):
         await asyncio.sleep(e.value)
         return send_msg(user_id, message)
     except InputUserDeactivated:
-        logger.info(f"{user_id} : Dᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
+        logger.info(f"❍ {user_id} ➛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
         return 400
     except UserIsBlocked:
-        logger.info(f"{user_id} : Bʟᴏᴄᴋᴇᴅ Tʜᴇ Bᴏᴛ")
+        logger.info(f"❍ {user_id} ➛ ʙʟᴏᴄᴋᴇᴅ ᴛʜᴇ ʙᴏᴛ")
         return 400
     except PeerIdInvalid:
-        logger.info(f"{user_id} : Uꜱᴇʀ Iᴅ Iɴᴠᴀʟɪᴅ")
+        logger.info(f"❍ {user_id} ➛ ᴜꜱᴇʀ ɪᴅ ɪɴᴠᴀʟɪᴅ")
         return 400
     except Exception as e:
-        logger.error(f"{user_id} : {e}")
+        logger.error(f"❍ {user_id} ➛ {e}")
         return 500
 
 
@@ -190,7 +190,7 @@ def log_user(update: Update, context: CallbackContext):
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = user_db.get_all_chats() or []
-    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
+    chatfile = "❍ ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n❍ ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
     P = 1
     for chat in all_chats:
         try:
@@ -209,7 +209,7 @@ def chats(update: Update, context: CallbackContext):
         update.effective_message.reply_document(
             document=output,
             filename="groups_list.txt",
-            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
+            caption="❍ ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
         )
 
 
@@ -224,22 +224,21 @@ def chat_checker(update: Update, context: CallbackContext):
 
 def __user_info__(user_id):
     if user_id in [777000, 1087968824]:
-        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
+        return """<b>❍ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs ➛ </b> <code>???</code>"""
     if user_id == dispatcher.bot.id:
-        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
+        return """<b>❍ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs ➛ </b> <code>???</code>"""
     num_chats = user_db.get_user_num_chats(user_id)
-    return f"""<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>{num_chats}</code>"""
+    return f"""<b>❍ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs ➛ </b> <code>{num_chats}</code>"""
 
 
 def __stats__():
-    return f"• {user_db.num_users()} ᴜsᴇʀs, ᴀᴄʀᴏss {user_db.num_chats()} ᴄʜᴀᴛs"
+    return f"❍ ᴛᴏᴛᴇʟ ᴜsᴇʀs ➛ {user_db.num_users()},❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {user_db.num_chats()}"
 
 
 def __migrate__(old_chat_id, new_chat_id):
     user_db.migrate_chat(old_chat_id, new_chat_id)
 
 
-__help__ = ""  # no help string
 
 # BROADCAST_HANDLER = CommandHandler(
 #     ["broadcastall", "broadcastusers", "broadcastgroups"], broadcast, run_async=True
@@ -257,5 +256,17 @@ dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
 
-__mod_name__ = "Usᴇʀs"
+__mod_name__ = "ɢ-ᴄᴀsᴛ"
 __handlers__ = [(USER_HANDLER, USERS_GROUP), CHATLIST_HANDLER]
+
+__help__ = """
+ ❍ *ʙʀᴏᴀᴅᴄᴀsᴛ ➛ (ʙᴏᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ)*
+
+ ❍ *ɴᴏᴛᴇ ➛* ᴛʜɪs sᴜᴘᴘᴏʀᴛs ʙᴀsɪᴄ ᴍᴀʀᴋᴅᴏᴡɴ
+
+ ❍ /broadcastall *➛* ʙʀᴏᴀᴅᴄᴀsᴛs ᴇᴠᴇʀʏᴡʜᴇʀᴇ
+ 
+ ❍ /broadcastusers *➛* ʙʀᴏᴀᴅᴄᴀsᴛs ᴛᴏᴏ ᴀʟʟ ᴜsᴇʀs
+ 
+ ❍ /broadcastgroups *➛* ʙʀᴏᴀᴅᴄᴀsᴛs ᴛᴏᴏ ᴀʟʟ ɢʀᴏᴜᴘs
+ """
