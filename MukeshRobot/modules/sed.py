@@ -71,7 +71,7 @@ def sed(update: Update, context: CallbackContext):
         repl, repl_with, flags = sed_result
         if not repl:
             update.effective_message.reply_to_message.reply_text(
-                "You're trying to replace... " "nothing with something?"
+                "❍ ʏᴏᴜ'ʀᴇ ᴛʀʏɪɴɢ ᴛᴏ ʀᴇᴘʟᴀᴄᴇ... " "ɴᴏᴛʜɪɴɢ ᴡɪᴛʜ sᴏᴍᴇᴛʜɪɴɢ ?"
             )
             return
 
@@ -82,14 +82,14 @@ def sed(update: Update, context: CallbackContext):
                 return
             if check and check.group(0).lower() == to_fix.lower():
                 update.effective_message.reply_to_message.reply_text(
-                    "Hey everyone, {} is trying to make "
-                    "me say stuff I don't wanna "
-                    "say!".format(update.effective_user.first_name)
+                    "❍ ʜᴇʏ ᴇᴠᴇʀʏᴏɴᴇ, {} ɪs ᴛʀʏɪɴɢ ᴛᴏ ᴍᴀᴋᴇ. "
+                    "❍ ᴍᴇ sᴀʏ sᴛᴜғғ ɪ ᴅᴏɴ'ᴛ ᴡᴀɴɴᴀ. "
+                    "❍ sᴀʏ !".format(update.effective_user.first_name)
                 )
                 return
             if infinite_loop_check(repl):
                 update.effective_message.reply_text(
-                    "I'm afraid I can't run that regex."
+                    "❍ ɪ'ᴍ ᴀғʀᴀɪᴅ ɪ ᴄᴀɴ'ᴛ ʀᴜɴ ᴛʜᴀᴛ ʀᴇɢᴇx."
                 )
                 return
             if "i" in flags and "g" in flags:
@@ -109,21 +109,21 @@ def sed(update: Update, context: CallbackContext):
             return
         except sre_constants.error:
             LOGGER.warning(update.effective_message.text)
-            LOGGER.exception("SRE constant error")
-            update.effective_message.reply_text("Do you even sed? Apparently not.")
+            LOGGER.exception("❍ sʀᴇ ᴄᴏɴsᴛᴀɴᴛ ᴇʀʀᴏʀ")
+            update.effective_message.reply_text("❍ ᴅᴏ ʏᴏᴜ ᴇᴠᴇɴ sᴇᴅ ? ᴀᴘᴘᴀʀᴇɴᴛʟʏ ɴᴏᴛ.")
             return
 
         # empty string errors -_-
         if len(text) >= telegram.MAX_MESSAGE_LENGTH:
             update.effective_message.reply_text(
-                "The result of the sed command was too long for \
-                                                 telegram!"
+                "❍ ᴛʜᴇ ʀᴇsᴜʟᴛ ᴏғ ᴛʜᴇ sᴇᴅ ᴄᴏᴍᴍᴀɴᴅ ᴡᴀs ᴛᴏᴏ ʟᴏɴɢ ғᴏʀ \
+                                                 ᴛᴇʟᴇɢʀᴀᴍ !"
             )
         elif text:
             update.effective_message.reply_to_message.reply_text(text)
 
 
-__mod_name__ = "Sᴇᴅ"
+__mod_name__ = "sᴇᴅ"
 
 SED_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"s([{}]).*?\1.*".format("".join(DELIMITERS))),
@@ -133,3 +133,4 @@ SED_HANDLER = DisableAbleMessageHandler(
 )
 
 dispatcher.add_handler(SED_HANDLER)
+        
