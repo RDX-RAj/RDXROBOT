@@ -15,7 +15,7 @@ async def short_urls(bot, message):
     await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
     if len(message.command) < 2:
         return await message.reply_text(
-            "**Example:**\n\n`/short [url]`")
+            "**❍ ᴇxᴀᴍᴘʟᴇ ➛** `/short [url]`")
 #     url_pattern = re.compile(r'https?://\S+')
     link=message.command[1]
 #     link = url_pattern.findall(urls)
@@ -35,24 +35,24 @@ async def short_urls(bot, message):
 
         shorted=[tiny_link,dagd_link,clckru_link]
         url=[
-        [ikb("Tiny Url",url=tiny_link)],
+        [ikb("ᴛɪɴʏ ᴜʀʟ",url=tiny_link)],
 
-        [ikb("Dagd Url",url=dagd_link),
+        [ikb("ᴅᴀɢᴅ ᴜʀʟ",url=dagd_link),
 
-         ikb("Clckru Url",url=clckru_link)
+         ikb("ᴄʟᴄᴋʀᴜ ᴜʀʟ",url=clckru_link)
         ]
         ]
-        await message.reply_text(f"Here are few shortened links :",reply_markup=ikm(url))
+        await message.reply_text(f"❍ ʜᴇʀᴇ ᴀʀᴇ ғᴇᴡ sʜᴏʀᴛᴇɴᴇᴅ ʟɪɴᴋs ➛ ",reply_markup=ikm(url))
 
     except Exception as e:
-        await message.reply_text(f"Either the link is already shortened or is invalid.")
+        await message.reply_text(f"❍ ᴇɪᴛʜᴇʀ ᴛʜᴇ ʟɪɴᴋ ɪs ᴀʟʀᴇᴀᴅʏ sʜᴏʀᴛᴇɴᴇᴅ ᴏʀ ɪs ɪɴᴠᴀʟɪᴅ.")
 
 @mukesh.on_message(filters.command(["unshort"]))
 async def unshort(bot, message):
     await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
     if len(message.command) < 2:
         return await message.reply_text(
-            "**Example:**\n\n`/unshort [short - url]`")
+            "❍ **ᴇxᴀᴍᴘʟᴇ ➛ **\n\n❍ `/unshort [short - url]`")
     link=message.text.split(' ')[1]
     
     try:
@@ -63,7 +63,7 @@ async def unshort(bot, message):
 
         [ikb
 
-         ("View Link",url=x)
+         ("ᴠɪᴇᴡ ʟɪɴᴋ",url=x)
 
         ]
 
@@ -71,18 +71,19 @@ async def unshort(bot, message):
 
         
 
-        await message.reply_text(f"Here's the unshortened link :\n`{x}` " ,reply_markup=ikm(url))
+        await message.reply_text(f"❍ ʜᴇʀᴇ's ᴛʜᴇ ᴜɴsʜᴏʀᴛᴇɴᴇᴅ ʟɪɴᴋ ➛\n❍ `{x}` " ,reply_markup=ikm(url))
 
         
 
     except Exception as e:
 
-        await message.reply_text(f"ᴇʀʀᴏʀ:    {e} ")
+        await message.reply_text(f"❍ ᴇʀʀᴏʀ : {e} ")
 # mukesh.add_handler(MessageHandler(short_urls))
 # mukesh.add_handler(MessageHandler(unshort))
 __help__ = """
-ᴍᴀᴋᴇ sʜᴏʀᴛs ᴏғ ᴀ ɢɪᴠᴇɴ ʟɪɴᴋ 
- ❍ /short <url>  *:Example `/short https://t.me/mr_sukkun`.
+ ❍ ᴍᴀᴋᴇ sʜᴏʀᴛs ᴏғ ᴀ ɢɪᴠᴇɴ ʟɪɴᴋ 
+ 
+ ❍ /short <url> ➛ *ᴇxᴀᴍᴘʟᴇ ⇴ `/short https://t.me/roy_editx`.
  *"""
 
-__mod_name__ = "Sʜᴏʀᴛᴇɴᴇʀ"
+__mod_name__ = "sʜᴏʀᴛᴇɴᴇʀ"
