@@ -39,8 +39,8 @@ async def handwrite(_, message: Message):
     caption = f"""
 ✦ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ ✦
 
-๏ **ᴡʀɪᴛᴛᴇɴ ʙʏ ➛** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
-๏ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
+❍ **ᴡʀɪᴛᴛᴇɴ ʙʏ ➛** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
+❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
 """
     await m.delete()
     await message.reply_photo(photo=write,caption=caption)
