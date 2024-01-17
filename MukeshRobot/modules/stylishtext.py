@@ -508,7 +508,7 @@ def lined(update, context):
     else:
         message.reply_text(string)
 
-__mod_name__ = "sᴛʏʟᴇs-ᴛᴇxᴛ"
+__mod_name__ = "sᴛʏʟᴇsʜ"
 
 __help__ = """
  ❍ ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ғᴏʀ ᴛʜᴇ *sᴛʏʟᴇ-ᴛᴇxᴛ* ᴍᴏᴅᴜʟᴇ
