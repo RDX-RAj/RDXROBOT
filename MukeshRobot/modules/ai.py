@@ -14,7 +14,7 @@ async def chat_gpt(event):
 
     if query:
         # Send "Please wait" message
-        processing_message = await event.reply("❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ, ɢᴇɴᴇʀᴀᴛɪɴɢ ᴀɴsᴡᴇʀ...")
+        processing_message = await event.reply("💭")
 
         try:
             # Make a request to GPT API
@@ -30,7 +30,7 @@ async def chat_gpt(event):
 
                 # Add signature to the answer
                 answer = result.get("answer", "❍ ɴᴏ ᴀɴsᴡᴇʀ ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴄʜᴀᴛ ᴀɪ.")
-                signature = "\n\n❍ ᴀɴsᴡᴇʀ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)"
+                signature = "\n\n❍ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)"
                 reply_message = answer + signature
 
                 # Edit the "Please wait" message with the final answer
