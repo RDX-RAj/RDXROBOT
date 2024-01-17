@@ -78,6 +78,6 @@ async def love_shayri(b,m):
     love = random.choice(loveShayri)      
     await m.reply_text(love)
 __mod_name__="​​sʜᴀʏʀɪ"
-__help__="""ꜱᴇɴᴅ ʀᴀɴᴅᴏᴍ ꜱʜᴀʏʀɪ.
+__help__="""❍ ꜱᴇɴᴅ ʀᴀɴᴅᴏᴍ ꜱʜᴀʏʀɪ.
 
- /loveshayri : ʟᴏᴠᴇ ꜱʜᴀʏʀɪ"""
+ ❍ /loveshayri ➛ ʟᴏᴠᴇ ꜱʜᴀʏʀɪ"""
