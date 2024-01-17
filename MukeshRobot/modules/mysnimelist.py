@@ -188,7 +188,7 @@ def manga(update: Update, context: CallbackContext):
         )
 
 
-__mod_name__ = "ᴍʏ-ᴀɴɪᴍᴇ"
+__mod_name__ = "ᴍ-ᴀɴɪᴍᴇ"
 
 __help__ = """
  ❍ /manime ➛ ᴄʜᴋ ᴍʏ ᴀɴɪᴍᴇ
