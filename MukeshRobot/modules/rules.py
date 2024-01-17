@@ -38,18 +38,18 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
     try:
         chat = bot.get_chat(chat_id)
     except BadRequest as excp:
-        if excp.message == "Chat not found" and from_pm:
+        if excp.message == "❍ ᴄʜᴀᴛ ɴᴏᴛ ғᴏᴜɴᴅ." and from_pm:
             bot.send_message(
                 dest_chat,
-                "The rules shortcut for this chat hasn't been set properly! Ask admins to "
-                "fix this.\nMaybe they forgot the hyphen in ID",
+                "❍ ᴛʜᴇ ʀᴜʟᴇs sʜᴏʀᴛᴄᴜᴛ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ ʜᴀsɴ'ᴛ ʙᴇᴇɴ sᴇᴛ ᴘʀᴏᴘᴇʀʟʏ! ᴀsᴋ ᴀᴅᴍɪɴs ᴛᴏ "
+                "ғɪx ᴛʜɪs.\n❍ ᴍᴀʏʙᴇ ᴛʜᴇʏ ғᴏʀɢᴏᴛ ᴛʜᴇ ʜʏᴘʜᴇɴ ɪɴ ɪᴅ",
             )
             return
         else:
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"❍ ᴛʜᴇ ʀᴜʟᴇs ғᴏʀ *{escape_markdown(chat.title)}* ᴀʀᴇ\n\n❍ {rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -61,17 +61,17 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
     elif from_pm:
         bot.send_message(
             dest_chat,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "❍ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs ʜᴀᴠᴇɴ'ᴛ sᴇᴛ ᴀɴʏ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ ʏᴇᴛ. "
+            "❍ ᴛʜɪs ᴘʀᴏʙᴀʙʟʏ ᴅᴏᴇsɴ'ᴛ ᴍᴇᴀɴ ɪᴛ's ʟᴀᴡʟᴇss ᴛʜᴏᴜɢʜ...!",
         )
     elif rules and reply_msg:
         reply_msg.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "❍ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʀᴜʟᴇs •",
+                            text="ʀᴜʟᴇs",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -80,12 +80,12 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     elif rules:
         update.effective_message.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "❍ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʀᴜʟᴇs •",
+                            text="ʀᴜʟᴇs",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -94,8 +94,8 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "❍ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs ʜᴀᴠᴇɴ'ᴛ sᴇᴛ ᴀɴʏ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ ʏᴇᴛ. "
+            "❍ ᴛʜɪs ᴘʀᴏʙᴀʙʟʏ ᴅᴏᴇsɴ'ᴛ ᴍᴇᴀɴ ɪᴛ's ʟᴀᴡʟᴇss ᴛʜᴏᴜɢʜ...!",
         )
 
 
@@ -122,9 +122,9 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Successfully set rules for this group.")
+        update.effective_message.reply_text("❍ sᴜᴄᴄᴇssғᴜʟʟʏ sᴇᴛ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ɢʀᴏᴜᴘ.")
     else:
-        update.effective_message.reply_text("There's... no rules?")
+        update.effective_message.reply_text("❍ ᴛʜᴇʀᴇ's... ɴᴏ ʀᴜʟᴇs ?")
 
 
 @connection_status
@@ -132,11 +132,11 @@ def set_rules(update: Update, context: CallbackContext):
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
-    update.effective_message.reply_text("Successfully cleared rules!")
+    update.effective_message.reply_text("❍ sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʟᴇᴀʀᴇᴅ ʀᴜʟᴇs !")
 
 
 def __stats__():
-    return f"• {sql.num_chats()} ɢʀᴏᴜᴘs ʜᴀᴠᴇ ʀᴜʟᴇs."
+    return f"❍ ɢʀᴏᴜᴘ ʜᴀᴠᴇ ʀᴜʟᴇs ➛ {sql.num_chats()}"
 
 
 def __import_data__(chat_id, data):
@@ -150,18 +150,21 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 def __chat_settings__(chat_id, user_id):
-    return f"This chat has had it's rules set: `{bool(sql.get_rules(chat_id))}`"
+    return f"❍ ᴛʜɪs ᴄʜᴀᴛ ʜᴀs ʜᴀᴅ ɪᴛ's ʀᴜʟᴇs sᴇᴛ ➛ `{bool(sql.get_rules(chat_id))}`"
 
 
 __help__ = """
- ‣ `/rules`*:* get the rules for this chat.
- ‣ `/rules here`*:* get the rules for this chat but send it in the chat.
-*Admins only:*
- ‣ `/setrules <your rules here>`*:* set the rules for this chat.
- ‣ `/clearrules`*:* clear the rules for this chat.
+ ❍ `/rules`* ➛* ɢᴇᴛ ᴛʜᴇ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ.
+ 
+ ❍ `/rules here`* ➛* ɢᴇᴛ ᴛʜᴇ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ ʙᴜᴛ sᴇɴᴅ ɪᴛ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
+ 
+✿ *ᴀᴅᴍɪɴs ᴏɴʟʏ* ✿
+
+ ❍ `/setrules <your rules here>`* ➛* sᴇᴛ ᴛʜᴇ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ.
+ ❍ `/clearrules`* ➛* ᴄʟᴇᴀʀ ᴛʜᴇ ʀᴜʟᴇs ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ.
 """
 
-__mod_name__ = "Rᴜʟᴇs"
+__mod_name__ = "ʀᴜʟᴇs"
 
 GET_RULES_HANDLER = CommandHandler("rules", get_rules, run_async=True)
 SET_RULES_HANDLER = CommandHandler("setrules", set_rules, run_async=True)
@@ -170,3 +173,4 @@ RESET_RULES_HANDLER = CommandHandler("clearrules", clear_rules, run_async=True)
 dispatcher.add_handler(GET_RULES_HANDLER)
 dispatcher.add_handler(SET_RULES_HANDLER)
 dispatcher.add_handler(RESET_RULES_HANDLER)
+    
