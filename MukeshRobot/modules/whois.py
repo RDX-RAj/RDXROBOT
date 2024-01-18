@@ -20,12 +20,13 @@ def ReplyCheck(message: Message):
 
 
 infotext = (
-    "[{full_name}](tg://user?id={user_id})\n\n"
-    " ➻ ᴜsᴇʀ ɪᴅ: `{user_id}`\n"
-    " ➻ ғɪʀsᴛ ɴᴀᴍᴇ: `{first_name}`\n"
-    " ➻ ʟᴀsᴛ ɴᴀᴍᴇ: `{last_name}`\n"
-    " ➻ ᴜsᴇʀɴᴀᴍᴇ: `@{username}`\n"
-    " ➻ ʟᴀsᴛ sᴇᴇɴ: `{last_online}`"
+    "❀ [{full_name}](tg://user?id={user_id}) ❀\n\n"
+    "❍ ᴜsᴇʀ ɪᴅ ➛ `{user_id}`\n"
+    "❍ ғɪʀsᴛ ɴᴀᴍᴇ ➛ {first_name}\n"
+    "❍ ʟᴀsᴛ ɴᴀᴍᴇ ➛ {last_name}\n"
+    "❍ ᴜsᴇʀɴᴀᴍᴇ ➛ @{username}\n"
+    "❍ ʟᴀsᴛ sᴇᴇɴ ➛ {last_online}\n\n"
+    "❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)"
 )
 
 
@@ -68,7 +69,7 @@ async def whois(client, message):
     try:
         user = await client.get_users(get_user)
     except PeerIdInvalid:
-        await message.reply("I don't know that user.")
+        await message.reply("❍ ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ ᴛʜᴀᴛ ᴜsᴇʀ.")
         return
     desc = await client.get_chat(get_user)
     desc = desc.description
@@ -85,3 +86,10 @@ async def whois(client, message):
         ),
         disable_web_page_preview=True,
     )
+
+
+__mod_name__ = "ᴡʜᴏɪs"
+__help__ = """
+ ❍ /whois ➛ ᴜsᴇʀ sʜᴏʀᴛ ɪɴғᴏ.
+ """
+ 
