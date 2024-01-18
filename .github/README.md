@@ -6,9 +6,9 @@
 
 
 <h2 align="center">
-    ᥫᩣ ─「 𝗡𝗬𝗞𝗔𝗔 𝗠𝗨𝗦𝗜𝗖 」─ ᥫᩣ
+    ᥫᩣ ─「 ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗ 」─ ᥫᩣ
 
- ⚘ ʜᴇʀᴏᴋᴜ + ᴠᴘs ⚘
+
 </h2>
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0786&width=420&lines=Ⰶ+ʜᴇʏ+ᴄᴜᴛɪᴇ+ᴅᴇᴘʟᴏʏ+ʙᴏᴛ+ᴏɴ+ʜᴇʀᴏᴋᴜ+Ⰶ;Ⰶ+ɪғ+ʏᴏᴜ+ᴅᴏɴ'ᴛ+ʜᴀᴠᴇ+ʜᴇʀᴏᴋᴜ+ᴀᴄᴄᴏᴜɴᴛ+Ⰶ;Ⰶ+ᴛʜᴇɴ+ᴅᴇᴘʟᴏʏ+ᴀʟsᴏ+ᴏɴ+ᴠᴘs+sᴇʀᴠᴇʀ+Ⰶ;Ⰶ+ᴘᴏᴡᴇʀᴇᴅ+ʙʏ+ʀᴏʏ+ᴇᴅɪᴛx+Ⰶ">
 <p align="center">
@@ -19,7 +19,7 @@
 
 </h2>
 
-**※ ᴛᴇxᴛ ʙᴏᴛ ➛ [‌⚘ ɴ ʏ ᴋ ᴀ ᴀ ☂ ᴍ ᴜ s ɪ ᴄ ₰](https://t.me/Avishaxbot)**
+**※ ᴛᴇxᴛ ʙᴏᴛ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗‌](https://t.me/Avishaxbot)**
 
 
  <img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=🧋+𝗛𝗔𝗣𝗣𝗬+𝗡𝗘𝗪+𝗬𝗘𝗔𝗥+❷⓿❷❹+🧋">
@@ -29,7 +29,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FFFF00?style=for-the-badge&logo=heroku" width="220" height="60"/></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FF00FF?style=for-the-badge&logo=heroku" width="180" height="60"/></a></p>
 
 
 <img src="https://readme-typing-svg.herokuapp.com?color=white&width=420&lines=💥+ɪғ+ᴀɴʏ+ᴇʀʀᴏʀ+ᴛʜᴇɴ+sᴇɴᴅ+ᴍᴇ+ᴇʀʀᴏʀ+ɪɴ+ʀᴏʏ+ᴇᴅɪᴛx+...">
