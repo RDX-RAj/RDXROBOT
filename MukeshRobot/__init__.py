@@ -60,6 +60,8 @@ if ENV:
 
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
+        HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+        HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
