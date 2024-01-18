@@ -83,6 +83,17 @@ async def wish(e):
     wish += f"❍ **ʏᴏᴜʀ ᴡɪꜱʜ** ➛ **{text}**\n"
     wish += f"❍ **ᴘᴏꜱꜱɪʙʟᴇ ᴛᴏ ➛ {wish_count}%**"
     await e.reply(WISH, buttons=BUTTON, file=WISHES)
+
+
+@asst.on(events.NewMessage(pattern="/guess ?(.*)"))
+async def guess(e):
+        user_id = e.sender.id
+        user_name = e.sender.frist_name
+        mention = f"[{user_name}](tg://user?id={str(user_id)})"
+        mm = random.randint(1, 100)
+        GUESS = f"∆ **Hey [{e.sender.first_name}](tg://user?id={e.sender.id}), Your Guess is {mm}% !**"
+        await e.reply(GUESS, button=BUTTON, file=GUESS)
+        
               
 
 __help__ = """
