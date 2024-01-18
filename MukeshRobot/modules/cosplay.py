@@ -28,7 +28,7 @@ async def ncosplay(_,msg):
     else:
        ncosplay = requests.get("https://waifu-api.vercel.app/items/1").json()
 
-       await msg.reply_photo(ncosplay, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/RoY_EdiTX)"
+       await msg.reply_photo(ncosplay, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/RoY_EdiTX)")
 
 
 __mod_name__ = "ᴄᴏsᴘʟᴀʏ"
