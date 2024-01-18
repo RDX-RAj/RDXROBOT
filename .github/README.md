@@ -29,7 +29,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FF0000?style=for-the-badge&logo=heroku" width="160" height="50"/></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FF0000?style=for-the-badge&logo=heroku" width="180" height="40"/></a></p>
 
 
 <img src="https://readme-typing-svg.herokuapp.com?color=white&width=420&lines=💥+ɪғ+ᴀɴʏ+ᴇʀʀᴏʀ+ᴛʜᴇɴ+sᴇɴᴅ+ᴍᴇ+ᴇʀʀᴏʀ+ɪɴ+ʀᴏʏ+ᴇᴅɪᴛx+...">
