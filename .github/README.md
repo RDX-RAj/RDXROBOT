@@ -12,7 +12,7 @@
 </h2>
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0786&width=420&lines=Ⰶ+ʜᴇʏ+ᴄᴜᴛɪᴇ+ᴅᴇᴘʟᴏʏ+ʙᴏᴛ+ᴏɴ+ʜᴇʀᴏᴋᴜ+Ⰶ;Ⰶ+ɪғ+ʏᴏᴜ+ᴅᴏɴ'ᴛ+ʜᴀᴠᴇ+ʜᴇʀᴏᴋᴜ+ᴀᴄᴄᴏᴜɴᴛ+Ⰶ;Ⰶ+ᴛʜᴇɴ+ᴅᴇᴘʟᴏʏ+ᴀʟsᴏ+ᴏɴ+ᴠᴘs+sᴇʀᴠᴇʀ+Ⰶ;Ⰶ+ᴘᴏᴡᴇʀᴇᴅ+ʙʏ+ʀᴏʏ+ᴇᴅɪᴛx+Ⰶ">
 <p align="center">
-  <img src="https://telegra.ph/file/9235d57807362b4e227a3.mp4">
+  <img src="https://graph.org/file/dd082ae606884f48852d3.jpg">
 </p>
 
 <img src="https://readme-typing-svg.herokuapp.com?color=00FF00&width=420&lines=💌+ɪ+ᴀᴍ+⚘+ɴʏᴋᴀᴀ+ᴍᴜsɪᴄ+₰+ᴀɴᴅ+ɪ+ʜᴀᴠᴇ+sᴘᴇᴄɪᴀʟ+ғᴜᴛᴜʀᴇs+🧋;💌+ғʀɪsᴛ+ʏᴏᴜ+ғᴏʀᴋ+ᴛʜɪs+ʀᴇᴘᴏ+ᴛʜᴇɴ+ᴅᴇᴘʟᴏʏ+ʏᴏᴜʀ+ʙᴏᴛ+🧋">
@@ -29,7 +29,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FF00FF?style=for-the-badge&logo=heroku" width="180" height="60"/></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/Avisha"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-FF0000?style=for-the-badge&logo=heroku" width="160" height="50"/></a></p>
 
 
 <img src="https://readme-typing-svg.herokuapp.com?color=white&width=420&lines=💥+ɪғ+ᴀɴʏ+ᴇʀʀᴏʀ+ᴛʜᴇɴ+sᴇɴᴅ+ᴍᴇ+ᴇʀʀᴏʀ+ɪɴ+ʀᴏʏ+ᴇᴅɪᴛx+...">
