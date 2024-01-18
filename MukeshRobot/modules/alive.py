@@ -9,7 +9,7 @@ from telethon import __version__ as tver
 
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
-START_IMG = [
+PHOTO = [
     "https://graph.org/file/f86b71018196c5cfe7344.jpg",
     "https://graph.org/file/a3db9af88f25bb1b99325.jpg",
     "https://graph.org/file/5b344a55f3d5199b63fa5.jpg",
