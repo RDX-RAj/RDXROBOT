@@ -17,12 +17,12 @@ from telegram.ext import CallbackContext, run_async
 from MukeshRobot import dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
-info_btn = "More Information"
-kaizoku_btn = "Kaizoku ☠️"
-kayo_btn = "Kayo 🏴‍☠️"
-prequel_btn = "⬅️ Prequel"
-sequel_btn = "Sequel ➡️"
-close_btn = "Close ❌"
+info_btn = "ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ"
+kaizoku_btn = "ᴋᴀɪᴢᴏᴋᴜ"
+kayo_btn = "ᴋᴀʏᴏ"
+prequel_btn = "ᴘʀᴇǫᴜᴇʟ"
+sequel_btn = "sᴇǫᴜᴇʟ"
+close_btn = "ᴄʟᴏsᴇ"
 
 
 def shorten(description, info="anilist.co"):
@@ -204,7 +204,7 @@ def anime(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
     if not search:
-        update.effective_message.reply_text("Format : /anime < anime name >")
+        update.effective_message.reply_text("✦ ғᴏʀᴍᴀᴛ : /anime < ᴀɴɪᴍᴇ ɴᴀᴍᴇ >")
         return
     variables = {"search": search}
     json = requests.post(
@@ -345,7 +345,7 @@ def manga(update: Update, context: CallbackContext):
             msg += f"{x}, "
         msg = msg[:-2]
         info = json["siteUrl"]
-        buttons = [[InlineKeyboardButton("More Info", url=info)]]
+        buttons = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏ", url=info)]]
         image = json.get("bannerImage", False)
         msg += f"_{json.get('description', None)}_"
         if image:
