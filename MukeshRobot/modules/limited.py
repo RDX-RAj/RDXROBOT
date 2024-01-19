@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from MukeshRobot.events import register
-from MukeshRobot import ubot
+from MukeshRobot import telethn
 
 
 @register(pattern="^/limited ?(.*)")
