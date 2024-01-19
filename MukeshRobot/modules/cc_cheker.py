@@ -34,7 +34,7 @@ import datetime
 
 from telethon.tl import functions, types
 from MukeshRobot.events import register
-from MukeshRobot import ubot, telethn
+from MukeshRobot import telethn
 
 
 async def is_register_admin(chat, user):
