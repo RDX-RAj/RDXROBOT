@@ -33,9 +33,9 @@ import os
 import requests
 import wget
 
-from pyrogram import filters
+from telethon import filters
 
-from MukeshRobot import pgram
+from MukeshRobot import telethn
 from MukeshRobot.utils.saavnhelp import get_arg
 
 
