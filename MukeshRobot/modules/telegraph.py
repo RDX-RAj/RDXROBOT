@@ -45,7 +45,7 @@ async def _(event):
                 (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
-                    "✦ ʏᴏᴜʀ ɢʀᴀᴘʜ ᴜʀʟ ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n❍ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴛᴏ {} ɪɴ {} sᴇᴄᴏɴᴅs.\n\n❍ https://graph.org{}".format(media_urls[0]),
+                    "✦ ʏᴏᴜʀ ɢʀᴀᴘʜ ᴜʀʟ ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ. ✦\n\n❍ https://graph.org{}".format(media_urls[0]),
                     link_preview=True,
                 )
         elif input_str == "t":
