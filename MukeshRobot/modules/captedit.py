@@ -1,7 +1,7 @@
-from pyrogram import filters
-from pyrogram.errors import RPCError
+from telethon import filters
+from telethon.errors import RPCError
 
-from MukeshRobot import pgram
+from MukeshRobot import telethn
 from MukeshRobot.utils.pluginhelpers import admins_only, get_text
 
 Cutiepii_PYRO_Captedit = filters.command("captedit")
