@@ -8,8 +8,8 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.constants import ParseMode
 from telegram.ext import CallbackQueryHandler, CommandHandler, ContextTypes
 
-from Mikobot import function
-from Mikobot.state import state
+from MukeshRobot import function
+from MukeshRobot.state import state
 
 # <=======================================================================================================>
 
