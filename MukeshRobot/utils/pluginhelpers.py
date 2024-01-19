@@ -47,7 +47,7 @@ from pyrogram.types import Chat, Message, User
 
 from MukeshRobot import OWNER_ID, SUPPORT_CHAT
 from MukeshRobot.utils.errors import split_limits
-from MukeshRobot import pgram
+from MukeshRobot import telethn
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:
