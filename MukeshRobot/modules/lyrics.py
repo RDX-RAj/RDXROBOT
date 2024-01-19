@@ -36,7 +36,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
-from MukeshRobot import pgram, GENIUS_API_TOKEN, arq
+from MukeshRobot import telethn, GENIUS_API_TOKEN, arq
 
 
 async def lyrics_func(answers, text):
