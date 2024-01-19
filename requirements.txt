@@ -57,3 +57,6 @@ youtube_search_python
 pyshorteners
 faker
 pyfiglet
+lyricsgenius==3.0.1
+git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
+base58
