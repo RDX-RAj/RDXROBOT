@@ -2,7 +2,7 @@ from html import escape
 from requests import get
 from json import JSONDecodeError
 
-from telegram.constants import ParseMode
+from telegram import ParseMode
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
