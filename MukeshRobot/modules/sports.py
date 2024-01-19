@@ -5,7 +5,7 @@
 
 # <============================================== IMPORTS =========================================================>
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.constants import ParseMode
+from telegram import ParseMode
 from telegram.ext import CallbackQueryHandler, CommandHandler, ContextTypes
 
 from MukeshRobot import function
