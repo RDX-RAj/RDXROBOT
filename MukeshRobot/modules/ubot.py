@@ -31,7 +31,7 @@ from asyncio.exceptions import TimeoutError
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from MukeshRobot import ubot
+from MukeshRobot import telethn
 from MukeshRobot.events import register
 
 
