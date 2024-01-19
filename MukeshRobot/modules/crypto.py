@@ -1,6 +1,6 @@
 import requests
 
-from MukeshRobot import pgram
+from MukeshRobot import telethn
 from MukeshRobot.utils.errors import capture_err
 from telethon import filters
 
