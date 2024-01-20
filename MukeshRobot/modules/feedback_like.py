@@ -47,37 +47,36 @@ async def feedback(e):
     user_name = e.sender.first_name
     mention = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
     HOTTIE = (
-        "https://telegra.ph/file/5a03a79acba8d3c407056.jpg",
-        "https://telegra.ph//file/15ab1c01c8ed09a7ffc95.jpg",
-        "https://telegra.ph/file/b4af1ee5c4179e8833d6d.jpg",
-        "https://telegra.ph/file/15f2fb8f2ff8c0bf2bd06.jpg",
-        "https://telegra.ph//file/5a3ec69041389b4fbcc2a.jpg",
-        "https://telegra.ph/file/979500203d6fcf1924130.jpg",
-        "https://telegra.ph/file/6b09f8642d1890e4d67c8.jpg",
-        "https://telegra.ph/file/abf580ada4818ab99f9c0.jpg",
-        "https://telegra.ph/file/ab410f256673c3001307b.jpg",
-        "https://telegra.ph/file/398e8cb58bff53c59ee19.jpg",
+        "https://graph.org/file/f86b71018196c5cfe7344.jpg",
+        "https://graph.org/file/a3db9af88f25bb1b99325.jpg",
+        "https://graph.org/file/5b344a55f3d5199b63fa5.jpg",
+        "https://graph.org/file/84de4b440300297a8ecb3.jpg",
+        "https://graph.org/file/84e84ff778b045879d24f.jpg",
+        "https://graph.org/file/a4a8f0e5c0e6b18249ffc.jpg",
+        "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
+        "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg"
     )
     FEED = ("https://telegra.ph/file/7739e801954a16bcb130f.jpg", )
     BUTTON = [[
-        Button.url("Go To Support Group", f"https://t.me/{SUPPORT_CHAT}")
+        Button.url("ɢᴏ ᴛᴏ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", f"https://t.me/{SUPPORT_CHAT}")
     ]]
-    TEXT = "Thanks For Your Feedback, I Hope You Happy With Our Service"
-    GIVE = "Give Some Text For Feedback ✨"
+    TEXT = "✦ ᴛʜᴀɴᴋs ғᴏʀ ʏᴏᴜʀ ғᴇᴇᴅʙᴀᴄᴋ, ɪ ʜᴏᴘᴇ ʏᴏᴜ ʜᴀᴘᴘʏ ᴡɪᴛʜ ᴏᴜʀ sᴇʀᴠɪᴄᴇ."
+    GIVE = "✦ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ғᴏʀ ғᴇᴇᴅʙᴀᴄᴋ."
     logger_text = f"""
-**New Feedback**
-**From User:** {mention}
-**Username:** @{e.sender.username}
-**User ID:** `{e.sender.id}`
-**Feedback:** `{e.text}`
+**✦ ɴᴇᴡ ғᴇᴇᴅʙᴀᴄᴋ ✦**
+**ғʀᴏᴍ ᴜsᴇʀ :** {mention}
+**ᴜsᴇʀɴᴀᴍᴇ :** @{e.sender.username}
+**ᴜsᴇʀ ɪᴅ :** `{e.sender.id}`
+**ғᴇᴇᴅʙᴀᴄᴋ :** `{e.text}`
+
 """
     if user_id == 1926801217:
-        await e.reply("**Sry I Can't Identify ur Info**",
+        await e.reply("**✦ sʀʏ ɪ ᴄᴀɴ'ᴛ ɪᴅᴇɴᴛɪғʏ ʏᴏᴜʀ ɪɴғᴏ.**",
                       parse_mode=ParseMode.MARKDOWN)
         return
 
     if user_id == 1087968824:
-        await e.reply("**Turn Off Ur Anonymous Mode And Try**",
+        await e.reply("**✦ ᴛᴜʀɴ ᴏғғ ᴜʀ ᴀɴᴏɴʏᴍᴏᴜs ᴍᴏᴅᴇ ᴀɴᴅ ᴛʀʏ.**",
                       parse_mode=ParseMode.MARKDOWN)
         return
 
