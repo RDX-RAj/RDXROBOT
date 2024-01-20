@@ -54,9 +54,9 @@ async def feedback(e):
         "https://graph.org/file/84e84ff778b045879d24f.jpg",
         "https://graph.org/file/a4a8f0e5c0e6b18249ffc.jpg",
         "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
-        "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg"
+        "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg",
     )
-    FEED = ("https://telegra.ph/file/7739e801954a16bcb130f.jpg", )
+    FEED = ("https://graph.org/file/84de4b440300297a8ecb3.jpg", )
     BUTTON = [[
         Button.url("ɢᴏ ᴛᴏ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", f"https://t.me/{SUPPORT_CHAT}")
     ]]
