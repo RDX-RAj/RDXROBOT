@@ -6,7 +6,7 @@ from pyrogram.types import *
 from logging import getLogger
 
 from MukeshRobot import app, LOG_CHANNEL_ID
-from MukeshRobot.database.wel_db import *
+from MukeshRobot.modules.no_sql import *
 from MukeshRobot.Config import COMMAND_HANDLER
 
 LOGGER = getLogger(__name__)
