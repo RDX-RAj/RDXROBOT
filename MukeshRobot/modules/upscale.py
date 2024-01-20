@@ -8,7 +8,7 @@ from pyrogram import filters , Client
 
 #BOT FILE IMPORTS
 #Name -> Your Bots File Name (Eg. From Liaa import pbot as app)
-from MukeshRobot import as app
+from MukeshRobot import app
 
 
 @Client.on_message(filters.command("upscale"))
