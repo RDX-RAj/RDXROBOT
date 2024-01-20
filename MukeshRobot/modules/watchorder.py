@@ -1,7 +1,7 @@
 import requests
-from Itachi.modules.quotly import register
-from Itachi import telethn
-from Itachi.config import SUPPORT_CHAT
+from MukeshRobot.modules.quotly import register
+from MukeshRobot import telethn
+from MukeshRobot.config import SUPPORT_CHAT
 from bs4 import BeautifulSoup
 
 @register(pattern='/watchorder')
