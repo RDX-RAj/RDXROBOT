@@ -84,7 +84,7 @@ async def reqgban(_, msg: Message):
                     ]
                 )
             )
-            await Client.send_photo(
+            await app.send_photo(
                 LOG_CHANNEL,
                 photo=thumb,
                 caption=f"{bug_report}",
