@@ -1,4 +1,4 @@
-from MukeshRobot.database import *
+from MukeshRobot.modules.no_sql import *
 
 wlcm = dbname["welcome"]
 
