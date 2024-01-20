@@ -25,7 +25,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from telethon import Button
 
-from MukeshRobot import telethon as tbot
+from MukeshRobot import telethon as telethn
 from MukeshRobot.events import register
 
 PHOTO = "https://te.legra.ph/file/4e959d8f074bef7061463.mp4"
