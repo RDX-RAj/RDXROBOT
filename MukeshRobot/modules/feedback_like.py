@@ -56,7 +56,7 @@ async def feedback(e):
         "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
         "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg",
     )
-    FEED = ("https://graph.org/file/84de4b440300297a8ecb3.jpg", )
+    FEED = ("https://graph.org/file/d6360613d0fa7a9d2f90b.jpg", )
     BUTTON = [[
         Button.url("ɢᴏ ᴛᴏ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", f"https://t.me/{SUPPORT_CHAT}")
     ]]
@@ -64,11 +64,13 @@ async def feedback(e):
     GIVE = "✦ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ғᴏʀ ғᴇᴇᴅʙᴀᴄᴋ."
     logger_text = f"""
 **✦ ɴᴇᴡ ғᴇᴇᴅʙᴀᴄᴋ ✦**
-**ғʀᴏᴍ ᴜsᴇʀ :** {mention}
-**ᴜsᴇʀɴᴀᴍᴇ :** @{e.sender.username}
-**ᴜsᴇʀ ɪᴅ :** `{e.sender.id}`
-**ғᴇᴇᴅʙᴀᴄᴋ :** `{e.text}`
 
+**❍ ғʀᴏᴍ ᴜsᴇʀ ➛** {mention}
+**❍ ᴜsᴇʀɴᴀᴍᴇ ➛** @{e.sender.username}
+**❍ ᴜsᴇʀ ɪᴅ ➛** `{e.sender.id}`
+**❍ ғᴇᴇᴅʙᴀᴄᴋ ➛** `{e.text}`
+
+**❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ** ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)
 """
     if user_id == 1926801217:
         await e.reply("**✦ sʀʏ ɪ ᴄᴀɴ'ᴛ ɪᴅᴇɴᴛɪғʏ ʏᴏᴜʀ ɪɴғᴏ.**",
