@@ -58,3 +58,4 @@ pyshorteners
 faker
 pyfiglet
 git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
+unidecode
