@@ -1,7 +1,7 @@
 import requests
-from MukeshRobot.modules.quotly import register
+from MukeshRobot import register
 from MukeshRobot import telethn
-from MukeshRobot.config import SUPPORT_CHAT
+from MukeshRobot import SUPPORT_CHAT
 from bs4 import BeautifulSoup
 
 @register(pattern='/watchorder')
