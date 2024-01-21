@@ -28,15 +28,15 @@ from telethon import Button
 from MukeshRobot import telethn
 from MukeshRobot.events import register
 
-PHOTO = "https://te.legra.ph/file/7a18675abd9b75230735d.mp4"
+PHOTO = "https://telegra.ph/file/1b57ea5abf2f600370b01.mp4"
 
 
 @register(pattern=("Good morning"))
 async def awake(event):
-    NEKO = f" Welcome this beautiful morning with a smile on your face. I hope youll have a great day today. Wishing you a very good morning! {event.sender.first_name}"
+    NEKO = f"❀ ᴡɪsʜɪɴɢ ʏᴏᴜ ᴀ ᴠᴇʀʏ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ❀\n\n✦ᴡᴇʟᴄᴏᴍᴇ ᴛʜɪs ʙᴇᴀᴜᴛɪғᴜʟ ᴍᴏʀɴɪɴɢ ᴡɪᴛʜ ᴀ sᴍɪʟᴇ ᴏɴ ʏᴏᴜʀ ғᴀᴄᴇ. I ʜᴏᴘᴇ ʏᴏᴜ ʟʟ ʜᴀᴠᴇ ᴀ ɢʀᴇᴀᴛ ᴅᴀʏ ᴛᴏᴅᴀʏ.\n\n✦ ᴡɪsʜɪɴɢ ᴛᴏ ➛ {event.sender.first_name}\n\n✦ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)"
     BUTTON = [
         [
-            Button.url("Meet Me Here🎀", "https://telegram.dog/Besties_XD"),
+            Button.url("ᴍᴇᴇᴛ ᴍᴇ ʜᴇʀᴇ ʙᴀʙʏ", "https://telegram.dog/The_Friendz"),
         ]
     ]
     await telethn.send_file(event.chat_id, PHOTO, caption=NEKO, buttons=BUTTON)
