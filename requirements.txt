@@ -59,3 +59,5 @@ faker
 pyfiglet
 git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
 unidecode
+openai
+numpy==1.21.2
