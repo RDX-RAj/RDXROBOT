@@ -25,7 +25,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from telethon import Button
 
-from MukeshRobot import telethon as telethn
+from MukeshRobot import telethn
 from MukeshRobot.events import register
 
 PHOTO = "https://te.legra.ph/file/4e959d8f074bef7061463.mp4"
@@ -39,4 +39,4 @@ async def awake(event):
             Button.url("Meet Me Here🎀", "https://telegram.dog/Besties_XD"),
         ]
     ]
-    await tbot.send_file(event.chat_id, PHOTO, caption=NEKO, buttons=BUTTON)
+    await telethn.send_file(event.chat_id, PHOTO, caption=NEKO, buttons=BUTTON)
