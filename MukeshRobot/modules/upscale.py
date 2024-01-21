@@ -1,24 +1,19 @@
-#CREATED BY @o_OKarma
-#API CREDITS: @Qewertyy
-#PROVIDED BY https://github.com/Team-ProjectCodeX
-
-#IMPORTS
 import httpx, base64
-from pyrogram import filters , Client
+from pyrogram import filters
 
 #BOT FILE IMPORTS
 #Name -> Your Bots File Name (Eg. From Liaa import pbot as app)
-from MukeshRobot import app
+from MukeshRobot import pbot as app
 
 
-@Client.on_message(filters.command("upscale"))
+@app.on_message(filters.command("upscale"))
 async def upscale_image(client, message):
     try:
         # Check if the replied message contains a photo
         if message.reply_to_message and message.reply_to_message.photo:
             # Send a message indicating upscaling is in progress
             progress_msg = await message.reply_text(
-                "**Upscaling your image, please wait...**"
+                "✦ ᴜᴘsᴄᴀʟɪɴɢ ʏᴏᴜʀ ɪᴍᴀɢᴇ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..."
             )
 
             # Access the image file_id from the replied message
@@ -48,12 +43,13 @@ async def upscale_image(client, message):
             # Send the upscaled image as a PNG file
             await client.send_document(
                 message.chat.id,
-                document=upscaled_file_path
+                document=upscaled_file_path,
+                caption=f"✦ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)\n\n✦ **ᴄʀᴇᴅɪᴛs** ➛ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/roy_editx)",
             )
         else:
-            await message.reply_text("**Please reply to an image to upscale it.**")
+            await message.reply_text("✦ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ ᴜᴘsᴄᴀʟᴇ ɪᴛ.")
 
     except Exception as e:
-        print(f"**Failed to upscale the image**: {e}")
-        await message.reply_text("**Failed to upscale the image. Please try again later.**")
+        print(f"✦ ғᴀɪʟᴇᴅ ᴛᴏ ᴜᴘsᴄᴀʟᴇ ᴛʜᴇ ɪᴍᴀɢᴇ ➛ {e}")
+        await message.reply_text("✦ ғᴀɪʟᴇᴅ ᴛᴏ ᴜᴘsᴄᴀʟᴇ ᴛʜᴇ ɪᴍᴀɢᴇ. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.")
         # You may want to handle the error more gracefully here
