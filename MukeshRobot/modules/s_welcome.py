@@ -5,10 +5,11 @@ from pyrogram import *
 from pyrogram.types import *
 from logging import getLogger
 
-from MukeshRobot import TOKEN as app, LOG_CHANNEL_ID
-from MukeshRobot.modules.no_sql import *
-from MukeshRobot.Config import COMMAND_HANDLER
+from MukeshRobot import pbot as app
+from MukeshRobot.database.wel_db import *
+from MukeshRobot import EVENT_LOGS
 
+COMMAND_HANDLER = ". /".split()
 LOGGER = getLogger(__name__)
 
 class temp:
@@ -46,10 +47,7 @@ def welcomepic(pic, user, chat, id, uname):
     draw.text((30,430), f"USERNAME : {uname}", fill=(255,255,255),font=font)
     pfp_position = (770, 140)  
     background.paste(pfp, pfp_position, pfp)  
-    background.save(
-        f"downloads/welcome#{id}.png"
-    )
-    return f"downloads/welcome#{id}.png"
+    
 
 
 @app.on_message(filters.command("swelcome", COMMAND_HANDLER) & ~filters.private)
@@ -138,7 +136,7 @@ USERNAME: @{user.username}
 async def bot_wel(_, message):
     for u in message.new_chat_members:
         if u.id == app.me.id:
-            await app.send_message(LOG_CHANNEL_ID, f"""
+            await app.send_message(EVENT_LOGS, f"""
 **NEW GROUP
 ➖➖➖➖➖➖➖➖➖➖➖➖
 NAME: {message.chat.title}
@@ -147,8 +145,3 @@ USERNAME: @{message.chat.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """)
             
-
-__mod__ = "S-WELCOME"
-__help__ = """
-**» /swelcome** - Turn On The Special Welcome For Groups
-"""
