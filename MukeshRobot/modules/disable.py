@@ -310,7 +310,7 @@ if is_module_loaded(FILENAME):
         )
 
     def __stats__():
-        return f"❍ ᴅɪsᴀʙʟᴇᴅ ɪᴛᴇᴍs ➛ {sql.num_disabled()}, ❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {sql.num_chats()}"
+        return f"❅ ᴅɪsᴀʙʟᴇᴅ ɪᴛᴇᴍs ➛ {sql.num_disabled()}\n✦ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {sql.num_chats()}\n\n"
 
     def __migrate__(old_chat_id, new_chat_id):
         sql.migrate_chat(old_chat_id, new_chat_id)
