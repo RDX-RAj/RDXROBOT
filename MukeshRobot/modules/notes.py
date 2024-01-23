@@ -477,7 +477,7 @@ def __import_data__(chat_id, data):
 
 
 def __stats__():
-    return f"• {sql.num_notes()} Nᴏᴛᴇs Aᴄʀᴏss,{sql.num_chats()} Cʜᴀᴛs."
+    return f"❅ ᴛᴏᴛᴇʟ ɴᴏᴛᴇs ➛ {sql.num_notes()}\n✦ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {sql.num_chats()}\n\n"
 
 
 def __migrate__(old_chat_id, new_chat_id):
