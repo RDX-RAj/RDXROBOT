@@ -130,8 +130,8 @@ def get_id(update: Update, context: CallbackContext):
 
             msg.reply_text(
                 f"✦<b> ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ </b>✦\n\n"
-                f"✦ {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
-                f"✦ {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
+                f"✦ {html.escape(user2.first_name)} ➛ <code>{user2.id}</code>.\n"
+                f"✦ {html.escape(user1.first_name)} ➛ <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -147,12 +147,12 @@ def get_id(update: Update, context: CallbackContext):
 
         if chat.type == "private":
             msg.reply_text(
-                f"✦ ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"✦ ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ ɪs ➛ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
         else:
             msg.reply_text(
-                f"✦ ᴛʜɪs ɢʀᴏᴜᴩ's ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"✦ ᴛʜɪs ɢʀᴏᴜᴩ's ɪᴅ ɪs ➛ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
 
@@ -174,23 +174,23 @@ async def group_info(event) -> None:
             "✦ ᴄᴀɴ'ᴛ ғᴏʀ sᴏᴍᴇ ʀᴇᴀsᴏɴ, ᴍᴀʏʙᴇ ɪᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴏɴᴇ ᴏʀ ᴛʜᴀᴛ ɪ ᴀᴍ ʙᴀɴɴᴇᴅ ᴛʜᴇʀᴇ."
         )
         return
-    msg = f"**✦ ɪᴅ**: `{entity.id}`"
-    msg += f"\n**✦ ᴛɪᴛʟᴇ**: `{entity.title}`"
-    msg += f"\n**✦ ᴅᴄ**: `{entity.photo.dc_id}`"
-    msg += f"\n**✦ ᴠɪᴅᴇᴏ ᴩғᴩ**: `{entity.photo.has_video}`"
-    msg += f"\n**✦ sᴜᴩᴇʀɢʀᴏᴜᴩ**: `{entity.megagroup}`"
-    msg += f"\n**✦ ʀᴇsᴛʀɪᴄᴛᴇᴅ**: `{entity.restricted}`"
-    msg += f"\n**✦ sᴄᴀᴍ**: `{entity.scam}`"
-    msg += f"\n**✦ sʟᴏᴡᴍᴏᴅᴇ**: `{entity.slowmode_enabled}`"
+    msg = f"**✦ ɪᴅ** ➛ `{entity.id}`"
+    msg += f"\n**✦ ᴛɪᴛʟᴇ** ➛ `{entity.title}`"
+    msg += f"\n**✦ ᴅᴄ** ➛ `{entity.photo.dc_id}`"
+    msg += f"\n**✦ ᴠɪᴅᴇᴏ ᴩғᴩ** ➛ `{entity.photo.has_video}`"
+    msg += f"\n**✦ sᴜᴩᴇʀɢʀᴏᴜᴩ** ➛ `{entity.megagroup}`"
+    msg += f"\n**✦ ʀᴇsᴛʀɪᴄᴛᴇᴅ** ➛ `{entity.restricted}`"
+    msg += f"\n**✦ sᴄᴀᴍ** ➛ `{entity.scam}`"
+    msg += f"\n**✦ sʟᴏᴡᴍᴏᴅᴇ** ➛`{entity.slowmode_enabled}`"
     if entity.username:
-        msg += f"\n**✦ ᴜsᴇʀɴᴀᴍᴇ**: @{entity.username}"
-    msg += "\n\n**✦ ᴍᴇᴍʙᴇʀ sᴛᴀᴛs:**"
-    msg += f"\n✦ ᴀᴅᴍɪɴs: `{len(totallist)}`"
-    msg += f"\n✦ ᴜsᴇʀs: `{totallist.total}`"
+        msg += f"\n**✦ ᴜsᴇʀɴᴀᴍᴇ**➛ @{entity.username}"
+    msg += "\n\n**Ⰶ ᴍᴇᴍʙᴇʀ sᴛᴀᴛs Ⰶ**"
+    msg += f"\n✦ ᴀᴅᴍɪɴs ➛ `{len(totallist)}`"
+    msg += f"\n✦ ᴜsᴇʀs ➛`{totallist.total}`"
     msg += "\n\n**✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦**"
     for x in totallist:
         msg += f"\n✦ [{x.id}](tg://user?id={x.id})"
-    msg += f"\n\n**✦ ᴅᴇsᴄʀɪᴩᴛɪᴏɴ**:\n`{ch_full.full_chat.about}`"
+    msg += f"\n\n**✦ ᴅᴇsᴄʀɪᴩᴛɪᴏɴ** ➛\n`{ch_full.full_chat.about}`"
     await event.reply(msg)
 
 
@@ -198,7 +198,7 @@ def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
         update.effective_message.reply_text(
-            f"✦ ɢɪғ ɪᴅ:\n<code>{msg.reply_to_message.animation.file_id}</code>",
+            f"✦ ɢɪғ ɪᴅ ➛\n<code>{msg.reply_to_message.animation.file_id}</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
@@ -434,7 +434,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 
 def stats(update: Update, context: CallbackContext):
-    stats = f"✦ <b>sᴛᴀᴛs ᴏғ {BOT_NAME} ✦</b>\n\n" + "\n".join(
+    stats = f"Ⰶ <b>ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ {BOT_NAME} Ⰶ</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
@@ -529,7 +529,7 @@ def __user_info__(user_id):
 
 
 __help__ = """
-✿ *ɪᴅ :* ✿
+✿ *ɪᴅ * ✿
  ❍ /id* ➛* ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ ɪᴅ. ɪғ ᴜsᴇᴅ ʙʏ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ɢᴇᴛs ᴛʜᴀᴛ ᴜsᴇʀ's ɪᴅ.
  ❍ /gifid *➛* ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ᴛᴏ ᴍᴇ ᴛᴏ ᴛᴇʟʟ ʏᴏᴜ ɪᴛs ғɪʟᴇ ɪᴅ.
 
