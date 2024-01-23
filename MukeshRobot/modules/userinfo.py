@@ -129,9 +129,9 @@ def get_id(update: Update, context: CallbackContext):
             user2 = message.reply_to_message.forward_from
 
             msg.reply_text(
-                f"<b>ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ:</b>,"
-                f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
-                f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
+                f"✦<b> ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ </b>✦\n\n"
+                f"✦ {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
+                f"✦ {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -139,7 +139,7 @@ def get_id(update: Update, context: CallbackContext):
 
             user = bot.get_chat(user_id)
             msg.reply_text(
-                f"{html.escape(user.first_name)}'s ɪᴅ ɪs <code>{user.id}</code>.",
+                f"✦ {html.escape(user.first_name)}'s ɪᴅ ɪs <code>{user.id}</code>.",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -147,12 +147,12 @@ def get_id(update: Update, context: CallbackContext):
 
         if chat.type == "private":
             msg.reply_text(
-                f"ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"✦ ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
         else:
             msg.reply_text(
-                f"ᴛʜɪs ɢʀᴏᴜᴩ's ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"✦ ᴛʜɪs ɢʀᴏᴜᴩ's ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
 
@@ -171,26 +171,26 @@ async def group_info(event) -> None:
         ch_full = await event.client(GetFullChannelRequest(channel=entity))
     except:
         await event.reply(
-            "ᴄᴀɴ'ᴛ ғᴏʀ sᴏᴍᴇ ʀᴇᴀsᴏɴ, ᴍᴀʏʙᴇ ɪᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴏɴᴇ ᴏʀ ᴛʜᴀᴛ ɪ ᴀᴍ ʙᴀɴɴᴇᴅ ᴛʜᴇʀᴇ."
+            "✦ ᴄᴀɴ'ᴛ ғᴏʀ sᴏᴍᴇ ʀᴇᴀsᴏɴ, ᴍᴀʏʙᴇ ɪᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴏɴᴇ ᴏʀ ᴛʜᴀᴛ ɪ ᴀᴍ ʙᴀɴɴᴇᴅ ᴛʜᴇʀᴇ."
         )
         return
-    msg = f"**ɪᴅ**: `{entity.id}`"
-    msg += f"\n**ᴛɪᴛʟᴇ**: `{entity.title}`"
-    msg += f"\n**ᴅᴄ**: `{entity.photo.dc_id}`"
-    msg += f"\n**ᴠɪᴅᴇᴏ ᴩғᴩ**: `{entity.photo.has_video}`"
-    msg += f"\n**sᴜᴩᴇʀɢʀᴏᴜᴩ**: `{entity.megagroup}`"
-    msg += f"\n**ʀᴇsᴛʀɪᴄᴛᴇᴅ**: `{entity.restricted}`"
-    msg += f"\n**sᴄᴀᴍ**: `{entity.scam}`"
-    msg += f"\n**sʟᴏᴡᴍᴏᴅᴇ**: `{entity.slowmode_enabled}`"
+    msg = f"**✦ ɪᴅ**: `{entity.id}`"
+    msg += f"\n**✦ ᴛɪᴛʟᴇ**: `{entity.title}`"
+    msg += f"\n**✦ ᴅᴄ**: `{entity.photo.dc_id}`"
+    msg += f"\n**✦ ᴠɪᴅᴇᴏ ᴩғᴩ**: `{entity.photo.has_video}`"
+    msg += f"\n**✦ sᴜᴩᴇʀɢʀᴏᴜᴩ**: `{entity.megagroup}`"
+    msg += f"\n**✦ ʀᴇsᴛʀɪᴄᴛᴇᴅ**: `{entity.restricted}`"
+    msg += f"\n**✦ sᴄᴀᴍ**: `{entity.scam}`"
+    msg += f"\n**✦ sʟᴏᴡᴍᴏᴅᴇ**: `{entity.slowmode_enabled}`"
     if entity.username:
-        msg += f"\n**ᴜsᴇʀɴᴀᴍᴇ**: @{entity.username}"
-    msg += "\n\n**ᴍᴇᴍʙᴇʀ sᴛᴀᴛs:**"
-    msg += f"\nᴀᴅᴍɪɴs: `{len(totallist)}`"
-    msg += f"\nᴜsᴇʀs: `{totallist.total}`"
-    msg += "\n\n**ᴀᴅᴍɪɴs ʟɪsᴛ:**"
+        msg += f"\n**✦ ᴜsᴇʀɴᴀᴍᴇ**: @{entity.username}"
+    msg += "\n\n**✦ ᴍᴇᴍʙᴇʀ sᴛᴀᴛs:**"
+    msg += f"\n✦ ᴀᴅᴍɪɴs: `{len(totallist)}`"
+    msg += f"\n✦ ᴜsᴇʀs: `{totallist.total}`"
+    msg += "\n\n**✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦**"
     for x in totallist:
-        msg += f"\n• [{x.id}](tg://user?id={x.id})"
-    msg += f"\n\n**ᴅᴇsᴄʀɪᴩᴛɪᴏɴ**:\n`{ch_full.full_chat.about}`"
+        msg += f"\n✦ [{x.id}](tg://user?id={x.id})"
+    msg += f"\n\n**✦ ᴅᴇsᴄʀɪᴩᴛɪᴏɴ**:\n`{ch_full.full_chat.about}`"
     await event.reply(msg)
 
 
@@ -198,11 +198,11 @@ def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
         update.effective_message.reply_text(
-            f"ɢɪғ ɪᴅ:\n<code>{msg.reply_to_message.animation.file_id}</code>",
+            f"✦ ɢɪғ ɪᴅ:\n<code>{msg.reply_to_message.animation.file_id}</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
-        update.effective_message.reply_text("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ᴛᴏ ɢᴇᴛ ɪᴛs ɪᴅ.")
+        update.effective_message.reply_text("✦ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ᴛᴏ ɢᴇᴛ ɪᴛs ɪᴅ.")
 
 
 def info(update: Update, context: CallbackContext):
@@ -226,13 +226,13 @@ def info(update: Update, context: CallbackContext):
             and not message.parse_entities([MessageEntity.TEXT_MENTION])
         )
     ):
-        message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴇxᴛʀᴀᴄᴛ ᴀ ᴜsᴇʀ ғʀᴏᴍ ᴛʜɪs")
+        message.reply_text("✦ ɪ ᴄᴀɴ'ᴛ ᴇxᴛʀᴀᴄᴛ ᴀ ᴜsᴇʀ ғʀᴏᴍ ᴛʜɪs")
         return
 
     else:
         return
 
-    rep = message.reply_text("<code>ᴇxᴛʀᴀᴄᴛɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("✦ <code>ᴇxᴛʀᴀᴄᴛɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ...</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"✦ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦\n•❅─────✧❅✦❅✧─────❅•\n\n"
@@ -399,14 +399,14 @@ def about_me(update: Update, context: CallbackContext):
             f"❍ {username} ʜᴀsɴ'ᴛ sᴇᴛ ᴀɴ ɪɴғᴏ ᴍᴇssᴀɢᴇ ᴀʙᴏᴜᴛ ᴛʜᴇᴍsᴇʟᴠᴇs ʏᴇᴛ!"
         )
     else:
-        update.effective_message.reply_text("ᴛʜᴇʀᴇ ɪsɴ'ᴛ ᴏɴᴇ ᴜsᴇ /setme ᴛᴏ sᴇᴛ ᴏɴᴇ.")
+        update.effective_message.reply_text("✦ ᴛʜᴇʀᴇ ɪsɴ'ᴛ ᴏɴᴇ ᴜsᴇ /setme ᴛᴏ sᴇᴛ ᴏɴᴇ.")
 
 
 def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
     if user_id in [777000, 1087968824]:
-        message.reply_text("ᴇʀʀᴏʀ ᴜɴᴀᴜᴛʜᴏʀɪsᴇᴅ")
+        message.reply_text("✦ ᴇʀʀᴏʀ ᴜɴᴀᴜᴛʜᴏʀɪsᴇᴅ")
         return
     bot = context.bot
     if message.reply_to_message:
@@ -420,21 +420,21 @@ def set_about_me(update: Update, context: CallbackContext):
         if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
             sql.set_user_me_info(user_id, info[1])
             if user_id in [777000, 1087968824]:
-                message.reply_text("ᴀᴜᴛʜᴏʀɪsᴇᴅ  .. ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
+                message.reply_text("✦ ᴀᴜᴛʜᴏʀɪsᴇᴅ  .. ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
             elif user_id == bot.id:
-                message.reply_text("ɪ ʜᴀᴠᴇ ᴜᴘᴅᴀᴛᴇᴅ ᴍʏ ɪɴғᴏ ᴡɪᴛʜ ᴏɴᴇ ʏᴏᴜ ᴘʀᴏᴠɪᴅᴇᴅ!")
+                message.reply_text("✦ ɪ ʜᴀᴠᴇ ᴜᴘᴅᴀᴛᴇᴅ ᴍʏ ɪɴғᴏ ᴡɪᴛʜ ᴏɴᴇ ʏᴏᴜ ᴘʀᴏᴠɪᴅᴇᴅ!")
             else:
-                message.reply_text("ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
+                message.reply_text("✦ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
         else:
             message.reply_text(
-                "ᴛʜᴇ ɪɴғᴏ ɴᴇᴇᴅs ᴛᴏ ʙᴇ ᴜɴᴅᴇʀ {} ᴄʜᴀʀᴀᴄᴛᴇʀs! ʏᴏᴜ ʜᴀᴠᴇ {}.".format(
+                "✦ ᴛʜᴇ ɪɴғᴏ ɴᴇᴇᴅs ᴛᴏ ʙᴇ ᴜɴᴅᴇʀ {} ᴄʜᴀʀᴀᴄᴛᴇʀs! ʏᴏᴜ ʜᴀᴠᴇ {}.".format(
                     MAX_MESSAGE_LENGTH // 4, len(info[1])
                 )
             )
 
 
 def stats(update: Update, context: CallbackContext):
-    stats = f"✦ <b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ {BOT_NAME} ✦</b>\n" + "\n".join(
+    stats = f"✦ <b>sᴛᴀᴛs ᴏғ {BOT_NAME} ✦</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
@@ -462,7 +462,7 @@ def about_bio(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = user.first_name
         update.effective_message.reply_text(
-            f"❍ {username} ʜᴀsɴ'ᴛ ʜᴀᴅ ᴀ ᴍᴇssᴀɢᴇ sᴇᴛ  ᴀʙᴏᴜᴛ ᴛʜᴇᴍsᴇʟᴠᴇs ʏᴇᴛ!\nsᴇᴛ ᴏɴᴇ ᴜsɪɴɢ /setbio"
+            f"❍ {username} ʜᴀsɴ'ᴛ ʜᴀᴅ ᴀ ᴍᴇssᴀɢᴇ sᴇᴛ  ᴀʙᴏᴜᴛ ᴛʜᴇᴍsᴇʟᴠᴇs ʏᴇᴛ!\n✦ sᴇᴛ ᴏɴᴇ ᴜsɪɴɢ /setbio"
         )
     else:
         update.effective_message.reply_text(
