@@ -439,7 +439,7 @@ def __chat_settings__(chat_id, user_id):
 
 
 def __stats__():
-    return "❅ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢᴇʀs ➛ {}\n✦ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {}\n\n".format(
+    return "❅ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢᴇʀs ➛ {}\n✦ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {}\n\n๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗".format(
         sql.num_blacklist_filters(), sql.num_blacklist_filter_chats()
     )
 
