@@ -232,7 +232,7 @@ def __user_info__(user_id):
 
 
 def __stats__():
-    return f"❍ ᴛᴏᴛᴇʟ ᴜsᴇʀs ➛ {user_db.num_users()},❍ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {user_db.num_chats()}"
+    return f"❅ ᴛᴏᴛᴇʟ ᴜsᴇʀs ➛ {user_db.num_users()}\n✦ ᴀᴄʀᴏss ᴄʜᴀᴛs ➛ {user_db.num_chats()}\n\n"
 
 
 def __migrate__(old_chat_id, new_chat_id):
