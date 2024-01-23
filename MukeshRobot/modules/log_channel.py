@@ -177,7 +177,7 @@ if is_module_loaded(FILENAME):
             message.reply_text("❍ ɴᴏ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʜᴀs ʙᴇᴇɴ sᴇᴛ ʏᴇᴛ !")
 
     def __stats__():
-        return f"❅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ sᴇᴛ ➛ {sql.num_logchannels()}\n\n"
+        return f"❅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ sᴇᴛ ➛ {sql.num_logchannels()}\n"
 
     def __migrate__(old_chat_id, new_chat_id):
         sql.migrate_chat(old_chat_id, new_chat_id)
