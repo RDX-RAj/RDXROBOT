@@ -1,3 +1,4 @@
+import random
 import importlib
 import re
 import time
@@ -95,8 +96,49 @@ buttons = [
 
 ]
 
+
+roy = [
+    [
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx"),
+        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+        ),
+    ],
+]
+
 HELP_STRINGS = f"""
 ❍ *{BOT_NAME}  ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄs ᴄᴏᴍᴍᴀɴᴅ*"""
+
+ABHI = [
+"https://telegra.ph/file/466152f38c4fa1d30a8ce.jpg",
+"https://telegra.ph/file/72369c352587c54e5aaff.jpg",
+"https://telegra.ph/file/057827d334a75103016b2.jpg",
+"https://telegra.ph/file/8d4df841cc3db656dc5d6.jpg",
+"https://telegra.ph/file/22cbc045071a2b046a848.jpg",
+"https://telegra.ph/file/de0422c51cdef3fd8a508.jpg",
+"https://telegra.ph/file/d5a8b909b9cb7d3bdb6d8.jpg",
+"https://telegra.ph/file/7d6dcf74e4fa529b311af.jpg",
+"https://telegra.ph/file/21c69049c4855ac0a035b.jpg",
+"https://telegra.ph/file/35cafae38a333d70a7a30.jpg"
+
+]
+
+NYKAA = [
+"https://graph.org/file/abe11c55367d2ae57ce15.jpg",
+"https://graph.org/file/d1f47b63f67655d3c3c28.jpg",
+"https://graph.org/file/71f6cd68710609b8d2732.jpg",
+"https://graph.org/file/12aa2c267e55d22a2444d.jpg",
+"https://graph.org/file/a86b9357fa749874c625d.jpg",
+"https://graph.org/file/ea890e5fc0f599a5661d1.jpg",
+"https://graph.org/file/4f168a631f6285c63acbf.jpg",
+"https://graph.org/file/923b3ca160eb68ef22cc2.jpg",
+    
+]
+
 
 DONATE_STRING = f"""❍ ʜᴇʏ ʙᴀʙʏ, ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ. ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @roy_editx ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ @the_friendz ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
 
@@ -210,17 +252,18 @@ def start(update: Update, context: CallbackContext):
             time.sleep(0.4)
             lol.delete()
             
-            update.effective_message.reply_photo(START_IMG,PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
+            update.effective_message.reply_photo(random.choice(NYKAA),PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
         update.effective_message.reply_photo(
-            START_IMG,
-            caption="❍ ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ...!\n❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ​ </b> <code>{}</code>".format(
+            random.choice(NYKAA),
+            caption="❍ ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ...!\n❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ </b> <code>{}</code>".format(
                 uptime
             ),
+            reply_markup=InlineKeyboardMarkup(roy),
             parse_mode=ParseMode.HTML,
         )
 
@@ -296,7 +339,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "❅ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ​​* *{}* ❅\n".format(
+                "❅ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ* *{}* ❅\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -406,7 +449,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Main_help":
         query.message.edit_caption(f"""
- ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ ꜰᴏʀ {BOT_NAME}
+ ✦ ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ ꜰᴏʀ {BOT_NAME}
 """,
             parse_mode=ParseMode.MARKDOWN,
             
@@ -712,7 +755,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="ʜᴇʟᴘ​",
+                                text="ʜᴇʟᴘ",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -897,7 +940,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="sᴇᴛᴛɪɴɢs​",
+                                text="sᴇᴛᴛɪɴɢs",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -983,15 +1026,16 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
-                photo=f"{START_IMG}",
+                photo=f"{ABHI}",
                 caption=f"""
 ✦ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ✦
 ━━━━━━━━━━━━━
-**๏ ᴍᴀᴅᴇ ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx**
 **๏ ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{y()}`
 **๏ ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{telever}`
 **๏ ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tlhver}`
 **๏ ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ** `{pyrover}`
+
+**๏ ᴍᴀᴅᴇ ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx**
 ━━━━━━━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
