@@ -265,7 +265,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             random.choice(NYKAA),
-            caption="❍** ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...!**\n\n❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ ʙᴀʙʏ.\n\n❍** ᴜᴘᴛɪᴍᴇ ➛ </b> <code>{}</code>**".format(
+            caption="❍ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...!\n\n❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ ʙᴀʙʏ.\n\n❍ ᴜᴘᴛɪᴍᴇ ➛ </b> <code>{}</code>".format(
                 uptime
             ),
             reply_markup=InlineKeyboardMarkup(roy),
@@ -1032,16 +1032,8 @@ def main():
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
                 photo=f"{ABHI}",
-                caption=f"""
-✦ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ✦
-   ━━━━━━━━ 🝮✿🝮 ━━━━━━━━
-**๏ ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{y()}`
-**๏ ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{telever}`
-**๏ ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tlhver}`
-**๏ ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➛** `{pyrover}`
-**๏ ᴍᴀᴅᴇ ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx**
-   ━━━━━━━━ 🝮✿🝮 ━━━━━━━━
-""",reply_markup=x,
+                caption=f"""✦ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ✦
+\n     ━━━━━━━━ 🝮✿🝮 ━━━━━━━━\n\n๏ ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛ {y()}\n๏ ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛ {telever}\n๏ ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛ {tlhver}\n๏ ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ  {pyrover}\n\n๏ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)\n     ━━━━━━━━ 🝮✿🝮 ━━━━━━━━""",reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
