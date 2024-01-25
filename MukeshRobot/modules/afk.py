@@ -1,4 +1,3 @@
-
 import random, html
 
 from MukeshRobot import dispatcher
@@ -158,12 +157,15 @@ dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
 dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
 
+__mod_name__ = "AFK-ᴏꜰꜰʟɪɴᴇ"
+
 __help__ = """
  » `/afk` <text> :  ɢɪᴠᴇꜱ ᴀᴜᴛᴏ ʀᴇᴘʟʏ ᴡʜᴇɴ ʏᴏᴜ ᴀʀᴇ ᴏꜰꜰʟɪɴᴇ
  » `brb` <text> :   ɢɪᴠᴇꜱ ᴀᴜᴛᴏ ʀᴇᴘʟʏ ᴡʜᴇɴ ʏᴏᴜ ᴀʀᴇ ᴏꜰꜰʟɪɴᴇ
  """
-__mod_name__ = "AFK-ᴏꜰꜰʟɪɴᴇ"
+
 __command_list__ = ["afk"]
+
 __handlers__ = [
     (AFK_HANDLER, AFK_GROUP),
     (AFK_REGEX_HANDLER, AFK_GROUP),
