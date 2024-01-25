@@ -114,28 +114,33 @@ HELP_STRINGS = f"""
 ❍ *{BOT_NAME}  ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄs ᴄᴏᴍᴍᴀɴᴅ*"""
 
 ABHI = [
-"https://telegra.ph/file/466152f38c4fa1d30a8ce.jpg",
-"https://telegra.ph/file/72369c352587c54e5aaff.jpg",
-"https://telegra.ph/file/057827d334a75103016b2.jpg",
-"https://telegra.ph/file/8d4df841cc3db656dc5d6.jpg",
-"https://telegra.ph/file/22cbc045071a2b046a848.jpg",
-"https://telegra.ph/file/de0422c51cdef3fd8a508.jpg",
-"https://telegra.ph/file/d5a8b909b9cb7d3bdb6d8.jpg",
-"https://telegra.ph/file/7d6dcf74e4fa529b311af.jpg",
-"https://telegra.ph/file/21c69049c4855ac0a035b.jpg",
-"https://telegra.ph/file/35cafae38a333d70a7a30.jpg"
+"https://graph.org/file/f76fd86d1936d45a63c64.jpg",
+"https://graph.org/file/69ba894371860cd22d92e.jpg",
+"https://graph.org/file/67fde88d8c3aa8327d363.jpg",
+"https://graph.org/file/3a400f1f32fc381913061.jpg",
+"https://graph.org/file/a0893f3a1e6777f6de821.jpg",
+"https://graph.org/file/5a285fc0124657c7b7a0b.jpg",
+"https://graph.org/file/25e215c4602b241b66829.jpg",
+"https://graph.org/file/a13e9733afdad69720d67.jpg",
+"https://graph.org/file/692e89f8fe20554e7a139.jpg",
+"https://graph.org/file/db277a7810a3f65d92f22.jpg",
+"https://graph.org/file/a00f89c5aa75735896e0f.jpg",
 
 ]
 
 NYKAA = [
-"https://graph.org/file/abe11c55367d2ae57ce15.jpg",
-"https://graph.org/file/d1f47b63f67655d3c3c28.jpg",
-"https://graph.org/file/71f6cd68710609b8d2732.jpg",
-"https://graph.org/file/12aa2c267e55d22a2444d.jpg",
-"https://graph.org/file/a86b9357fa749874c625d.jpg",
-"https://graph.org/file/ea890e5fc0f599a5661d1.jpg",
-"https://graph.org/file/4f168a631f6285c63acbf.jpg",
-"https://graph.org/file/923b3ca160eb68ef22cc2.jpg",
+"https://graph.org/file/9bba2b7ee9ba3806de65d.jpg",
+"https://graph.org/file/ef82f289043a4fa74f8ff.jpg",
+"https://graph.org/file/9c27c68958e06ae074c38.jpg",
+"https://graph.org/file/0ff325b1d2efe80299aa3.jpg",
+"https://graph.org/file/41167b953cf3579853d47.jpg",
+"https://graph.org/file/bd93ab42e69305f274028.jpg",
+"https://graph.org/file/97575db5586c05d6b2898.jpg",
+"https://graph.org/file/07c393fdf931a407c9bc0.jpg",
+"https://graph.org/file/f332767490ad3a5ca20e8.jpg",
+"https://graph.org/file/f3449e9069667f647d14e.jpg",
+"https://graph.org/file/9f51cdc739f907cbd2c7e.jpg",
+"https://telegra.ph/file/d7a6a923c38e051ce35f3.jpg",
     
 ]
 
@@ -260,7 +265,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             random.choice(NYKAA),
-            caption="❍ ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ...!\n❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ </b> <code>{}</code>".format(
+            caption="❍ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...!\n\❍ <b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ.\n\n❍ ᴜᴘᴛɪᴍᴇ ➛ </b> <code>{}</code>".format(
                 uptime
             ),
             reply_markup=InlineKeyboardMarkup(roy),
