@@ -822,7 +822,7 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n\n✦ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ➠ {}".format(name)
+            text += "\n\n\n๏ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ➠ {}".format(name)
 
 
     text += "\n\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦"
@@ -856,11 +856,11 @@ def adminlist(update, context):
                 normal_admin_list.append(name)
 
     for admin in normal_admin_list:
-        text += "\n\n<code> ❍ ᴄᴏ-ғᴏᴜɴᴅᴇʀ ➠ </code>{}\n".format(admin)
+        text += "\n<code> ๏ ᴄᴏ-ғᴏᴜɴᴅᴇʀ ➠ </code>{}".format(admin)
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➠ </code>{}".format(
+            text += "\n<code> ๏ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➠ </code>{}".format(
                 custom_admin_list[admin_group][0],
                 html.escape(admin_group),
             )
