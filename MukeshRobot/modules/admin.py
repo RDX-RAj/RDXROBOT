@@ -868,6 +868,10 @@ def adminlist(update, context):
 
     text += "\n"
     for admin_group, value in custom_admin_list.items():
+        text += "\n🔮 <code>{}</code>".format(admin_group)
+        for admin in value:
+            text += "\n<code> ❍ </code>{}".format(admin)
+        text += "\n"
 
     try:
         msg.edit_text(text, parse_mode=ParseMode.HTML)
@@ -995,4 +999,4 @@ __handlers__ = [
     DEMOTE_HANDLER,
     SET_TITLE_HANDLER,
     ADMIN_REFRESH_HANDLER,
-]
+            ]
