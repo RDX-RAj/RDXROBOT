@@ -47,7 +47,7 @@ tgcrypto==1.2.5
 wikipedia==1.4.0
 # update modules extra
 gtts
-heroku3
+heroku3==5.2.1
 alphabet_detector
 wget
 nekos.py
