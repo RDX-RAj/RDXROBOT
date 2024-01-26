@@ -822,11 +822,10 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n\n✦ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ✦"
-            text += "\n\n<code> ❍ </code>{}".format(name)
+            text += "\n\n✦ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ➠ {}".format(name)
 
 
-    text += "\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦"
+    text += "\n\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -857,11 +856,11 @@ def adminlist(update, context):
                 normal_admin_list.append(name)
 
     for admin in normal_admin_list:
-        text += "\n\n<code> ❍ ᴄᴏ-ғᴏᴜɴᴅᴇʀ ➛ </code>{}\n\n".format(admin)
+        text += "\n\n<code> ❍ ᴄᴏ-ғᴏᴜɴᴅᴇʀ ➠ </code>{}\n".format(admin)
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➛ </code>{}".format(
+            text += "\n<code> ❍ ᴀᴅᴍɪɴ ɴᴀᴍᴇ ➠ </code>{}".format(
                 custom_admin_list[admin_group][0],
                 html.escape(admin_group),
             )
@@ -894,7 +893,7 @@ async def listbots(client, message):
         else:
             bot = botList.pop(0)
             text3 += f"❍ @{bot.username}\n\n"
-            text3 += f"✦ || **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➛ {lenBotList}"
+            text3 += f"✦ || **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➠ {lenBotList}"
             await pbot.send_message(message.chat.id, text3)
     except FloodWait as e:
         await asyncio.sleep(e.value)
