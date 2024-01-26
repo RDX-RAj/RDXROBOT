@@ -1032,16 +1032,16 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
-                photo=f"{ABHI}",
+                photo=f"{START_IMG}",
                 caption=f"""
 ✦ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ✦
-━━━━━━━━━━━━━
+     ━━━━━━━━ 🝮✿🝮 ━━━━━━━━
 **❅ ᴍᴀᴅᴇ ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx**
 **❅ ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{y()}`
 **❅ ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{telever}`
 **❅ ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tlhver}`
 **❅ ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➛** `{pyrover}`
-━━━━━━━━━━━━━
+     ━━━━━━━━ 🝮✿🝮 ━━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
             )
