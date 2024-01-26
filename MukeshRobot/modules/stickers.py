@@ -72,18 +72,18 @@ def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.sticker:
         update.effective_message.reply_text(
-            "ʜᴇʟʟᴏ "
-            + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}"
-            + ", ᴛʜᴇ sᴛɪᴄᴋᴇʀ ɪᴅ ʏᴏᴜ ᴀʀᴇ ʀᴇᴘʟʏɪɴɢ ɪs:\n<code>"
+            "✦ ʜᴇʟʟᴏ "
+            + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}\n\n"
+            + "❍ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ɪᴅ ʏᴏᴜ ᴀʀᴇ ʀᴇᴘʟʏɪɴɢ ɪs\n\n❍ <code>"
             + escape(msg.reply_to_message.sticker.file_id)
             + "</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
         update.effective_message.reply_text(
-            "ʜᴇʟʟᴏ "
-            + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}"
-            + ", ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ sᴛɪᴄᴋᴇʀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ɪᴅ sᴛɪᴄᴋᴇʀ",
+            "✦ ʜᴇʟʟᴏ "
+            + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}\n\n"
+            + "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ sᴛɪᴄᴋᴇʀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ɪᴅ sᴛɪᴄᴋᴇʀ",
             parse_mode=ParseMode.HTML,
         )
 
@@ -107,22 +107,22 @@ def get_cbs_data(query, page, user_id):
     buttons = []
     if has_prev_page:
         buttons.append(
-            InlineKeyboardButton(text="⟨", callback_data=f"cbs_{page - 1}_{user_id}")
+            InlineKeyboardButton(text="《", callback_data=f"cbs_{page - 1}_{user_id}")
         )
     if has_next_page:
         buttons.append(
-            InlineKeyboardButton(text="⟩", callback_data=f"cbs_{page + 1}_{user_id}")
+            InlineKeyboardButton(text="《", callback_data=f"cbs_{page + 1}_{user_id}")
         )
     buttons = InlineKeyboardMarkup([buttons]) if buttons else None
-    text = f"sᴛɪᴄᴋᴇʀs ғᴏʀ <code>{escape(query)}</code>:\nᴘᴀɢᴇ: {page}"
+    text = f"❍ sᴛɪᴄᴋᴇʀs ғᴏʀ <code>{escape(query)}</code>\n\n❍ ᴘᴀɢᴇ ➠ {page}"
     if packs and titles:
         for pack, title in zip(packs, titles):
             link = pack["href"]
-            text += f"\n• <a href='{link}'>{escape(title.get_text())}</a>"
+            text += f"\n❍ <a href='{link}'>{escape(title.get_text())}</a>"
     elif page == 1:
-        text = "ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ, ᴛʀʏ ᴀ ᴅɪғғᴇʀᴇɴᴛ ᴛᴇʀᴍ"
+        text = "❍ ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ, ᴛʀʏ ᴀ ᴅɪғғᴇʀᴇɴᴛ ᴛᴇʀᴍ"
     else:
-        text += "\n\nɪɴᴛᴇʀᴇsᴛɪɴɢʟʏ, ᴛʜᴇʀᴇ's  ɴᴏᴛʜɪɴɢ ʜᴇʀᴇ."
+        text += "\n\n❍ ɪɴᴛᴇʀᴇsᴛɪɴɢʟʏ, ᴛʜᴇʀᴇ's  ɴᴏᴛʜɪɴɢ ʜᴇʀᴇ."
     return text, buttons
 
 
@@ -130,10 +130,10 @@ def cb_sticker(update: Update, context: CallbackContext):
     msg = update.effective_message
     query = " ".join(msg.text.split()[1:])
     if not query:
-        msg.reply_text("ᴘʀᴏᴠɪᴅᴇ sᴏᴍᴇ ᴛᴇʀᴍ ᴛᴏ sᴇᴀʀᴄʜ ғᴏʀ ᴀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ.")
+        msg.reply_text("❍ ᴘʀᴏᴠɪᴅᴇ sᴏᴍᴇ ᴛᴇʀᴍ ᴛᴏ sᴇᴀʀᴄʜ ғᴏʀ ᴀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ.")
         return
     if len(query) > 50:
-        msg.reply_text("ᴘʀᴏᴠɪᴅᴇ ᴀ sᴇᴀʀᴄʜ ǫᴜᴇʀʏ ᴜɴᴅᴇʀ 50 ᴄʜᴀʀᴀᴄᴛᴇʀs")
+        msg.reply_text("❍ ᴘʀᴏᴠɪᴅᴇ ᴀ sᴇᴀʀᴄʜ ǫᴜᴇʀʏ ᴜɴᴅᴇʀ 50 ᴄʜᴀʀᴀᴄᴛᴇʀs")
         return
     if msg.from_user:
         user_id = msg.from_user.id
@@ -147,7 +147,7 @@ def cbs_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     _, page, user_id = query.data.split("_", 2)
     if int(user_id) != query.from_user.id:
-        query.answer("ɴᴏᴛ ғᴏʀ ʏᴏᴜ", cache_time=60 * 60)
+        query.answer("❍ ɴᴏᴛ ғᴏʀ ʏᴏᴜ", cache_time=60 * 60)
         return
     search_query = query.message.text.split("\n", 1)[0].split(maxsplit=2)[2][:-1]
     text, buttons = get_cbs_data(search_query, int(page), query.from_user.id)
@@ -169,7 +169,7 @@ def getsticker(update: Update, context: CallbackContext):
             bot.send_document(chat_id, document=file)
     else:
         update.effective_message.reply_text(
-            "ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ғᴏʀ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs PNG.",
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ғᴏʀ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs ᴘɴɢ.",
         )
 
 
@@ -226,7 +226,7 @@ def kang(update, context):
             file_id = msg.reply_to_message.animation.file_id
             is_gif = True
         else:
-            msg.reply_text("ʏᴇᴀ, ɪ ᴄᴀɴ'ᴛ ᴋᴀɴɢ ᴛʜᴀᴛ.")
+            msg.reply_text("❍ ʏᴇᴀ, ɪ ᴄᴀɴ'ᴛ ᴋᴀɴɢ ᴛʜᴀᴛ.")
         kang_file = context.bot.get_file(file_id)
         if not is_animated and not (is_video or is_gif):
             kang_file.download("kangsticker.png")
@@ -246,7 +246,7 @@ def kang(update, context):
             sticker_emoji = "❤️"
 
         adding_process = msg.reply_text(
-            "<b>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...ғᴏʀ ᴀ ᴍᴏᴍᴇɴᴛ</b>",
+            "<b>❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...ғᴏʀ ᴀ ᴍᴏᴍᴇɴᴛ</b>",
             parse_mode=ParseMode.HTML,
         )
 
@@ -289,8 +289,8 @@ def kang(update, context):
                         ]
                     )  
                 adding_process.edit_text(
-                    f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                    f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                    f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                    f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠  {sticker_emoji}",
                     reply_markup=keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -315,7 +315,7 @@ def kang(update, context):
                 elif e.message == "Sticker_png_dimensions":
                     im.save(kangsticker, "PNG")
                     adding_process = msg.reply_text(
-                        "<b>ᴡᴀɪᴛ.... ғᴏʀ ᴀ ᴍᴏᴍᴇɴᴛ ..</b>",
+                        "<b>❍ ᴡᴀɪᴛ.... ғᴏʀ ᴀ ᴍᴏᴍᴇɴᴛ ..</b>",
                         parse_mode=ParseMode.HTML,
                     )
                     context.bot.add_sticker_to_set(
@@ -334,16 +334,16 @@ def kang(update, context):
                         ]
                     )  
                     adding_process.edit_text(
-                        f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                        f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                        f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                        f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                         reply_markup=keyboard,
                         parse_mode=ParseMode.HTML,
                     )
-                elif e.message == "Invalid sticker emojis":
-                    msg.reply_text("Invalid emoji(s).")
+                elif e.message == "❍ ɪɴᴠᴀʟɪᴅ sᴛɪᴄᴋᴇʀ ᴇᴍᴏᴊɪs":
+                    msg.reply_text("ɪɴᴠᴀʟɪᴅ ᴇᴍᴏᴊɪ(s).")
                 elif e.message == "Stickers_too_much":
-                    msg.reply_text("Max packsize reached. Press F to pay respecc.")
-                elif e.message == "Internal Server Error: sticker set not found (500)":
+                    msg.reply_text("❍ ᴍᴀx ᴘᴀᴄᴋsɪᴢᴇ ʀᴇᴀᴄʜᴇᴅ. ᴘʀᴇss ғ ᴛᴏ ᴘᴀʏ ʀᴇsᴘᴇᴄᴄ.")
+                elif e.message == "❍ ɪɴᴛᴇʀɴᴀʟ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ : sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ (500)":
                     keyboard = InlineKeyboardMarkup(
                         [
                             [
@@ -354,8 +354,8 @@ def kang(update, context):
                         ]
                     )  
                     msg.reply_text(
-                        f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                        f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                        f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                        f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                         reply_markup=keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -400,8 +400,8 @@ def kang(update, context):
                         ]
                     )  
                 adding_process.edit_text(
-                    f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                    f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                    f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                    f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                     reply_markup=keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -418,9 +418,9 @@ def kang(update, context):
                         tgs_sticker=open("kangsticker.tgs", "rb"),
                     )
                     adding_process.delete()
-                elif e.message == "Invalid sticker emojis":
-                    msg.reply_text("Invalid emoji(s).")
-                elif e.message == "Internal Server Error: sticker set not found (500)":
+                elif e.message == "❍ ɪɴᴠᴀʟɪᴅ sᴛɪᴄᴋᴇʀ ᴇᴍᴏᴊɪs":
+                    msg.reply_text("❍ ɪɴᴠᴀʟɪᴅ ᴇᴍᴏᴊɪ(s).")
+                elif e.message == "❍ ɪɴᴛᴇʀɴᴀʟ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ : sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ (500)":
                     keyboard = InlineKeyboardMarkup(
                         [
                             [
@@ -431,8 +431,8 @@ def kang(update, context):
                         ]
                     )  
                     adding_process.edit_text(
-                        f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                        f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                        f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                        f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                         reply_markup=keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -477,8 +477,8 @@ def kang(update, context):
                         ]
                     )  
                 adding_process.edit_text(
-                    f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                    f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                    f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                    f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                     reply_markup=keyboard,
                     parse_mode=ParseMode.HTML,
                 )
@@ -495,9 +495,9 @@ def kang(update, context):
                         webm_sticker=open("kangsticker.webm", "rb"),
                     )
                     adding_process.delete()
-                elif e.message == "Invalid sticker emojis":
-                    msg.reply_text("Invalid emoji(s).")
-                elif e.message == "Internal Server Error: sticker set not found (500)":
+                elif e.message == "❍ ɪɴᴠᴀʟɪᴅ sᴛɪᴄᴋᴇʀ ᴇᴍᴏᴊɪs":
+                    msg.reply_text("❍ ɪɴᴠᴀʟɪᴅ ᴇᴍᴏᴊɪ(s).")
+                elif e.message == "❍ ɪɴᴛᴇʀɴᴀʟ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ : sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ (500)":
                     keyboard = InlineKeyboardMarkup(
                         [
                             [
@@ -508,8 +508,8 @@ def kang(update, context):
                         ]
                     )
                     adding_process.edit_text(
-                        f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                        f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                        f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                        f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                         reply_markup=keyboard,
                         parse_mode=ParseMode.HTML,
                     )
@@ -561,13 +561,13 @@ def kang(update, context):
                         ]
                     )  
             adding_process.edit_text(
-                f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                 reply_markup=keyboard,
                 parse_mode=ParseMode.HTML,
             )
         except OSError as e:
-            msg.reply_text(" sᴏʀʀʏ ɪ ᴄᴀɴ'ᴛ ᴋᴀɴɢ ᴛʜᴀᴛ.")
+            msg.reply_text("❍ sᴏʀʀʏ ɪ ᴄᴀɴ'ᴛ ᴋᴀɴɢ ᴛʜᴀᴛ.")
             print(e)
             return
         except TelegramError as e:
@@ -601,25 +601,25 @@ def kang(update, context):
                         ]
                     )  
                 adding_process.edit_text(
-                    f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                    f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                    f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                    f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                     reply_markup=keyboard,
                     parse_mode=ParseMode.HTML,
                 )
-            elif e.message == "Invalid sticker emojis":
-                msg.reply_text("Invalid emoji(s).")
+            elif e.message == "❍ ɪɴᴠᴀʟɪᴅ sᴛɪᴄᴋᴇʀ ᴇᴍᴏᴊɪs":
+                msg.reply_text("❍ ɪɴᴠᴀʟɪᴅ ᴇᴍᴏᴊɪ(s).")
             elif e.message == "Stickers_too_much":
-                msg.reply_text("Max packsize reached. Press F to pay respect.")
-            elif e.message == "Internal Server Error: sticker set not found (500)":
+                msg.reply_text("❍ ᴍᴀx ᴘᴀᴄᴋsɪᴢᴇ ʀᴇᴀᴄʜᴇᴅ. ᴘʀᴇss ғ ᴛᴏ ᴘᴀʏ ʀᴇsᴘᴇᴄᴛ.")
+            elif e.message == "❍ ɪɴᴛᴇʀɴᴀʟ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ : sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ (500)":
                 msg.reply_text(
-                    f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
-                    f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
+                    f"<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
+                    f"\n❍ ᴇᴍᴏᴊɪ ɪs ➠ {sticker_emoji}",
                     reply_markup=edited_keyboard,
                     parse_mode=ParseMode.HTML,
                 )
             print(e)
     else:
-        packs_text = "*ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ, ᴏʀ ɪᴍᴀɢᴇ ᴛᴏ ᴋᴀɴɢ ɪᴛ!*\n"
+        packs_text = "*❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ, ᴏʀ ɪᴍᴀɢᴇ ᴛᴏ ᴋᴀɴɢ ɪᴛ !*\n"
         if packnum > 0:
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
@@ -685,7 +685,7 @@ def makepack_internal(
             extra_version = " " + str(packnum)
         if png_sticker:
             sticker_pack_name = (
-                f"{name}'s sticker pack (@{context.bot.username})" + extra_version
+                f"❍ {name}'s sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ (@{context.bot.username})" + extra_version
             )
             success = context.bot.create_new_sticker_set(
                 user.id,
@@ -696,7 +696,7 @@ def makepack_internal(
             )
         if tgs_sticker:
             sticker_pack_name = (
-                f"{name}'s animated pack (@{context.bot.username})" + extra_version
+                f"❍ {name}'s ᴀɴɪᴍᴀᴛᴇᴅ ᴘᴀᴄᴋ (@{context.bot.username})" + extra_version
             )
             success = context.bot.create_new_sticker_set(
                 user.id,
@@ -707,7 +707,7 @@ def makepack_internal(
             )
         if webm_sticker:
             sticker_pack_name = (
-                f"{name}'s video pack (@{context.bot.username})" + extra_version
+                f"❍ {name}'s ᴠɪᴅᴇᴏ ᴘᴀᴄᴋ (@{context.bot.username})" + extra_version
             )
             success = context.bot.create_new_sticker_set(
                 user.id,
@@ -719,17 +719,17 @@ def makepack_internal(
 
     except TelegramError as e:
         print(e)
-        if e.message == "Sticker set name is already occupied":
+        if e.message == "❍ sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴀᴍᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴏᴄᴄᴜᴘɪᴇᴅ":
             msg.reply_text(
-                "<b>Your Sticker Pack is already created!</b>"
-                "\n\nYou can now reply to images, stickers and animated sticker with /steal to add them to your pack"
-                "\n\n<b>Send /stickers to find any sticker pack.</b>",
+                "<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ ɪs ᴀʟʀᴇᴀᴅʏ ᴄʀᴇᴀᴛᴇᴅ !</b>"
+                "\n\n❍ ʏᴏᴜ ᴄᴀɴ ɴᴏᴡ ʀᴇᴘʟʏ ᴛᴏ ɪᴍᴀɢᴇs, sᴛɪᴄᴋᴇʀs ᴀɴᴅ ᴀɴɪᴍᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀ ᴡɪᴛʜ /steal ᴛᴏ ᴀᴅᴅ ᴛʜᴇᴍ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ"
+                "\n\n❍ <b>sᴇɴᴅ /stickers ᴛᴏ ғɪɴᴅ ᴀɴʏ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ.</b>",
                 reply_markup=keyboard,
                 parse_mode=ParseMode.HTML,
             )
-        elif e.message == "Peer_id_invalid" or "bot was blocked by the user":
+        elif e.message == "Peer_id_invalid" or "❍ ʙᴏᴛ ᴡᴀs ʙʟᴏᴄᴋᴇᴅ ʙʏ ᴛʜᴇ ᴜsᴇʀ":
             msg.reply_text(
-                f"{context.bot.first_name} was blocked by you.",
+                f"❍ {context.bot.first_name} ᴡᴀs ʙʟᴏᴄᴋᴇᴅ ʙʏ ʏᴏᴜ.",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -740,11 +740,11 @@ def makepack_internal(
                     ]
                 ),
             )
-        elif e.message == "Internal Server Error: created sticker set not found (500)":
+        elif e.message == "❍ ɪɴᴛᴇʀɴᴀʟ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ : ᴄʀᴇᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀ sᴇᴛ ɴᴏᴛ ғᴏᴜɴᴅ (500)":
             msg.reply_text(
-                "<b>Your Sticker Pack has been created!</b>"
-                "\n\nYou can now reply to images, stickers and animated sticker with /steal to add them to your pack"
-                "\n\n<b>Send /stickers to find sticker pack.</b>",
+                "<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ !</b>"
+                "\n\n❍ ʏᴏᴜ ᴄᴀɴ ɴᴏᴡ ʀᴇᴘʟʏ ᴛᴏ ɪᴍᴀɢᴇs, sᴛɪᴄᴋᴇʀs ᴀɴᴅ ᴀɴɪᴍᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀ ᴡɪᴛʜ /steal ᴛᴏ ᴀᴅᴅ ᴛʜᴇᴍ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ"
+                "\n\n<b>❍ sᴇɴᴅ /stickers ᴛᴏ ғɪɴᴅ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ.</b>",
                 reply_markup=keyboard,
                 parse_mode=ParseMode.HTML,
             )
@@ -752,14 +752,14 @@ def makepack_internal(
 
     if success:
         msg.reply_text(
-            "<b>Your Sticker Pack has been created!</b>"
-            "\n\nYou can now reply to images, stickers and animated sticker with /steal to add them to your pack"
-            "\n\n<b>Send /stickers to find sticker pack.</b>",
+            "<b>❍ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ ʜᴀs ʙᴇᴇɴ ᴄʀᴇᴀᴛᴇᴅ !</b>"
+            "\n\n❍ ʏᴏᴜ ᴄᴀɴ ɴᴏᴡ ʀᴇᴘʟʏ ᴛᴏ ɪᴍᴀɢᴇs, sᴛɪᴄᴋᴇʀs ᴀɴᴅ ᴀɴɪᴍᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀ ᴡɪᴛʜ /steal ᴛᴏ ᴀᴅᴅ ᴛʜᴇᴍ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ"
+            "\n\n❍ <b>sᴇɴᴅ /stickers ᴛᴏ ғɪɴᴅ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ.</b>",
             reply_markup=keyboard,
             parse_mode=ParseMode.HTML,
         )
     else:
-        msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
+        msg.reply_text("❍ ғᴀɪʟᴇᴅ ᴛᴏ ᴄʀᴇᴀᴛᴇ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ. ᴘᴏssɪʙʟʏ ᴅᴜᴇ ᴛᴏ ʙʟᴇᴋ ᴍᴇᴊɪᴋ.")
 
 
 def getsticker(update: Update, context: CallbackContext):
@@ -774,7 +774,7 @@ def getsticker(update: Update, context: CallbackContext):
         os.remove("sticker.png")
     else:
         update.effective_message.reply_text(
-            "Please reply to a sticker for me to upload its PNG."
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ғᴏʀ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs ᴘɴɢ."
         )
 
 
@@ -790,7 +790,7 @@ def getvidsticker(update: Update, context: CallbackContext):
         os.remove("sticker.mp4")
     else:
         update.effective_message.reply_text(
-            "Please reply to a video sticker to upload its MP4."
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴠɪᴅᴇᴏ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs ᴍᴘ4."
         )
 
 
@@ -802,7 +802,7 @@ def delsticker(update, context):
         msg.reply_text("ᴅᴇʟᴇᴛᴇᴅ!")
     else:
         update.effective_message.reply_text(
-            "Please reply to sticker message to del sticker"
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ sᴛɪᴄᴋᴇʀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴅᴇʟ sᴛɪᴄᴋᴇʀ"
         )
 
 
@@ -818,18 +818,18 @@ def video(update: Update, context: CallbackContext):
         os.remove("video.mp4")
     else:
         update.effective_message.reply_text(
-            "Please reply to a gif for me to get it's video."
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ғᴏʀ ᴍᴇ ᴛᴏ ɢᴇᴛ ɪᴛ's ᴠɪᴅᴇᴏ."
         )
 
                              
 __help__ = """
- ❍ /sᴛɪᴄᴋᴇʀɪᴅ *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴛᴇʟʟ ʏᴏᴜ ɪᴛs ғɪʟᴇ ɪᴅ.
- ❍ /getsticker *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs ʀᴀᴡ ᴘɴɢ ғɪʟᴇ.
- ❍ /kang *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴀᴅᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ.
- ❍ /stickers *:* ғɪɴᴅ sᴛɪᴄᴋᴇʀs ғᴏʀ ɢɪᴠᴇɴ ᴛᴇʀᴍ ᴏɴ ᴄᴏᴍʙᴏᴛ sᴛɪᴄᴋᴇʀ ᴄᴀᴛᴀʟᴏɢᴜᴇ
+ ❍ /stickerid *➛* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴛᴇʟʟ ʏᴏᴜ ɪᴛs ғɪʟᴇ ɪᴅ.
+ ❍ /getsticker *➛* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛs ʀᴀᴡ ᴘɴɢ ғɪʟᴇ.
+ ❍ /kang *➛* ʀᴇᴘʟʏ ᴛᴏ ᴀ sᴛɪᴄᴋᴇʀ ᴛᴏ ᴀᴅᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ.
+ ❍ /stickers *➛* ғɪɴᴅ sᴛɪᴄᴋᴇʀs ғᴏʀ ɢɪᴠᴇɴ ᴛᴇʀᴍ ᴏɴ ᴄᴏᴍʙᴏᴛ sᴛɪᴄᴋᴇʀ ᴄᴀᴛᴀʟᴏɢᴜᴇ
 """
 
-__mod_name__ = "Kᴀɴɢ"
+__mod_name__ = "ᴋᴀɴɢ"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 KANG_HANDLER = DisableAbleCommandHandler("kang", kang, admin_ok=True, run_async=True)
@@ -839,3 +839,4 @@ dispatcher.add_handler(STICKERS_HANDLER)
 dispatcher.add_handler(STICKERID_HANDLER)
 dispatcher.add_handler(GETSTICKER_HANDLER)
 dispatcher.add_handler(KANG_HANDLER)
+    
