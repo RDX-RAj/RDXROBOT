@@ -40,7 +40,7 @@ async def gogo(event):
     args = event.pattern_match.group(1)
     if not args:
         return await event.respond(
-            "Your Query should be in This format: /search <space> Name of the Anime you want to Search."
+            "❍ ʏᴏᴜʀ ǫᴜᴇʀʏ sʜᴏᴜʟᴅ ʙᴇ ɪɴ ᴛʜɪs ғᴏʀᴍᴀᴛ : /search <space> ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀɴɪᴍᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴇᴀʀᴄʜ."
         )
     result = anime.get_search_results(args)
     buttons = []
@@ -58,18 +58,18 @@ async def search(event):
     data = tata.decode()
     input = data.split("_", 1)[1]
     animeid = input
-    await event.answer("Fetching Anime Details")
+    await event.answer("❍ ғᴇᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ ᴅᴇᴛᴀɪʟs.")
     result = anime.get_anime_details(animeid)
     episodes = result["episodes"]
     nfo = f"{animeid}?{episodes}"
     buttons = Button.inline("Download", data=f"episode_{nfo}")
     text = """
-{} (Released: {})
-Type: {}
-Status: {}
-Generies: {}
-Episodes: {}
-Summary: {}
+❍ {} (ʀᴇʟᴇᴀsᴇᴅ ➛ {})
+❍ ᴛʏᴘᴇ ➛ {}
+❍ sᴛᴀᴛᴜs ➛ {}
+❍ ɢᴇɴᴇʀɪᴇs ➛ {}
+❍ ᴇᴘɪsᴏᴅᴇs ➛ {}
+❍ sᴜᴍᴍᴀʀʏ ➛ {}
 """
     await event.edit(
         text.format(
@@ -102,7 +102,7 @@ async def episode(event):
         if len(buttons) == 4:
             cbutton.append(buttons)
             buttons = []
-    text = f"You selected {animeid},\n\nSelect the Episode you want :-"
+    text = f"❍ ʏᴏᴜ sᴇʟᴇᴄᴛᴇᴅ {animeid},\n\n❍ sᴇʟᴇᴄᴛ ᴛʜᴇ ᴇᴘɪsᴏᴅᴇ ʏᴏᴜ ᴡᴀɴᴛ."
     await event.edit(text, buttons=cbutton)
 
 
@@ -115,7 +115,7 @@ async def episode(event):
     animeid = episode.strip()
     epsd = imd.strip()
     result = anime.get_episodes_link(animeid, epsd)
-    text = f"You are watching Episode {epsd} of {animeid}:\n\nNote: Select HDP link for faster streaming."
+    text = f"❍ ʏᴏᴜ ᴀʀᴇ ᴡᴀᴛᴄʜɪɴɢ ᴇᴘɪsᴏᴅᴇ {epsd} ᴏғ {animeid}\n\n❍ ɴᴏᴛᴇ : sᴇʟᴇᴄᴛ ʜᴅᴘ ʟɪɴᴋ ғᴏʀ ғᴀsᴛᴇʀ sᴛʀᴇᴀᴍɪɴɢ."
 
     butons = []
     cbutton = []
