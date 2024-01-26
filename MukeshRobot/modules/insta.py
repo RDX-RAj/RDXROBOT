@@ -28,7 +28,7 @@ async def search_and_send_instagram_video(event):
             video_url = response.json().get("data")[0].get("url", "No video received from the API")
 
             # Format the reply with a clickable link
-            reply_message = f"[𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗬𝗢𝗨𝗥 𝗥𝗘𝗘𝗟 𝗕𝗔𝗕𝗬◕‿◕ ]({video_url})\n\nᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ [𝐐𝐔𝐄𝐄𝐍](https://t.me/TheQueenRobot)"
+            reply_message = f"✦ ʏᴏᴜʀ ɪɴsᴛᴀ ʀᴇᴇʟs ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n✦ [ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ]({video_url})\n\n❍ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
         else:
             reply_message = "Error fetching Instagram video from the API."
     except requests.exceptions.RequestException as e:
@@ -41,6 +41,6 @@ async def search_and_send_instagram_video(event):
     # Edit the "Please wait" message with the final reply
     await processing_message.edit(reply_message)
 
-__mod_name__ = "Insta"
+__mod_name__ = "ɪɴsᴛᴀ"
 
-__help__ = "use: /insta 𝚟𝚍𝚘 / 𝚛𝚎𝚎𝚕 𝚕𝚒𝚗𝚔"
+__help__ = "❍ use : /ɪɴsᴛᴀ ᴠɪᴅᴇᴏ / ʀᴇᴇʟ ʟɪɴᴋ"
