@@ -28,7 +28,7 @@ async def search_and_send_instagram_video(event):
             video_url = response.json().get("data")[0].get("url", "❍ ɴᴏ ᴠɪᴅᴇᴏ ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ")
 
             # Format the reply with a clickable link
-            reply_message = f"✦ ʏᴏᴜʀ ɪɴsᴛᴀ ʀᴇᴇʟs ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n๏ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ɪᴍᴀɢᴇ/ʀᴇᴇʟs ➠ [ᴅᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ]({video_url})\n\n๏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
+            reply_message = f"✦ ʏᴏᴜʀ ɪɴsᴛᴀ ɪᴍᴀɢᴇs/ʀᴇᴇʟs ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n๏ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ɪᴍᴀɢᴇ/ʀᴇᴇʟs ➠ [ᴅᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ]({video_url})\n\n๏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
         else:
             reply_message = "❍ ᴇʀʀᴏʀ ғᴇᴛᴄʜɪɴɢ ɪɴsᴛᴀɢʀᴀᴍ ᴠɪᴅᴇᴏ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ."
     except requests.exceptions.RequestException as e:
