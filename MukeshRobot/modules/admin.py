@@ -825,7 +825,7 @@ def adminlist(update, context):
             text += "\n\n\n๏ ғᴏᴜɴᴅᴇʀ ᴏᴡɴᴇʀ ➠ {}".format(name)
 
 
-    text += "\n\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦"
+    text += "\n\n✦ ᴀᴅᴍɪɴs ʟɪsᴛ ✦\n"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -868,10 +868,6 @@ def adminlist(update, context):
 
     text += "\n"
     for admin_group, value in custom_admin_list.items():
-        text += "\n🔮 <code>{}</code>".format(admin_group)
-        for admin in value:
-            text += "\n<code> ❍ </code>{}".format(admin)
-        text += "\n"
 
     try:
         msg.edit_text(text, parse_mode=ParseMode.HTML)
@@ -889,10 +885,10 @@ async def listbots(client, message):
         text3 = f"**✦ ʙᴏᴛ ʟɪsᴛ ➛ {message.chat.title}**\n\n✦ ʙᴏᴛs ✦\n\n"
         while len(botList) > 1:
             bot = botList.pop(0)
-            text3 += f"❍ @{bot.username}\n"
+            text3 += f"๏ @{bot.username}\n"
         else:
             bot = botList.pop(0)
-            text3 += f"❍ @{bot.username}\n\n"
+            text3 += f"๏ @{bot.username}\n\n"
             text3 += f"✦ || **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➠ {lenBotList}"
             await pbot.send_message(message.chat.id, text3)
     except FloodWait as e:
