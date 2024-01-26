@@ -13,11 +13,11 @@ async def search_and_send_instagram_video(event):
     insta_video_url = event.pattern_match.group(1).strip()
 
     if not insta_video_url:
-        await event.reply("Please provide a valid Instagram video URL.")
+        await event.reply("❍ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɪɴsᴛᴀɢʀᴀᴍ ᴠɪᴅᴇᴏ ᴜʀʟ.")
         return
 
     # Send "Please wait" message
-    processing_message = await event.reply("Please wait while fetching your download...")
+    processing_message = await event.reply("❍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴡʜɪʟᴇ ғᴇᴛᴄʜɪɴɢ ʏᴏᴜʀ ᴅᴏᴡɴʟᴏᴀᴅ...")
 
     try:
         # Make a request to the Instagram Video Downloader API
@@ -25,22 +25,25 @@ async def search_and_send_instagram_video(event):
 
         if response.status_code == 200:
             # Downloaded Instagram video URL
-            video_url = response.json().get("data")[0].get("url", "No video received from the API")
+            video_url = response.json().get("data")[0].get("url", "❍ ɴᴏ ᴠɪᴅᴇᴏ ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ")
 
             # Format the reply with a clickable link
-            reply_message = f"✦ ʏᴏᴜʀ ɪɴsᴛᴀ ʀᴇᴇʟs ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n✦ [ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ]({video_url})\n\n❍ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
+            reply_message = f"✦ ʏᴏᴜʀ ɪɴsᴛᴀ ʀᴇᴇʟs ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ.\n\n❍ [ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ]({video_url})\n\n❍ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
         else:
-            reply_message = "Error fetching Instagram video from the API."
+            reply_message = "❍ ᴇʀʀᴏʀ ғᴇᴛᴄʜɪɴɢ ɪɴsᴛᴀɢʀᴀᴍ ᴠɪᴅᴇᴏ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ."
     except requests.exceptions.RequestException as e:
         # Handle network-related errors
-        reply_message = f"Error: {str(e)}. Please try again later."
+        reply_message = f"❍ ᴇʀʀᴏʀ : {str(e)}. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ."
     except Exception as e:
         # Handle unexpected errors
-        reply_message = f"Unexpected error: {str(e)}. Please try again later."
+        reply_message = f"❍ ᴜɴᴇxᴘᴇᴄᴛᴇᴅ ᴇʀʀᴏʀ : {str(e)}. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ."
 
     # Edit the "Please wait" message with the final reply
     await processing_message.edit(reply_message)
 
 __mod_name__ = "ɪɴsᴛᴀ"
 
-__help__ = "❍ use : /ɪɴsᴛᴀ ᴠɪᴅᴇᴏ / ʀᴇᴇʟ ʟɪɴᴋ"
+__help__ = """
+❍ /insta ➛ ᴘᴀsᴛᴇ ɪɴsᴛᴀ ʀᴇᴇʟs / ɪᴍᴀɢᴇ ᴜʀʟ ɪs ʜᴇʀᴇ ʙᴀʙʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀʀᴅ ɪɴsᴛᴀ ᴠɪᴅᴇᴏ/ ʀᴇᴇʟs.
+❍ /fbdl ➛ ᴘᴀsᴛᴇ ғᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟs ᴜʀʟ ʙᴀʙʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ғᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟs.
+"""
