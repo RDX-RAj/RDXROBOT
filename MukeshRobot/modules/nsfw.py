@@ -26,15 +26,15 @@ def add_nsfw(update: Update, context: CallbackContext):
     is_nsfw = sql.is_nsfw(chat.id)
     if not is_nsfw:
         sql.set_nsfw(chat.id)
-        msg.reply_text("ᴀᴄᴛɪᴠᴀᴛɪᴏɴ ɴsғᴡ ᴍᴏᴅᴇ!")
+        msg.reply_text("๏ ᴀᴄᴛɪᴠᴀᴛɪᴏɴ ɴsғᴡ ᴍᴏᴅᴇ!")
         message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"ᴀᴄᴛɪᴠᴀᴛᴇᴅ_ɴsғᴡ\n"
-            f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"๏ <b>{html.escape(chat.title)}</b>\n"
+            f"๏ ᴀᴄᴛɪᴠᴀᴛᴇᴅ_ɴsғᴡ\n"
+            f"๏ <b>ᴀᴅᴍɪɴ :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
     else:
-        msg.reply_text("ɴsғᴡ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ")
+        msg.reply_text("๏ ɴsғᴡ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ")
         return ""
 
 
@@ -47,27 +47,27 @@ def rem_nsfw(update: Update, context: CallbackContext):
     user = update.effective_user
     is_nsfw = sql.is_nsfw(chat.id)
     if not is_nsfw:
-        msg.reply_text("ɴsғᴡ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
+        msg.reply_text("๏ ɴsғᴡ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
         return ""
     else:
         sql.rem_nsfw(chat.id)
-        msg.reply_text("ʀᴏʟʟᴇᴅ ʙᴀᴄᴋ ᴛᴏ ɴsғᴡ ᴍᴏᴅᴇ")
+        msg.reply_text("๏ ʀᴏʟʟᴇᴅ ʙᴀᴄᴋ ᴛᴏ ɴsғᴡ ᴍᴏᴅᴇ")
         message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ_ɴsғᴡ\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"๏ <b>{html.escape(chat.title)}:</b>\n"
+            f"๏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ_ɴsғᴡ\n"
+            f"๏ <b>ᴀᴅᴍɪɴ :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
 
 
 def list_nsfw_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_nsfw_chats()
-    text = "<b>ɴsғᴡ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴄʜᴀᴛs</b>\n"
+    text = "๏ <b>ɴsғᴡ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴄʜᴀᴛs</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
             name = x.title if x.title else x.first_name
-            text += f"• <code>{name}</code>\n"
+            text += f"๏ <code>{name}</code>\n"
         except BadRequest:
             sql.rem_nsfw(*chat)
         except Unauthorized:
@@ -440,7 +440,7 @@ def keta(update, context):
     msg = update.effective_message
     target = "keta"
     if not target:
-        msg.reply_text("No URL was received from the API!")
+        msg.reply_text("๏ ɴᴏ ᴜʀʟ ᴡᴀs ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ !")
         return
     msg.reply_photo(nekos.img(target))
 
@@ -618,7 +618,7 @@ def dva(update, context):
     url = nsfw.get("url")
     # do shit with url if you want to
     if not url:
-        msg.reply_text("No URL was received from the API!")
+        msg.reply_text("๏ ɴᴏ ᴜʀʟ ᴡᴀs ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ !")
         return
     msg.reply_photo(url)
 
@@ -798,23 +798,26 @@ __handlers__ = [
     BAKA_HANDLER,
     DVA_HANDLER,
 ]
-__mod_name__ = "Nsғᴡ"
+__mod_name__ = "ɴsғᴡ"
 
 __help__ = """
-*ɴsғᴡ:*
-❂ /addnsfw  : ᴇɴᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
-❂ /rmnsfw  : ᴅɪsᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
+✿ *ɴsғᴡ ᴍᴏᴅᴇ* ✿
+
+❍ /addnsfw ➛ ᴇɴᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
+❍ /rmnsfw ➛ ᴅɪsᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
  
-*ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:*  
-❂ /neko : sᴇɴᴅs ʀᴀɴᴅᴏᴍ sғᴡ ɴᴇᴋᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
-❂ /ngif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ɴᴇᴋᴏ ɢɪғs.
-❂ /tickle : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛɪᴄᴋʟᴇ ɢɪғs.
-❂ /feed : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴇᴇᴅɪɴɢ ɢɪғs.
-❂ /gasm : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴏʀɢᴀsᴍ sᴛɪᴄᴋᴇʀs.
-❂ /kuni : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴜssʏ ʟɪᴄᴋ ɢɪғs.
-❂ /waifu : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴡᴀɪғᴜ sᴛɪᴄᴋᴇʀs.
-❂ /kiss : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋɪssɪɴɢ ɢɪғs.
-❂ /erok : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ᴋɪᴛsᴜɴᴇ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
-❂ /foxgirl : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴏxɢɪʀʟ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
-❂ /smug : sᴇɴᴅs ʀᴀɴᴅᴏᴍ sᴍᴜɢ ɢɪғs.
+✿ *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs* ✿
+
+❍ /neko ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ sғᴡ ɴᴇᴋᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❍ /ngif ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ɴᴇᴋᴏ ɢɪғs.
+❍ /tickle ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛɪᴄᴋʟᴇ ɢɪғs.
+❍ /feed ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴇᴇᴅɪɴɢ ɢɪғs.
+❍ /gasm ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴏʀɢᴀsᴍ sᴛɪᴄᴋᴇʀs.
+❍ /kuni ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴜssʏ ʟɪᴄᴋ ɢɪғs.
+❍ /waifu ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴡᴀɪғᴜ sᴛɪᴄᴋᴇʀs.
+❍ /kiss ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋɪssɪɴɢ ɢɪғs.
+❍ /erok ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ᴋɪᴛsᴜɴᴇ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❍ /foxgirl ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴏxɢɪʀʟ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❍ /smug ➛ sᴇɴᴅs ʀᴀɴᴅᴏᴍ sᴍᴜɢ ɢɪғs.
 """
+    
