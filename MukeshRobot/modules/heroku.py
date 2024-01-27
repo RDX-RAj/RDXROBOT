@@ -209,8 +209,9 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     )
     return indentitems(items, indent, level=0)
 
-__mod_name__= "Heroku"
-__help__= """ /set or /see
-/usage
-/logs
+__mod_name__= "ʜᴇʀᴏᴋᴜ"
+__help__= """
+❍ /set ᴏʀ /see
+❍ /usage
+❍ /logs
 """
