@@ -55,6 +55,18 @@ async def feedback(e):
         "https://graph.org/file/a4a8f0e5c0e6b18249ffc.jpg",
         "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
         "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg",
+        "https://graph.org/file/9bba2b7ee9ba3806de65d.jpg",
+        "https://graph.org/file/ef82f289043a4fa74f8ff.jpg",
+        "https://graph.org/file/9c27c68958e06ae074c38.jpg",
+        "https://graph.org/file/0ff325b1d2efe80299aa3.jpg",
+        "https://graph.org/file/41167b953cf3579853d47.jpg",
+        "https://graph.org/file/bd93ab42e69305f274028.jpg",
+        "https://graph.org/file/97575db5586c05d6b2898.jpg",
+        "https://graph.org/file/07c393fdf931a407c9bc0.jpg",
+        "https://graph.org/file/f332767490ad3a5ca20e8.jpg",
+        "https://graph.org/file/f3449e9069667f647d14e.jpg",
+        "https://graph.org/file/9f51cdc739f907cbd2c7e.jpg",
+        "https://telegra.ph/file/d7a6a923c38e051ce35f3.jpg",
     )
     FEED = ("https://graph.org/file/d6360613d0fa7a9d2f90b.jpg", )
     BUTTON = [[
