@@ -72,7 +72,7 @@ async def _(event):
     for match in result:
         Sed += match.get_text() + "\n\n"
     await event.reply(
-        f"<b>✦ ᴍᴀᴛᴄʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴄᴇssғᴜʟ ✦</b>\n\n\n❍ <code>{Sed}</code>",
+        f"<b>✦ ᴍᴀᴛᴄʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴄᴇssғᴜʟ ✦</b>\n\n\n๏ <code>{Sed}</code>",
         parse_mode="HTML",
     )
 
