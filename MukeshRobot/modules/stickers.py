@@ -74,7 +74,7 @@ def stickerid(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "✦ ʜᴇʟʟᴏ "
             + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}\n\n"
-            + "๏ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ɪᴅ ➠\n\n <code>"
+            + "๏ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ɪᴅ ➠ <code>"
             + escape(msg.reply_to_message.sticker.file_id)
             + "</code>",
             parse_mode=ParseMode.HTML,
