@@ -65,12 +65,12 @@ async def feedback(e):
     logger_text = f"""
 **✦ ɴᴇᴡ ғᴇᴇᴅʙᴀᴄᴋ ✦**
 
-**❍ ғʀᴏᴍ ᴜsᴇʀ ➛** {mention}
-**❍ ᴜsᴇʀɴᴀᴍᴇ ➛** @{e.sender.username}
-**❍ ᴜsᴇʀ ɪᴅ ➛** `{e.sender.id}`
-**❍ ғᴇᴇᴅʙᴀᴄᴋ ➛** `{e.text}`
+**๏ ғʀᴏᴍ ᴜsᴇʀ ➛** {mention}
+**๏ ᴜsᴇʀɴᴀᴍᴇ ➛** @{e.sender.username}
+**๏ ᴜsᴇʀ ɪᴅ ➛** `{e.sender.id}`
+**๏ ғᴇᴇᴅʙᴀᴄᴋ ➛** `{e.text}`
 
-**❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ** ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)
+**๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ** ➛ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/avishaxbot)
 """
     if user_id == 1926801217:
         await e.reply("**✦ sʀʏ ɪ ᴄᴀɴ'ᴛ ɪᴅᴇɴᴛɪғʏ ʏᴏᴜʀ ɪɴғᴏ.**",
