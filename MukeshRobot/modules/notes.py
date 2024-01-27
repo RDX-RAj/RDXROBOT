@@ -75,10 +75,10 @@ def get(update, context, notename, show_none=True, no_format=False):
                         chat_id=chat_id, from_chat_id=EVENT_LOGS, message_id=note.value
                     )
                 except BadRequest as excp:
-                    if excp.message == "Message to forward not found":
+                    if excp.message == "๏ ᴍᴇssᴀɢᴇ ᴛᴏ ғᴏʀᴡᴀʀᴅ ɴᴏᴛ ғᴏᴜɴᴅ":
                         message.reply_text(
-                            "This message seems to have been lost - I'll remove it "
-                            "from your notes list."
+                            "๏ ᴛʜɪs ᴍᴇssᴀɢᴇ sᴇᴇᴍs ᴛᴏ ʜᴀᴠᴇ ʙᴇᴇɴ ʟᴏsᴛ - ɪ'ʟʟ ʀᴇᴍᴏᴠᴇ ɪᴛ "
+                            "ғʀᴏᴍ ʏᴏᴜʀ ɴᴏᴛᴇs ʟɪsᴛ."
                         )
                         sql.rm_note(chat_id, notename)
                     else:
@@ -89,12 +89,12 @@ def get(update, context, notename, show_none=True, no_format=False):
                         chat_id=chat_id, from_chat_id=chat_id, message_id=note.value
                     )
                 except BadRequest as excp:
-                    if excp.message == "Message to forward not found":
+                    if excp.message == "๏ ᴍᴇssᴀɢᴇ ᴛᴏ ғᴏʀᴡᴀʀᴅ ɴᴏᴛ ғᴏᴜɴᴅ":
                         message.reply_text(
-                            "Looks like the original sender of this note has deleted "
-                            "their message - sorry! Get your bot admin to start using a "
-                            "message dump to avoid this. I'll remove this note from "
-                            "your saved notes."
+                            "๏ ʟᴏᴏᴋs ʟɪᴋᴇ ᴛʜᴇ ᴏʀɪɢɪɴᴀʟ sᴇɴᴅᴇʀ ᴏғ ᴛʜɪs ɴᴏᴛᴇ ʜᴀs ᴅᴇʟᴇᴛᴇᴅ "
+                            "๏ ᴛʜᴇɪʀ ᴍᴇssᴀɢᴇ - sᴏʀʀʏ ! ɢᴇᴛ ʏᴏᴜʀ ʙᴏᴛ ᴀᴅᴍɪɴ ᴛᴏ sᴛᴀʀᴛ ᴜsɪɴɢ ᴀ "
+                            "ᴍᴇssᴀɢᴇ ᴅᴜᴍᴘ ᴛᴏ ᴀᴠᴏɪᴅ ᴛʜɪs. ɪ'ʟʟ ʀᴇᴍᴏᴠᴇ ᴛʜɪs ɴᴏᴛᴇ ғʀᴏᴍ "
+                            "ʏᴏᴜʀ sᴀᴠᴇᴅ ɴᴏᴛᴇs."
                         )
                         sql.rm_note(chat_id, notename)
                     else:
@@ -178,29 +178,29 @@ def get(update, context, notename, show_none=True, no_format=False):
             except BadRequest as excp:
                 if excp.message == "Entity_mention_user_invalid":
                     message.reply_text(
-                        "Looks like you tried to mention someone I've never seen before. If you really "
-                        "want to mention them, forward one of their messages to me, and I'll be able "
-                        "to tag them!"
+                        "๏ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ᴛʀɪᴇᴅ ᴛᴏ ᴍᴇɴᴛɪᴏɴ sᴏᴍᴇᴏɴᴇ ɪ'ᴠᴇ ɴᴇᴠᴇʀ sᴇᴇɴ ʙᴇғᴏʀᴇ. ɪғ ʏᴏᴜ ʀᴇᴀʟʟʏ "
+                        "ᴡᴀɴᴛ ᴛᴏ ᴍᴇɴᴛɪᴏɴ ᴛʜᴇᴍ, ғᴏʀᴡᴀʀᴅ ᴏɴᴇ ᴏғ ᴛʜᴇɪʀ ᴍᴇssᴀɢᴇs ᴛᴏ ᴍᴇ, ᴀɴᴅ ɪ'ʟʟ ʙᴇ ᴀʙʟᴇ "
+                        "ᴛᴏ ᴛᴀɢ ᴛʜᴇᴍ !"
                     )
                 elif FILE_MATCHER.match(note.value):
                     message.reply_text(
-                        "This note was an incorrectly imported file from another bot - I can't use "
-                        "it. If you really need it, you'll have to save it again. In "
-                        "the meantime, I'll remove it from your notes list."
+                        "๏ ᴛʜɪs ɴᴏᴛᴇ ᴡᴀs ᴀɴ ɪɴᴄᴏʀʀᴇᴄᴛʟʏ ɪᴍᴘᴏʀᴛᴇᴅ ғɪʟᴇ ғʀᴏᴍ ᴀɴᴏᴛʜᴇʀ ʙᴏᴛ - ɪ ᴄᴀɴ'ᴛ ᴜsᴇ "
+                        "ɪᴛ. ɪғ ʏᴏᴜ ʀᴇᴀʟʟʏ ɴᴇᴇᴅ ɪᴛ, ʏᴏᴜ'ʟʟ ʜᴀᴠᴇ ᴛᴏ sᴀᴠᴇ ɪᴛ ᴀɢᴀɪɴ. ɪɴ "
+                        "ᴛʜᴇ ᴍᴇᴀɴᴛɪᴍᴇ, ɪ'ʟʟ ʀᴇᴍᴏᴠᴇ ɪᴛ ғʀᴏᴍ ʏᴏᴜʀ ɴᴏᴛᴇs ʟɪsᴛ."
                     )
                     sql.rm_note(chat_id, notename)
                 else:
                     message.reply_text(
-                        "This note could not be sent, as it is incorrectly formatted. Ask in "
-                        f"@{SUPPORT_CHAT} if you can't figure out why!"
+                        "๏ ᴛʜɪs ɴᴏᴛᴇ ᴄᴏᴜʟᴅ ɴᴏᴛ ʙᴇ sᴇɴᴛ, ᴀs ɪᴛ ɪs ɪɴᴄᴏʀʀᴇᴄᴛʟʏ ғᴏʀᴍᴀᴛᴛᴇᴅ. ᴀsᴋ ɪɴ "
+                        f"@{SUPPORT_CHAT} ɪғ ʏᴏᴜ ᴄᴀɴ'ᴛ ғɪɢᴜʀᴇ ᴏᴜᴛ ᴡʜʏ !"
                     )
                     EVENT_LOGS.exception(
-                        "Could not parse message #%s in chat %s", notename, str(chat_id)
+                        "๏ ᴄᴏᴜʟᴅ ɴᴏᴛ ᴘᴀʀsᴇ ᴍᴇssᴀɢᴇ #%s ɪɴ ᴄʜᴀᴛ %s", notename, str(chat_id)
                     )
-                    EVENT_LOGS.warning("Message was: %s", str(note.value))
+                    EVENT_LOGS.warning("๏ ᴍᴇssᴀɢᴇ ᴡᴀs : %s", str(note.value))
         return
     elif show_none:
-        message.reply_text("This note doesn't exist")
+        message.reply_text("๏ ᴛʜɪs ɴᴏᴛᴇ ᴅᴏᴇsɴ'ᴛ ᴇxɪsᴛ")
 
 
 @connection_status
@@ -233,7 +233,7 @@ def slash_get(update: Update, context: CallbackContext):
         note_name = str(noteid).strip(">").split()[1]
         get(update, context, note_name, show_none=False)
     except IndexError:
-        update.effective_message.reply_text("Wrong Note ID 😾")
+        update.effective_message.reply_text("๏ ᴡʀᴏɴɢ ɴᴏᴛᴇ ɪᴅ.")
 
 
 @user_admin
@@ -245,7 +245,7 @@ def save(update: Update, context: CallbackContext):
     note_name, text, data_type, content, buttons = get_note_type(msg)
     note_name = note_name.lower()
     if data_type is None:
-        msg.reply_text("Dude, there's no note")
+        msg.reply_text("๏ ᴅᴜᴅᴇ, ᴛʜᴇʀᴇ's ɴᴏ ɴᴏᴛᴇ")
         return
 
     sql.add_note_to_db(
@@ -253,24 +253,24 @@ def save(update: Update, context: CallbackContext):
     )
 
     msg.reply_text(
-        f"Yas! Added `{note_name}`.\nGet it with /get `{note_name}`, or `#{note_name}`",
+        f"๏ ʏᴇs ! ᴀᴅᴅᴇᴅ `{note_name}`.\n๏ ɢᴇᴛ ɪᴛ ᴡɪᴛʜ /get `{note_name}`, ᴏʀ `#{note_name}`",
         parse_mode=ParseMode.MARKDOWN,
     )
 
     if msg.reply_to_message and msg.reply_to_message.from_user.is_bot:
         if text:
             msg.reply_text(
-                "Seems like you're trying to save a message from a bot. Unfortunately, "
-                "bots can't forward bot messages, so I can't save the exact message. "
-                "\nI'll save all the text I can, but if you want more, you'll have to "
-                "forward the message yourself, and then save it."
+                "๏ sᴇᴇᴍs ʟɪᴋᴇ ʏᴏᴜ'ʀᴇ ᴛʀʏɪɴɢ ᴛᴏ sᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ғʀᴏᴍ ᴀ ʙᴏᴛ. ᴜɴғᴏʀᴛᴜɴᴀᴛᴇʟʏ, "
+                "ʙᴏᴛs ᴄᴀɴ'ᴛ ғᴏʀᴡᴀʀᴅ ʙᴏᴛ ᴍᴇssᴀɢᴇs, sᴏ ɪ ᴄᴀɴ'ᴛ sᴀᴠᴇ ᴛʜᴇ ᴇxᴀᴄᴛ ᴍᴇssᴀɢᴇ. "
+                "\n๏ ɪ'ʟʟ sᴀᴠᴇ ᴀʟʟ ᴛʜᴇ ᴛᴇxᴛ ɪ ᴄᴀɴ, ʙᴜᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏʀᴇ, ʏᴏᴜ'ʟʟ ʜᴀᴠᴇ ᴛᴏ "
+                "ғᴏʀᴡᴀʀᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ʏᴏᴜʀsᴇʟғ, ᴀɴᴅ ᴛʜᴇɴ sᴀᴠᴇ ɪᴛ."
             )
         else:
             msg.reply_text(
-                "Bots are kinda handicapped by telegram, making it hard for bots to "
-                "interact with other bots, so I can't save this message "
-                "like I usually would - do you mind forwarding it and "
-                "then saving that new message? Thanks!"
+                "๏ ʙᴏᴛs ᴀʀᴇ ᴋɪɴᴅᴀ ʜᴀɴᴅɪᴄᴀᴘᴘᴇᴅ ʙʏ ᴛᴇʟᴇɢʀᴀᴍ, ᴍᴀᴋɪɴɢ ɪᴛ ʜᴀʀᴅ ғᴏʀ ʙᴏᴛs ᴛᴏ "
+                "ɪɴᴛᴇʀᴀᴄᴛ ᴡɪᴛʜ ᴏᴛʜᴇʀ ʙᴏᴛs, sᴏ ɪ ᴄᴀɴ'ᴛ sᴀᴠᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ "
+                "ʟɪᴋᴇ ɪ ᴜsᴜᴀʟʟʏ ᴡᴏᴜʟᴅ - ᴅᴏ ʏᴏᴜ ᴍɪɴᴅ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ ᴀɴᴅ "
+                "ᴛʜᴇɴ sᴀᴠɪɴɢ ᴛʜᴀᴛ ɴᴇᴡ ᴍᴇssᴀɢᴇ ? ᴛʜᴀɴᴋs !"
             )
         return
 
@@ -284,9 +284,9 @@ def clear(update: Update, context: CallbackContext):
         notename = args[0].lower()
 
         if sql.rm_note(chat_id, notename):
-            update.effective_message.reply_text("Successfully removed note.")
+            update.effective_message.reply_text("๏ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇᴍᴏᴠᴇᴅ ɴᴏᴛᴇ.")
         else:
-            update.effective_message.reply_text("That's not a note in my database!")
+            update.effective_message.reply_text("๏ ᴛʜᴀᴛ's ɴᴏᴛ ᴀ ɴᴏᴛᴇ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ !")
 
 
 def clearall(update: Update, context: CallbackContext):
@@ -295,21 +295,21 @@ def clearall(update: Update, context: CallbackContext):
     member = chat.get_member(user.id)
     if member.status != "creator" :
         update.effective_message.reply_text(
-            "Only the chat owner can clear all notes at once."
+            "๏ ᴏɴʟʏ ᴛʜᴇ ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴄᴀɴ ᴄʟᴇᴀʀ ᴀʟʟ ɴᴏᴛᴇs ᴀᴛ ᴏɴᴄᴇ."
         )
     else:
         buttons = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="Delete all notes", callback_data="notes_rmall"
+                        text="ᴅᴇʟᴇᴛᴇ ᴀʟʟ ɴᴏᴛᴇs", callback_data="notes_rmall"
                     )
                 ],
-                [InlineKeyboardButton(text="Cancel", callback_data="notes_cancel")],
+                [InlineKeyboardButton(text="ᴄᴀɴᴄᴇʟ", callback_data="notes_cancel")],
             ]
         )
         update.effective_message.reply_text(
-            f"Are you sure you would like to clear ALL notes in {chat.title}? This action cannot be undone.",
+            f"๏ ᴀʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴏᴜʟᴅ ʟɪᴋᴇ ᴛᴏ ᴄʟᴇᴀʀ ᴀʟʟ ɴᴏᴛᴇs ɪɴ {chat.title} ? ᴛʜɪs ᴀᴄᴛɪᴏɴ ᴄᴀɴɴᴏᴛ ʙᴇ ᴜɴᴅᴏɴᴇ.",
             reply_markup=buttons,
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -327,23 +327,23 @@ def clearall_btn(update: Update, context: CallbackContext):
                 for notename in note_list:
                     note = notename.name.lower()
                     sql.rm_note(chat.id, note)
-                message.edit_text("Deleted all notes.")
+                message.edit_text("ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ɴᴏᴛᴇs.")
             except BadRequest:
                 return
 
         if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.")
+            query.answer("๏ ᴏɴʟʏ ᴏᴡɴᴇʀ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ ᴄᴀɴ ᴅᴏ ᴛʜɪs.")
 
         if member.status == "member":
-            query.answer("You need to be admin to do this.")
+            query.answer("๏ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴏ ᴛʜɪs.")
     elif query.data == "notes_cancel":
         if member.status == "creator" or query.from_user.id in DRAGONS:
-            message.edit_text("Clearing of all notes has been cancelled.")
+            message.edit_text("๏ ᴄʟᴇᴀʀɪɴɢ ᴏғ ᴀʟʟ ɴᴏᴛᴇs ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ.")
             return
         if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.")
+            query.answer("๏ ᴏɴʟʏ ᴏᴡɴᴇʀ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ ᴄᴀɴ ᴅᴏ ᴛʜɪs.")
         if member.status == "member":
-            query.answer("You need to be admin to do this.")
+            query.answer("๏ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴏ ᴛʜɪs.")
 
 
 @connection_status
@@ -351,7 +351,7 @@ def list_notes(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     note_list = sql.get_all_chat_notes(chat_id)
     notes = len(note_list) + 1
-    msg = "Get note by `/notenumber` or `#notename` \n\n  *ID*    *Note* \n"
+    msg = "๏ ɢᴇᴛ ɴᴏᴛᴇ ʙʏ `/notenumber` ᴏʀ `#notename` \n\n๏ *ɪᴅ* *ɴᴏᴛᴇ* \n"
     for note_id, note in zip(range(1, notes), note_list):
         if note_id < 10:
             note_name = f"`{note_id:2}.`  `#{(note.name.lower())}`\n"
@@ -363,7 +363,7 @@ def list_notes(update: Update, context: CallbackContext):
         msg += note_name
 
     if not note_list:
-        update.effective_message.reply_text("No notes in this chat!")
+        update.effective_message.reply_text("๏ ɴᴏ ɴᴏᴛᴇs ɪɴ ᴛʜɪs ᴄʜᴀᴛ !")
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -470,9 +470,9 @@ def __import_data__(chat_id, data):
                 chat_id,
                 document=output,
                 filename="failed_imports.txt",
-                caption="These files/photos failed to import due to originating "
-                "from another bot. This is a telegram API restriction, and can't "
-                "be avoided. Sorry for the inconvenience!",
+                caption="๏ ᴛʜᴇsᴇ ғɪʟᴇs/ᴘʜᴏᴛᴏs ғᴀɪʟᴇᴅ ᴛᴏ ɪᴍᴘᴏʀᴛ ᴅᴜᴇ ᴛᴏ ᴏʀɪɢɪɴᴀᴛɪɴɢ "
+                "ғʀᴏᴍ ᴀɴᴏᴛʜᴇʀ ʙᴏᴛ. ᴛʜɪs ɪs ᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ʀᴇsᴛʀɪᴄᴛɪᴏɴ, ᴀɴᴅ ᴄᴀɴ'ᴛ "
+                "ʙᴇ ᴀᴠᴏɪᴅᴇᴅ. sᴏʀʀʏ ғᴏʀ ᴛʜᴇ ɪɴᴄᴏɴᴠᴇɴɪᴇɴᴄᴇ !",
             )
 
 
@@ -486,29 +486,29 @@ def __migrate__(old_chat_id, new_chat_id):
 
 def __chat_settings__(chat_id, user_id):
     notes = sql.get_all_chat_notes(chat_id)
-    return f"There are `{len(notes)}` notes in this chat."
+    return f"๏ ᴛʜᴇʀᴇ ᴀʀᴇ `{len(notes)}` ɴᴏᴛᴇs ɪɴ ᴛʜɪs ᴄʜᴀᴛ."
 
 
 __help__ = """
+ ❍ `/get <notename>`* ➛* ɢᴇᴛ ᴛʜᴇ ɴᴏᴛᴇ ᴡɪᴛʜ ᴛʜɪs ɴᴏᴛᴇɴᴀᴍᴇ
+ ❍ `#<notename>`* ➛* sᴀᴍᴇ ᴀs /get
+ ❍ `/notes` ᴏʀ `/saved`* ➛* ʟɪsᴛ ᴀʟʟ sᴀᴠᴇᴅ ɴᴏᴛᴇs ɪɴ ᴛʜɪs ᴄʜᴀᴛ
+ ❍ `/number` *➛* ᴡɪʟʟ ᴘᴜʟʟ ᴛʜᴇ ɴᴏᴛᴇ ᴏғ ᴛʜᴀᴛ ɴᴜᴍʙᴇʀ ɪɴ ᴛʜᴇ ʟɪsᴛ. 
+ ❍ ɪғ ʏᴏᴜ ᴡᴏᴜʟᴅ ʟɪᴋᴇ ᴛᴏ ʀᴇᴛʀɪᴇᴠᴇ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛs ᴏғ ᴀ ɴᴏᴛᴇ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ғᴏʀᴍᴀᴛᴛɪɴɢ, ᴜsᴇ `/get <notename> ɴᴏғᴏʀᴍᴀᴛ`. ᴛʜɪs ᴄᴀɴ \ ʙᴇ ᴜsᴇғᴜʟ ᴡʜᴇɴ ᴜᴘᴅᴀᴛɪɴɢ ᴀ ᴄᴜʀʀᴇɴᴛ ɴᴏᴛᴇ.
 
- ❍ `/get <notename>`*:* get the note with this notename
- ❍ `#<notename>`*:* same as /get
- ❍ `/notes` or `/saved`*:* list all saved notes in this chat
- ❍ `/number` *:* Will pull the note of that number in the list. 
-If you would like to retrieve the contents of a note without any formatting, use `/get <notename> noformat`. This can \
-be useful when updating a current note.
+✿ *ᴀᴅᴍɪɴs ᴏɴʟʏ* ✿
 
-*Admins only:*
- ❍ `/save <notename> <notedata>`*:* saves notedata as a note with name notename
-A button can be added to a note by using standard markdown link syntax - the link should just be prepended with a \
-`buttonurl:` section, as such: `[somelink](buttonurl:example.com)`. Check `/markdownhelp` for more info.
- ❍ `/save <notename>`*:* save the replied message as a note with name notename
- ❍ `/clear <notename>`*:* clear note with this name
- ❍ `/removeallnotes`*:* removes all notes from the group
- *Note:* Note names are case-insensitive, and they are automatically converted to lowercase before getting saved.
+ ❍ `/save <notename> <notedata>`* ➛* sᴀᴠᴇs ɴᴏᴛᴇᴅᴀᴛᴀ ᴀs ᴀ ɴᴏᴛᴇ ᴡɪᴛʜ ɴᴀᴍᴇ ɴᴏᴛᴇɴᴀᴍᴇ
+❍ ᴀ ʙᴜᴛᴛᴏɴ ᴄᴀɴ ʙᴇ ᴀᴅᴅᴇᴅ ᴛᴏ ᴀ ɴᴏᴛᴇ ʙʏ ᴜsɪɴɢ sᴛᴀɴᴅᴀʀᴅ ᴍᴀʀᴋᴅᴏᴡɴ ʟɪɴᴋ sʏɴᴛᴀx - ᴛʜᴇ ʟɪɴᴋ sʜᴏᴜʟᴅ ᴊᴜsᴛ ʙᴇ ᴘʀᴇᴘᴇɴᴅᴇᴅ ᴡɪᴛʜ ᴀ \
+`buttonurl:` sᴇᴄᴛɪᴏɴ, ᴀs sᴜᴄʜ : `[sᴏᴍᴇʟɪɴᴋ](buttonurl:example.com)`. ᴄʜᴇᴄᴋ `/markdownhelp` ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ.
+ ❍ `/save <notename>`* ➛* sᴀᴠᴇ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ᴀs ᴀ ɴᴏᴛᴇ ᴡɪᴛʜ ɴᴀᴍᴇ ɴᴏᴛᴇɴᴀᴍᴇ
+ ❍ `/clear <notename>`* ➛* ᴄʟᴇᴀʀ ɴᴏᴛᴇ ᴡɪᴛʜ ᴛʜɪs ɴᴀᴍᴇ
+ ❍ `/removeallnotes`* ➛* ʀᴇᴍᴏᴠᴇs ᴀʟʟ ɴᴏᴛᴇs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ
+ 
+ ❍ *ɴᴏᴛᴇ ➛* ɴᴏᴛᴇ ɴᴀᴍᴇs ᴀʀᴇ ᴄᴀsᴇ-ᴇɴsɪᴛɪᴠᴇ, ᴀɴᴅ ᴛʜᴇʏ ᴀʀᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄᴏɴᴠᴇʀᴛᴇᴅ ᴛᴏ ʟᴏᴡᴇʀᴄᴀsᴇ ʙᴇғᴏʀᴇ ɢᴇᴛᴛɪɴɢ sᴀᴠᴇᴅ.
 """
 
-__mod_name__ = "Nᴏᴛᴇs"
+__mod_name__ = "ɴᴏᴛᴇs"
 
 GET_HANDLER = CommandHandler("get", cmd_get, run_async=True)
 HASH_GET_HANDLER = MessageHandler(Filters.regex(r"^#[^\s]+"), hash_get, run_async=True)
