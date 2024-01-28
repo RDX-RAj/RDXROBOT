@@ -4,7 +4,8 @@ from telegram.ext import CallbackContext
 from MukeshRobot import pbot as app
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
-
+from pyrogram.types import InputMediaVideo
+import random
 trans = SyncTranslator()
 
 
