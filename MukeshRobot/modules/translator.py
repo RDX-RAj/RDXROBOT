@@ -115,3 +115,4 @@ async def gib_repo_callback(_, callback_query):
             ]
         ),
         )
+close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
