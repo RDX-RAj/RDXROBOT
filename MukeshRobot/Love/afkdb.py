@@ -1,4 +1,4 @@
-from YukkiMusic.utils.mongo import db
+from MukeshRobot.Love.mongo.import db
 
 afkdb = db.afk
 
