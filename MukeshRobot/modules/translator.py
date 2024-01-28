@@ -97,7 +97,7 @@ async def repo(client, message):
                     ),
                     InlineKeyboardButton(
                         "ʀᴇᴘᴏ",
-                        url="https://x-hd.video/video/-aubree-valentine-switch-roles-fta-reality-kings.html",
+                        callback_data="gib_source",
                     ),
                 ]
             ]
