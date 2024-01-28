@@ -1,4 +1,4 @@
-from MukeshRobot.Love.mongo.import db
+from MukeshRobot.Love.mongo import db
 
 afkdb = db.afk
 
