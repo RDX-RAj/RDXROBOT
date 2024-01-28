@@ -1,12 +1,12 @@
 
 from typing import Dict, Union
-
+import random
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 
 from config import MONGO_DB_URI
 
 mongo = MongoCli(MONGO_DB_URI)
-db = mongo.YukkiMusic
+db = mongo.MukeshRobot
 
 coupledb = db.couple
 
