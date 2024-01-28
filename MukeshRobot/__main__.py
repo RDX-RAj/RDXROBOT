@@ -86,15 +86,13 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="ʀᴇᴘᴏ", callback_data="source_"),
+        InlineKeyboardButton(text="ʀᴇᴘᴏ", callback_data="gib_source"),
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mukesh_"),
     ],
     [
         InlineKeyboardButton(text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
     ],
-    [ 
-        InlineKeyboardButton(text="repo", callback_data="gib_source"),
-        ]
+     
 ]
 
 
