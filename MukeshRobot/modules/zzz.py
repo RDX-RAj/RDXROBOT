@@ -12,6 +12,7 @@ from MukeshRobot.database.wel_db import *
 
 COMMAND_HANDLER = ". /".split() # COMMAND HANDLER
 
+LOGGER = getLogger(__name__)
 
 class temp:
     ME = None
