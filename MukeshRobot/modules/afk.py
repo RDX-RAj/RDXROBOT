@@ -4,8 +4,8 @@ from pyrogram.enums import MessageEntityType
 from pyrogram import filters
 from pyrogram.types import Message
 from MukeshRobot import pbot as app
-from YukkiMusic.mongo.readable_time import get_readable_time
-from YukkiMusic.mongo.afkdb import add_afk, is_afk, remove_afk
+from MukeshRobot.Love.readable_time import get_readable_time
+from MukeshRobot.Love.afkdb import add_afk, is_afk, remove_afk
 
 
 
