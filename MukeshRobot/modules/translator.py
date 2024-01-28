@@ -1,7 +1,7 @@
 from gpytranslate import SyncTranslator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
-
+from MukeshRobot import pbot as app
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
@@ -104,3 +104,13 @@ async def repo(client, message):
     )
 
 
+@app.on_callback_query(filters.regex("gib_source"))
+async def gib_repo_callback(_, callback_query):
+    await callback_query.edit_message_media(
+        media=InputMediaVideo("https://telegra.ph/file/e32eefb47ddd4cfde46e5.mp4", has_spoiler=True),
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [close_button]
+            ]
+        ),
+        )
