@@ -19,25 +19,25 @@ async def fetch_joke(event):
         if response.status_code == 200:
             # Extract the joke from the API response
             joke_data = response.json()
-            joke = joke_data.get("hindi_Jokes", "No joke received from the API")
+            joke = joke_data.get("hindi_Jokes", "❍ ɴᴏ ᴊᴏᴋᴇ ʀᴇᴄᴇɪᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ")
 
             # Add signature below the joke
-            signature = "\n\nᴊᴏᴋᴇ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [𝐐𝐔𝐄𝐄𝐍](https://t.me/TheQueenRobot)"
-            reply_message = f"🤣 {joke}{signature}"
+            signature = "\n\n๏ ᴊᴏᴋᴇs ɢᴇɴᴇʀᴀᴛᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
+            reply_message = f"💌 {joke}{signature}"
         else:
-            reply_message = "Error fetching joke from the API."
+            reply_message = "❍ ᴇʀʀᴏʀ ғᴇᴛᴄʜɪɴɢ ᴊᴏᴋᴇ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ."
     except requests.exceptions.RequestException as e:
         # Handle network-related errors
-        reply_message = f"Error: {str(e)}. Please try again later."
+        reply_message = f"❍ ᴇʀʀᴏʀ ➛ {str(e)}. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ."
     except Exception as e:
         # Handle unexpected errors
-        reply_message = f"Unexpected error: {str(e)}. Please try again later."
+        reply_message = f"❍ ᴜɴᴇxᴘᴇᴄᴛᴇᴅ ᴇʀʀᴏʀ ➛ {str(e)}. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ."
 
     # Edit the "Generating a joke" message with the final reply
     await processing_message.edit(reply_message)
 
-__mod_name__ = "Jokes"
+__mod_name__ = "ᴊᴏᴋᴇs"
 
 __help__ = """
-write the command `/joke` to get random jokes.
+❍ ᴡʀɪᴛᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ➛ `/joke` ᴛᴏ ɢᴇᴛ ʀᴀɴᴅᴏᴍ ᴊᴏᴋᴇs.
 """
