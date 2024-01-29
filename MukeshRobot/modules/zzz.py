@@ -71,20 +71,20 @@ async def auto_state(_, message):
       state = state.lower()
       if state == "enable":
         if A:
-           return await message.reply_text("Special Welcome Already Enabled")
+           return await message.reply_text("๏ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ")
         elif not A:
            await add_wlcm(chat_id)
-           await message.reply_text(f"Enabled Special Welcome in {message.chat.title}")
+           await message.reply_text(f"๏ ᴇɴᴀʙʟᴇᴅ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ ɪɴ {message.chat.title}")
       elif state == "disable":
         if not A:
-           return await message.reply_text("Special Welcome Already Disabled")
+           return await message.reply_text("๏ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ")
         elif A:
            await rm_wlcm(chat_id)
-           await message.reply_text(f"Disabled Special Welcome in {message.chat.title}")
+           await message.reply_text(f"๏ ᴅɪsᴀʙʟᴇᴅ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ ɪɴ {message.chat.title}")
       else:
         await message.reply_text(usage)
     else:
-        await message.reply("Only Admins Can Use This Command")
+        await message.reply("๏ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ")
 
 @app.on_chat_member_updated(filters.group, group=-3)
 async def greet_group(_, member: ChatMemberUpdated):
@@ -118,11 +118,11 @@ async def greet_group(_, member: ChatMemberUpdated):
             member.chat.id,
             photo=welcomeimg,
             caption= f"""
-**WELCOME TO {member.chat.title}
-➖➖➖➖➖➖➖➖➖➖➖➖
-NAME: {user.mention}
-ID: {user.id}
-USERNAME: @{user.username}
+**❀ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {member.chat.title} ❀
+
+๏ ɴᴀᴍᴇ ➠ {user.mention}
+๏ ɪᴅ ➠ {user.id}
+๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{user.username}**
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (f"ᴠɪᴇᴡ ᴜsᴇʀ", url=f"https://t.me/{user.username}")]])
@@ -135,3 +135,12 @@ USERNAME: @{user.username}
         os.remove(f"downloads/pp{user.id}.png")
     except Exception as e:
         return 
+
+
+__mod_name__ = "ᴢ-ᴡᴇʟᴄᴏᴍᴇ"
+__help__ = """
+ ❍ ᴛʜɪs ɪs sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs.
+
+ ❍ /zwelcome <enable> ➛ ᴇɴᴀʙʟᴇ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ.
+ ❍ /zwelcome <disable> ➛ ᴅɪsᴀʙʟᴇ sᴘᴇᴄɪᴀʟ ᴡᴇʟᴄᴏᴍᴇ.
+ """
