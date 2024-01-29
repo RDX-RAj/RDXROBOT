@@ -43,3 +43,7 @@ async def search_and_send_youtube_video(event):
         await processing_message.edit(error_message)
 
 mod_name = "YouTubeDownloader"
+
+__help__ = """
+command : `/yt` video url
+"""
