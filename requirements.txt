@@ -62,3 +62,5 @@ git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
 unidecode
 openai
 numpy==1.26.3
+glitch_this
+opencv-python-headless
