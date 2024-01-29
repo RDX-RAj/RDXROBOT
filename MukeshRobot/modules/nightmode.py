@@ -82,7 +82,7 @@ async def close_ws(event):
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
-        f"❍ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ➛ {event.chat.title} \n❍ɪᴅ➛ {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n\n**❍ ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",
+        f"๏ ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ ➛ {event.chat.title} \n๏ ɪᴅ ➛ {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n\n**❍ ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12 ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06 ᴀᴍ(ɪꜱᴛ)**",
        buttons=button_row )
 
 
@@ -101,7 +101,7 @@ async def disable_ws(event):
         return
     rmnightmode(str(event.chat_id))
     await event.reply(
-        f"❍ ʀᴇᴍᴏᴠᴇᴅ ᴄʜᴀᴛ ➛ {event.chat.title} \n❍ɪᴅ➛  {event.chat_id} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ."
+        f"๏ ʀᴇᴍᴏᴠᴇᴅ ᴄʜᴀᴛ ➛ {event.chat.title} \n๏ ɪᴅ ➛  {event.chat_id} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ."
     )
 
 
@@ -137,8 +137,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"๏ ɢʀᴏᴜᴘ ɪꜱ ᴏᴘᴇɴɪɴɢ,ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴇᴠᴇʀʏᴏɴᴇ !\n\n๏ ᴍᴀʏ ᴛʜɪs ᴅᴀʏ ᴄᴏᴍᴇ ᴡɪᴛʜ ᴀʟʟ ᴛʜᴇ ʟᴏᴠᴇ ʏᴏᴜʀ ʜᴇᴀʀᴛ ᴄᴀɴ ʜᴏʟᴅ ᴀɴᴅ ʙʀɪɴɢ ʏᴏᴜ ᴇᴠᴇʀʏ sᴜᴄᴄᴇss ʏᴏᴜ ᴅᴇsɪʀᴇ. ᴍᴀʏ ᴇᴀᴄʜ ᴏғ ʏᴏᴜʀ ғᴏᴏᴛsᴛᴇᴘs ʙʀɪɴɢ ᴊᴏʏ ᴛᴏ ᴛʜᴇ ᴇᴀʀᴛʜ ᴀɴᴅ ʏᴏᴜʀsᴇʟғ. ɪ ᴡɪsʜ ʏᴏᴜ ᴀ ᴍᴀɢɪᴄᴀʟ ᴅᴀʏ ᴀɴᴅ ᴀ ᴡᴏɴᴅᴇʀғᴜʟ ʟɪғᴇ ᴀʜᴇᴀᴅ.\n\n**๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ {BOT_NAME}**",
-            )
+                f"๏ ɢʀᴏᴜᴘ ɪꜱ ᴏᴘᴇɴɪɴɢ, ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴇᴠᴇʀʏᴏɴᴇ !\n\n๏ ᴍᴀʏ ᴛʜɪs ᴅᴀʏ ᴄᴏᴍᴇ ᴡɪᴛʜ ᴀʟʟ ᴛʜᴇ ʟᴏᴠᴇ ʏᴏᴜʀ ʜᴇᴀʀᴛ ᴄᴀɴ ʜᴏʟᴅ ᴀɴᴅ ʙʀɪɴɢ ʏᴏᴜ ᴇᴠᴇʀʏ sᴜᴄᴄᴇss ʏᴏᴜ ᴅᴇsɪʀᴇ. ᴍᴀʏ ᴇᴀᴄʜ ᴏғ ʏᴏᴜʀ ғᴏᴏᴛsᴛᴇᴘs ʙʀɪɴɢ ᴊᴏʏ ᴛᴏ ᴛʜᴇ ᴇᴀʀᴛʜ ᴀɴᴅ ʏᴏᴜʀsᴇʟғ. ɪ ᴡɪsʜ ʏᴏᴜ ᴀ ᴍᴀɢɪᴄᴀʟ ᴅᴀʏ ᴀɴᴅ ᴀ ᴡᴏɴᴅᴇʀғᴜʟ ʟɪғᴇ ᴀʜᴇᴀᴅ.\n\n**๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ {BOT_NAME}**",buttons=button_row)
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(warner.chat_id), banned_rights=openhehe
