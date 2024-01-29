@@ -31,7 +31,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@pbot.on_message(filters.command(["couple", "couples"]))
+@pbot.on_message(filters.command(["couple",]))
 async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘ.")
