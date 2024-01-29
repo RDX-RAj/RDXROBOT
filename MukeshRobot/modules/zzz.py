@@ -57,7 +57,7 @@ def welcomepic(pic, user, chat, id, uname):
 
 @app.on_message(filters.command("zwelcome", COMMAND_HANDLER) & ~filters.private)
 async def auto_state(_, message):
-    usage = "**Usage:**\n/swelcome [ENABLE|DISABLE]"
+    usage = "**๏ ᴜsᴀɢᴇ ➠ **/swelcome [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ]"
     if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
@@ -118,12 +118,12 @@ async def greet_group(_, member: ChatMemberUpdated):
             member.chat.id,
             photo=welcomeimg,
             caption= f"""
-**❀ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {member.chat.title} ❀
+**❀ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ {member.chat.title} ɢʀᴏᴜᴘ ❀
 
 ๏ ɴᴀᴍᴇ ➠ {user.mention}
 ๏ ɪᴅ ➠ {user.id}
-๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{user.username}**
-➖➖➖➖➖➖➖➖➖➖➖➖**
+๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{user.username}
+๏ ᴍᴀᴅᴇ ʙʏ ➠ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/roy_editx)**
 """,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (f"ᴠɪᴇᴡ ᴜsᴇʀ", url=f"https://t.me/{user.username}")]])
 
