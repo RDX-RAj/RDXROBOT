@@ -13,11 +13,11 @@ async def search_and_send_youtube_video(event):
     yt_video_url = event.pattern_match.group(1).strip()
 
     if not yt_video_url:
-        await event.reply("To download a YouTube video, use the command like this:\n\n`/yt [YouTube Video URL]`\n\nFor example: `/yt https://www.youtube.com/watch?v=example_video_id`")
+        await event.reply("๏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ, ᴜsᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ʟɪᴋᴇ ᴛʜɪs.\n\n๏ `/yt [ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ᴜʀʟ]`\n\n๏ ғᴏʀ ᴇxᴀᴍᴘʟᴇ : `/yt https://www.youtube.com/watch?v=example_video_id`")
         return
 
     # Send a "Please wait" message while processing
-    processing_message = await event.reply("Please wait while fetching your video...")
+    processing_message = await event.reply("🧨")
 
     # Make a request to the YouTube Video Downloader API
     response = requests.get(f"{YOUTUBE_API_URL}?url={yt_video_url}")
@@ -29,21 +29,21 @@ async def search_and_send_youtube_video(event):
 
         # Format the reply with clickable links
         reply_message = (
-            f"[𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗜𝗡 𝗔𝗨𝗗𝗜𝗢 🎵]({audio_url})\n\n"
-            f"[𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗜𝗡 𝗩𝗜𝗗𝗘𝗢 🎞]({video_url})\n\n\n"
-            f"ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ [𝐐𝐔𝐄𝐄𝐍](https://t.me/TheQueenRobot)"
+            f"๏ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʏᴛ-ǫᴜᴇʀʏ ɪɴ ᴀᴜᴅɪᴏ ➠ [ᴅᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ]({audio_url})\n\n"
+            f"๏ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʏᴛ-ǫᴜᴇʀʏ ɪɴ ᴠɪᴅᴇᴏ ➠ [ᴅᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ]({video_url})\n\n\n"
+            f"๏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴠɪᴀ ➠ [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/AvishaxBot)"
         )
 
         # Edit the "Please wait" message with the final answer
         await processing_message.edit(reply_message)
     else:
-        error_message = "Error fetching YouTube video from the API."
+        error_message = "๏ ᴇʀʀᴏʀ ғᴇᴛᴄʜɪɴɢ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ғʀᴏᴍ ᴛʜᴇ ᴀᴘɪ."
 
         # Edit the "Please wait" message with the error response
         await processing_message.edit(error_message)
 
-mod_name = "YouTubeDownloader"
+mod_name = "ʏᴛ-ᴅʟ"
 
 __help__ = """
-command : `/yt` video url
+❍ ᴄᴏᴍᴍᴀɴᴅ ➛ `/yt` ᴠɪᴅᴇᴏ ᴜʀʟ
 """
