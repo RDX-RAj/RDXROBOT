@@ -44,6 +44,3 @@ async def search_and_send_youtube_video(event):
 
 mod_name = "ʏᴛ-ᴅʟ"
 
-__help__ = """
-❍ ᴄᴏᴍᴍᴀɴᴅ ➛ `/yt` ᴠɪᴅᴇᴏ ᴜʀʟ
-"""
