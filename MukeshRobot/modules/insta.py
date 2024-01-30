@@ -41,9 +41,12 @@ async def search_and_send_instagram_video(event):
     # Edit the "Please wait" message with the final reply
     await processing_message.edit(reply_message)
 
-__mod_name__ = "ɪɴsᴛᴀ"
+__mod_name__ = "ᴛᴏᴏʟs"
 
 __help__ = """
 ❍ /insta ➛ ᴘᴀsᴛᴇ ɪɴsᴛᴀ ʀᴇᴇʟs / ɪᴍᴀɢᴇ ᴜʀʟ ɪs ʜᴇʀᴇ ʙᴀʙʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀʀᴅ ɪɴsᴛᴀ ᴠɪᴅᴇᴏ/ ʀᴇᴇʟs.
+
 ❍ /fbdl ➛ ᴘᴀsᴛᴇ ғᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟs ᴜʀʟ ʙᴀʙʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ғᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟs.
+
+❍ ᴄᴏᴍᴍᴀɴᴅ ➛ `/yt` ᴠɪᴅᴇᴏ ᴜʀʟ
 """
