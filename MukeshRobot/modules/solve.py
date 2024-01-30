@@ -14,7 +14,7 @@ async def chat_gpt(event):
 
     if query:
         # Send "Please wait" message
-        processing_message = await event.reply("💭")
+        processing_message = await event.reply("📝")
 
         try:
             # Make a request to GPT API
