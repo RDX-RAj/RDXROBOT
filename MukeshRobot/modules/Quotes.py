@@ -80,7 +80,7 @@ loveShayri = [
 ]
 
 
-@pbot.on_message(filters.command("quotes"))
+@pbot.on_message(filters.command("quote"))
 
 async def love_shayri(b,m):
     "dont remove this line \n credit  |n github : noob-mukesh"
