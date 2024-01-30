@@ -42,10 +42,10 @@ async def ytmusic(client, message: Message):
     user_name = message.from_user.first_name
     chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
 
-    pablo = await client.send_message(message.chat.id, f"🎥")
+    pablo = await client.send_message(message.chat.id, f"📺")
     if not urlissed:
         await pablo.edit(
-            "❍ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ.\n\n❍ ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴛɪ ʟɪᴋʜᴀ ʜᴏ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !"
+            "❍ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ.\n\n❍ ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴀᴛ ʟɪᴋʜᴀ ʜᴀɪ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !"
         )
         return
 
