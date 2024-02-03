@@ -566,6 +566,37 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                 ]
             ),
             )  
+elif query.data == "mukesh_back":
+        first_name = update.effective_user.first_name 
+        query.message.edit_caption(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+          )
+def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "Main_help":
+        query.message.edit_caption(f"""
+ ✦ ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ ꜰᴏʀ {BOT_NAME}
+""",
+            parse_mode=ParseMode.MARKDOWN,
+            
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="ʙᴀsɪᴄ", callback_data="basic_help"),
+                        InlineKeyboardButton(text="ꜱᴘᴀᴍ", callback_data="expert_help")
+                    ],
+                    [
+                        InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
+                        InlineKeyboardButton(text="ᴄʜᴀᴛ ᴀɪ", callback_data="donation_help") 
+                    ],
+                    [InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back")]
+                ]
+            ),
+            )
+
+
 def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
