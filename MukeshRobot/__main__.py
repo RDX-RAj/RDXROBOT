@@ -577,7 +577,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_caption(
-            f"""❍ ᴀᴀ ɢʏᴀ ʀᴇᴘᴏ ʟᴇɴᴇ ʙᴏsᴅᴋ, ʏᴇ ᴠɪᴅᴇᴏ ᴅᴇᴋʜ ᴀᴜʀ ᴀᴘɴɪ ʀᴇᴘᴏ ʟᴇɴᴇ ᴋɪ ᴀᴀɢ ʙʜᴜᴊʜᴀ.\n\n❍ https://x-hd.video/video/-aubree-valentine-switch-roles-fta-reality-kings.html
+            f"""✦ ʜᴇʀᴇ ɪs sᴏᴍᴇ ʙᴀsɪᴄ ᴄᴏᴍᴍᴀᴅs ғᴏʀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇ.
 """,
             parse_mode=ParseMode.MARKDOWN,
             
