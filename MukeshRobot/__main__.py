@@ -591,6 +591,9 @@ def Source_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
                         InlineKeyboardButton(text="ᴄʜᴀᴛ ᴀɪ", callback_data="donation_help") 
                     ],
+                    [
+                        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="Main_help")
+                    ],
                 ]
             ),
         )
