@@ -487,14 +487,14 @@ def site_search(update: Update, context: CallbackContext, site: str):
         search_result = soup.find_all("h2", {"class": "post-title"})
 
         if search_result:
-            result = f"❍ <b>sᴇᴀʀᴄʜ ʀᴇsᴜʟᴛs ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KaizokuAnime: \n"
+            result = f"❍ <b>sᴇᴀʀᴄʜ ʀᴇsᴜʟᴛs ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @RoY_EdiTX\n"
             for entry in search_result:
                 post_link = "https://animekaizoku.com/" + entry.a["href"]
                 post_name = html.escape(entry.text)
                 result += f"❍ <a href='{post_link}'>{post_name}</a>\n"
         else:
             more_results = False
-            result = f"❍ <b>ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @KaizokuAnime"
+            result = f"❍ <b>ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ғᴏʀ</b> <code>{html.escape(search_query)}</code> <b>ᴏɴ</b> @RoY_EdiTX"
 
     elif site == "kayo":
         search_url = f"https://animekayo.com/?s={search_query}"
