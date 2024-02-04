@@ -556,12 +556,12 @@ def Source_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                      [
-                        InlineKeyboardButton(text="ᴀɴɪᴍᴇ-ɪᴍɢ", callback_data="basic_help"),
+                        InlineKeyboardButton(text="ᴡᴀɪғᴜs", callback_data="basic_help"),
                         InlineKeyboardButton(text="ᴀɪʀɪɴɢ", callback_data="expert_help")
                     ],
                     [
                         InlineKeyboardButton(text="ʜᴇʀᴇᴍ", callback_data="advance_help"),
-                        InlineKeyboardButton(text="ᴇxᴛʀᴀ", callback_data="Music_roy_extra") 
+                        InlineKeyboardButton(text="ᴀɴɪᴍᴇ-ɢɪғ", callback_data="Music_roy_extra") 
                     ],
                     [
                         InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="Main_help")
