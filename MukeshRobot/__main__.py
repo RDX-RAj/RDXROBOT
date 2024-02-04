@@ -568,7 +568,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [ 
                     [
-                        InlineKeyboardButton(text="ᴅᴏɴᴀᴛᴇ", url="https://t.me/roy_editx"),InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
+                        InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back"),InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", callback_data="Main_help")
                     ]
                 ]
             ),
@@ -589,7 +589,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(text="ᴀᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
-                        InlineKeyboardButton(text="ᴄʜᴀᴛ ᴀɪ", callback_data="donation_help") 
+                        InlineKeyboardButton(text="ᴇxᴛʀᴀ", callback_data="Music_roy_extra") 
                     ],
                     [
                         InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="Main_help")
@@ -768,8 +768,8 @@ def Music_about_callback(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(text="ᴏᴡɴᴇʀ", callback_data="Music_roy_bot"),
                         InlineKeyboardButton(
-                            text="ᴇxᴛʀᴀ",
-                            callback_data="Music_roy_extra",
+                            text="ᴄʜᴀᴛ-ᴀɪ",
+                            callback_data="donation_help",
                         ),
                     ],
                     [
@@ -837,7 +837,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_roy"),InlineKeyboardButton(text="ᴛᴏᴏʟs", callback_data="mukesh_support")
+                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_roy"),InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="Main_help")
                     ]
                 ]
             ),
