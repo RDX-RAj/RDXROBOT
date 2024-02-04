@@ -468,8 +468,11 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(text="ᴀɴɪᴍᴇ", callback_data="Music_avi"),
+                        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx")
+                    ],
+                    [
                         InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back")
-                    ]
+                    ],
                 ]
             ),
             )
