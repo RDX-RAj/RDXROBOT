@@ -468,7 +468,6 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="ᴇxᴛʀᴀ", callback_data="source_") 
                     ],
                     [
-                        InlineKeyboardButton(text="ᴀᴠɪsʜᴀ", callback_data="Avisha_"),
                         InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back")
                     ],
                 ]
@@ -492,7 +491,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="Main_help"),InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
+                        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="Main_help"),InlineKeyboardButton(text="ANIME", callback_data="Avisha_")
                     ]
                 ]
             ),
