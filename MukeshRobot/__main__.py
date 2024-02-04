@@ -197,9 +197,8 @@ for module_name in ALL_MODULES:
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    dispatcher.bot.send_photo(
+    dispatcher.bot.send_photo(random.choice(NYKAA),
         chat_id=chat_id,
-        photo=START_IMG,
         caption=text,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=keyboard,
@@ -242,7 +241,7 @@ def start(update: Update, context: CallbackContext):
             first_name = update.effective_user.first_name
             
             x=update.effective_message.reply_sticker(
-                "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ")
+                "CAACAgUAAx0CfAEyWgACUm9lvtbntTE1hwGNutZ_zY5Pljj34QAC6wwAAhHM2FVSsQ11QuSOKx4E")
             x.delete()
             usr = update.effective_user
             lol = update.effective_message.reply_text(
