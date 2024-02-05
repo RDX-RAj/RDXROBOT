@@ -6,8 +6,12 @@ from pyrogram.types import Message
 from MukeshRobot import pbot as app
 from MukeshRobot.Love.readable_time import get_readable_time
 from MukeshRobot.Love.afkdb import add_afk, is_afk, remove_afk
+import random 
 
-
+POLICE = [
+"https://telegra.ph/file/790f5f3cdcbe30633a541.jpg",
+"https://telegra.ph/file/ec3283c6af0a1795d47a7.jpg"
+]
 
 @app.on_message(filters.command(["afk"], prefixes=["/", "!", ""]))
 async def active_afk(_, message: Message):
@@ -160,7 +164,10 @@ async def active_afk(_, message: Message):
         }
 
     await add_afk(user_id, details)    
-    await message.reply_text(f"Ⰶ {message.from_user.first_name} ɪs ɴᴏᴡ ᴀғᴋ !")
+    await message.reply_photo(
+        photo=random.choice(POLICE),
+        caption=f"Ⰶ {message.from_user.first_name} ɪs ɴᴏᴡ ᴀғᴋ !"
+    )
 
 
 
