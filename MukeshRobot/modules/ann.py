@@ -66,7 +66,7 @@ ANN_HANDLER = CommandHandler('ann', ann, run_async=True)
 dispatcher.add_handler(ANN_HANDLER)
 
 #  Buttons for /help .
-__mod_name__ = "ᴀɴɪᴍᴇ-ɴᴇᴡs"  # *IF YOU WANT* EDIT NAME OF BUTTON IN '/help'
+__mod_name__ = "ᴀɴɪᴍᴇ-ɴ"  # *IF YOU WANT* EDIT NAME OF BUTTON IN '/help'
 
 # *IF YOU WANT* EDIT MESSAGE FOR HELP OF THIS MODULE.
 __help__ = '''
