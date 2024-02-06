@@ -136,6 +136,6 @@ dispatcher.add_handler(MARK_ATTENDANCE)
 dispatcher.add_handler(END_ATTENDANCE)
 dispatcher.add_handler(END_ATTENDANCE_CMD)
 
-__mod_name__ = "ᴀᴛᴛᴇɴᴅᴀɴᴄᴇ"
+__mod_name__ = "ᴘʀᴇsᴇɴᴛ"
 __command_list__ = ["attendance", "end_attendance"]
 __handlers__ = [START_ATTENDANCE, END_ATTENDANCE, END_ATTENDANCE_CMD]
