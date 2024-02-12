@@ -6,7 +6,7 @@ from cachetools import TTLCache
 from telegram import Chat, ChatMember, ParseMode, Update
 from telegram.ext import CallbackContext
 
-from MukeshRobot import (
+from RDXROBOT import (
     DEL_CMDS,
     DEMONS,
     DEV_USERS,
