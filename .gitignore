@@ -1,16 +1,16 @@
 # Config files, logs and stuff
-MukeshRobot/modules/helper_funcs/temp.txt
-MukeshRobot/elevated_users.json
-MukeshRobot/config.py
-MukeshRobot/config.ini
+RDXROBOT/modules/helper_funcs/temp.txt
+RDXROBOT/elevated_users.json
+RDXROBOT/config.py
+RDXROBOT/config.ini
 log.txt
 kangsticker.png
 updates.txt
 
 # Session files
-MukeshRobot/*.session
-MukeshRobot/*.session-journal
-Mukesh.session-journal
+RDXROBOT/*.session
+RDXROBOT/*.session-journal
+rdx.session-journal
 *.session
 
 # Byte-compiled / optimized / DLL files
