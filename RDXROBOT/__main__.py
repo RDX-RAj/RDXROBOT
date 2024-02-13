@@ -90,7 +90,7 @@ buttons = [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="rdx_"),
     ],
     [
-        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="rdx_source"),
+        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="Alone_rdx"),
     ],
     [
         InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
@@ -279,7 +279,7 @@ def start(update: Update, context: CallbackContext):
             first_name = update.effective_user.first_name
             
             x=update.effective_message.reply_sticker(
-                "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ")
+                "CAACAgQAAx0CfbmH5wACKZllywajynyEYX94f4kWNe2PlChPoAACuAkAApHw8FCB2AT9XGPTdx4E")
             x.delete()
             usr = update.effective_user
             lol = update.effective_message.reply_text(
@@ -494,9 +494,9 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
         )
 
 
-def RDXROBOT_Rdxsource_Callback(update: Update, context: CallbackContext):
+def RDXROBOT_Alone_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "rdx_source":
+    if query.data == "Alone_rdx":
         query.message.edit_caption(f"""
  ✦ ʜᴇʀᴇ ɪꜱ sᴏᴜʀᴄє ᴍєɴᴜ ꜰᴏʀ {BOT_NAME}
 """,
