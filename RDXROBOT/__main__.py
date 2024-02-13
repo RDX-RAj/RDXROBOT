@@ -90,10 +90,10 @@ buttons = [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="rdx_"),
     ],
     [
-        InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
+        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="rdx_support"),
     ],
     [
-        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="rdx_support"),],
+        InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),],
      
 ]
 
@@ -492,11 +492,9 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
         ],
                     [
                         InlineKeyboardButton(text="ʜᴏᴍє", callback_data="rdx_back"),
-                    ],
-                ]
-            ),
-        )
-    elif query.data == "rdx_back":
+                    ],]
+                                   
+    elif qery.data == "rdx_back":
         first_name = update.effective_user.first_name 
         query.message.edit_caption(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
             reply_markup=InlineKeyboardMarkup(buttons),
