@@ -96,9 +96,9 @@ buttons = [
 ]
 
 
-roy = [
+Raj = [
     [
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx"),
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/+DtVrETqxH18wZTdl"),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -454,7 +454,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                             text="ʜᴇʟᴘ ᴍᴇɴᴜ", callback_data="Main_help"
                         ),
-                        InlineKeyboardButton(text="ɴʏᴋᴀᴀ ", url="https://t.me/nykaa_update"),
+                        InlineKeyboardButton(text="ᴀʟᴇxᴀ", url="https://t.me/+DtVrETqxH18wZTdl"),
                     ],
                     [
                         InlineKeyboardButton(text="ʜᴏᴍᴇ", callback_data="mukesh_back"),
@@ -473,7 +473,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                             text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx"
+                            text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/+DtVrETqxH18wZTdl"
                         ),
                     ],
                     [
