@@ -90,10 +90,10 @@ buttons = [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="rdx_"),
     ],
     [
-        InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
+        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="rdx_source"),
     ],
     [
-        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="rdx_source"),
+        InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
         ],
         ]
 
@@ -111,45 +111,6 @@ rdxraj = [
     ],
 ]
 
-
-def RDXROBOT_rdx_source_Callback(update: Update, context: CallbackContext):
-    query = update.callback_query
-    if query.data == "rdx_source":
-        query.message.edit_caption(f"""
- ✦ ʜᴇʀᴇ ɪꜱ sᴏᴜʀᴄє ᴍєɴᴜ ꜰᴏʀ {BOT_NAME}
-""",
-            parse_mode=ParseMode.MARKDOWN,
-            
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-            InlineKeyboardButton(
-                text="˹sᴜᴘᴘ๏ʀᴛ˼",
-                url="https://t.me/+PtOLQT04ocMzOTJl"),
-            InlineKeyboardButton(
-                text="˹sᴜᴘᴘ๏ʀᴛ˼", 
-                url="https://t.me/+muWyzsc4W9JjNDJl"),],[
-            InlineKeyboardButton(text="˹ᴀᴅᴅ ᴍє ʙᴀʙʏ˼", url=f"https://t.me/{dispatcher.bot.username}?startgroup=true"),],
-        [
-            InlineKeyboardButton(text="˹๏ᴡɴєʀ˼", user_id="1777270311"),
-            InlineKeyboardButton(text="˹ᴜᴘᴅᴀᴛєs˼", url="https://t.me/+m4oVCt2zFhYyMTdl"),
-        ],
-        [
-            InlineKeyboardButton(text="◃◃", url="https://t.me/+okCO84m2hZxjYTE9"),
-            InlineKeyboardButton(text="˹ʏ๏ᴜᴛᴜʙє˼", url="https://www.youtube.com/channel/UCoOmopJ8YVYz9Lm8iHhNYMw"),
-            InlineKeyboardButton(text="▹▹", url="https://t.me/+pAWm7GPhFYliOGI1"),
-        ],
-        [
-            InlineKeyboardButton(text="❀", url="https://t.me/+BD8IVag4UpU3ODI1"),
-            InlineKeyboardButton(text="˹ɪɴsᴛᴀ˼", url="https://www.instagram.com/vdjrajofficial"),
-            InlineKeyboardButton(text="❀", url="https://t.me/+KRt7ApiJ5Ek2ZjY1"),
-        ],
-                    [
-                        InlineKeyboardButton(text="ʜᴏᴍє", callback_data="rdx_back"),
-                    ],
-                    ]
-            ),
-                                  )
 
 HELP_STRINGS = f"""
 ❍ *{BOT_NAME}  ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄs ᴄᴏᴍᴍᴀɴᴅ*"""
@@ -531,6 +492,45 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
         )
+
+
+def RDXROBOT_Rdxsource_Callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "rdx_source":
+        query.message.edit_caption(f"""
+ ✦ ʜᴇʀᴇ ɪꜱ sᴏᴜʀᴄє ᴍєɴᴜ ꜰᴏʀ {BOT_NAME}
+""",
+            parse_mode=ParseMode.MARKDOWN,
+            
+            reply_markup=InlineKeyboardMarkup(
+                [
+                     [
+                         InlineKeyboardButton(
+                           text="˹sᴜᴘᴘ๏ʀᴛ˼", url="https://t.me/+PtOLQT04ocMzOTJl"),
+                         InlineKeyboardButton(
+                           text="˹sᴜᴘᴘ๏ʀᴛ˼", url="https://t.me/+muWyzsc4W9JjNDJl"),],[
+                         InlineKeyboardButton(text="˹ᴀᴅᴅ ᴍє ʙᴀʙʏ˼", url=f"https://t.me/{dispatcher.bot.username}?startgroup=true"),],
+                     [
+                         InlineKeyboardButton(text="˹๏ᴡɴєʀ˼", user_id="1777270311"),
+                         InlineKeyboardButton(text="˹ᴜᴘᴅᴀᴛєs˼", url="https://t.me/+m4oVCt2zFhYyMTdl"),
+                     ],
+                     [
+                         InlineKeyboardButton(text="◃◃", url="https://t.me/+okCO84m2hZxjYTE9"),
+                         InlineKeyboardButton(text="˹ʏ๏ᴜᴛᴜʙє˼", url="https://www.youtube.com/channel/UCoOmopJ8YVYz9Lm8iHhNYMw"),
+                         InlineKeyboardButton(text="▹▹", url="https://t.me/+pAWm7GPhFYliOGI1"),
+                     ],
+                     [
+                         InlineKeyboardButton(text="❀", url="https://t.me/+BD8IVag4UpU3ODI1"),
+                         InlineKeyboardButton(text="˹ɪɴsᴛᴀ˼", url="https://www.instagram.com/vdjrajofficial"),
+                         InlineKeyboardButton(text="❀", url="https://t.me/+KRt7ApiJ5Ek2ZjY1"),
+                     ],
+                     [
+                         InlineKeyboardButton(text="ʜᴏᴍє", callback_data="rdx_back"),
+               ],
+           ]
+      ),
+      )
+        
 def RDXROBOT_Main_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Main_help":
@@ -1098,7 +1098,7 @@ def get_settings(update: Update, context: CallbackContext):
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
             text = "๏ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ᴛʜɪs ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs ᴀs ᴡᴇʟʟ ᴀs ʏᴏᴜʀs"
-            msg.reply_photo(random.choice(ABHI),text,
+            msg.reply_photo(random.choice(RAJ),text,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -1229,7 +1229,7 @@ def main():
     music_callback_handler = CallbackQueryHandler(
         Music_about_callback, pattern=r"Music_",run_async=True
     )
-    mukeshrobot_main_handler = CallbackQueryHandler(
+    rdxrobot_main_handler = CallbackQueryHandler(
         RDXROBOT_Main_Callback, pattern=r".*_help",run_async=True)
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -1242,7 +1242,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-    dispatcher.add_handler(mukeshrobot_main_handler)
+    dispatcher.add_handler(rdxrobot_main_handler)
     dispatcher.add_error_handler(error_callback)
     dispatcher.add_handler(source_callback_handler)
     LOGGER.info("Using long polling.")
