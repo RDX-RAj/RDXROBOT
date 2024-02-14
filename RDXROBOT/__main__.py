@@ -90,7 +90,7 @@ buttons = [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="rdx_"),
     ],
     [
-        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="Rdx_links"),
+        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="Owner_rdx"),
     ],
     [
         InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
@@ -476,7 +476,7 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
                             text="˹sᴜᴘᴘ๏ʀᴛ˼", url=f"https://t.me/+RObRa7kXPIJmMjU1"
                         ),
                         InlineKeyboardButton(
-                            text="˹ᴜᴘᴅᴀᴛє˼", url="https://t.me/+DtVrETqxH18wZTdl"
+                            text="˹ᴜᴘᴅᴀᴛє˼", url=f"https://t.me/+DtVrETqxH18wZTdl"
                         ),
                     ],
                     [
@@ -622,7 +622,7 @@ def RDXROBOT_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [ 
                     [
-                        InlineKeyboardButton(text="ʜᴏᴍє", callback_data="rdx_back"),InlineKeyboardButton(text="˹sᴜᴘᴘ๏ʀᴛ˼", callback_data="Main_help")
+                        InlineKeyboardButton(text="ʜᴏᴍє", callback_data="rdx_back"),InlineKeyboardButton(text="˹sᴜᴘᴘ๏ʀᴛ˼", callback_data="rdx_support")
                     ]
                 ]
             ),
@@ -650,32 +650,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
                     ],
                 ]
             ),
-        )
-    elif query.data == "Rdx_links":
-        query.message.edit_caption(f"*✿ ꝛᴅꭙ sᴏᴜʀᴄᴇ ✿*"
-            f"""
-✦ ʜᴇʀᴇ ɪꜱ ꝛᴅꭙ sᴏᴜʀᴄᴇ ᴍєɴᴜ ꜰᴏʀ {BOT_NAME} 
-
-❍˹๏ᴡɴєʀ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](tg://user?id=1777270311)
-
-❍˹sᴜᴘᴘ๏ʀᴛ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+PtOLQT04ocMzOTJl)
-
-❍˹sᴜᴘᴘ๏ʀᴛ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+RObRa7kXPIJmMjU1)
-❍˹ꝛᴅꭙʙᴏᴛᴢ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+KRt7ApiJ5Ek2ZjY1)
-❍˹ᴜᴘᴅᴀᴛєѕ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+m4oVCt2zFhYyMTdl)
-❍˹ʏ๏ᴜᴛᴜʙє˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://www.youtube.com/channel/UCoOmopJ8YVYz9Lm8iHhNYMw)
-❍˹Aв๏ᴜᴛ ꝛᴅꭙ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+okCO84m2hZxjYTE9)
-""",
-            parse_mode=ParseMode.MARKDOWN,
             
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="ᴛᴏᴏʟs", callback_data="rdx_support")
-                    ]
-                ]
-            ),
-        )        
     elif query.data == "source_back":
         first_name = update.effective_user.first_name
         query.message.edit_caption(
@@ -743,6 +718,35 @@ def Music_about_callback(update: Update, context: CallbackContext):
                 ]
             ),
         )
+    elif query.data == "Owner_rdx":
+        query.message.edit_caption(f"*✿ ꝛᴅꭙ sᴏᴜʀᴄᴇ ✿*"
+            f"""
+✦ ʜᴇʀᴇ ɪꜱ ꝛᴅꭙ sᴏᴜʀᴄᴇ ᴍєɴᴜ ꜰᴏʀ {BOT_NAME} 
+
+❍˹๏ᴡɴєʀ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](tg://user?id=1777270311)
+
+❍˹sᴜᴘᴘ๏ʀᴛ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+PtOLQT04ocMzOTJl)
+
+❍˹sᴜᴘᴘ๏ʀᴛ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+RObRa7kXPIJmMjU1)
+
+❍˹ꝛᴅꭙʙᴏᴛᴢ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+KRt7ApiJ5Ek2ZjY1)
+
+❍˹ᴜᴘᴅᴀᴛєѕ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+m4oVCt2zFhYyMTdl)
+
+❍˹ʏ๏ᴜᴛᴜʙє˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://www.youtube.com/channel/UCoOmopJ8YVYz9Lm8iHhNYMw)
+
+❍˹Aв๏ᴜᴛ ꝛᴅꭙ˼ ➛ [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/+okCO84m2hZxjYTE9)
+""",
+            parse_mode=ParseMode.MARKDOWN,
+            
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="ᴛᴏᴏʟs", callback_data="rdx_support")
+                    ]
+                ]
+            ),
+        )        
     elif query.data == "Music_play":
         query.message.edit_caption(f"*✿ ᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅꜱ ✿*"
             f"""
