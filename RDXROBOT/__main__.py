@@ -90,7 +90,7 @@ buttons = [
         InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="rdx_"),
     ],
     [
-        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="source"),
+        InlineKeyboardButton(text="˹s๏ᴜʀᴄє˼", callback_data="Main_source"),
     ],
     [
         InlineKeyboardButton(text="˹ʜєʟᴘ & ᴄᴍᴅ˼", callback_data="Main_help"),
@@ -494,9 +494,9 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
         )
 
 
-def RDXROBOT_Source_Callback(update: Update, context: CallbackContext):
+def RDXROBOT_Main_source_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "source":
+    if query.data == "Main_source":
         query.message.edit_caption(f"""
  ✦ ʜᴇʀᴇ ɪꜱ sᴏᴜʀᴄє ᴍєɴᴜ ꜰᴏʀ {BOT_NAME}
 """,
