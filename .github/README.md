@@ -12,7 +12,7 @@
 </h2>
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0786&width=420&lines=Ⰶ+ʜᴇʏ+ᴄᴜᴛɪᴇ+ᴅᴇᴘʟᴏʏ+ʙᴏᴛ+ᴏɴ+ʜᴇʀᴏᴋᴜ+Ⰶ;Ⰶ+ɪғ+ʏᴏᴜ+ᴅᴏɴ'ᴛ+ʜᴀᴠᴇ+ʜᴇʀᴏᴋᴜ+ᴀᴄᴄᴏᴜɴᴛ+Ⰶ;Ⰶ+ᴛʜᴇɴ+ᴅᴇᴘʟᴏʏ+ᴀʟsᴏ+ᴏɴ+ᴠᴘs+sᴇʀᴠᴇʀ+Ⰶ;Ⰶ+ᴘᴏᴡᴇʀᴇᴅ+ʙʏ+ꝛᴅꭙ+ᴇᴅɪᴛx+Ⰶ">
 <p align="center">
-  <img src="https://graph.org/file/241a156e1555427b80581.jpg">
+  <img src="https://telegra.ph/file/164cb64528b23360715ff.jpg">
 </p>
 
 <img src="https://readme-typing-svg.herokuapp.com?color=00FF00&width=420&lines=💌+ɪ+ᴀᴍ+๛+ᴀ+ʟ+ᴇ+x+ᴀ+༗‌+ᴀɴᴅ+ɪ+ʜᴀᴠᴇ+sᴘᴇᴄɪᴀʟ+ғᴜᴛᴜʀᴇs+🧋;💌+ғʀɪsᴛ+ʏᴏᴜ+ғᴏʀᴋ+ᴛʜɪs+ʀᴇᴘᴏ+ᴛʜᴇɴ+ᴅᴇᴘʟᴏʏ+ʏᴏᴜʀ+ʙᴏᴛ+🧋">
@@ -34,7 +34,7 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?color=white&width=420&lines=💥+ɪғ+ᴀɴʏ+ᴇʀʀᴏʀ+ᴛʜᴇɴ+sᴇɴᴅ+ᴍᴇ+ᴇʀʀᴏʀ+ɪɴ+ꝛᴅꭙ+ᴇᴅɪᴛx+...">
 <p align="center">
-<a href="https://t.me/+RObRa7kXPIJmMjU1"><img src="https://img.shields.io/badge/-๛DM TO ꝛᴅꭙ ᴄʟᴜʙ%20☆-FF00FF.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/+RObRa7kXPIJmMjU1"><img src="https://img.shields.io/badge/-๛DM TO 『♕︎𓆩𝗥𝗗𝗫𓆪𝗥⟁𝗝™♕︎』%20☆-FF00FF.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 <h3 align="center">
 
