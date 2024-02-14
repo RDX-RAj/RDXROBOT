@@ -494,7 +494,7 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
         )
 
 
-def RDXROBOT_Main_source_Callback(update: Update, context: CallbackContext):
+def RDXROBOT_Main_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Main_source":
         query.message.edit_caption(f"""
