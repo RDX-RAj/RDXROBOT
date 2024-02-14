@@ -286,7 +286,7 @@ def start(update: Update, context: CallbackContext):
             lol = update.effective_message.reply_text(
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
-            time.sleep(0.5)
+            time.sleep(0.6)
             lol.edit_text("💛")
             time.sleep(0.5)
             lol.edit_text("💜")
@@ -477,7 +477,7 @@ def Rdx_about_callback(update: Update, context: CallbackContext):
                             text="˹sᴜᴘᴘ๏ʀᴛ˼", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="˹ᴜᴘᴅᴀᴛє˼", url=f"https://t.me/+DtVrETqxH18wZTdl"
+                            text="˹ᴜᴘᴅᴀᴛє˼", url="https://t.me/+DtVrETqxH18wZTdl"
                         ),
                     ],
                     [
